@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!ELEMENT DataReader (GamesList | GamePage | CoverPage)+>
+<!ATTLIST DataReader
+	Version CDATA #REQUIRED
+>
+
+<!ELEMENT GamesList (Element | PerGameBlock)+>
+<!ATTLIST GamesList
+	URL CDATA #REQUIRED
+	AllPlatformsURL CDATA #IMPLIED
+>
+
+<!ELEMENT GamePage (Element)>
+<!ATTLIST GamePage
+	URL CDATA #REQUIRED
+>
+
+<!ELEMENT CoverPage (Element | Javascript)+>
+<!ATTLIST CoverPage
+	URL CDATA #REQUIRED
+>
+
+<!ELEMENT Element (Element | PerGameBlock | Link | SearchGameData | Img | Javascript)+>
+<!ATTLIST Element
+  Type CDATA #IMPLIED
+  Key CDATA #IMPLIED
+  Value CDATA #IMPLIED
+  Nr CDATA #IMPLIED
+  ContainsText CDATA #IMPLIED
+>
+
+<!ELEMENT PerGameBlock (Element | PerGameBlock | Link)+>
+<!ATTLIST PerGameBlock
+  Type CDATA #IMPLIED
+  Key CDATA #IMPLIED
+  Value CDATA #IMPLIED
+>
+
+<!ELEMENT Link EMPTY>
+<!ATTLIST Link
+	Nr CDATA #IMPLIED
+	HrefSubstring CDATA #REQUIRED
+>
+
+<!ELEMENT Javascript EMPTY>
+<!ATTLIST Javascript
+  ContainsText CDATA #IMPLIED
+>
+
+<!ELEMENT SearchGameData EMPTY>
+<!ATTLIST SearchGameData
+	Publisher CDATA #IMPLIED
+	Developer CDATA #IMPLIED
+	Year CDATA #IMPLIED
+	Genre CDATA #IMPLIED
+	IgnoreTags CDATA #IMPLIED
+	StartTokens CDATA #IMPLIED
+	StoppTokens CDATA #IMPLIED
+>
+
+<!ELEMENT Img EMPTY>

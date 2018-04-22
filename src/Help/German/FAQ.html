@@ -1,0 +1,339 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>H&auml;ufig gestellte Fragen (FAQ)</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="H&auml;ufig gestellte Fragen, Frequently asked questions, FAQ">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="FAQ">
+  <param name="Keyword" value="Frequently asked questions">
+  <param name="Keyword" value="H&auml;ufig gestellte Fragen">
+</OBJECT>
+ 
+<h1>H&auml;ufig gestellte Fragen (FAQ)</h1>
+
+<p class="small">
+  1. <a href="#FAQ01">Wie funktioniert die Update-&Uuml;berpr&uuml;fung ?</a><br />
+  2. <a href="#FAQ02">Beim Ausf&uuml;hren eines selbst erstellen Installer-Paketes erhalte ich eine "DFend.dat nicht gefunden"-Fehlermeldung.</a><br />
+  3. <a href="#FAQ03">Ich wusste genau auf welche Seite des D-Fend Profileditors welche Einstellungen waren. Gibt es diesen Dialog auch in D-Fend Reloaded ?</a><br />
+  4. <a href="#FAQ04">Ich verwende ein spezielles DOSBox-Build mit einigen zus&auml;tzlichen Funktionen. Unterst&uuml;tzt D-Fend Reloaded einige dieser Features ?</a><br />
+  5. <a href="#FAQ05">Ich habe "<tt>C:\Users\me\D-Fend Reloaded\VritualHD</tt>" als Laufwerk C in DOSBox eingestellt, aber DOSBox zeigt an, dass "<tt>C:\Users\me\D-FEND~1\VIRTUA~1</tt>" als Laufwerk C gemounted wurde. Was ist passiert ?</a><br />
+  6. <a href="#FAQ06">Wie kann ich eine andere Sprache f&uuml;r die D-Fend Reloaded Programmoberfl&auml;che erstellen ?</a><br />
+  7. <a href="#FAQ07">Gibt es einen einfachen Weg, eine neue Sprachdatei auf Rechtschreibfehler zu &uuml;berpr&uuml;fen ?</a><br />
+  8. <a href="#FAQ08">Wo ist der "Standardvorlage bearbeiten... (F5)"-Men&uuml;punkt hin ?</a><br />
+  9. <a href="#FAQ09">Kann D-Fend Reloaded in Wine unter Linux verwendet werden ?</a><br />
+  10. <a href="#FAQ10">Ich habe Tastaturprobleme, die sich mit dem DOSBox Keymapper nicht l&ouml;sen lassen.</a><br />
+  11. <a href="#FAQ11">Ich erhalte einen Fehler, wenn ich versuche den DOSBox Videocodec zu installieren.</a><br />
+</p>
+
+<a onclick="Work('FAQ01')" name="FAQ01" href="#"><h2>&raquo; Wie funktioniert die Update-&Uuml;berpr&uuml;fung ?</h2></a>
+<div id="FAQ01"><p>
+Der Update-Checker l&auml;d folgende Datei von der D-Fend Reloaded Hompage auf Sourceforge herunter:
+"<a href="http://dfendreloaded.sourceforge.net/UpdateInfo.txt" target="_blank">http://dfendreloaded.sourceforge.net/UpdateInfo.txt</a>".
+Die Datei enth&auml;lt zwei Textzeilen; in der ersten Zeile steht die Versionsnummer der aktuellen D-Fend Reloaded Version 
+(z.B. "<tt>0.6.0</tt>" ) und in der zweiten Zeile die Download-Adresse f&uuml;r den Updateinstaller, der eine existierende
+D-Fend Reloaded Installation auf diese Version aktualisiert (z.B. "<tt>http://downloads.sourceforge.net/dfendreloaded/D-Fend-Reloaded-0.6.0-UpdateSetup.exe</tt>").
+Wenn die Versionsnummer in der <tt>UpdateInfo.txt</tt>-Datei gr&ouml;&szlig;er ist, als die Versionsnummer der momentan
+verwendeten D-Fend Reloaded Installation, wird Sie der Update-Checker fragen, ob Sie jetzt auf diese Version aktualisiern
+wollen. Wenn Sie diese Frage mit "Ja" beantworten, wird er die in der zweiten Zeile der in der <tt>UpdateInfo.txt</tt>-Datei
+angegebenen Datei in Ihr Verzeichnis f&uuml;r tempr&auml;re Dateien herunterladen und starten. Als letzten Schritt wird
+er Windows mitteilen, den Update-Installer so bald wie m&ouml;glich wieder zu l&ouml;schen. Da der Update-Installer jedoch
+gerade ausgef&uuml;hrt wird, kann Windows die Datei nicht sofort l&ouml;schen und f&uuml;gt sie in die interne
+"Beim n&auml;chsten Systemstart l&ouml;schen"-Liste ein.
+</p>
+
+<p>
+Momentan handelt es sich bei der <tt>UpdateInfo.txt</tt>-Datei um eine statische Datei,
+aber in Zukunft w&auml;re es denkbar, dass der Webserver verschiedene Dateiinhalte
+abh&auml;ngig von der momentan verwendeten D-Fend Reloaded Version ausliefert (ein
+kleiner Update-Installer f&uuml;r Aktualisierungen von Version 0.6.0 auf 0.6.1 und ein
+gr&ouml;eres Installationspaket, welches alle &auml;lteren Versionen aktualisieren kann).
+Um dies zu erm&ouml;glichen, f&uuml;gt D-Fend Reloaded beim Abfragen der Update-Informationsdatei
+ein "<tt>?Version=0.6.0</tt>" an die Adresse an (bzw. was sonst die aktuelle Verionsnummer ist).
+Wenn Sie nicht m&ouml;chten, dass php-Skript auf dem Sourceforge-Webserver erf&auml;hrt,
+welche D-Fend Reloaded Version Sie momentan einsetzen, k&ouml;nnen Sie diese Adresserg&auml;nzung
+auf der <a href="FileOptionsSearchForUpdates.html">Nach Updates suchen</a>-Seite des
+<a href="FileOptions.html">Programmeinstellungen</a>-Dialog deaktivieren. Da php-Skripte auf
+dem Sourceforge Webserver grunds&auml;tzlich keine Daten in Dateien abspeichern k&ouml;nnen
+(d.h. keine Anfragen in Log-Dateien erfassen k&ouml;nnen), ergeben sich keinerlei Einschr&auml;nkungen
+der Privateph&auml;re durch die Update-Abfrage.
+</p>
+
+<p>
+Der Update-Checker stellt also lediglich eine Automatisierung dessen dar, was Sie
+manuell unternehmen w&uuml;rden, wenn Sie auf der Homepage nach Updates suchen.
+Die Update-&Uuml;berpr&uuml;fung kann automatisch beim Programmstart von
+D-Fend Reloaded durchgef&uuml;hrt werden. Da Programme, die ungefragt Internetverbindungen
+aufbauen h&auml;ufig jedoch nicht gern gesehen werden, ist diese Option im
+Auslieferungszustand deaktiviert. Wenn Sie m&ouml;gen, k&ouml;nnen Sie die
+automatische Update-Pr&uuml;fung jeder Zeit auf der
+<a href="FileOptionsSearchForUpdates.html">Nach Updates suchen</a>-Seite des
+<a href="FileOptions.html">Programmeinstellungen</a>-Dialog aktivieren.
+Alternativ k&ouml;nnen Sie jederzeit manuell &uuml;ber den Men&uuml;punkt
+<a href="HelpSearchForUpdates.html">Nach Updates suchen</a> im "Hilfe"-Men&uuml;.
+</p>
+
+<p>
+Die Update-Pr&uuml;fung verwendet die Windows-Verbindungseinstellung (die Sie
+&uuml;ber die Programmeinstellungen des Internet Explorers anpassen k&ouml;nnen).
+Dies bedeutet insbesondere, dass D-Fend Reloaded den m&ouml;glicherweise im
+Internet Explorer konfigurierten Proxy-Server verwenden wird.
+</p>
+</div>
+
+<a onclick="Work('FAQ02')" name="FAQ02" href="#"><h2>&raquo; Beim Ausf&uuml;hren eines selbst erstellen Installer-Paketes erhalte ich eine "DFend.dat nicht gefunden"-Fehlermeldung.</h2></a>
+<div id="FAQ02"><p>
+Selbst erstellte Installer-Pakete enthalten nur die bei der Erstellung ausgew&auml;hlten Spiele und nicht
+D-Fend Reloaded und DOSbox. Dies bedeutet, dass sie nur auf Computern installier werden k&ouml;nnen,
+auf denen bereits eine D-Fend Reloaded Installation existiert.
+</p>
+
+<p>
+Wenn Sie D-Fend Reloaded im "Benutzerverzeichnis Modus" installiert haben
+(der voreingestellte Installationstyp), m&uuml;ssen Sie als Zielverzeichnis
+bei der Installation eines Installer-Paketes dennoch das D-Fend Reloaded
+Programmverzeichnis (beispielsweise "<tt>C:\Program Files\D-Fend Reloaded</tt>")
+angeben und nicht etwa da Datenverzeichnis (etwa "<tt>C:\Users\IhrName\D-Fend Reloaded</tt>").
+Der Installer des Datenpaketes greift nur lesend auf die Basiseinstellungen im
+Programmverzeichnis zu und kopiert die eigentlichen Spieledaten dann in das
+Datanverzeichnis (d.h. er kann unter Vista ohne Admin-Rechte ausgef&uuml;hrt werden).
+</p>
+
+<p>
+Wenn Sie ein Installationspaket erstellen wollen, welches neben den Spielen
+auch die D-Fend Reloaded Programmdateien enth&auml;lt, so sollten Sie D-Fend Reloaded
+in der portablen Betriebsart in ein beliebiges Verzeichnis installieren, die
+jeweiligen Spiele (per Installer-Paket) in dieser Installation installieren
+oder zu ihr &uuml;bertragen und dann ein Zip-Archiv des gesamten Programmverzeichnisses
+erstellen oder den gesamten Ordner auf einen USB-Stick kopieren.
+</p>
+</div>
+
+<a onclick="Work('FAQ03')" name="FAQ03" href="#"><h2>&raquo; Ich wusste genau auf welche Seite des D-Fend Profileditors welche Einstellungen waren. Gibt es diesen Dialog auch in D-Fend Reloaded ?</h2></a>
+<div id="FAQ03"><p>
+D-Fend Reloaded besitzt zwei Profileditor-Dialoge: Den klassischen D-Fend-Style Profileditor und
+den modernen Profileditor-Dialog. &Uuml;ber beide Dialoge k&ouml;nnen alle normalen Einstellungen
+zu einem Profil vorgenommen werden (d.h. Einstellungen, die es auch bereits in D-Fend gab).
+Einige neuere Einstellungen sind jedoch nur &uuml;ber den modernen Profileditor erreichbar.
+Welchen Profileditor Sie verwenden wollen, k&ouml;nnen Sie im
+<a href="FileOptions.html">Programeinstellungen</a>-Dialog auf der Seite
+<a href="FileOptionsProfileEditor.html">profile editor</a> einstellen.
+Diese Dialogseite ist allerdings nur sichtbar, wenn Sie den Konfigurationsmodus "Vollst&auml;ndig" gew&auml;hlt haben.
+</p>
+</div>
+
+<a onclick="Work('FAQ04')" name="FAQ04" href="#"><h2>&raquo; Ich verwende ein spezielles DOSBox-Build mit einigen zus&auml;tzlichen Funktionen. Unterst&uuml;tzt D-Fend Reloaded einige dieser Features ?</h2></a>
+<div id="FAQ04"><p>
+Ja, D-Fend Reloaded unterst&uuml;tzt die folgenden neuen Features der DOSBox-CSV-Builds:
+</p>
+<ul>
+  <li>Mehrere Diskettenimages pro Laufwerk</li>
+  <li>Mounten von Zip-Dateien (PhysFS)</li>
+  <li>28 oder 50 Zeilen-Textmodus</li>
+  <li>Glide-Emulation</li>
+  <li>VGA-Chipsatz und Video-RAM Einstellungen</li>
+  <li>Drucker-Emulation</li>
+  <li>Einige weitere Dinge (neue Render-Typen, neue Grafikkartentypen, neue MIDI-Ger&auml;te)
+  k&ouml;nnen durch das Hinzuf&uuml;gen weiterer Vorgabewerte zu verschiedenen Auswahlboxen aktiviert werden.</li>
+</ul>
+<p>
+Um diese Einstellungsm&ouml;glichkeiten in der Programmoberfl&auml;che zu aktivieren,
+m&uuml;ssen Sie den <a href="FileOptions.html">Programeinstellungen</a>-Dialog &ouml;ffnen
+und auf der (nur im Konfigurationsmodus "Vollst&auml;ndig" sichtbaren) Seite
+<a href="FileOptionsDOSBoxCVSFeatures.html">DOSBox CVS-Features</a> die gew&uuml;nschten
+Funktionen aktivieren.
+</p>
+
+<p>
+Alle anderen speziellen Funktion der Nicht-Standard DOSBox-Versionen werden 
+momentan nicht direkt unterst&uuml;tzt. Allerdings k&ouml;nnen Sie &uuml;ber
+das Eingabefeld "Benutzerdefinierte Einstellungen" auf der Dialogseite
+"DOSBox Einstellungen" im Profileditor beliebige Konfigurationseinstellungen
+vorgeben, die beim Aufrufen von DOSBox mit in die Konfigurationsdatei
+aufgenommen werden.
+</p>
+</div>
+
+<a onclick="Work('FAQ05')" name="FAQ05" href="#"><h2>&raquo; Ich habe "<tt>C:\Users\me\D-Fend Reloaded\VritualHD</tt>" als Laufwerk C in DOSBox eingestellt, aber DOSBox zeigt an, dass "<tt>C:\Users\me\D-FEND~1\VIRTUA~1</tt>" als Laufwerk C gemounted wurde. Was ist passiert ?</h2></a>
+<div id="FAQ05"><p>	
+"<tt>C:\Users\me\D-FEND~1\VIRTUA~1</tt>" ist der kurze Name f&uuml;r "<tt>C:\Users\me\D-Fend
+Reloaded\VritualHD</tt>". D-Fend Reloaded &uuml;bersetzt den langen Namen in die kurze
+Form beim Erstellen der DOSBox Konfigurationsdatei. Der Grund hierf&uuml;r liegt darin,
+dass DOSBox nur maximal 134 Zeichen lange Befehle unterst&uuml;tzt. Ist der angegebene
+Pfad zu lang, so w&uuml;rde DOSBox den Pfad ohne die Umwandlung in die kurze Schreibweise
+evtl. nicht korrekt mounten. Wenn Sie diese Umwandlung nicht m&ouml;gen, so k&ouml;nnen Sie
+sie &uuml;ber die Option "Kurze Pfadnamen in Mount-Befehlen verwenden" auf der
+<a href="FileOptionsDOSBox.html">DOSBox</a>-Seite des
+<a href="FileOptions.html">Programeinstellungen</a>-Dialogs deaktivieren.
+(Diese Option ist nur im Konfigurationsmodus "Vollst&auml;ndig" sichtbar.)
+</p>
+</div>
+
+<a onclick="Work('FAQ06')" name="FAQ06" href="#"><h2>&raquo; Wie kann ich eine andere Sprache f&uuml;r die D-Fend Reloaded Programmoberfl&auml;che erstellen ?</h2></a>
+<div id="FAQ06"><p>
+Daf&uuml;r muss lediglich der Men&uuml;punkt "&Uuml;bersetzen Sie das Programm in eine andere Sprache"
+aus dem "Helfen Sie, D-Fend Reloaded besser zu machen"-Untermen&uuml; des "Hilfe"-Men&uuml;s
+angeklickt werden. In dem folgenden Dialog k&ouml;nnen Sie dann &uuml;ber die Option
+"Neue Sprache anlegen" eine neue Sprachdatei erstellen.
+</p>
+
+<p>
+D-Fend Reloaded erstellt dann eine neue Sprachdatei und &ouml;ffnet diese in ein eingebauten
+&Uuml;bersetzungseditor. In dem &Uuml;bersetzungseditor ist eine dreispaltige Tabelle
+f&uuml;r die verschiedenen Kategorien zu sehen (Men&uuml;, Profileditor, Programmeinstellungen-Dialog usw.).
+In der ersten Spalte der Tabelle steht der Name des zu &uuml;bersetzenden Bezeichners, in der
+zweiten Spalte der zugeh&ouml;rige englische Begriff und in der dritten Spalte kann der
+Begriff in der von Ihnen gew&uuml;nschten Sprache eingetragen werden. Nach dem Schlie&szlig;en
+des &Uuml;bersetzungseditors kann die neu erstellte Sprache genauso wie die mitgelieferten
+Sprachdateien &uuml;ber den Programmeinstellungendialog aktiviert werden.</p>
+
+<p>
+Wenn Sie m&ouml;chten, dass Ihre Sprachdatei mit der n&auml;chsten Version
+von D-Fend Reloaded ver&ouml;ffentlicht wird, so schicken Sie mir Ihre
+Sprachdatei einfach. (Sie finden die benutzererstellten Sprachdateien in dem
+Verzeichnis "<tt>C:\Users\me\D-Fend Reloaded\Lang</tt>".) Selbstverst&auml;ndlich
+werden Sie dann auch in der Sprachdateien-Kategorie des Programm-Info-Dialogs
+aufgef&uuml;hrt. Dabei sollten Sie jedoch eine Sache beachten: Ihr Name und
+der Name der Sprache erscheinen in allen D-Fend Reloaded Installationen; daher
+sollten beide jeweils in allen Codepage- und Zeichensatzkombinationen lesbar
+sein. (So sollten z.B. keine speziellen kyrillischen Zeichen in dem Namen
+der Sprache und in der Autorennamen enthalten sein.)
+</p>
+
+<p>
+Wenn Ihre Sprachdatei einen speziellen Zeichensatz (wie z.B. Kyrillisch)
+voraussetzt, so wird sie automatisch korrekt dargestellt, wenn dieser
+Zeichensatz auch der Standardzeichensatz ihrer Windows-Installation ist.
+Auf Systemen, die jedoch einen anderen Standardzeichensatz verwenden, werden
+die Zeichen falsch dargestellt. Um dies zu vermeiden, kann in der Sprachdatei
+eingestellt werden welcher Zeichensatz bei Verwendung der Sprachdatei in
+D-Fend Reloaded eingestellt werden soll. Daf&uuml;r muss nur in dem
+Abschnitt [CharsetSettings] in dem Feld "Name=" einer der folgenden
+Werte eingetragen werden: ANSI_CHARSET, DEFAULT_CHARSET, SYMBOL_CHARSET,
+SHIFTJIS_CHARSET, HANGEUL_CHARSET, GB2312_CHARSET, CHINESEBIG5_CHARSET, OEM_CHARSET,
+JOHAB_CHARSET, HEBREW_CHARSET, ARABIC_CHARSET, GREEK_CHARSET, TURKISH_CHARSET,
+VIETNAMESE_CHARSET, THAI_CHARSET, EASTEUROPE_CHARSET, RUSSIAN_CHARSET.
+Der Standardwert ist "DEFAULT_CHARSET" und bedeutet, dass D-Fend Reloaded
+den Windows-Standardzeichensatz verwenden soll. Allerdings gibt es bei
+dieser Zeichensatzanpassung eine Kleinigkeit zu beachten: Die Zeichensatz-Einstellungen
+wirken sich nur auf Fenster, die D-Fend Reloaded unmittelbar selbst kontrolliert, aus.
+Dies bedeutet leider, dass insbesondere Meldungsfenster unabh&auml;ngig von
+der Einstellung in der Sprachdatei immer den Windows-Zeichensatz verweden werden.
+</p>
+</div>
+
+<a onclick="Work('FAQ07')" name="FAQ07" href="#"><h2>&raquo; Gibt es einen einfachen Weg, eine neue Sprachdatei auf Rechtschreibfehler zu &uuml;berpr&uuml;fen ?</h2></a>
+<div id="FAQ07"><p>	
+Textverarbeitungen verf&uuml;gen &uuml;blicherweise &uuml;ber verh&auml;ltnism&auml;&szlig;ig gute
+Rechtschreibkorrekturfunktionen. Allerdings ist es wenig zweckm&auml;&szlig;ig den
+gesamten Inhalt einer Sprachdatei in eine Textverarbeitung zu kopieren, da in diesem Fall
+alle Bezeichner, d.h. die Ausdr&uuml;cke links der Gleichheitszeichen ("CouldNotDeleteFile=" usw.)
+als Fehler markiert w&uuml;rden. Um nur die Texte rechts der Gleichheitszeichen
+zu &uuml;r&uuml;fen, hilft der folgende Trick: &Ouml;ffnen Sie Windows Notepad und dr&uuml;cken
+Sie die Tabulatortaste (es entstehen 8 freie Buchstabenfelder), markieren Sie den Tabulator
+und kopieren Sie ihn in die Zwischenablage. &Ouml;ffnen Sie nun die Sprachdatei in
+Notepad, &ouml;ffnen Sie den Ersetzen-Dialog, f&uuml;gen Sie in das "Suchen nach"-Feld
+"=" ein und kopieren Sie den Tabulator aus der Zwischenablage in das Ersetzen-Feld.
+Nach dem ersetzen aller "=" markieren und kopieren Sie den gesamten Fensterinhalt in
+die Zwischenablage und f&uuml;gen Sie ihn in eine Tabellenkalkulation ein. Nun sind
+Bezeichner und Werte in zwei Spalten getrennt. Wenn Sie jetzt schlie&szlig;lich die zweite
+Spalte in eine Textverarbeitung kopieren, haben Sie dort nur noch Ihre &Uuml;bersetzungen.</p>
+</div>
+
+<a onclick="Work('FAQ08')" name="FAQ08" href="#"><h2>&raquo; Wo ist der "Standardvorlage bearbeiten... (F5)"-Men&uuml;punkt hin ?</h2></a>
+<div id="FAQ08"><p>	
+Da die Standardvorlage auch nur eine Vorlage ist, wurde die Funktion zum Bearbeiten der Standardvorlage
+in den Vorlagen-Dialog verlagert. Die Standardvorlage erscheint jetzt als weiterer Eintrag in der
+Vorlagen-Liste im Vorlagen-Dialog. Um zwischen der (nicht l&ouml;schbaren) Standardvorlage und den
+normalen Vorlagen zu unterscheiden, wird die Standardvorlage in blau in der Liste dargestellt.</p>
+
+<p>
+Auch wenn der separate Men&uuml;punkt zum Bearbeiten der Standardvorlage nicht mehr existiert,
+so existiert doch immer noch der F5-Hotkey um die Standardvorlage jederzeit bearbeiten zu k&ouml;nnen.</p>
+</div>
+
+<a onclick="Work('FAQ09')" name="FAQ09" href="#"><h2>&raquo; Kann D-Fend Reloaded in Wine unter Linux verwendet werden ?</h2></a>
+<div id="FAQ09"><p>	
+Die Verwendung von D-Fend Reloaded in einer Wine-Umgebung wird nur halboffiziell unterst&uuml;tzt.
+Auf der (nur im Konfigurationsmodus "Vollst&auml;ndig" sichtbaren) Seite
+<a href="FileOptionsWineSupport.html">Wine-Unterst&uuml;tzung</a> im
+<a href="FileOptions.html">Programmeinstellungen</a>-Dialog kann eingestellt werden,
+wie die Wine-Laufwerksbuchstaben (<tt>C:</tt>, <tt>D:</tt> usw.) beim Erstellen
+der DOSBox conf-Dateien wieder zur&uuml;ckabgebildet werden sollen auf die
+Linux Pfadnamen (<tt>/mnt/sta3</tt>, <tt>/mnt/stb1</tt> usw.).
+</p>
+
+<p>
+Die Art, wie die Funktion zur Erstellung von Verkn&uuml;pfungen arbeiten soll,
+kann ebenfalls f&uuml;r den Einsatz unter Linux angepasst werden: Wenn die
+funktion "Men&uuml;punkt zur Erstellung von Verkn&uuml;pfungen erstellt Shellskripte"
+aktiviert ist, lassen sich &uuml;ber die entsprechende Funktion im "Profil"-Men&uuml;
+Linux Shellskripte statt Windows-Verkn&uuml;pfungen erstellen.
+</p>
+
+<p>
+Sie k&ouml;nnen die selbe D-Fend Reloaded Installation sowohl unter Windows als
+auch unter Wine verwende (ohne dabei die Konfiguration jedes Mal wieder zu &auml;ndern):
+Wenn Sie D-Fend Reloaded mit den Parametern "<tt>WineMode</tt>" oder "<tt>WineSupportEnabled</tt>"
+aufrufen, k&ouml;nnen Sie damit die globale Voreinstellung zur Aktivierung der
+Wine-Unterst&uuml;tzung &uuml;berschreiben (und sie aktivieren). Wenn Sie D-Fend Reloaded
+mit den Paramerern "<tt>WindowsMode</tt>", "<tt>NoWineSupport</tt>"
+oder "<tt>WineSupportDisabled</tt>" aufrufen, k&ouml;nnen Sie damit die globale Voreinstellung
+zur Aktivierung der Wine-Unterst&uuml;tzung &uuml;berschreiben (und sie deaktivieren).
+Die Paraeter wirken sich dabei nicht dauerhaft auf die Konfiguration aus.
+Die Parameter werden ohne Beachtung der Gr&ouml;&szlig;- und Kleinschreibung interpretiert
+und es k&ouml;nnen Ihnen, nach eigenem Geschmack "-" oder "/" vorangestellt werden
+(so wird beispielsweise auch "<tt>-winemode</tt>" korrekt erkannt.
+</p>
+</div>
+
+<a onclick="Work('FAQ10')" name="FAQ10" href="#"><h2>&raquo; Ich habe Tastaturprobleme, die sich mit dem DOSBox Keymapper nicht l&ouml;sen lassen.</h2></a>
+<div id="FAQ10"><p>	
+Als ersten Schritten sollten Sie den SDL-Videotreiber auf "Win DIB" auf der DOSBox-Seite 
+des Programmeinstellungen-Dialogs umstellen. Wenn Sie danach immer noch Tastaturprobleme
+haben (insbesondere wenn es Tasten gibt, die vom Keymapper &uuml;berhaupt nicht erkannt werden,
+wenn sie gedr&uuml;ckt werden und noch mehr insbesondere wenn es sich dabei um die rechte
+Umschalttaste handelt) und Sie eine Microsoft eHome Infrarot-Empf&auml;nger (die offizielle
+Fernbedienung f&uuml;r das Microsoft Mediacenter) verwenden, sollten Sie die folgenden Schritten
+ausprobieren:
+
+<ol>
+  <li>&Ouml;ffnen Sie den "Tastaturen"-Abschnitt im Ger&auml;temanager.</li>
+  <li>Klicken Sie mit der rechten Maustaste auf "Microsoft eHome MCIR 109 Keyboard" und w&auml;hlen Sie "Treiber aktualisieren"
+   (unter Vista hei&szlig;t dieser Men&uuml;punkt "Treibersoftware aktualisieren").</li>
+  <li>W&auml;hlen Sie "Auf dem Computer nach Treibersoftware suchen" (XP Nutzer m&uuml;ssen angeben,
+  nicht automatisch nach Treibern zu suchen, sondern dass sie manuell einen Speicherort angeben m&ouml;chten).
+  Im folgenden "Treiber von Liste ausw&auml;hlen" anklicken.</li>
+  <li>In dem folgenden Dailog muss "Kompatible Hardware anzeigen" aktiviert werden; w&auml;hlen Sie
+  "HID-compliant device" aus und klicken Sie auf "Weiter". Klicken Sie auf "Ok" und/oder "Abschlie&szlig;en"
+  um die Installation abzuschlie&szlig;en.</li>
+</ol>
+
+<p>
+Der 109-Tasten-Treiber ist ein japanischer Tastaturtreiber. Sofern sie keine japanische 109-Tasten-Tastatur
+einsetzen, sollte diese Einstellung die Funktionsweise ihrer Tastatur und ihrer Fernbedienung nicht
+beeintr&auml;chtigen. (Siehe auch <a href="http://forums.logitech.com/logitech/board/message?board.id=general&amp;message.id=6123" target="_blank">http://forums.logitech.com/logitech/board/message?board.id=general&amp;message.id=6123</a>)
+</p>
+</div>
+
+<a onclick="Work('FAQ11')" name="FAQ11" href="#"><h2>&raquo; Ich erhalte einen Fehler, wenn ich versuche den DOSBox Videocodec zu installieren.</h2></a>
+<div id="FAQ11"><p>	
+Um den DOSBox Videocodec installieren zu k&ouml;nnen, werden Admin-Rechte ben&ouml;tigt.
+Unter Windows XP arbeiten die meisten Anwender stets als Administratoren, so dass Sie den
+Codec in diesem Fall einfach vom Startmen&uuml; aus installieren k&ouml;nnen. Unter
+Windows Vista m&uuml;ssen Sie Programmen jedoch stets explizit Admin-Rechte erteilen.
+Da die Codec-Installation aus einem einfachen RunDLL-Aufruf besteht, erkennt Vista diesen
+nicht als Installationsvorgang und fragt nicht von sich aus, ob der Vorgang Admin-Rechte
+erhalten soll (wie dies bei normalen Installationsprogrammen der Fall isr). Daher m&uuml;ssen
+Sie unter Vista explizit angeben, dass die Codec-Installation mit Admin-Rechten erfolgen soll:
+Klicken Sie mit der rechten Maustaste auf den Eintrag zur Codec-Installation im Startmen&uuml;
+und w&auml;hlen Sie "Als Administrator ausf&uuml;hren" aus.
+</p>
+</div>
+
+</body>
+</html>

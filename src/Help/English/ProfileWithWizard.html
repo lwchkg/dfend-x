@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Add with wizard</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Menu, Profile, Add with wizard">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Menu">
+  <param name="Keyword" value="Profile">
+  <param name="Keyword" value="Add with wizard">
+</OBJECT>
+  
+<p class="content">
+Menu: &nbsp; <b>Profile</b> | <b>Add with wizard</b>
+</p>
+
+<h1>Add with wizard</h1>
+
+<p>
+The profile wizard offers you a very easy way of adding new profiles to
+D-Fend Reloaded. The profile wizard consists of five pages. D-Fend Reloaded
+will show two to all five pages depending on the already known and still needed
+information on the game.
+</p>
+
+<h2>Page 1: Type of the profile</h2>
+
+<p>
+One the first page all you have to choose is the profile type:
+You can add <b>a DOSBox based profile, a ScummVM profile or a profile for a Windows game</b>.
+(The option "Scumm-based adventure" will only be offered if you have defined the path to
+ScummVM in the <a href="FileOptionsScummVM.html">program options dialog</a>.)
+You can run nearly all DOS games by using DOSBox. ScummVM is only used
+for the old Scumm adventures.
+</p>
+
+<p>
+Additionally you can setup how many things the wizard should ask you. If you keep
+the default setting "Only setup game automatically if matching auto setup template exists",
+the wizard will already close after the first two pages if the new game has beend indentified
+via an auto setup template, because in this case the new profile can be created completely
+automatically with no need of any user interaction. Alternatively you can setup that the
+wizard should always show all pages or that the wizard should always close after the
+first two pages. (If there is no matching auto setup template and if the wizard should
+always close after the first two pages, D-Fend Reloaded will try to configurate the game
+via the default template.)
+</p>
+
+<h2>Page 2: Program files (for a new DOSBox profile)</h2>
+
+<p>
+One this page you can select the <b>program file</b> and optionally
+a <b>setup file</b> for the profile. The program file defined on
+this page will be started inside DOSBox if you double click on the
+profile in the games list later.
+</p>
+
+<p>
+To allow D-Fend Reloaded to use realtive path names, the game files
+should be located in the folder shown as "<b>Recommend parant directory</b>"
+(see also the <a href="Introduction.html">introduction to D-Fend Reloaded</a>
+for a description of the recommended directory structure). You can also
+setup the default games folder offerend on this page on the
+<a href="FileOptionsDirectories.html">directories page</a> of then
+<a href="FileOptions.html">program options dialog</a>.
+</p>
+
+<p>
+By pressing the <b>Setup additonal files manually</b> you can extended the dialog
+to show you an input line for defining an additional folder for manuals etc.
+The content of this folder will be shown on the bottom of the main window
+when single clicking on the profile in the games list later.
+Alternatively you can check <b>Setup additional files directory automatically</b>
+option to let D-Fend Reloaded automatically create an data folder based on the name
+of the new profile.
+</p>
+
+<h2>Page 2: Program files (for a new ScummVM profile)</h2>
+
+<p>
+One this page you can select the <b>folder</b> where the game files
+are located. The folder defined on this page will be given to ScummVM
+for running the game.
+</p>
+
+<p>
+To allow D-Fend Reloaded to use realtive path names, the game files
+should be located in the folder shown as "<b>Recommend parant directory</b>"
+(see also the <a href="Introduction.html">introduction to D-Fend Reloaded</a>
+for a description of the recommended directory structure). You can also
+setup the default games folder offerend on this page on the
+<a href="FileOptionsDirectories.html">directories page</a> of then
+<a href="FileOptions.html">program options dialog</a>.
+</p>
+
+<p>
+In the <b>game</b> dropdown box you can select for which game you want to
+create a profile. This information is also given to ScummVM for running the game.
+</p>
+
+<p>
+By pressing the <b>Setup additonal files</b> you can extended the dialog
+to show you an input line for defining an additional folder for manuals etc.
+The content of this folder will be shown on the bottom of the main window
+when single clicking on the profile in the games list later.
+</p>
+
+<h2>Page 2: Program files (for a new Windows game profile)</h2>
+
+<p>
+One this page you can select the <b>program file</b> and optionally
+a <b>setup file</b> for the profile. The program file defined on
+this page will be started if you double click on the
+profile in the games list later.
+</p>
+
+<p>
+By pressing the <b>Setup additonal files</b> you can extended the dialog
+to show you an input line for defining an additional folder for manuals etc.
+The content of this folder will be shown on the bottom of the main window
+when single clicking on the profile in the games list later.
+</p>
+
+<h2>Page 3: Settings (for a new DOSBox profile)</h2>
+
+<p>
+On this page you can define the main game settings. Setting up games via
+the profile wizard mainly means choosing a template to use. There are 5
+different template usage modes:
+</p>
+
+<ul class="big">
+  <li>
+    <b>Use compatible auto setup template</b><br />
+    The templates listed in this dropdown box are found to be compatible
+    with the selected game. (They match to the program file via a checksum.)
+    If there is a auto setup template listed in this drowdown box it
+    is recommended to choose it.
+  </li>
+  <li>
+    <b>Use auto setup template which only matchs by filename</b><br />
+    The templates listed in this dropdown box  match to the given program file
+    by the filename but not by the checksum. May be your game version just differs
+    from the game version the auto setup template was made from. If this list
+    of compatible auto setup templates but there are templated listed in this
+    dropdown box, you should select one from this list.
+  </li>
+  <li>
+    <b>Use user-defined auto setup template</b><br />
+    In this dropdown box you will find all available auto setup templates.
+    If there are no entries in the two lists above and if you are sure your
+    new game is one from this list, you can choose the corresponding auto setup template.
+  </li>
+  <li>
+    <b>Use user-defined template</b><br />
+    In this dropdown box you will find all user-defined templates.
+    You can use any of this templates for new profiles at any time.
+    But this templates do not contain any settings specific for a the selected game.
+  </li>
+  <li>
+    <b>Use default wizard template</b><br />
+    Choosing this radio button will result in using a built-in wizard template
+    for the new profile. Via the dropdown box and the checkboxes below you can
+    select some settings for the new profile.
+  </li>
+</ul>
+
+ 
+<h2>Page 3: Settings (for a new ScummVM profile)</h2>
+
+<p>
+On this page you can configurate some additional settings for the 
+seleced game. The settings offered on this page depend on the game
+you have selected on the last page.
+</p>
+
+<h2>Page 4: Game information</h2>
+
+<p>
+On this page you can define many additional game information like name, genre, developer etc.
+The information entered on this page are shown in the games list (in view mode
+<a href="ViewModes.html">report</a>) and the profiles can be filtered by them.
+</p>
+
+<p>
+Via the "<b>Look up game at ...</b>" you can search for the profile name on different 
+classic game related search engines.
+</p>
+
+<p>
+If you are just adding a DOSBox based profile via a auto setup template, the game information
+page will not be shown because all additional game information are already included in the template.
+</p>
+
+<h2>Page 5: Virtual drives (for a new DOSBox profile)</h2>
+
+<p>
+On this page you can select the virtual drives DOSBox should use. The game files must be reachable
+inside DOSBox to be able to start the game. D-Fend Reloaded will try to detect which drives are
+needed automatically and will create drive records on this page. If the settings made on this page
+are not sufficient, you can change the drive settings via the
+<a href="ProfileEdit.html">profile editor</a> at any time.
+</p>
+ 
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="ProfileEdit.html">Profile editor dialog</a>
+</p>
+
+</body>
+</html>

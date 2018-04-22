@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Profile editor | Serial ports</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Menu, Profile, Edit, Serial ports">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Menu">
+  <param name="Keyword" value="Profile">
+  <param name="Keyword" value="Edit profile">
+  <param name="Keyword" value="Edit">
+  <param name="Keyword" value="Serial ports">
+</OBJECT>
+  
+<p class="content">
+Menu: &nbsp; <b>Profile</b> | <b>Edit</b> | <b>Serial ports</b>
+</p>
+
+<h1>Profile editor dialog page "Serial ports"</h1>
+
+<p>
+On this page you can setup the virtual serial ports DOSBox should offer to the game
+running inside it. There are 5 different operation modes for each emulated serial port:
+</p>
+
+<ul class="big">
+  <li>
+    <b>Disabled</b><br />
+    Support for the selected serial port will be disabled.
+  </li>
+  <li>
+    <b>Dummy</b><br />
+    Will create a dummy serial port inside DOSBox without any real function.
+  </li>
+  <li>
+    <b>Modem</b><br />
+    Will emulate a virtual modem connected to the serial port inside DOSBox.
+    The real connection will be established via the network of the real
+    computer. Therefore you will have to <!-- enter the address of the server
+    on the client computer and--> choose "Listen for connections" on the server.
+  </li>  
+  <li>
+    <b>Nullmodem</b><br />
+    Activating this option will emulate a virtual nullmodem cable connected
+    to the serial port inside DOSBox. The "other side" of the cable must be
+    connected to another DOSBox instance running on another computer. One computer
+    will be the server and one the client. On the client computer you will
+    have to specifiy the address of the server computer.
+  </li>
+  <li>
+    <b>Direct serial</b><br />
+    This option will connect the selected virtual serial port inside DOSBox with
+    a real real serial port of the real computer.
+  </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="ProfileEdit.html">Profile editor dialog</a>
+</p>
+
+</body>
+</html>

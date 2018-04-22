@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!ELEMENT GamesList (Game)*>
+<!ATTLIST GamesList
+	DFRVersion CDATA #IMPLIED
+	ExportDate CDATA #IMPLIED
+>
+
+<!ELEMENT Game (Name | EmulationType | Genre | Developer | Publisher | Year | Language | WWW | License | StartCount | UserData | Notes)+>
+
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT EmulationType (#PCDATA)>
+<!ELEMENT Genre (#PCDATA)>
+<!ELEMENT Developer (#PCDATA)>
+<!ELEMENT Publisher (#PCDATA)>
+<!ELEMENT Year (#PCDATA)>
+<!ELEMENT Language (#PCDATA)>
+<!ELEMENT WWW (#PCDATA)>
+<!ELEMENT License (#PCDATA)>
+<!ELEMENT StartCount (#PCDATA)>
+<!ELEMENT UserData (Name | Value)+>
+<!ELEMENT Value (#PCDATA)>
+<!ELEMENT Notes (#PCDATA)>

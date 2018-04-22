@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Profileditor | CPU</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Men&uuml;, Profil, Bearbeiten, CPU">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Men&uuml;">
+  <param name="Keyword" value="Profil">
+  <param name="Keyword" value="Profil bearbeiten">
+  <param name="Keyword" value="Bearbeiten">
+  <param name="Keyword" value="CPU">
+</OBJECT>
+  
+<p class="content">
+Men&uuml;: &nbsp; <b>Profil</b> | <b>Bearbeiten</b> | <b>CPU</b>
+</p>
+
+<h1>Profileditor-Dialogseite "CPU"</h1>
+
+<p>
+Auf dieser Dialogseite kann eingestellt werden, wie DOSBox die CPU f&uuml;r das
+auszuf&uuml;hrende Spiel emulieren soll.
+</p>
+
+<ul class="big">
+  <li>
+    <b>Emulationskern</b><br />
+    In diesem Feld k&ouml;nnen Sie den Typ des zu verwendenden Emulationskerns w&auml;hlen:<br /><br />
+    <ul>
+      <li><b>Auto:</b> DOSBox w&auml;hlt den Typ des Emulationskerns automatisch.</li>
+      <li><b>Normal:</b> DOSBox f&uuml;hrt die CPU-Befehle Schritt f&uuml;r Schritt auf einem virtuellen CPU-Kern aus.
+      Prinzipiell k&ouml;nnen alle Spiele in dieser Betriebsart ausgef&uuml;hrt werden, allerdings verbraucht die
+      Schritt-f&uuml;r-Schritt Emulation einer kompletten CPU verh&auml;ltnism&auml;&szlig;ig viel Rechenzeit, d.h.
+      evtl. l&auml;sst sich in dieser Einstellung nicht die gew&uuml;nschte ausf&uuml;hrungsgeschwindigkeit erreichen.</li>
+      <li><b>Dynamic:</b> DOSBox wird versuchen, die CPU-Befehle des Spiels direkt auf der realen CPU auszuf&uuml;hren.
+      Diese Emulationsart ist sehr schnell, da prinzipiell die gesamte CPU-Leistung der (modernen, schnellen) realen CPU
+      zur Ausf&uuml;hrung des DOS-Programms zur Verf&uuml;gung steht. Allerdings kann diese direkte Abbildung auf die
+      reale CPU bei einigen Spielen Probleme verursachen. So lange keine Probleme bei einem Spiel auftreten, sollte
+      dieser Emulationstyp verwendet werden.</li>
+      <li><b>Simple:</b> DOSBox f&uuml;hrt die CPU-Befehle, genauso wie im Modus "Normal" Schritt f&uuml;r Schritt auf
+      einem virtuellen CPU-Kern aus. Allerdings ist der virtuelle CPU-Kern in diesem Modus einfacher aufgebaut und damit
+      schneller.</li>
+    </ul>
+  </li>
+  <li>
+    <b>CPU Zyklen</b><br />
+    In dieser Box k&ouml;nnen Sie einstellen, wie viele Befehle DOSBox pro Millisekunde zu emulieren versuchen soll.
+    Wenn Sie den Wert "<b>Max</b>" w&auml;hlen, wird DOSBox versuchen, so viele Befehle wie m&ouml;glich pro Millisekunde
+    auszuf&uuml;hren. Die Einstellung "<b>Auto</b>" f&uuml;hrt dazu, dass DOSBox automatisch den optimalen Wert an
+    CPU Zyklen zu bestimmen versucht und ggf. automatisch in den Modus "Max" wechselt.
+  </li>
+  <li>
+    <b>CPU Zyklen erh&ouml;hen</b><br />
+    In diesem Eingabefeld k&ouml;nnen Sie einstellen, um wie viele emulierte CPU Befehle pro Millisekunde
+    der Zyklen-Wert erh&ouml;ht werden soll, wenn Sie in DOSBox
+    <span class="Key">Strg</span>+<span class="Key">F12</span> dr&uuml;cken.
+  </li>
+  <li>
+    <b>CPU Zyklen verringern</b><br />
+    In diesem Eingabefeld k&ouml;nnen Sie einstellen, um wie viele emulierte CPU Befehle pro Millisekunde
+    der Zyklen-Wert verringert werden soll, wenn Sie in DOSBox
+    <span class="Key">Strg</span>+<span class="Key">F11</span> dr&uuml;cken.
+  </li>
+  <li>
+    <b>CPU-Typ <font color="red">(*)</font></b><br />
+	Über diese Auswahlbox können Sie festlegen, welchen CPU-Typ DOSBox emulieren soll.
+  </li>
+</ul>
+
+<p>
+Die mit <font color="red">(*)</font> markierte Optionen ist nur sichtbar, wenn Sie das zugeh&ouml;rige
+DOSBox CVS-Feature auf der Dialogseite <a href="FileOptionsDOSBoxCVSFeatures.html">DOSBox CVS-Features</a>
+des <a href="FileOptionsDOSBox.html">Programmeinstellungen</a>-Dialogs aktiviert haben. Die offizelle
+DOSBox 0.72 Version, die mit D-Fend Reloaded ausgeliefert wird, unterst&uuml;tzt diese zus&auml;tzliche
+Option nicht.
+</p>
+
+<p>&nbsp;</p>
+
+<p class="smallH">Siehe auch:</p>
+<p class="smallT">
+  <a href="ProfileEdit.html">Profileditor-Dialog</a>
+</p>
+
+</body>
+</html>

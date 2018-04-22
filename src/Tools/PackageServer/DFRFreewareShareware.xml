@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE DFRPackagesFile SYSTEM "http://dfendreloaded.sourceforge.net/Packages/DFRPackagesFile.dtd">
+
+<DFRPackagesFile Name="Official freeware download list for D-Fend Reloaded" LastUpdateDate="10/30/2009">
+  <ExePackage
+    Name="Programs package"
+    Description="Freeware:\\4DOS 7.61, Necromancer's Dos Navigator, Fasttracker 2, ScreamTracker 3.21, FreeDOS (Boot-Image), DOSBox Info (DB-Info 1.0.2), OpenGEM, VGA Copy 6.25\\\\Shareware:\\AnsiDraw 3.0, The Draw 4.63"
+    PackageChecksum="1EB211B24314F01AB9C8978AE3185427"
+    Size="14852789">http://downloads.sourceforge.net/dfendreloaded/D-Fend-Reloaded-DemoPackage1.exe</ExePackage>
+  <ExePackage
+    Name="Adventure, roleplay and strategy games package"
+    Description="Freeware:\\Beneath a Steel Sky, Beyond the Titanic, Supernova, The Adventures of Maddog Williams\\\\Shareware:\\Ancients 1: Deathwatch, Castle Adventure, Mystic Towers, Solar Winds, Super ZZT"
+    PackageChecksum="76144817A48BD8D5D06ECDC6F9967D23"
+    Size="11427343">http://downloads.sourceforge.net/dfendreloaded/D-Fend-Reloaded-DemoPackage2.exe</ExePackage>
+  <ExePackage
+    Name="Action games package"
+    Description="Freeware:\\Beast, Major Stryker, One Must Fall 2097, Overkill, Striker, Traffic Department 2192, Xenophage: Alien Bloodsport\\\\Shareware:\\Highway Hunter, Kiloblaster, Raptor, Seek and Destroy, Tyrian 2000, Zone 66, Terminal Velocity, Epic Pinball, Extreme Pinball, Death Rally, Slicks'n'Slide, Wacky Wheels"
+    PackageChecksum="8A971BE2CAA3FB8D780C7B4B785F4CAA"
+    Size="75735193">http://downloads.sourceforge.net/dfendreloaded/D-Fend-Reloaded-DemoPackage3.exe</ExePackage>
+  <ExePackage
+    Name="Puzzle and board games package"
+    Description="Freeware:\\Railroad Tycoon Deluxe, Adventures of Robbo, Game of Robot (Junior), Heartlight PC\\\\Shareware/Demo:\\Magjongg VGA, Lemmings 3D Demo, Lemmings 3D Winterland Demo, Lemmings Demo, XMas Lemmings '91 Demo, XMas Lemmings '92 Demo, Brix, Game of Robot 1, Game of Robot 2, Game of Robot 3, Game of Robot 4, Paganitzu, Ramona das Apfelwürmchen"
+    PackageChecksum="949F8861164A1BF0658ABE36028E16B4"
+    Size="15818244">http://downloads.sourceforge.net/dfendreloaded/D-Fend-Reloaded-DemoPackage4.exe</ExePackage>
+  <ExePackage
+    Name="First person games package"
+    Description="Freeware:\\Ken's Labyrinth\\\\Shareware: Blake Stone: Aliens of Gold, Duke Nukem 3D, Radix: Beyond the Void, Rise of the Triad, Shadow Warrior"
+    PackageChecksum="2A3AA0705A0CEE0C2ADCBA3E45FD4F1D"
+    Size="23952775">http://downloads.sourceforge.net/dfendreloaded/D-Fend-Reloaded-DemoPackage5.exe</ExePackage>
+  <ExePackage
+    Name="Platform games package"
+    Description="Freeware:\\Alien Carnage, Bio Menace, Electro Man, Jazz Jackrabbit: Holiday Hare, Jazz Jackrabbit: Holiday Hare 1995\\\\Shareware:\\Commander Keen 1 (Marooned on Mars), Commander Keen 4 (Secret of the Oracle), Cosmo's Cosmic Adventure, Crystal Caves, Duke Nukem 1, Duke Nukem 2, Halloween Harry, Hocus Pocus, Jazz Jackrabbit, Jill of the Jungle, Math Rescue, Monster Bash, Realms of Chaos, Secret Agent, Space Chase, Word Rescue, Xargon"
+    PackageChecksum="80659E1F8AE0F3E522459482F3AFEC2D"
+    Size="15861158">http://downloads.sourceforge.net/dfendreloaded/D-Fend-Reloaded-DemoPackage6.exe</ExePackage>
+  <ExePackage
+    Name="Demos package"
+    Description="119 Demos"
+    PackageChecksum="81B1586C82571EFAE55A6594826DF419"
+    Size="130398531">http://downloads.sourceforge.net/dfendreloaded/D-Fend-Reloaded-DemoPackage7.exe</ExePackage>
+  <Game
+    Name="Beneath a Steel Sky"
+    Genre="Adventure"
+    Developer="Revolution Software"
+    Publisher="Virgin Interactive Entertainment"
+    Year="1994"
+    Language="English"
+    License="Freeware"
+    PackageChecksum="37182AD079A1BA6910CF120E5567015D"
+    GameExeChecksum="B841389A9908F60B20CC76AA814848B3"
+    Size="8226858">Games/Beneath%20a%20Steel%20Sky.zip</Game>
+  <Game
+    Name="Castle Adventure"
+    Genre="Adventure"
+    Developer="Kevin Bales"
+    Publisher="Kevin Bales"
+    Year="1984"
+    Language="English"
+    License="Shareware"
+    PackageChecksum="86E3B5F377375BA58764ADE621A9F23A"
+    GameExeChecksum="961FC64D95D8B64F0013CB8177035FF2"
+    Size="86361">Games/Castle%20Adventure.zip</Game>
+  <Game
+    Name="Commander Keen 1 (Marooned on Mars)"
+    Genre="Plattform"
+    Developer="ID Software"
+    Publisher="Apogee Software"
+    Year="1990"
+    Language="English"
+    License="Shareware"
+    PackageChecksum="16642CD4D9BA374D3DADA4444DB57A44"
+    GameExeChecksum="8B2B1F335BB49E0B81AD66AF582DE2EF"
+    Size="176427">Games/Commander%20Keen%201%20(Marooned%20on%20Mars).zip</Game>
+  <Game
+    Name="Commander Keen 4 (Secret of the Oracle)"
+    Genre="Plattform"
+    Developer="ID Software"
+    Publisher="Apogee Software"
+    Year="1992"
+    Language="English"
+    License="Shareware"
+    PackageChecksum="B57E56F731B3452A83AB951BED66E39A"
+    GameExeChecksum="56DE6F7F48300A0774E194F7ED98811D"
+    Size="622922">Games/Commander%20Keen%204%20(Secret%20of%20the%20Oracle).zip</Game>
+  <Game
+    Name="Death Rally"
+    Genre="Race"
+    Developer="Remedy Entertainment"
+    Publisher="Apogee Software"
+    Year="1996"
+    Language="English"
+    License="Shareware"
+    PackageChecksum="BBB93950CACD7B78619C24425BFDD8C9"
+    GameExeChecksum="D16FB4F939CE2D473D55C88A18B1D8C3"
+    Size="7146177">Games/Death%20Rally.zip</Game>
+  <Game
+    Name="Epic Pinball"
+    Genre="Flipper"
+    Developer="Digital Extremes"
+    Publisher="Epic MegaGames"
+    Year="1993"
+    Language="English"
+    License="Shareware"
+    PackageChecksum="7523D407E875C92CB6B75107CAB45021"
+    GameExeChecksum="CAF0205C1F92DC7275227FFBDEDD98AD"
+    Size="1151500">Games/Epic%20Pinball.zip</Game>
+  <Game
+    Name="Game of Robot 1"
+    Genre="Puzzle"
+    Developer="TOM Productions"
+    Publisher="TOM Productions"
+    Year="1988"
+    Language="German"
+    License="Shareware"
+    PackageChecksum="93D990ED414EF9AB096369D8B1F08CDC"
+    GameExeChecksum="D9227687BAF036BE007260E82147FDD2"
+    Size="332767">Games/Game%20of%20Robot%201.zip</Game>
+  <Game
+    Name="Jazz Jackrabbit"
+    Genre="Plattform"
+    Developer="Epic MegaGames"
+    Publisher="Epic MegaGames"
+    Year="1994"
+    Language="English"
+    License="Shareware"
+    PackageChecksum="8A6ED0BFD499148A41EB4598FFF0DAD6"
+    GameExeChecksum="C4C386CCDCFF8414094BF4452A8CE54B"
+    Size="1670867">Games/Jazz%20Jackrabbit.zip</Game>
+  <Game
+    Name="Lemmings Demo"
+    Genre="Lemmings"
+    Developer="DMA Design Limited"
+    Publisher="Psygnosis Limited"
+    Year="1991"
+    Language="English"
+    License="Demo / Public domain"
+    PackageChecksum="A6E1F8E74EBC42631FBD6D81C99D3D6E"
+    GameExeChecksum="CAE377E6B4A9B28E921F6623EF33240B"
+    Size="281369">Games/Lemmings%20Demo.zip</Game>
+  <Game
+    Name="Mystic Towers"
+    Genre="RPG"
+    Developer="Animation FX"
+    Publisher="Apogee Software"
+    Year="1994"
+    Language="English"
+    License="Shareware"
+    PackageChecksum="B04A5B27D73A2951D7D9FF9940524510"
+    GameExeChecksum="C7233BC301FBF1133B565DB9C1146BE4"
+    Size="1079129">Games/Mystic%20Towers.zip</Game>
+  <Game
+    Name="Raptor"
+    Genre="Arcade"
+    Developer="Mountain King Studios"
+    Publisher="Apogee Software"
+    Year="1994"
+    Language="English"
+    License="Shareware"
+    PackageChecksum="ED1E914381F236E3D12FE8915DBD9F03"
+    GameExeChecksum="3167A6C4B0F32D779319DD1639BB8702"
+    Size="2301316">Games/Raptor.zip</Game>
+  <Game
+    Name="Solar Winds"
+    Genre="Strategy"
+    Developer="Epic MegaGames"
+    Publisher="Epic MegaGames"
+    Year="1993"
+    Language="English"
+    License="Shareware"
+    PackageChecksum="512925F4E9DE76050BAAF6A21C5CE1CA"
+    GameExeChecksum="B32268DDFAAC4F35D1D8A769F5103EE5"
+    Size="713798">Games/Solar%20Winds.zip</Game>
+  <Game Name="Hocus Pocus" Genre="Plattform" Developer="Moonlite Software" Publisher="Apogee Software" Year="1994" Language="English" License="Shareware" PackageChecksum="1637272CCEED900CAFC39985CAA436F4" Size="1130019">Games/Hocus%20Pocus.zip</Game>
+  <Game Name="Jill of the Jungle" Genre="Plattform" Developer="Epic MegaGames" Publisher="Epic MegaGames" Year="1992" Language="English" License="Shareware" PackageChecksum="28EC5663A1C66C21EF44614CC0177FAC" Size="565187">Games/Jill%20of%20the%20Jungle.zip</Game>
+  <Game Name="Secret Agent" Genre="Plattform" Developer="Peter Jungck" Publisher="Apogee Software" Year="1992" Language="English" License="Shareware" PackageChecksum="6BCF67F5F035720EE4631E11466791B0" Size="209724">Games/Secret%20Agent.zip</Game>
+</DFRPackagesFile>

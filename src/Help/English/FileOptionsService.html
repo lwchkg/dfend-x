@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Program options | Service</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Menu, File, Program options, Service">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Menu">
+  <param name="Keyword" value="File">
+  <param name="Keyword" value="Program options">
+  <param name="Keyword" value="Service">
+</OBJECT>
+  
+<p class="content">
+Menu: &nbsp; <b>File</b> | <b>Program options</b>  | <b>Service</b>
+</p>
+
+<h1>Program options dialog page "Service"</h1>
+
+<p>
+This page will offer you 2 to 5 (depending of the setup mode) function for
+maintaining your profiles database:
+</p>
+
+<ul class="big">
+  <li>
+    <b>Restore "DOSBox DOS" profile</b><br>
+    Clicking this button will restore the default "DOSBox DOS" profile.
+    If the profile does not exist it will be created and if it already
+    exists it will be overwritten.
+  </li>
+  <li>
+    <b>Restore default templates</b><br />
+    By clicking this button all templates will be restored to the state
+    when D-Fend Reloaded was installed.
+  </li>
+</ul>
+
+<p>
+The following settings will only be visible if the advanced setup mode is selected at the bottom of the program options dialog:
+</p>
+
+<ul class="big">  
+  <li>
+    <b>Delete old unsued setup files from D-Fend v2</b><br />
+    D-Fend v2 (classic) used to store additional <tt>conf</tt> files in the
+    profiles folder which are not used by D-Fend Reloaded. Additonally
+    canceling the add profile dialog in D-Fend v2 can result in some
+    <tt>Tempprof.*</tt> files in the profiles folder. Clicking this button
+    will delete these old, unused files.
+  </li>
+  <li>
+    <b>Make absolute to relative paths</b><br />
+    When clicking this button, D-Fend Reloaded will check all profiles
+    for path names that are stored absolute but can be expressed
+    as relative paths and will change them. (Using relative path names is
+    required for usage of the functions to <a href="ExtrasTransferProfiles.html">transfer profiles</a>
+    and to <a href="FileExportBuildInstallers.html">build installer packages</a>.)
+  </li>  
+  <li>
+    <b>Caclulate checksums for all profiles</b><br />
+    D-Fend Reloaded is using checksums to monitor the game files for changes.
+    Checksums are created (if not existent) or checked (if they already exist) when opening and
+    closing the profile editor and when trying to run a profile. By clicking this button you can
+    create checksums for all profiles at once.
+  </li>
+  <li>
+    <b>Clear package cache and lists</b><br />
+	By clicking this option you can delete all downloaded packages lists and cached data packages.
+	The next time you open the <a href="FileImportPackage.html">packages manager</a> you will
+	need to redownload the list files.
+  </li>
+  <li>
+    <b>Create capture folders for all profiles</b><br />
+	Clicking this button creates capture folders (for screenshots, records sounds and videos) for all profiles.
+	If there is no capture folder defined in the profile an unique folder name is derived from the profile name.
+  </li>
+  <li>
+    <b>Create game data folders for all profiles</b><br />
+	Clicking this button creates game data folders (for manuals etc.) for all profiles.
+	If there is no game data folder defined in the profile an unique folder name is derived from the profile name.
+  </li>
+  <li>
+    <b>Rename all media files for all profiles</b><br />
+	  Renames the screenshots, sounds or cpatures videos of all profiles to user defined file name schema.
+  </li>
+  <li>
+    <b>Reset profiles to templates</b><br />
+	Clicking this button will open the <a href="FileOptionsResetProfiles.html">Resetting profiles</a> dialog.
+  </li>
+</ul>
+ 
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="FileOptions.html">Program options dialog</a>
+</p>
+
+</body>
+</html>

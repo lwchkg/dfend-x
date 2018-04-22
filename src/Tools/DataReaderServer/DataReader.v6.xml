@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE DataReader SYSTEM "http://dfendreloaded.sourceforge.net/DataReader/DataReader.dtd">
+
+<DataReader Version="6">
+
+  <GamesList URL="http://www.mobygames.com/search/quick/q,%s/sFilter,1/sG,1/p,2/" AllPlatformsURL="http://www.mobygames.com/search/quick/q,%s/sFilter,1/sG,1/">
+    <Element Type="div" Key="class" Value="results clear mb40">
+      <PerGameBlock Type="h3" Key="class" Value="list">
+        <Link  HrefSubstring="/game/" />
+      </PerGameBlock>
+    </Element>
+  </GamesList>
+
+  <GamePage URL="http://www.mobygames.com">
+    <Element Type="div" Key="id" Value="main">
+
+	  <Element Type="div" Key="class" Value="game-nav">
+	    <Element Type="div" Key="class" Value="text-center">
+		  <Link />
+		</Element>
+	  </Element>
+
+      <Element Type="div" Key="class" Value="game-info">
+	    <Element Type="div" Key="class" Value="detail">
+	      <Element Type="div" Key="class" Value="listings">
+            <SearchGameData Publisher="Published by" Developer="Developed by" Year="Released" Genre="Genre" />
+		  </Element>
+		  <SearchGameData Notes="SELF" />
+	    </Element>
+	  </Element>
+	  
+	</Element>
+  </GamePage>	
+  
+  <CoverPage URL="http://www.mobygames.com">
+    <Javascript ContainsText="var screenshots = {" />
+  </CoverPage>
+
+</DataReader>

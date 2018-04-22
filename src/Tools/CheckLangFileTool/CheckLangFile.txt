@@ -1,0 +1,8 @@
+The language file checker can check your language file for missing lines and untranslated lines. Additionally it will create a nice looking version of your language file (this means the same lines in the same order as in the default language file, which makes comparing the English and the custom language file in an editor easier).
+
+How to use the language checker:
+1. Copy the language checker program file CheckLangFile.exe, the up to date English.ini and your language file in one directory.
+2. Run CheckLangFile.exe.
+3. Enter file name (without any path) of your language file.
+
+The language checker will write a modified version of your language file to <YourLanguageName>New.ini and the log lines to <YourLanguageName>Log.txt.

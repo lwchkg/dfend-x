@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Build installer for multiple games</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Menu, File, Export, Build installer for multiple games">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+  <param name="Keyword" value="Menu">
+  <param name="Keyword" value="File">
+  <param name="Keyword" value="Export">
+  <param name="Keyword" value="Build installer for multiple games">
+</OBJECT>
+  
+<p class="content">
+Menu: &nbsp; <b>File</b> | <b>Export</b> | <b>Build installer for multiple games</b>
+</p>
+
+<h1>Build installer for multiple games</h1>
+
+<p>
+D-Fend Reloaded can make exe installer packages from installed games. This packages will contain all
+game data (program files, profile, data folder, captured screenshots etc.) and can be archived and installed
+again later.
+</p>
+
+<p>
+For making exe installers D-Fend Reloaded is using the open source installer maker
+<a href="http://nsis.sourceforge.net/Main_Page" target="_blank">Nullsoft scriptable install system (NSIS)</a>.
+D-Fend Reloaded will create a <tt>nsi</tt> script from which NSIS will create the
+exe file. This means you will need to have NSIS installed on your system to use this
+feature. (There is no need to configurate the NSIS installation path in D-Fend Reloaded
+because the path can be read from the registry.)
+</p>
+
+<h3>Complete games</h3>
+
+<p>
+From this list you can select the games you want to include to the installer.
+If you just want to create an installer package for a single game,
+you can use "<a href="ProfileMakeInstallerPackage.html">Make installer package</a>"
+menu item from the "Profile" menu.
+</p>
+
+<h3>Templates / Auto setup templates</h3>
+
+<p>
+You can also make installer packages not containing complete games but templates.
+On this two pages you can select templates and auto setup templates for the installer package.
+</p>
+
+<p class="smallH">Advice:</p>
+<p class="smallT">
+  Only the games or templates from the currently visible page will be included to the
+  installer package when clicking "Ok". This means you do not need to unselect the
+  templates if you want to create a games package.
+</p>
+
+<h3>Group games by genre</h3>
+
+<p>
+If this option is activated, the games or templates will be group by genres
+in the installer. This means the "Select games to install" page will not display
+a simple checklistbox but a tree where you can select any genre group or any
+game.
+</p>
+
+<h3>Package settings</h3>
+
+<p>
+From this box you can select if D-Fend Reloaded should only create a <tt>nsi</tt> script
+(for later use with NSIS) or should create a <tt>nsi</tt> script and compile it with
+NSIS to an exe installer. (In most cases you probabily want the second option.)
+</p>
+
+<h3>Package file name</h3>
+
+<p>
+In this edit field you can enter the name of the exe installer to create.
+The file must be located in the base data folder
+(see <a href="FileOptionsDirectories.html">directories</a> of the
+<a href="FileOptions.html">program options</a> dialog) because there
+are relative path names used in the <tt>nsi</tt> script. (The exe installer
+itself can be copied an executed from any location.)
+</p>
+ 
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="FileExportBuildZipPackages.html">Build zip packages for multiple games</a><br />
+  <a href="http://nsis.sourceforge.net/Main_Page" target="_blank">Nullsoft scriptable install system (NSIS) homepage</a>  
+</p>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Profileditor | Laufwerke</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Men&uuml;, Profil, Bearbeiten, Laufwerke">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Men&uuml;">
+  <param name="Keyword" value="Profil">
+  <param name="Keyword" value="Profil bearbeiten">
+  <param name="Keyword" value="Bearbeiten">
+  <param name="Keyword" value="Laufwerke">
+</OBJECT>
+  
+<p class="content">
+Men&uuml;: &nbsp; <b>Profil</b> | <b>Bearbeiten</b> | <b>Laufwerke</b>
+</p>
+
+<h1>Profileditor-Dialogseite "Laufwerke"</h1>
+
+<p>
+Auf dieser Seite k&ouml;nnen Sie die virtuellen Laufwerke, die DOSBox den
+Programmen, die in DOSBox laufen sollen, zur Verf&uuml;gung stellen soll,
+konfigurieren. DOSBox kann physikalische Laufwerke, einzelne Ordner, Imagedateien
+und (wenn Sie ein neueres CVS Build von DOSBox einsetzen) Zip-Dateien
+als Laufwerke einbinden. Au&szlig;erdem lassen sich mit Hilfe von
+D-Fend Reloaded auch mit der normalen DOSBox-Versin Zip-Dateien als
+Laufwerke verwenden. (D-Fend Reloaded packt die Zip-Datei dabei vor dem
+Start von DOSBox aus und nach dem Beenden von DOSBox wieder ein.)
+</p>
+
+<p>
+&Uuml;ber die Schaltenfl&auml;chen unten auf dieser Dialogseite k&ouml;nnen
+Sie virtuelle Laufwerke hinzuf&uuml;gen, bearbeiten und l&ouml;schen.
+Au&szlig;erdem k&ouml;nnen Sie auch Laufwerke hinzuf&uuml;gen, in dem Sie
+in der Laufwerksliste <span class="key">Einfg</span> dr&uuml;cken,
+Laufwerke bearbeiten, in dem Sie <span class="key">Enter</span> dr&uuml;cken
+und Laufwerke l&ouml;schen, in dem Sie <span class="key">Entf</span> dr&uuml;cken.
+</p>
+
+<p>
+Sie k&ouml;nnen D-Fend Reloaded auch anweisen, die ben&ouml;tigten
+Laufwerke f&uuml;r das Spiel automatisch zu erstellen, in dem Sie
+auf die Schaltfl&auml;che "<b>Autom. erstellen</b>" klicken. In diesem Fall
+wird ein virtuelles Laufwerk so als Verkn&uuml;pfung mit einem physikalischen
+Ordner (bevorzugt dem Spieleordner) erstellt, dass DOSBox die Spieledateien
+erreichen kann. (Achtung: Evtl. durch das Spiel ben&ouml;tigte Verkn&uuml;pfungen
+zu CD-Laufwerken usw. k&ouml;nnen nicht erkannt werden und folglich auch nicht
+automatisch erstellt werden.)
+</p>
+
+<ul class="big">
+  <li><b>Zusätzlich alle aktuell verfügbaren CDs automatisch mounten</b><br />
+    Wenn diese Funktion aktiviert ist, bindet D-Fend Reloaded zusätzlich zu den explizit
+	in der oben stehenden Liste angegebenen Laufwerken auch noch alle CD-Laufwerke beim DOSBox-Start ein.
+  </li>
+  <li><b>Einbinden von Laufwerken nach dem DOSBox-Start verhindern</b><br />
+    Wenn dieser Sicherheitsmodus aktiv ist, können Sie (bzw. Programme, die in DOSBox laufen) nach dem
+	Programmstart von DOSBox keine weiteren Laufwerke mehr einbinden. Wenn diese Option eingeschaltet ist,
+	können Sie also sicher sein, dass selbst ein Virus nicht Zugriff auf Daten, die Sie nicht hier explizit
+	eingebunden haben, erlangen kann.
+  </li>
+</ul>
+
+<h2>Der "Laufwerk bearbeiten"-Dialog</h2>
+
+<p>
+In diesem Dialog k&ouml;nnen Sie den Typ des Laufwerk, das DOSBox emulieren
+soll, einstellen und dann Einstellungen f&uuml;r den gew&auml;hlten Typ
+vornehmen. Aus der Auswahlfeld "<b>Typ</b>" k&ouml;nnen Sie einen der
+folgenden Laufwerkstypen w&auml;hlen:
+</p>
+
+<ul class="big">
+  <li><b>Ordner als Festplatte</b><br />
+  Diese Option erlaubt es ein beliebiges Verzeichnis als Festplatte
+  in DOSBox einzubinden. (Achtung: Sie sollten <b>nicht</b> versuchen
+  das Wurzelverzeichnis Ihrer Festplatte als Festplatte in DOSBox
+  einzubinden. Dies h&auml;tte zwar den Vorteil, dass Ihnen in DOSBox
+  alle Ordner der realen Festplatte zur Verf&uuml;gung st&uuml;nden und
+  auch die Struktur identisch w&auml;re, allerdings h&auml;tten damit eben
+  auch alle Programme innerhalb von DOSBox vollen Zugriff auf alle Verzeichnisse
+  der realen Festplatte und k&ouml;nnen so Ihre gesamte Softwareinstallation
+  besch&auml;digen. Wenn Sie hingegen nur einen Spieleordner als Festplatte
+  einbinden, so k&ouml;nnen b&ouml;sartige Programme bzw. Fehlbedienungen
+  innerhalb von DOSBox keinen Schaden an Dateien au&szlig;erhalb dieses
+  Ordner anrichten.) 
+  </li>
+  <li><b>Ordner als Diskette</b><br />
+  &Uuml;ber diese Option k&ouml;nnen Sie ein beliebiges Verzeichnis als
+  virtuelles Diskettenlaufwerk in DOSBox einbinden.
+  </li>
+  <li><b>CD-Laufwerk</b><br />
+  Diese Option erlaubt es, ein reales CD-Laufwerk als virtuelles CD-Laufwerk
+  in DOSBox einzubinden. Sie haben dabei mehrere Möglichkeiten, nach der
+  das Laufwerk beim Start von DOSBox ausgewählt werden soll. U.a. ist es möglich,
+  das zu verwendende Laufwerk an Hand der eingelegten CD automatisch auszuwählen.
+  Wenn Sie einen festen Pfad als CD-Laufwerk mounten wollen, so sollte der Pfad
+  auf das Wurzelverzeichnis eines realen CD-Laufwerks verweisen.
+  </li>
+  <li><b>Diskettenimage</b><br />
+  Diese Option erlaubt es, ein Diskettenimage als virtuelles Diskettenlaufwerk
+  in DOSBox einzubinden. &Uuml;ber die Schaltfl&auml;che "Imagedatei erstellen"
+  auf der rechten Seite des Dialogs k&ouml;nnen Sie ein
+  <a href="ExtrasImagesCreateImageFromFloppy.html">neues Diskettenimage von einer realen Diskette erstellen</a>
+  oder auch ein <a href="ExtrasImagesCreateImage.html">neues, leeres Diskettenimage erstellen</a>.
+  </li>
+  <li><b>ISO-Image</b><br />
+  Diese Option erlaubt es, ein ISO-Image einer CD als virtuelles CD-ROM-Laufwerk einzubinden.
+  &Uuml;ber die Schaltfl&auml;che "<a href="ExtrasImagesCreateImageFromCD.html">Imagedatei erstellen</a>" 
+  auf der rechten Seite des Dialogs k&ouml;nnen Sie ISO-Images von realen CDs auslesen.
+  </li>
+  <li><b>Festplattenimage als Festplatte</b><br />
+  Diese Option erlaubt es, ein Festplattenimage als virtuelle Festplatte in DOSBox einzubinden.
+  &Uuml;ber die Schaltfl&auml;che "<a href="ExtrasImagesCreateImage.html">Imagedatei erstellen</a>"
+  auf der rechten Seite des Dialogs k&ouml;nnen Sie neue, leere Festplattenimages erstellen.
+  </li>
+  <li><b>DOSBox PhysFS</b> <font color="red">(*)</font><br />
+  &Uuml;ber diese Option k&ouml;nnen Sie eine Zip-Datei als Laufwerk in DOSBox einbinden.
+  DOSBox erstellt das Laufwerk intern aus der Zip-Datei und einem Verzeichnis; es
+  lie&szlig;t dabei aus der Zip-Datei und f&uuml;hrt alle Schreiboperationen in das
+  angegebene Verzeichnis durch (d.h. die Zip-Datei wird von DOSBox nicht ver&auml;ndert.)
+  Nach dem Programmende von DOSBox wird der Inhalt des Verzeichnisses optional in die Zip-Datei eingepackt.
+  </li>
+  <li><b>Zip-Datei</b><br />
+  &Uuml;ber diese Option k&ouml;nnen Sie eine Zip-Datei als Laufwerk in DOSBox einbinden,
+  ohna dass daf&uuml;r die DOSBox PhysFS-Unterst&uuml;tzung ben&ouml;tigt wird (welche in
+  der normalen DOSBox-Version auch nicht vorhanden ist). D-Fend Reloaded entpackt daf&uuml;r
+  den Inhalt der Zip-Datei vor dem Start von DOSBox in ein Verzeichnis und bindet dieses
+  in DOSBox als Laufwerk ein. Nach dem Programmende von DOSBox wird der Inhalt des
+  Verzeichnisses optional wieder in die Zip-Datei eingepackt.
+  </li>
+</ul>
+
+<p>
+Die mit <font color="red">(*)</font> markierte Option ist nur verf&uuml;gbar, wenn die
+zugeh&ouml;rige Option auf der Dialogseite <a href="FileOptionsDOSBoxCVSFeatures.html">DOSBox CVS-Features</a>
+des <a href="FileOptionsDOSBox.html">Programmeinstellungen</a>-Dialogs aktiviert ist. Die offizielle DOSBox
+Version 0.73, die mit D-Fend Reloaded ausgeliefert wird, unterst&uuml;tzt diesen Mount-Typ und den Sicherheitsmodus nicht.
+</p>
+
+<p>
+&Uuml;ber das "<b>Laufwerksbuchstabe</b>" Auswahlfeld k&ouml;nnen Sie festlegen, welchen Laufwerksbuchstaben
+der jeweils einzubindende physkalische Ordner bzw. das jeweils einzubindende Image in DOSBox erhalten soll.
+Beim Einbinden von Disketten- und Festplattenimages k&ouml;nnen Sie au&szlig;er den &uuml;blichen Laufwerksbuchstaben
+auch optional ein Zahl zwischen 0 und 3 angeben. Wenn Sie eine dieser Zahlen als Laufwerksbuchstabe w&auml;hlen,
+wird das Laufwerk nicht mit einem DOSBox-Laufwerksbuchstaben versehen, sondern direkt an den virtuellen
+Disketten- und Festplattencontroler in DOSBox angebunden. Dies hat zur Folge, dass das Laufwerk zwar nicht direkt
+auf der DOSBox-Kommandozeile verwedet werden kann, aber nach dem Booten eines alternativen Betriebssystems in
+DOSBox als Laufwerk zur Verf&uuml;gung steht.
+</p>
+
+<p>&nbsp;</p>
+
+<p class="smallH">Siehe auch:</p>
+<p class="smallT">
+  <a href="ProfileEdit.html">Profileditor-Dialog</a>
+</p>
+
+</body>
+</html>

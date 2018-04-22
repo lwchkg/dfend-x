@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Programeinstellungen | Nach Updates suchen</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Men&uuml;, Datei, Programeinstellungen, Nach Updates suchen">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Men&uuml;">
+  <param name="Keyword" value="Datei">
+  <param name="Keyword" value="Programeinstellungen">
+  <param name="Keyword" value="Nach Updates suchen">
+</OBJECT>
+  
+<p class="content">
+Men&uuml;: &nbsp; <b>Datei</b> | <b>Programeinstellungen</b>  | <b>Nach Updates suchen</b>
+</p>
+
+<h1>Programmeinstellungen-Dialogseite "Nach Updates suchen"</h1>
+
+<p>
+Auf dieser Dialogseite k&ouml;nnen Sie einstellen ob und wie oft D-Fend Reloaded nach Updates suchen soll.
+</p>
+
+<h2>Programm-Updates</h2>
+
+<p>
+Die Update&uuml;berpr&uuml;fung &uuml;bertr&auml;gt <b>keine</b> pers&ouml;nlichen
+Daten ins Internet. Bei der Update&uuml;berpr&uuml;fung wird lediglich der Inhalt
+einer auf der D-Fend Reloaded Homepage angebotenen Textdatei heruntergeladen und
+ausgewertet. Wenn die Versionsnummer, die in dieser Textdatei angegeben ist,
+gr&ouml;&szlig;er als die Versionsnummer der aktuellen Installation ist, bietet
+die Updatepr&uuml;fung an, den in der zweiten Zeile der Textdatei angegebenen
+Updateinstaller herunter zu laden und auszuf&uuml;hren.
+<br />(Vorgabewert f&uuml;r diese Option: "Nur manuell auf Updates prüfen")
+</p>
+
+<h3>Kennung der aktuellen Version in die Abfrage-URL integrieren</h3>
+<p>
+Wenn diese Option aktiviert ist, f&uuml;gt die Updatepr&uuml;fung die Nummer der
+aktuell verwendeten D-Fend Reloaded Version an die Abfrage-URL f&uuml;r die
+Update-Informationsdarei an. Dadurch wird des den Skripten auf der D-Fend Reloaded
+Homepage erm&ouml;glicht, je nach verwendeter Version verschiedene Update-Dateien
+(die dann ggf. kleiner ausfallen k&ouml;nnen) anzubieten. (Siehe dazu auch der
+Abschnitt &uuml;ber die Arbeitsweise der Updatefunktion weiter unten). Momentan
+wird diese Funktion jedoch nicht durch die D-Fend Reloaded Homepage ausgewertet,
+d.h. unabh&auml;ngig von dieser Einstellung f&uuml;r stets die selbe
+Update-Datei angeboten.
+<br />(Vorgabewert f&uuml;r diese Option: an)
+</p>
+
+<h2>Paketlisten aktualisieren</h2>
+<p>
+In diesem Feld kann gewählt werden, ob und wann D-Fend Reloaded die Listen der im
+<a href="FileImportPackage.html">Paketmanager</a> angeboten Pakete aktualisieren soll.
+Die Listen können auch jeder Zeit über die Funktion "Paketlisten aktualisieren" im
+Paketmanager manuell aktualisiert werden.
+<br />(Vorgabewert f&uuml;r diese Option: "Nur manuell")
+</p>
+
+<h2>Cheats-Datenbank</h2>
+<p>
+In diesem Feld können Sie auswählen, ob D-Fend Reloaded automatisch nach Updates
+für die Cheats-Datenbank suchen soll.
+<br />(Vorgabewert f&uuml;r diese Option: "Nur manuell")
+</p>
+
+<h2>Mobygames-Downloader Konfigurationsupdate</h2>
+<p>
+In diesem Feld kann gewählt werden, wann die Funktion zum Auslesen von Spieleinformationen von
+der Mobygames-Homepage die Konfiguration neu von der D-Fend Reloaded Homepage lesen soll.
+Um auf Änderungen an der Mobygames-Homepage reagieren zu können, ist es notwendig, dass die
+Ausleseroutinen konfigurierbar sind. Auf der D-Fend Reloaded Homepage befindet sich eine
+Datei, die der Auslesefunktion mitteilt, wie die Mobygames-Suchanfrage-Antwortseiten
+auszuwerten sind um an die Spieleinformationen zu gelangen.
+<br />(Vorgabewert f&uuml;r diese Option: "Täglich bei der ersten Benutzung")
+</p>
+
+<h3>Jetzt nach Update suchen</h3>
+<p>
+Diese Schaltfläche öfnnet den Dialog, der auch über den Menüpunkt <a href="HelpSearchForUpdates.html">Nach Updates suchen</a>
+im "Hilfe"-Men&uuml; erreichbar ist.
+</p>
+
+<h3>Dateils zur Funktionsweise der Programmupdate-&Uuml;berpr&uuml;fung</h3>
+<p>
+Der Programmupdate-Checker l&auml;d folgende Datei von der D-Fend Reloaded Hompage auf Sourceforge herunter:
+"<a href="http://dfendreloaded.sourceforge.net/UpdateInfo.txt" target="_blank">http://dfendreloaded.sourceforge.net/UpdateInfo.txt</a>".
+Die Datei enth&auml;lt zwei Textzeilen; in der ersten Zeile steht die Versionsnummer der aktuellen D-Fend Reloaded Version 
+ und in der zweiten Zeile die Download-Adresse f&uuml;r den Updateinstaller, der eine existierende
+D-Fend Reloaded Installation auf diese Version aktualisiert.
+Wenn die Versionsnummer in der <tt>UpdateInfo.txt</tt>-Datei gr&ouml;&szlig;er ist, als die Versionsnummer der momentan
+verwendeten D-Fend Reloaded Installation, wird Sie der Update-Checker fragen, ob Sie jetzt auf diese Version aktualisiern
+wollen.
+</p>
+
+<p>
+Die Update-Pr&uuml;fung verwendet die Windows-Verbindungseinstellung (die Sie
+&uuml;ber die Programmeinstellungen des Internet Explorers anpassen k&ouml;nnen).
+Dies bedeutet insbesondere, dass D-Fend Reloaded den m&ouml;glicherweise im
+Internet Explorer konfigurierten Proxy-Server verwenden wird.
+</p>
+
+<p>&nbsp;</p>
+
+<p class="smallH">Siehe auch:</p>
+<p class="smallT">
+  <a href="FileOptions.html">Programeinstellungen-Dialog</a>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Profile editor | Graphics</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Menu, Profile, Edit, Graphics">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Menu">
+  <param name="Keyword" value="Profile">
+  <param name="Keyword" value="Edit profile">
+  <param name="Keyword" value="Edit">
+  <param name="Keyword" value="Graphics">
+</OBJECT>
+  
+<p class="content">
+Menu: &nbsp; <b>Profile</b> | <b>Edit</b> | <b>Graphics</b>
+</p>
+
+<h1>Profile editor dialog page "Graphics"</h1>
+
+<p>
+On this page you can setup the virtual graphic card DOSBox or ScummVM should emulate.
+</p>
+
+<h2>For DOSBox profiles</h2>
+
+<ul class="big">
+  <li>
+    <b>Window resolution</b><br />
+    In this dropdown box you can select the resolution you want to use if
+    DOSBox is running in window mode. "Original" means using the resolution
+    the game uses without scaling. In all other cases DOSBox is upscaling
+    the game resolution to the chosen resolution.
+  </li>
+  <li>
+    <b>Fullscreen resolution</b><br />
+    In this dropdown box you can select the resolution you want to use if
+    DOSBox is running in fullscreen mode. "Original" means using the resolution
+    the game uses without scaling. In all other cases DOSBox is upscaling
+    the game resolution to the chosen resolution.
+  </li>
+  <li>
+    <b>Start in fullscreen mode</b><br />
+    If this option is activated, DOSBox will start in fullscreen mode.
+    Otherwise it will start in window mode.
+  </li>  
+  <li>
+    <b>Use double buffering</b><br />
+    If this option is activated double buffering will be activated in fullscreen mode.
+    Activation this option can cause or solve some graphic problems depending on your
+    video driver, your operation system and the game you want to run.
+  </li>
+  <li>
+    <b>Keep correct aspect</b><br />
+    Aspect correction is useful for games that uses the 320x200 mode with non-square pixel.
+    If a game using this mode is displayed on a modern screen using a mode with regular square pixel
+    it looks stretched. Aspect correction stretches the image vertically so the 320x200 will become
+    320x240 and it looks better depending on the interpolation algorithm.
+  </li>
+  <li>
+    <b>Glide emulation <font color="red">(*)</font></b><br />
+    If this option is activated DOSBox will offer glide emulation to the game.
+  </li>
+  <li>
+    <b>Render</b><br />
+    From this dropdown box you can choose the output method DOSBox should use
+    to display the content of its window (this means the way DOSBox will
+    communicate with the Windows device driver). The default value is "surface".
+    The best render method depends on your video driver and operating system.
+  </li>
+  <li>
+    <b>Video card</b><br />
+    From this dropdown box you can select the graphic card type you want DOSBox to emulate.
+    For most games "vga" should work fine. Only if the game requieres some special graphic card
+    you should select some other video card type. Note that "vga" fully supports most cga modes,
+    so you should be able to leave DOSBox in vga mode for playing most cga games.
+  </li>
+  <li>
+    <b>Pixel shader <font color="red">(*)</font><b><br />
+	From this dropdown box you can select the pixel shader program to use.
+	The pixel shader programs offered in this box are <tt>fx</tt> files in the
+	<tt>Shaders</tt> subdirectory of the directory of the chosen DOSBox installation.
+  </li>
+  <li>
+    <b>Settings for video card type "vga" <font color="red">(*)</font></b><br />
+    In this box you can select the exact type of vga card to emulate in video card mode "vga".
+    This can be helpful when running some newer DOS games expecting some special vga chipset.
+  </li>
+  <li>
+    <b>Scale</b><br />
+    From this dropdown box you can select the scale algorithm to use when displaying a
+    game in a higher resolution than the game uses. The best scaling mode depends on the
+    game you want to use. In general modes at the top of the list tend to be faster
+    and modes at the bottom tend to produce smoother images.
+  </li>
+  <li>
+    <b>Frameskip</b><br />
+    In this box you can select how many frames DOSBox should skip when showing the game frames.
+    Skipping frames makes the running a game faster. The frameskip is not based on the games
+    frames per second (fps), but on the screen refresh rate, which is 70 fps for most modes and 60 fps
+    for 640*480 VGA modes. A frameskip of one means 35 / 30 fps, a frameskip of two means 23.3 / 20 fps
+    and three means 17.5 / 15 fps.
+  </li>
+  <li>
+    <b>Text mode lines <font color="red">(*)</font></b><br />
+    In this box you can select how many text lines DOSBox should use in
+    text mode (on the command line for example). The default value is 25.
+  </li>
+</ul>
+
+<p>
+The settings marked with <font color="red">(*)</font> are only visible if the corresponding
+DOSBox CVS features are enabled on the <a href="FileOptionsDOSBoxCVSFeatures.html">DOSBox CVS features</a>
+page of the <a href="FileOptionsDOSBox.html">program options</a> dialog. The official DOSBox 0.72 build
+delivered with D-Fend Reloaded does not support these special settings.
+</p>
+
+<h2>For ScummVM profiles</h2>
+
+<ul class="big">
+  <li>
+    <b>Filter</b><br />
+	From this box you can select the method ScummVM should use for up scaling the game graphics
+	to your physical resolution.
+  </li>
+  <li>
+    <b>Render mode</b><br />
+	In the box you can setup the graphical card ScummVM should emulation. In most cases the
+	default value "default" will lead to good results.
+  </li>
+  <li>
+    <b>Start in fullscreen mode</b><br />
+    If this option is activated, ScummVM will start in fullscreen mode.
+    Otherwise it will start in window mode.
+  </li>  
+  <li>
+    <b>Keep correct aspect</b><br />
+    Aspect correction is useful for games that uses the 320x200 mode with non-square pixel.
+    If a game using this mode is displayed on a modern screen using a mode with regular square pixel
+    it looks stretched. Aspect correction stretches the image vertically so the 320x200 will become
+    320x240 and it looks better depending on the interpolation algorithm.
+  </li>
+</ul>
+
+
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="ProfileEdit.html">Profile editor dialog</a>
+</p>
+
+</body>
+</html>

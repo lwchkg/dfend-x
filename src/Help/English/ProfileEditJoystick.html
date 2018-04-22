@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Profile editor | Joystick</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Menu, Profile, Edit, Joystick">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Menu">
+  <param name="Keyword" value="Profile">
+  <param name="Keyword" value="Edit profile">
+  <param name="Keyword" value="Edit">
+  <param name="Keyword" value="Joystick">
+</OBJECT>
+  
+<p class="content">
+Menu: &nbsp; <b>Profile</b> | <b>Edit</b> | <b>Joystick</b>
+</p>
+
+<h1>Profile editor dialog page "Joystick"</h1>
+
+<p>
+On this page you can setup the virtual joystick DOSBox should emulate.
+DOSBox will map this virtual Joystick to any real Joystick connected to
+your computer and supported by Windows automatically.
+</p>
+
+<ul class="big">
+  <li>
+    <b>Joystick type</b><br />
+    From this drowpdown box you can select the type of joystick DOSBox should emulate:<br /><br />
+    <ul>
+      <li><b>auto:</b>chooses emulation depending on real joystick(s)</li>
+      <li><b>none:</b> disables joystick emulation</li>
+      <li><b>2axis:</b> supports two joysticks</li>
+      <li><b>4axis:</b> supports one joystick, first joystick used</li>
+      <li><b>4axis_2:</b> supports one joystick, second joystick used</li>
+      <li><b>fcs:</b> Thrustmaster</li>
+      <li><b>ch:</b> CH Flightstick</li>
+    </ul>
+  </li>
+  <li>
+    <b>Timed intervals for axis</b><br />
+    Enable timed intervals for axis.
+  </li>
+  <li>
+    <b>Autofire</b><br />
+    If this option is activated, DOSBox will send separate fire-button
+    press events to the game as long as you keep the button pressed.
+  </li>  
+  <li>
+    <b>Swap axis 3 and 4</b><br />
+    If this option is activated the 3rd and 4th axis phyisical axis of the
+    connected joystick will be swaped in the emulation.
+  </li>
+  <li>
+    <b>Activate button wrap</b><br />
+    If this option is activated, on joysticks with more physical buttons than emulated
+    virtual buttons (see "type" dropdown box) the higher physical buttons are mapped to
+    lower logical buttons in the emulation. For example if you use a joystick with more
+    than 4 buttons and you have configurated in the "type" dropdown box a 4-button joystick,    
+    physical button 5 is mapped to logical button 1, physical button 6 to logical button 2 etc.
+  </li>  
+</ul>
+
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="ProfileEdit.html">Profile editor dialog</a>
+</p>
+
+</body>
+</html>

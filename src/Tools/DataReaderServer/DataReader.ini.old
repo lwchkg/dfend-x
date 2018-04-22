@@ -1,0 +1,33 @@
+[Version]
+FileVersion=1
+[List]
+URL=http://www.mobygames.com/search/quick/p,2/q,%s/showOnly,9/
+MainBlock=table
+Main.AttributeName=summary
+Main.AttributeValue=game match
+Sub=td
+SubNr=-1
+[Game]
+URL=http://www.mobygames.com
+MainBlock1=div
+MainBlock1.AttributeName=id
+MainBlock1.AttributeValue=floatholder coreGameInfo
+MainBlock2=table
+MainBlock2.AttributeName=
+MainBlock2.AttributeValue=
+CoverBlock=div
+CoverBlock.AttributeName=id
+CoverBlock.AttributeValue=coreGameCover
+ReleaseBlock=div
+ReleaseBlock.AttributeName=id
+ReleaseBlock.AttributeValue=coreGameRelease
+ReleaseBlock.Sub=div
+GenreBlock=div
+GenreBlock.AttributeName=id
+GenreBlock.AttributeValue=coreGameGenre
+GenreBlock.Sub=div
+[GameKeyWords]
+Genre=genre
+Developer=developed
+Publisher=published
+Year=released

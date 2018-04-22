@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Installer-Pakete f&uuml;r mehrere Spiele erstellen</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Men&uuml;, Datei, Export, Installer-Pakete f&uuml;r mehrere Spiele erstellen">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+  <param name="Keyword" value="Men&uuml;">
+  <param name="Keyword" value="Datei">
+  <param name="Keyword" value="Export">
+  <param name="Keyword" value="Installer-Pakete f&uuml;r mehrere Spiele erstellen">
+</OBJECT>
+  
+<p class="content">
+Men&uuml;: &nbsp; <b>Datei</b> | <b>Export</b> | <b>Installer-Pakete f&uuml;r mehrere Spiele erstellen</b>
+</p>
+
+<h1>Installer-Pakete f&uuml;r mehrere Spiele erstellen</h1>
+
+<p>
+D-Fend Reloaded kann Installationspakete von den bestehenden Spielen erstellen.
+Diese Pakete entalten alle Spieledateien (Programmdateien, Profildatei, Datanordner,
+aufgezeichnete Screensshots usw.) eignen sich daher gut zum Archivien und
+&Uuml;bertragen von Spielen.
+</p>
+
+<p>
+D-Femd Reloaded verwendet bei der Erstellung von Installer-Paketen das Opensource
+Installations-Ersteller System
+<a href="http://nsis.sourceforge.net/Main_Page" target="_blank">Nullsoft scriptable install system (NSIS)</a>.
+D-Fend Reloaded selbst erstellt lediglich eine <tt>nsi</tt>-Skriptdatei, aus der
+dann NSIS die eigentliche <tt>exe</tt>-Datei erstellt. Dies bedeutet, dass Sie NSIS auf Ihrem
+System installiert haben m&uuml;ssen, um diese Funktion nutzen zu k&ouml;nnen. (Die NSIS-Installation
+muss in D-Fend Reloaded nicht explizit eingetragen werden, da D-Fend Reloaded den NSIS-Installationspfad
+aus der Registry auslesen kann.)
+</p>
+
+<h3>Vollst&auml;ndige Spiele</h3>
+
+<p>
+Aus dieser Liste k&ouml;nnen Sie die Spiele, die in den Installer aufgenommen werden sollen,
+ausw&auml;hlen. Wenn Sie lediglich ein Installationspaket f&uuml;r ein einzelnes Spiel
+erstellen wollen, so k&ouml;nnen Sie auch die Funktion
+"<a href="ProfileMakeInstallerPackage.html">Installer-Paket erstellen</a>"
+aus dem "Profil"-Men&uuml; verwenden.
+</p>
+
+<h3>Vorlagen / Autosetup-Vorlagen</h3>
+
+<p>
+Sie k&ouml;nnen auch Installationspakete erstellen, die Vorlagen statt Spielen enthalten.
+Auf diesen beiden Dialogseiten k&ouml;nnen Sie die Vorlagen bzw. die Autosetup-Vorlagen
+w&auml;hlen, die in das Paket aufgenommen werden sollen. (Ein Paket kann jeweils nur
+entweder Spiele, Vorlagen oder Autosetup-Vorlagen enthalten.)
+</p>
+
+<p class="smallH">Hinweis:</p>
+<p class="smallT">
+  Da jeweils nut die Spiele bzw. Vorlagen von der jeweils sichtbaren Dialogseite
+  in den Installer aufgenommen werden wenn Sie auf "Ok" klicken, m&uuml;ssen Sie
+  die Elemente auf den jeweils nicht sichbaren Dialogseiten nicht explizit
+  abw&auml;hlen, damit sie nicht in den Installer aufgenommen werden.
+</p>
+
+<h3>Spiele im Installer nach Genres gruppieren</h3>
+
+<p>
+Wenn diese Option aktiviert ist, werden die Spiele bzw. Vorlagen nach Genres
+gruppiert in den Installer aufgenommen. Dies bedeutet, dass auf der Dialogseite
+"Spiele zur Installation ausw&auml;hlen" im Installer-Paket nicht nur eine
+einfache Auswahlbox angezeigt wird, sondern eine Baumstruktur, aus der die
+zu installierenden Spiele nach Genres sortiert ausgew&auml;hlt werden k&ouml;nnen.
+</p>
+
+<h3>Paket-Einstellungen</h3>
+
+<p>
+Aus diesem Feld k&ouml;nnen Sie ausw&auml;hlen, ob D-Fend Reloaded lediglich ein
+<tt>nsi</tt>-Skript (f&uuml;r die sp&auml;tere Verwendung mit NSIS) erstellten soll
+oder ob das erstellte <tt>nsi</tt>-Skript sofort mit NSIS zu einem Installer
+compiliert werden soll. (In den meisten F&auml;llen d&uuml;rfte die zweite Option
+die von Ihnen bevorzugte sein.)
+</p>
+
+<h3>Dateiname des Pakets</h3>
+
+<p>
+In diesem Eingabefeld k&ouml;nnen Sie den Namen des anzulegenden <tt>exe</tt>-Installers
+angeben. Die Datei muss in dem D-Fend Reloaded Basisverzeichnis (siehe Dialogseite
+<a href="FileOptionsDirectories.html">Verzeichnisse</a> des
+<a href="FileOptions.html">Programmeinstellungen</a>-Dialogs) liegen, da in der Datei
+relative Pfadnamen verwendet werden, die nur dann g&uuml;ltig sind, wenn das
+<tt>nsi</tt>-Skript in diesem Verzeichnis liegt. (Der <tt>exe</tt>-Installer selbst hingegen
+kann an jede beliebige Position kopiert werden und auch von jedem Verzeichnis aus gestartet
+werden.)
+</p>
+ 
+<p>&nbsp;</p>
+
+<p class="smallH">Siehe auch:</p>
+<p class="smallT">
+  <a href="FileExportBuildZipPackages.html">Archivdatei-Pakete f&uuml;r mehrere Spiele erstellen</a><br />
+  <a href="http://nsis.sourceforge.net/Main_Page" target="_blank">Nullsoft scriptable install system (NSIS) Homepage</a>  
+</p>
+
+</body>
+</html>

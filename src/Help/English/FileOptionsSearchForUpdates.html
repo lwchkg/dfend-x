@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Program options | Search for updates</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Menu, File, Program options, Search for updates">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Menu">
+  <param name="Keyword" value="File">
+  <param name="Keyword" value="Program options">
+  <param name="Keyword" value="Search for updates">
+</OBJECT>
+  
+<p class="content">
+Menu: &nbsp; <b>File</b> | <b>Program options</b>  | <b>Search for updates</b>
+</p>
+
+<h1>Program options dialog page "Search for updates"</h1>
+
+<p>
+On this page you can define if and how often D-Fend Reloaded should look for updates.
+</p>
+
+<h2>Program updates</h2>
+<p>
+The update checker will <b>not</b> transfer any of your private data to the internet.
+It will just read the content of a text file offered on the D-Fend Reloaded homepage.
+If the version named in this file is bigger than the current version number it will
+offer to you to download und run the update installer also named in this text file.
+That all.
+<br />(Default value for this option: "Only manual")
+</p>
+
+<h3>Add current version number to request URL</h3>
+<p>
+If this option is activated, the update checker will add the current version number
+to the request URL. This will allow the scripts on the D-Fend Reloaded homepage to
+offer different (maybe smaller) update packages for different versions (see details below).
+At the moment the update information text file is a real text file and this feature is
+not used on the homepage.
+<br />(Default value for this option: on)
+</p>
+
+<h2>Package lists update</h2>
+<p>
+From this box you can select if and when D-Fend Reloaded should update the lists offered
+in the <a href="FileImportPackage.html">packages manager</a>. The lists can also be updated
+via the "Update package lists" button in the package manager dialog at any time manually.
+<br />(Default value for this option: "Only manual")
+</p>
+
+<h2>Cheats database</h2>
+<p>
+From this box you can select if and when D-Fend Reloaded should search and install
+updates to the cheats database.
+<br />(Default value for this option: "Only manual")
+</p>
+
+<h2>Mobygames reader configuration update</h2>
+<p>
+From this box you can select when the function for reading game information from the
+Mobygames homaepage should update its configuration from the D-Fend Reloaded homepage.
+To be able to react on changes of the Mobygames homepage the reader function is configurateable.
+On the D-Fend Reloaded homepage there is always a file telling the reader how to interpret
+the Mobygames search result page to get the game information.
+<br />(Default value for this option: "On first use each day")
+</p>
+
+<h3>Search for updates now</h3>
+<p>
+Clicking this button opens the same dialog as the menu item
+<a href="HelpSearchForUpdates.html">Search for updates</a>
+from the help menu.
+</p>
+
+<h3>Details on the function of the program update checker</h3>
+<p>
+The program update checker is reading this file from Sourceforge:
+"<a href="http://dfendreloaded.sourceforge.net/UpdateInfo.txt" target="_blank">http://dfendreloaded.sourceforge.net/UpdateInfo.txt</a>" The file contains two
+lines; in the first line the version number of the current D-Fend Reloaded
+version on the server is given and in the second line
+the download URL of the update installer for this version is given. If the version number in the <tt>UpdateInfo.txt</tt> is bigger than the
+version number of the currently installed D-Fend Reloaded version, the update
+checker will ask you, if you want to update to the new version.
+</p>
+
+<p>
+The update checker will use the windows connection settings (which you can edit
+in the Internet Explorer). This means: If you have setup a proxy server in the
+Internet Explorer, the D-Fend Reloaded update checker will use this proxy, too.
+</p>
+
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="FileOptions.html">Program options dialog</a><br />
+  <a href="HelpSearchForUpdates.html">Search for updates (in help menu)</a>
+</p>
+
+</body>
+</html>

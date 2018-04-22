@@ -1,0 +1,26 @@
+body {font-family:Helvetica,sans-serif; background-color: #FFFFDD; margin: 0px; padding: 10pt;}
+h3 {font-size: normal; margin-bottom: 0pt; padding-bottom: 0px;}
+h2 {color: black;}
+p {margin: 3px 0px 10px 0px}
+p.small {font-size: smaller; background-color: #FFFFBB; border-style: solid; border-width: 1px; border-color: #FFFF22; padding: 3pt;}
+
+p.smallH {font-size: smaller; font-weight: bold; background-color: #FFFFBB; border-style: solid; border-width: 1px 1px 0px 1px; border-color: #FFFF22; padding: 3pt; margin-bottom: 0px;}
+p.smallT {font-size: smaller; background-color: #FFFFBB; border-style: solid; border-width: 0px 1px 1px 1px; border-color: #FFFF22; padding: 0pt 3pt 2pt 3pt; margin-top: 0px;}
+
+p.content {position: relative; top: -10pt; left: -10pt; width: 105%; margin: 0px; font-size: smaller; background-color: #DDDDDD; border-style: solid; border-width: 1px; border-color: #AAAAAA; padding: 3pt;}
+
+span.key {background-color: #DDDDDD; border-style: solid; border-color: #AAAAAA; border-width: 1px; padding: 1px;}
+
+a {text-decoration: none; color: blue;}
+a:visited {text-decoration: none; color: blue;}
+a:hover {text-decoration: underline; color: blue;}
+
+p.Author {font-size: x-small; color: #777777;}
+
+p.From {font-size: smaller; color: #777777;}
+
+ul.small {margin-top: 1pt; margin-bottom: 3pt;}
+
+ul.big li {margin-bottom: 10pt;}
+
+tt {font-size: larger;}

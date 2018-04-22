@@ -1,0 +1,9 @@
+DOSBox version 0.74
+Copyright 2002-2010 DOSBox Team, published under GNU GPL.
+---
+CONFIG:Loading primary settings from config file C:\Users\ALEXAN~1\AppData\Local\Temp\DOSBOX.CONF
+Memory sizes above 31 MB are NOT recommended.
+Stick with the default values unless you are absolutely certain.
+MIDI:Opened device:win32
+DOS keyboard layout loaded with main language code GR for layout GR
+SHELL:Redirect output to nul

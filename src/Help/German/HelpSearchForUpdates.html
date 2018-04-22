@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Nach Updates suchen</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Men&uuml;, Hilfe, Nach Updates suchen">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Men&uuml;">
+  <param name="Keyword" value="Hilfe">
+  <param name="Keyword" value="Nach Updates suchen">
+</OBJECT>
+
+<p class="content">
+Men&uuml;: &nbsp; <b>Hilfe</b> | <b>Nach Updates suchen</b>
+</p>
+
+<h1>Nach Updates suchen</h1>
+
+<p>
+Durch das Anklicken dieses Men&uuml;punkts starten Sie eine manuelle Suche nach
+Updates f&uuml;r D-Fend Reloaded. Sie k&ouml;nnen auf der
+<a href="FileOptionsSearchForUpdates.html">Nach Updates suchen</a> Dialogseite des
+of the <a hre="FileOptions.html">Programmeinstellungen</a>-Dialogs auch einstellen,
+dass D-Fend Reloaded in regelm&auml;&szlig;igen Abst&auml;nden automatisch nach Updates
+sucht.
+</p>
+
+<p>
+Die Update&uuml;berpr&uuml;fung &uuml;bertr&auml;gt <b>keine</b> pers&ouml;nlichen
+Daten ins Internet. Bei der Update&uuml;berpr&uuml;fung wird lediglich der Inhalt
+einer auf der D-Fend Reloaded Homepage angebotenen Textdatei heruntergeladen und
+ausgewertet. Wenn die Versionsnummer, die in dieser Textdatei angegeben ist,
+gr&ouml;&szlig;er als die Versionsnummer der aktuellen Installation ist, bietet
+die Updatepr&uuml;fung an, den in der zweiten Zeile der Textdatei angegebenen
+Updateinstaller herunter zu laden und auszuf&uuml;hren.
+</p>
+
+<h2>Dateils zur Funktionsweise der Update-&Uuml;berpr&uuml;fung</h2>
+
+<p>
+Der Update-Checker l&auml;d folgende Datei von der D-Fend Reloaded Hompage auf Sourceforge herunter:
+"<a href="http://dfendreloaded.sourceforge.net/UpdateInfo.txt" target="_blank">http://dfendreloaded.sourceforge.net/UpdateInfo.txt</a>".
+Die Datei enth&auml;lt zwei Textzeilen; in der ersten Zeile steht die Versionsnummer der aktuellen D-Fend Reloaded Version 
+(z.B. "<tt>0.6.0</tt>" ) und in der zweiten Zeile die Download-Adresse f&uuml;r den Updateinstaller, der eine existierende
+D-Fend Reloaded Installation auf diese Version aktualisiert (z.B. "<tt>http://downloads.sourceforge.net/dfendreloaded/D-Fend-Reloaded-0.6.0-UpdateSetup.exe</tt>").
+Wenn die Versionsnummer in der <tt>UpdateInfo.txt</tt>-Datei gr&ouml;&szlig;er ist, als die Versionsnummer der momentan
+verwendeten D-Fend Reloaded Installation, wird Sie der Update-Checker fragen, ob Sie jetzt auf diese Version aktualisiern
+wollen. Wenn Sie diese Frage mit "Ja" beantworten, wird er die in der zweiten Zeile der in der <tt>UpdateInfo.txt</tt>-Datei
+angegebenen Datei in Ihr Verzeichnis f&uuml;r tempr&auml;re Dateien herunterladen und starten. Als letzten Schritt wird
+er Windows mitteilen, den Update-Installer so bald wie m&ouml;glich wieder zu l&ouml;schen. Da der Update-Installer jedoch
+gerade ausgef&uuml;hrt wird, kann Windows die Datei nicht sofort l&ouml;schen und f&uuml;gt sie in die interne
+"Beim n&auml;chsten Systemstart l&ouml;schen"-Liste ein.
+</p>
+
+<p>
+Momentan handelt es sich bei der <tt>UpdateInfo.txt</tt>-Datei um eine statische Datei,
+aber in Zukunft w&auml;re es denkbar, dass der Webserver verschiedene Dateiinhalte
+abh&auml;ngig von der momentan verwendeten D-Fend Reloaded Version ausliefert (ein
+kleiner Update-Installer f&uuml;r Aktualisierungen von Version 0.6.0 auf 0.6.1 und ein
+gr&ouml;eres Installationspaket, welches alle &auml;lteren Versionen aktualisieren kann).
+Um dies zu erm&ouml;glichen, f&uuml;gt D-Fend Reloaded beim Abfragen der Update-Informationsdatei
+ein "<tt>?Version=0.6.0</tt>" an die Adresse an (bzw. was sonst die aktuelle Verionsnummer ist).
+Wenn Sie nicht m&ouml;chten, dass php-Skript auf dem Sourceforge-Webserver erf&auml;hrt,
+welche D-Fend Reloaded Version Sie momentan einsetzen, k&ouml;nnen Sie diese Adresserg&auml;nzung
+auf dieser Dialogseite deaktivieren. Da php-Skripte auf
+dem Sourceforge Webserver grunds&auml;tzlich keine Daten in Dateien abspeichern k&ouml;nnen
+(d.h. keine Anfragen in Log-Dateien erfassen k&ouml;nnen), ergeben sich keinerlei Einschr&auml;nkungen
+der Privateph&auml;re durch die Update-Abfrage.
+</p>
+
+<p>
+Der Update-Checker stellt also lediglich eine Automatisierung dessen dar, was Sie
+manuell unternehmen w&uuml;rden, wenn Sie auf der Homepage nach Updates suchen.
+Die Update-&Uuml;berpr&uuml;fung kann automatisch beim Programmstart von
+D-Fend Reloaded durchgef&uuml;hrt werden. Da Programme, die ungefragt Internetverbindungen
+aufbauen h&auml;ufig jedoch nicht gern gesehen werden, ist diese Option im
+Auslieferungszustand deaktiviert.
+</p>
+
+<p>
+Die Update-Pr&uuml;fung verwendet die Windows-Verbindungseinstellung (die Sie
+&uuml;ber die Programmeinstellungen des Internet Explorers anpassen k&ouml;nnen).
+Dies bedeutet insbesondere, dass D-Fend Reloaded den m&ouml;glicherweise im
+Internet Explorer konfigurierten Proxy-Server verwenden wird.
+</p>
+
+<p>&nbsp;</p>
+
+<p class="smallH">Siehe auch:</p>
+<p class="smallT">
+  <a href="FileOptions.html">Programmeinstellungen-Dialog</a>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Programeinstellungen | Verzeichnisse</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Men&uuml;, Datei, Programeinstellungen, Verzeichnisse">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Men&uuml;">
+  <param name="Keyword" value="Datei">
+  <param name="Keyword" value="Programeinstellungen">
+  <param name="Keyword" value="Verzeichnisse">
+</OBJECT>
+  
+<p class="content">
+Men&uuml;: &nbsp; <b>Datei</b> | <b>Programeinstellungen</b>  | <b>Verzeichnisse</b>
+</p>
+
+<h1>Programmeinstellungen-Dialogseite "Directories"</h1>
+
+<p>
+Auf dieser Dialogseite gibt es drei Eingabezeilen:
+</p>
+
+<ul class="big">
+  <li>
+    <b>Basisverzeichnis (f&uuml;r relative Pfade)</b><br>
+    Alle Pfade in D-Fend Reloaded werden relativ zu diesem Verzeichnis gespeichert.
+    Dieses Verzeichnis sollte das Basisverzeichnis f&uuml;r alle D-Fend Reloaded Datendateien darstellen.
+    Das Programm ist nur dann in der Lage Operationen wie das <a href="ExtrasTransferProfiles.html">&Uuml;bertragen von Programmen</a>
+    oder das <a href="FileExportBuildInstallers.html">Erstellen von Installer-Paketen</a> durchzuf&uuml;hren, 
+    wenn sich die Spieledateien in dieser Verzeichnisstruktur befinden.
+    <br />(Der Vorgabewert f&uuml;r diese Einstellung h&auml;ngt von der gew&auml;hlten <a href="HelpOperationMode.html">Betriebsart</a> ab.
+    In den Betriebsarten "Programmverzeichnis" und "Portable" ist der Vorgabewert f&uuml;r das Basisverzeichnis das Programmverzeichnis.
+    In der Betriebsart "Benutzerverzeichnis" ist der Vorgabewert f&uuml;r das Basisverzeichnis das Verzeichnis
+    <tt>C:\Users\<i>IhrAccount</i>\D-Fend Reloaded</tt>.)
+  </li>
+  <li>
+    <b>Spiele-Verzeichnis</b><br>
+    Wenn Sie im <a href="ProfileEdit.html">Profileditor</a> auf die Datei-Auswahl-Schaltfl&auml;che klciken, um
+    die Programmdatei f&uuml;r ein Spiel auszuw&auml;hlen, wird dieser Ordner als erstes angezeigt.
+    <br />(Vorgabewert f&uuml;r den Spieleordner ist der Unterordner <tt>VirtualHD</tt> des Basisverzeichnisses.)
+  </li>
+  <li>
+    <b>Zusatzdaten-Verzeichnis</b><br>
+    Wenn Sie zus&auml;tzliche Daten zu einem Profil ablegen wollen und die "Daten-Verzeichnis automatisch erstellen"
+    Schaltfl&auml;che im <a href="ProfileEdit.html">Profileditor</a> anklicken wird ein Unterordner in dem hier
+    angegebenen Verzeichnis angelegt.
+    <br />(Vorgabewert f&uuml;r das Zusatzdaten-Verzeichnis ist der Unterordner <tt>GameData</tt> des Basisverzeichnisses.)
+  </li>
+  <li>
+    <b>Basisverzeichnis für Screenshots</b><br>
+	D-Fend Reloaded legt Ordner zum Speichern der in DOSBox aufgezeichneten Screenshots in diesem Verzeichnis an.
+	<br />(Vorgabewert f&uuml;r das Basisverzeichnis für Screenshots ist der Unterordner <tt>Capture</tt> des Basisverzeichnisses.)
+  </li>
+</ul>
+  
+<p>
+Sie m&uuml;ssen die Spieledateien nicht in den oben angegebenen Verzeichnissen ablegen, um sie in D-Fend Reloaded
+verwenden zu k&ouml;nnen. Sie k&ouml;nnen im Profileditor jede beliebige Datei aus jedem beliebigen Verzeichnis
+angeben. Allerdings sind einige Programmfunktionen wie das <a href="">&Uuml;bertragen von Programmen</a> oder das
+<a href="FileExportBuildInstallers.html">Erstellen von Installer-Paketen</a> nur verf&uuml;gbar, wenn sich die Spieledateien
+in Unterordnern des Basisverzeichnisses befinden. (Da D-Fend Reloaded nur in diesen F&auml;llen mit relativen Pfaden
+arbeiten kann, was die Voraussetzung daf&uuml;r darstellt, die Dateien in eine andere D-Fend Reloaded Installation an
+der richtigen Stelle einzuf&uuml;gen.)
+</p>
+
+<p>
+Das "Spiele-Verzeichnis" und das "Zusatzdaten-Verzeichnis" hingegen dienen nur als Start-Verzeichnisse beim
+&Ouml;ffnen von Datei- bzw. Verzeichnis-Auswahldialogen.
+</p>
+
+<h3>Verzeichnisse in der portablen Betriebsart</h3>
+
+<p>
+In der portablen Betriebsart werden die drei obigen Verzeichnisse <b>beim Beenden von D-Fend Reloaded</b>
+relativ zum Programmverzeichnis gespeichert. Wenn D-Fend Reloaded dann erneut gestartet wird, werden sie
+<b>wieder in absolute Pfade umgewandelt</b>. D.h. in der portablen Betriebsart werden diese drei
+Verzeichnisse korrekt relativ zum Programmverzeichnis gespeichert, auch wenn sie in diesem Dialog als
+absolute Pfade angezeigt werden.
+</p>
+
+<p>&nbsp;</p>
+
+<p class="smallH">Siehe auch:</p>
+<p class="smallT">
+  <a href="FileOptions.html">Programmeinstellungen-Dialog</a>
+</p>
+
+</body>
+</html>

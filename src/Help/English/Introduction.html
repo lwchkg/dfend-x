@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Introduction to D-Fend Reloaded</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Introduction, DOSBox, D-Fend Reloaded, Directory structure">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Introduction">
+  <param name="Keyword" value="DOSBox">
+  <param name="Keyword" value="D-Fend Reloaded">
+  <param name="Keyword" value="Directory structure">    
+</OBJECT>
+  
+<p class="content">
+Content of this page:
+&nbsp;&nbsp;
+<a href="#DOSBox">DOSBox</a>
+&nbsp;&nbsp;
+<a href="#D-Fend-Reloaded">D-Fend Reloaded</a>
+&nbsp;&nbsp;
+<a href="#DirectoryStructure">Directory structure</a>
+&nbsp;&nbsp;
+<a href="#AddingProfiles">Adding new profiles</a>
+&nbsp;&nbsp;
+<a href="#RunningGames">Running games</a>
+</p>
+ 
+<h1>Introduction to D-Fend Reloaded</h1>
+
+<p>
+The information on this page will give you an overview about what D-Fend Reloaded is and how to handle it.
+</p>
+
+<a onclick="Work('DOSBox')" name="DOSBox" href="#"><h2>&raquo; What is DOSBox ?</h2></a>
+
+<div id="DOSBox"><p>
+DOSBox emulates an x86 PC including all hardware needed to run DOS programs. With this you can run
+nearly all of your old DOS games and programs on modern operating systems like Windows or Linux.
+</p>
+<p>
+Unlike most other emulators (like Bochs or QEmu) DOSBox not only emulates the hardware of an x86 PC but
+also an MS-DOS compatible operation system. This means you can start directly running your old games
+without needing to install some operation system first. (But anyway you can install a custom operation
+system inside DOSBox if you want to.) Additonally DOSBox is much easier to handle than any of the other
+emulators and virtualizers: There is no need to install any system driver etc. to use it. It is even
+possible to run DOSBox directly from a USB stick. You can just mount any real folder as a drive inside
+DOSBox (this means there is no need to use harddisk image files, but of couse DOSBox can also handle harddisk images). 
+</p></div>
+
+<a onclick="Work('D-Fend-Reloaded')" name="D-Fend-Reloaded" href="#"><h2>&raquo; What is D-Fend Reloaded ?</h2></a>
+
+<div id="D-Fend-Reloaded"><p>
+Even so DOSBox is easy to handle compared to most of the other emulators, there is no graphical environment to
+setup the hardware used by the games and if you want to run different games needing different hardware setups
+you need to keep different versions of the DOSBox configuration file and always need to start DOSBox using the
+right configuration file.
+</p>
+
+<p>
+To make things easier for the user there a several frontends for DOSBox. They offer dialogs for setting up
+DOSBox for different games. Also some of them can handle additional data for the games (manual files and
+captured screenshots).
+</p>
+
+<p>
+D-Fend Reloaded is a DOSBox frontend for the Windows plattform. Inside D-Fend Reloaded you can manage your games just like
+links in the start menu. Inside the <a href="ProfilesEdit.html">profile editor</a> you can setup every option
+DOSBox is offering. To make things even easier there is a <a href="ProfilesWizard.html">profile adding wizard</a>
+which will only ask you very few question and try to automatically setup all nessessary things for you. Addtionally
+D-Fend Reloaded can store additionally files (like manuals) together with each game and can manage and view/play captured
+screenshots, sound and videos. You can even use your captured screenshots in the games list instead of plain
+text links.
+</p>
+
+<p>
+Long time ago there has been a freeware frontend called "D-Fend". But some day the development of this program has been
+stopped and it has been removed from the internet. D-Fend Reloaded is a complete rewrite of D-Fend. It is nearly 100%
+compatible with D-Fend (you can upate from D-Fend to D-Fend Reloaded by just replacing the program file if you want to).
+But by now D-Fend Reloaded has many new features D-Fend never had.
+</p></div>
+
+<a onclick="Work('DirectoryStructure')" name="DirectoryStructure" href="#"><h2>&raquo; Directory structure</h2></a>
+
+<div id="D-Fend-Reloaded"><p>
+You can place the games, you want to manage inside D-Fend Reloaded, in any directory you want to, but there will be some
+advantages (easier moving games from one installation to an other) if you keep some rules when storing games.
+</p>
+
+<p>
+The normal installation ("User mode") has two main directories for storing data: The program directory  and the
+data directory
+</p>
+
+<h3>The program directory (usually <tt>C:\Program files\D-Fend Reloaded</tt>)</h3>
+
+<p>
+In the program directory all program files needed to run D-Fend Reloaded and DOSBox will be stored. D-Fend Reloaded
+will not write to this directory after installation any more. (This means D-Fend Reloaded is compatible to the Vista way
+of dividing program files and data files.)
+</p>
+
+<h3>The data directory (usually <tt>C:\Users\<i>YourName</i>\D-Fend Reloaded</tt>)</h3>
+
+<p>
+All user files (programm configuration, game program files, manuals, captured files, etc.) should be stored in this
+directory and its subdirectores. The games files are stored in the subdirectories of the data directory:
+</p></div>
+
+<ul class="big">
+  <li><b>Settings:</b> This folder is used by D-Fend Reloaded to store its configuration files.</li>
+  <li><b>VirtualHD:</b> This folder will be mounted as drive "<tt>C:</tt>" inside DOSBox (as long as you do not change
+  this behavior for a profile). If you place your games in subdirectories of this folder you will be able to access them
+  inside DOSBox without having to setup anything special in D-Fend Reloaded. Additionally you cannot damage your Windows
+  installation if you accidentally delete your whole virtual harddisk inside DOSBox as long as you have only mounted this
+  folder as drive "<tt>C:</tt>" inside DOSBox and not your whole real harddisk.</tt></li>
+  <li><b>Capture:</b> D-Fend Reloaded will create a subfolder in this folder for each profile you create. (Of course
+  you can also define some other capture folder.) The profile capture folder will be used by DOSBox to store captured
+  images, sounds and videos. D-Fend Reloaded will show the captured files for each profile just below the profiles
+  list. All you have to do is select a profile and you will see the corresponding screenshots etc.</li>
+  <li><b>GameData:</b> D-Fend Reloaded can create a subfolder of this folder for each profile you have (optionally and
+  even of course also in any other folder). You can store addtional game files (like manuals etc.) here. You can access
+  the content of this folder also via the information area below the profiles list or via the profile context menu.</li>
+  <li><b>Confs:</b> This folder is used to store the <tt>prof</tt> files for the games. Each <tt>prof</tt> file contains
+  one profile. You can add your old D-Fend profiles just by copying the D-Fend <tt>prof</tt> files to this folder.
+  (Attention: D-Fend stores each profile in a DOSBox <tt>conf</tt> and a <tt>prof</tt> file. If you import the whole
+  content of the D-Fend <tt>Confs</tt> folder (via the import function from the file menu) you will have each profile
+  twice. It is recommended to only import the <tt>prof</tt> files (because they contain more information than the
+  corresponding <tt>conf</tt> files).</li>
+  <li><b>AutoSetup, Lang, Templates:</b> This folders are used internally by D-Fend Reloaded to store the auto setup
+  templates, the language files and the normal profile templates. Of couse you can manually add templates by copying
+  them to this folders but are is also the much more easily operated <a href="ExtrasTemplates.html">template editor</a>
+  inside D-Fend Reloaded.</li>
+</ul>
+
+<a onclick="Work('AddingProfiles')" name="AddingProfiles" href="#"><h2>&raquo; Adding new profiles</h2></a>
+
+<div id="AddingProfiles"><p>
+The absolute easiest way of adding games to the list (if the game is stored as a <tt>zip</tt> file) is draging the
+<tt>zip</tt> file to the D-Fend Reloaded program window. D-Fend Reloaded will copy the game files to a new created
+subdirectory of the games folder and will try to automatically setup the new game via an auto setup template. If
+there is no auto setup template matching to the new game, D-Fend Reloaded will aplly the default template to the
+new profile. In most cases this will result in a correctly working new profile. But this way of adding new games
+does not allow the user to influence the process of profile creation. (Of couse you can edit the new profile later
+like any profile via the profile editor.)</p>
+<p>
+
+<p>
+The easiest way of adding profiles while letting user influence the process 
+is via the <a href="ProfilesWizard.html">profile adding wizard</a> ("Add with wizard..."
+in the "Profile" menu or <span class="key">F3</span>-key). The profile wizard will only ask you the really nessessary
+things: The name for the new profile, the <tt>exe</tt> file to execute inside DOSBox and some game settings.
+D-Fend Reloaded already knows over 350 games (the auto setup templates). If you add a known game it will offer you
+to completely automatically setup the game for you. If you want to add a game D-Fend Reloaded does not know, it
+will offer you to choose a template (of the type "low CPU power", "normal", "3D graphics"). Additionally you can
+add some information like author, publisher, language, year etc. to the profile and that's it, your new profile
+is ready.
+</p></div>
+
+<a onclick="Work('RunningGames')" name="RunningGames" href="#"><h2>&raquo; Running Games</h2></a>
+
+<div id="RunningGames"><p>
+If you have defined a profile for your game, starting the game is very easy: Double click the profile name in the
+profile list on the right side of the program window. (Or select the profile and press <span class="key">Enter</span>
+or select the profile and click on the "Run" toolbar button.) D-Fend Reloaded will run the game inside DOSBox. If you
+capture any images inside DOSBox (by pressing <span class="key">Ctrl</span>+<span class="key">F5</span>) or any sounds
+(by pressing <span class="key">Ctrl</span>+<span class="key">F6</span> to start/stop) or any videos (by pressing
+<span class="key">Ctrl</span>+<span class="key">Alt</span>+<span class="key">F5</span>) D-Fend Reloaded will show you
+this files in the bottom area of the program window. If you click on a screenshot, you will get a bigger preview and
+if you click on a captured sound or video file, D-Fend Reloaded will play the file.
+</p></div>
+
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="index.html">Content of this help file</a><br />
+  <a href="ProfileWizard.html">Adding profiles with the profile wizard</a><br />
+  Internet link: <a href="http://dfendreloaded.sourceforge.net/" target="_blank">D-Fend Reloaded homepage</a><br />
+  Internet link: <a href="http://www.dosbox.com/" target="_blank">DOSBox homepage</a>  
+</p>
+
+</body>
+</html>

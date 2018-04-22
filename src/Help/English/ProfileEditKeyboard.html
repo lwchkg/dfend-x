@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Profile editor | Keyboard</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Menu, Profile, Edit, Keyboard">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Menu">
+  <param name="Keyword" value="Profile">
+  <param name="Keyword" value="Edit profile">
+  <param name="Keyword" value="Edit">
+  <param name="Keyword" value="Keyboard">
+</OBJECT>
+  
+<p class="content">
+Menu: &nbsp; <b>Profile</b> | <b>Edit</b> | <b>Keyboard</b>
+</p>
+
+<h1>Profile editor dialog page "Keyboard"</h1>
+
+<p>
+On this page you can setup the virtual keyboard DOSBox should emulate
+and the keyboard driver, DOSBox should provide to the programs running
+inside DOSBox.
+</p>
+
+<ul class="big">
+  <li>
+    <b>Use scan codes</b><br />
+    By activating or deactivating you can change the method DOSBox will use to get
+    the information about the pressed keys on the real keyboard. Activating or
+    deactivating this option can cause or solve some keyboard problems depending
+    on your keyboard and your operating system.
+  </li>
+  <li>
+    <b>Keyboard layout</b><br />
+    In this dropdown box you can select the keyboard layout you want to use in DOSBox.
+    You should use the layout of your real keybaord. If you select "default" the
+    keyboard layout defined for the chosen DOSBox installation (or if there is also
+	"default" selected)	in the current language file will be used. (The keyboard
+    layout chosen in this case will be shown in the information text below the dropdown
+    box.) Selecting "default" will make DOSBox use the "US" layout when the D-Fend Reloaded
+    program language is English, layout "GR" (=German) when the D-Fend Reloaded program
+    is German etc.
+  </li>
+  <li>
+    <b>Codepage</b><br />
+    In this dropdown box you can select the codepage you want to use in DOSBox.
+    The codepage influences how characters are displayed on the DOSBox command line.
+    If you select "default" the codepage defined for the chosen DOSBox installation
+	(or if there is also "default" selected) in the current language file will be used.
+    (The codepage chosen in this case will be shown in the information text below the dropdown
+    box.)
+	<br><b>Attention:</b>
+	Not all codepages are supported for all keyboard layouts. You can find a list of all
+	possitible keyboard layout and codepage combinations 
+	<a href="ProfileEditKeyboardList.html">here</a>.
+  </li>  
+  <li>
+    <b>Num lock status</b>, <b>Caps lock status</b> and <b>Scroll lock status</b><br />
+    Via this three boxes you can select the initial state of the three toggle keys num lock,
+    caps lock and scroll lock. The option "Do not change" means DOSBox will use the state
+    given by the Windows keyboard device driver as the initial state of the three virtual
+    toggle keys.
+  </li>
+  <li>
+    <b>Use default DOSBox key mapping file</b><br />
+    DOSBox uses a key mapping file for storing which physical key shall be connected with
+    which virtual key inside DOSBox. If this option is activated the key mapping file
+    defined on the <a href="FileOptionsDOSBox.html">DOSBox</a> page of the
+    <a href="FileOptions.html">program options</a> dialog will be used.
+  </li>
+  <li>
+    <b>Use this custom DOSBox key mapping file</b><br />
+    If this option is activated the given key mapping file will be used inside DOSBox
+    instead of the regular key mapping file.
+  </li>
+</ul>
+
+<p class="smallH">Hint:</p>
+<p class="smallT">
+You can open the key mapper to change the mapping from physical to virtual keys
+inside DOSBox at any time by pressing <span class="key">Ctrl</span>+<span class="key">F1</span>.
+</p>
+
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="ProfileEdit.html">Profile editor dialog</a><br>
+  <a href="ProfileEditKeyboardList.html">Liste of possible keyboard layout and codepage combinations</a>.
+</p>
+
+</body>
+</html>

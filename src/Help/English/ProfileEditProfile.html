@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Profile editor | Profile</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Menu, Profile, Edit, Profile">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Menu">
+  <param name="Keyword" value="Profile">
+  <param name="Keyword" value="Edit profile">
+  <param name="Keyword" value="Edit">
+  <param name="Keyword" value="Profile">
+</OBJECT>
+  
+<p class="content">
+Menu: &nbsp; <b>Profile</b> | <b>Edit</b> | <b>Profile</b>
+</p>
+
+<h1>Profile editor dialog page "Profile"</h1>
+
+<p>
+On this page you can configurate the main settings for your profiles.
+The content of this pages differs depending of the profile type
+(DOSBox profile, ScummVM profile or Windows game profile).
+</p>
+
+<ul class="big">
+  <li>
+    <b>Select icon</b><br />
+    You can define an icon for each profile. The icon will be shown
+    in the games list in most <a href="ViewModes.html">view modes</a>.
+    The icons can be managed global via the <a href="ExtrasManageIcons.html">icon manager</a>
+    but you can also choose any icon file for use with the profile.
+    If you use a custom icon file, you can use relative path names like
+    for all other game data.  
+  </li>
+  <li>
+    <b>Delete icon</b><br />
+    The delete icon button will remove the selected icon from the profile data record.
+    The icon file itself will not be deleted when removing the icon from the profile.
+  </li>
+  <li>
+    <b>Profile name</b><br />
+      The name entered in this field will be shown in the games list. The name will not
+      directly be used for the file name (like D-Fend v2 did) so you can enter any
+      characters in this field.
+  </li>
+  <li>
+    <b>Filename</b><br />
+    In this field you can edit the filename (without extension) which will be used
+    when storing the profile. All non valid characters for filenames will be removed
+    automatically. When adding a new profile the filename field will be disabeled
+    because the first filename will be generated from the initial profile name.
+  </li>
+  <li>
+    <b>Program</b> (only availalbe in DOSBox and Windows mode)<br />
+    In this box you can define the program file to run and the parameters to use.
+    The file name will be stored relatively to the base folder
+    (defined on the <a href="FileOptionsDirectories.html">directories</a> page
+    of the <a href="FileOptions.html">program options</a> dialog).
+    D-Fend Reloaded will translate it to the DOSBox directory structure at
+    run time. If the current profile is a DOSBox based profile, you
+    can also select <b>File path is relaive to the DOSBox directory structure</b>.
+    In this case D-Fend Reloaded will treat the path as a DOSBox pathname
+    and will not try to translate it in anyway when running the program file.    
+  </li>
+  <li>
+    <b>Setup</b> (only availalbe in DOSBox and Windows mode)<br />
+    In this box you can define the setup file to run and the parameters to use.
+    The usage of a setup file is optional.
+    The file name will be stored relatively to the base folder
+    (defined on the <a href="FileOptionsDirectories.html">directories</a> page
+    of the <a href="FileOptions.html">program options</a> dialog).
+    D-Fend Reloaded will translate it to the DOSBox directory structure at
+    run time. If the current profile is a DOSBox based profile, you
+    can also select <b>File path is relaive to the DOSBox directory structure</b>.
+    In this case D-Fend Reloaded will treat the path as a DOSBox pathname
+    and will not try to translate it in anyway when running the setup file.
+  </li>
+  <li>
+    <b>Extra program files</b> (only availalbe in DOSBox and Windows mode)<br />
+    Additionally to the program and the setup file you can define more files
+    to be associated with the profile via this extra program files button.
+    The files defined in this dialog will be offered to run via the
+    context menu of the profile.
+  </li>
+  <li>
+    <b>No Windows file warnings for this profile</b> (only availalbe in DOSBox mode)<br />
+	D-Fend Reloaded will warn you, if you try to execute a Windows EXE file in DOSBox
+	because DOSBox is not able to execute Windows program files. But there are a few games
+	containing DOS and Windows code in a single EXE file. When using such an EXE file
+	D-Fend Reloaded would warn you because it detects the Windows part of the file. To
+	deactivate this (in this case useless) warnings you can activate this option.
+	(The checkbox will appear only if a Windows EXE file is selected as game or setup file.)
+  </li>
+  <li>
+    <b>Game</b> (only available in ScummVM mode)<br />
+    From this box you can choose the name of the game you want to run.
+    (ScummVM needs to know which of the supported games you want to run because
+    it applys different settings to the different games.)
+  </li>
+  <li>
+    <b>Game folder</b> (only available in ScummVM mode)<br />
+    In this box you can select folder where ScummVM should look for the game
+    files and the name of the game to run.
+  </li>
+  <li>
+    <b>Extract game files from this zip file to the folder</b> (only available in ScummVM mode)<br />
+    If this option is checked (and there is a zip file entered in the edit field below) D-Fend Reloaded
+    will extract the given zip file to the folder selected in the "Game folder" before running ScummVM.
+    ScummVM itself will be executed the normal way with the given game folder. When ScummVM quite
+    D-Fend Reloaded will repack the content of the game folder to the archive file and then delete
+    the games folder.
+  </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="ProfileEdit.html">Profile editor dialog</a>
+</p>
+
+</body>
+</html>

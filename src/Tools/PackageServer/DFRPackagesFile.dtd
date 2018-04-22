@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!ELEMENT DFRPackagesFile (Game | AutoSetup | Language | ExePackage | Icon | IconSet | Provider)+>
+<!ATTLIST DFRPackagesFile
+	Name CDATA #REQUIRED
+	LastUpdateDate CDATA #REQUIRED
+>
+
+<!ELEMENT Game (#PCDATA)>
+<!ATTLIST Game
+	Name CDATA #REQUIRED
+	Genre CDATA #REQUIRED
+	Developer CDATA #REQUIRED
+	Publisher CDATA #REQUIRED
+	Year CDATA #REQUIRED
+	Language CDATA #REQUIRED
+	License CDATA #REQUIRED
+	PackageChecksum CDATA #REQUIRED
+	GameExeChecksum CDATA #IMPLIED
+	Size CDATA #REQUIRED
+	MetaLink CDATA #IMPLIED
+	AutoSetupURL CDATA #IMPLIED
+	AutoSetupURLMaxVersion CDATA #IMPLIED
+>
+
+<!ELEMENT AutoSetup (#PCDATA)>
+<!ATTLIST AutoSetup
+	Name CDATA #REQUIRED
+	Genre CDATA #REQUIRED
+	Developer CDATA #REQUIRED
+	Publisher CDATA #REQUIRED
+	Year CDATA #REQUIRED
+	Language CDATA #REQUIRED
+	PackageChecksum CDATA #REQUIRED
+	GameExeChecksum CDATA #IMPLIED
+	Size CDATA #REQUIRED
+	MaxVersion CDATA #IMPLIED
+>
+
+<!ELEMENT Language (#PCDATA)>
+<!ATTLIST Language
+	Name CDATA #REQUIRED
+	Description CDATA #IMPLIED
+	MinVersion CDATA #REQUIRED
+	MaxVersion CDATA #REQUIRED
+	Author CDATA #REQUIRED
+	PackageChecksum CDATA #REQUIRED
+	Size CDATA #REQUIRED
+>
+
+<!ELEMENT ExePackage (#PCDATA)>
+<!ATTLIST ExePackage
+	Name CDATA #REQUIRED
+	Description CDATA #REQUIRED
+	PackageChecksum CDATA #REQUIRED
+	Size CDATA #REQUIRED
+>
+
+<!ELEMENT Icon (#PCDATA)>
+<!ATTLIST Icon
+	Name CDATA #REQUIRED
+	FileChecksum CDATA #REQUIRED
+	Size CDATA #REQUIRED
+>
+
+<!ELEMENT IconSet (#PCDATA)>
+<!ATTLIST IconSet
+	Name CDATA #REQUIRED
+	MinVersion CDATA #REQUIRED
+	MaxVersion CDATA #REQUIRED
+	Author CDATA #REQUIRED
+	FileChecksum CDATA #REQUIRED
+	Size CDATA #REQUIRED
+>
+
+<!ELEMENT Provider EMPTY>
+<!ATTLIST Provider
+    Name CDATA #IMPLIED
+	Text CDATA #IMPLIED
+	URL CDATA #IMPLIED
+	WriteToProfile (yes|no) #IMPLIED
+	Dialog (yes|no) #IMPLIED
+	OpenURL (yes|no) #IMPLIED
+	Referer CDATA #IMPLIED
+>

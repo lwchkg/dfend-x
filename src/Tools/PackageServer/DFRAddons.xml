@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE DFRPackagesFile SYSTEM "http://dfendreloaded.sourceforge.net/Packages/DFRPackagesFile.dtd">
+
+<DFRPackagesFile Name="Official addons (languages, icon sets etc.) for D-Fend Reloaded" LastUpdateDate="06/27/2015">
+
+  <Language
+    Name="Czech"
+	MinVersion="0.9.0"
+	MaxVersion="0.9.2"
+	Author="marker"
+	PackageChecksum="89871115D339BDB119134B8AABCE3FE0"
+	Size="99121">Czech.ini</Language>
+
+  <Language
+    Name="Italian"
+	MinVersion="0.9.0"
+	MaxVersion="0.9.1"
+	Author="Filippo Bartoli (fillo82@email.it) &amp; Massimo Pizzolante Leuzzi (maxim30@tiscali.it)"
+	PackageChecksum="D713F30DB5C12E63AD2E3B335186E803"
+	Size="106074">Italian.ini</Language>
+
+  <Language
+    Name="Turkish"
+    MinVersion="1.4.0"
+    MaxVersion="1.4.99"
+    Author="Hakan ATEÞ ( hakan.ates@msn.com )"
+    PackageChecksum="621A798E5AA186A7971216FA72E40C3F"
+    Size="122893">Turkish.ini</Language>
+
+  <Language
+    Name="Portuguese-BR"
+	Description="A Brazilian Portuguese language file for the 0.9.x series."
+    MinVersion="0.9.0"
+    MaxVersion="0.9.0"
+    Author="Cpt.Guapo (cpt.guapo@gmail.com)"
+    PackageChecksum="5A919C0FBD834E735D3A671D386ACD80"
+    Size="100083">Portuguese-BR.ini</Language>
+	
+  <Language
+    Name="French"
+	Description="An improved version of the French language file for the 0.8.x series."
+    MinVersion="0.8.0"
+    MaxVersion="0.8.10"
+    Author="Sylvain St-Amand / Christophe Bertrand (soft.translator at free.fr,http://soft.translator.free.fr)"
+    PackageChecksum="240CC7744EB3BA27C3B0CD0D806902F7"
+    Size="100083">Addons/French.ini</Language>
+	
+  <Language
+    Name="Polish"
+	Description="An updated Polish language file for the 0.9 pre-releases (0.8.9 to 0.8.13)."
+	MinVersion="0.8.9"
+	MaxVersion="0.8.99"
+	Author="Adam Sosnowski (oolie@wp.pl)"
+	PackageChecksum="5D84270E945C7E5306DC08DF7A316282"
+	Size="97162">Addons/Polish.ini</Language>
+	
+  <Language
+	Name="Korean"
+	Description="Korean language file for D-Fend Reloaded 1.3"
+	MinVersion="1.3.0"
+	MaxVersion="1.3.99"
+	Author="Decon(kmshts@naver.com)"
+	PackageChecksum="2D43A524E2FB896F542AC2BF3C005D85"
+	Size="116141">Addons/Korean.ini</Language>
+</DFRPackagesFile>

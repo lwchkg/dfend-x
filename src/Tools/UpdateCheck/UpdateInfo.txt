@@ -1,0 +1,2 @@
+0.2.0
+http://downloads.sourceforge.net/dfendreloaded/D-Fend-Reloaded-0.2.0-UpdateSetup.exe

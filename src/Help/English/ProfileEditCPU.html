@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Profile editor | CPU</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Menu, Profile, Edit, CPU">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Menu">
+  <param name="Keyword" value="Profile">
+  <param name="Keyword" value="Edit profile">
+  <param name="Keyword" value="Edit">
+  <param name="Keyword" value="CPU">
+</OBJECT>
+  
+<p class="content">
+Menu: &nbsp; <b>Profile</b> | <b>Edit</b> | <b>CPU</b>
+</p>
+
+<h1>Profile editor dialog page "CPU"</h1>
+
+<p>
+On this page you can setup how DOSBox should emulate the CPU
+for the game you want to run.
+</p>
+
+<ul class="big">
+  <li>
+    <b>Emulation core</b><br />
+    In this box you can choose the emulation core you want to use.<br /><br />
+    <ul>
+      <li><b>Auto:</b> DOSBox will choose the core type automatically.</li>
+      <li><b>Normal:</b> DOSBox will execute the game instructions on a virtual CPU step by step.
+      All games should run with this core type but this type will bring a big slow down of the emulation.</li>
+      <li><b>Dynamic:</b> DOSBox will try to execute the game instructions directly on the real CPU.
+      This emulation type is very fast but can have problems with some games. Unless you do not experience
+      any problems with a game you should use this emulation type.</li>
+      <li><b>Simple:</b> DOSBox will run the game on a virtual CPU core just like "Normal", but the CPU emulation
+      is much more simple (and therefore faster).</li>
+    </ul>
+  </li>
+  <li>
+    <b>CPU cycles</b><br />
+    In this box you can enter the amount of instructions DOSBox shall try to emulate each millisecond.
+    Setting this value to "<b>Max</b>" will make DOSBox automatically run as many cycles as possible.
+    Setting it to "<b>Auto</b>" will make DOSBox try to automatically detect the needed number of cycles
+    and will switch to "Max" if appropriate.
+  </li>
+  <li>
+    <b>Increate CPU cycles</b><br />
+    In this box you can enter the amount of cycles DOSBox will increase the total number of cycles
+    emulated per millisecond when pressing <span class="Key">Ctrl</span>+<span class="Key">F12</span>
+    inside DOSBox.
+  </li>
+  <li>
+    <b>Decrease CPU cycles</b><br />
+    In this box you can enter the amount of cycles DOSBox will decrease the total number of cycles
+    emulated per millisecond when pressing <span class="Key">Ctrl</span>+<span class="Key">F11</span>
+    inside DOSBox.
+  </li>
+  <li>
+    <b>CPU type <font color="red">(*)</font></b><br />
+	From this dropdown box you can choose the CPU type DOSBox should emulate.
+  </li>
+</ul>
+
+<p>
+The option marked with <font color="red">(*)</font> is only visible if the corresponding
+DOSBox CVS features is enabled on the <a href="FileOptionsDOSBoxCVSFeatures.html">DOSBox CVS features</a>
+page of the <a href="FileOptionsDOSBox.html">program options</a> dialog. The official DOSBox 0.72 build
+delivered with D-Fend Reloaded does not support is special setting.
+</p>
+
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="ProfileEdit.html">Profile editor dialog</a>
+</p>
+
+</body>
+</html>

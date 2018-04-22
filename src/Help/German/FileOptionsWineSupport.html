@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Programeinstellungen | Wine-Unterst&uuml;tzung</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Men&uuml;, Datei, Programeinstellungen, Wine-Unterst&uuml;tzung">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Men&uuml;">
+  <param name="Keyword" value="Datei">
+  <param name="Keyword" value="Programeinstellungen">
+  <param name="Keyword" value="Wine-Unterst&uuml;tzung">
+</OBJECT>
+  
+<p class="content">
+Men&uuml;: &nbsp; <b>Datei</b> | <b>Programeinstellungen</b>  | <b>Wine-Unterst&uuml;tzung</b>
+</p>
+
+<h1>Programmeinstellungen-Dialogseite "Wine-Unterst&uuml;tzung"</h1>
+
+<p class="small">
+Diese Dialogseite ist nur sichtbar, wenn Sie den Konfigurationsmodus "Vollst&auml;ndig" unten im Programmeinstellungen-Dialog gew&auml;hlt haben.
+</p>
+
+<p>
+Sowohl D-Fend Reloaded als auch die Windows-Version von DOSBox k&ouml;nnen in einer Wine-Umgebung unter Linux ausgef&uuml;hrt werden.
+Von daher besteht eigentlich kein Bedarf, spezielle Einstellungen zur Verwendung von D-Fend Reloaded unter Wine vorzunehmen.
+D-Fend Reloaded kann jedoch, wenn unter Wine eingesetzt, auch direkt mit der Linux-Version von DOSBox zusammenarbeiten und bietet
+auch sonst einige Komfort-Funktionen (wie die Erstellung von Shellskripten) an, die beim Einsatz unter Linux n&uuml;tzlich sein k&ouml;nnen.
+</p>
+
+<ul class="big">
+  <li><b>Wine-Modus aktivieren</b><br />
+  Durch das Aktivieren bzw. deaktivieren dieser Auswahlbox, l&auml;sst sich die gesamte
+  Wine-Unterst&uuml;tzung in D-Fend Reloaded ein- bzw. ausschalten. Wenn die
+  Wine-Unterst&uuml;tzung durch diese Auswahlbox deaktiviert ist, werden alle
+  weiteren Einstellm&ouml;glichkeiten auf dieser Dialogseite durch D-Fend Reloaded
+  im Betrieb ignoriert.<br />  
+  Sie k&ouml;nnen die selbe D-Fend Reloaded Installation unter Windows und unter Wine
+  verwenden, ohne daf&uuml;r die Konfiguration jedes Mal &auml;ndern zu m&uuml;ssen):
+  Wenn Sie D-Fend Reloaded mit einem der Kommandozeilenparametern "WineMode" oder
+  "WineSupportEnabled" aufrufen, k&ouml;nnen Sie damit die Einstellung des Schalters
+  "Wine-Modus aktivieren" auf "ein" setzen. Wenn Sie D-Fend Reloaded mit einem der
+  Kommandozeilenparametern "WindowsMode", "NoWineSupport" oder "WineSupportDisabled"
+  aufrufen, k&ouml;nnen Sie damit die Einstellung des Schalters "Wine-Modus aktivieren"
+  auf "aus" setzen. Dabei gelten die durch den Parameter vorgegebenen Einstellungen
+  nur so lange D-Fend Reloaded l&auml;uft. Wenn Sie es erneut ohne Parameter
+  aufrufen, gilt wieder der urspr&uuml;ngliche Wert dieser Einstellung, d.h. durch
+  den Aufruf mit einem der oben gegannten Parameter wird die Konfiguration nicht
+  dauerhaft ver&auml;ndert. Bei der Auswertung der Parameter wird die Gr&ouml;&szlig;- und
+  Kleinschreibung nicht beachtet. Au&szlig;erdem kann den Parametern nach eigenem
+  Geschmack auch ein "-" oder ein "/" vorangestellt werden (d.h. auch "-winemode" 
+  w&uuml;rde korrekt erkannt werden).
+  <br />(Vorgabewert f&uuml;r diese Option: aus)
+  </li>
+  <li><b>Wine-Laufwerke auf Linux-Pfade r&uuml;ckabbilden (remappen)</b><br />
+  In dieser Liste k&ouml;nnen Sie angeben, auf welche Linux Pfadnamen (/mnt/sta3, /mnt/stb1 usw.)
+  die Wine-Laufwerksbuchstaben (C: D: usw.) beim Erstellen der Conf-Dateien r&uuml;ckabgebildet werden sollen.
+  </li>
+  <li><b>Mount-Befehle remappen</b><br />
+  Ist diese Option aktiviert, so werden die Pfade in den Mount-Befehlen
+  auf die in der Remapping-Liste angegebenen Linux-Pfade r&uuml;ckabgebildet.
+  <br />(Vorgabewert f&uuml;r diese Option: aus)
+  </li>
+  <li><b>Screenshot-Ordner remappen</b><br />
+  Ist diese Option aktiviert, so wird der Pfad f&uuml;r den Screenshots-Ordner
+  gem&auml;&szlig;g der Remapping-Liste auf den zugeh&ouml;rigen Linux-Pfade r&uuml;ckabgebildet.
+  <br />(Vorgabewert f&uuml;r diese Option: aus)
+  </li>
+  <li><b>Keymapping-Datei remappen</b><br />
+  Ist diese Option aktiviert, so wird der Pfad zu der Keymapping-Datei
+  gem&auml;&szlig;g der Remapping-Liste auf den zugeh&ouml;rigen Linux-Pfade r&uuml;ckabgebildet.
+  <br />(Vorgabewert f&uuml;r diese Option: aus)
+  </li>
+  <li><b>DOSBox-Pfad remappen</b><br />
+  Ist diese Option aktiviert, so wird der Pfad zur DOSBox-Installation selbst
+  gem&auml;&szlig;g der Remapping-Liste auf den zugeh&ouml;rigen Linux-Pfade r&uuml;ckabgebildet.
+  <br />(Vorgabewert f&uuml;r diese Option: aus)
+  </li>
+  <li><b>Men&uuml;punkt zur Erstellung von Verkn&uuml;pfungen erstellt Linux Shellskripte</b><br />
+  Wenn diese Option aktiviert ist, so k&ouml;nnen &uuml;ber den Men&uuml;punkt
+  "Verkn&uuml;pfung erstellen" im "Profil"-Men&uuml; Linux Shellskripte zum direkten
+  Starten von DOSBox mit dem jeweiligen Profil erstellt werden. Andernfalls erstellt
+  die "Verkn&uuml;pfung erstellen"-Funktion Windows-Verkn&uuml;pfungen.
+  <br />(Vorgabewert f&uuml;r diese Option: aus)
+  </li>
+  <li><b>Shellskript-Preambel</b><br />
+  Wenn die Funktion zur Erstellung von Linux Shellskripten statt Windows-Verkn&uuml;pfungen
+  aktiviert ist, so wird beim Erstellen eines solchen Skriptes die in dieser
+  Eingabezeile angegebene Pr&auml;ambel in das Skript eingef&uuml;gt.
+  <br />(Vorgabewert f&uuml;r diese Option: "<tt>#!/bin/bash</tt>")
+  </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p class="smallH">Siehe auch:</p>
+<p class="smallT">
+  <a href="FileOptions.html">Programeinstellungen-Dialog</a>
+</p>
+
+</body>
+</html>

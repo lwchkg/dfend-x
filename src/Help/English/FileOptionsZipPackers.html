@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Program options | Archiving programs</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Menu, File, Program options, Archiving programs">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Menu">
+  <param name="Keyword" value="File">
+  <param name="Keyword" value="Program options">
+  <param name="Keyword" value="Archiving programs">
+</OBJECT>
+  
+<p class="content">
+Menu: &nbsp; <b>File</b> | <b>Program options</b>  | <b>Archiving programs</b>
+</p>
+
+<h1>Program options dialog page "Archiving programs"</h1>
+
+<p>
+On this page you can configurate external archiving programs. With the help of this programs
+D-Fend Reloaded will be able to handle some other archive formats. (Support for the zip and 7z
+archiv files is already buildin.)
+</p>
+
+<ul class="big">
+  <li><b>Name of archiving program</b><br />
+  From this dropdown box you can select the program you want to configurate. Via the four
+  buttons on the right of this box you can add, delete and sort the entries of this box.</li>
+  <li><b>Programm filename</b><br />
+  In this input line you can enter the path and the filename of the external archiving program
+  you want to use.</li>
+  <li><b>File extensions to handle</b><br />
+  In this input line you can define which file type you want to be handled by the
+  external archiving program. The filename extension in the line must be divided by
+  ";" and must be entered without leading "*.". If you enter "ZIP" or "7Z" as supported
+  formats for some external programs, D-Fend Reloaded will use this external program
+  to extract and pack this archive formats instead of the internal functions.</li>
+  <li><b>Commandline for extracting an archive file</b><br />
+  In this inputline you can define the commandline parameters to be used when calling
+  the archiving program to extract an existing archive file. The placeholder
+  "<tt>%1</tt>" will be replaced by the path and filename of the existing archive file and
+  the placeholder "<tt>%2</tt>" will be replaced by the path name of the folder where the
+  archive file should be extracted to.</li>
+  <li><b>Commandline for creating an archive file</b><br />
+  In this inputline you can define the commandline parameters to be used when calling
+  the archiving program to create a new archive file. The placeholder
+  "<tt>%1</tt>" will be replaced by the path and filename of the new archive file and
+  the placeholder "<tt>%2</tt>" will be replaced by the path name of the folder which
+  should be packed into the archive file.</li>
+  <li><b>Commandline for adding files / updating an archive file</b><br />
+  In this inputline you can define the commandline parameters to be used when calling
+  the archiving program to update an existing archive file. The placeholder
+  "<tt>%1</tt>" will be replaced by the path and filename of the archive file and
+  the placeholder "<tt>%2</tt>" will be replaced by the path name of the folder which
+  should be added to the archive file.</li>
+  <li><b>Add trailing "\" to path names.</b><br />
+  Defines whether the path names where the files to pack are located or where the archive
+  file should be extracted to should include a trailing "\" or not. (Some external packers
+  like uha do not work correctly if the path name has a trailing "\".)
+  </li>
+  <li><b>Set default values for ...</b><br />
+  D-Fend Reloaded already knows the right parameters for packing and extracting archive file
+  for some archiving programs. The the currently chosen archiving program is already known,
+  you can set the default parameters in the three input lines above by clicking this button.</li>
+</ul>
+ 
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="FileOptions.html">Program options dialog</a>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Einf&uuml;hrung in D-Fend Reloaded</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Einf&uuml;hrung, DOSBox, D-Fend Reloaded, Verzeichnisstruktur">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Einf&uuml;hrung">
+  <param name="Keyword" value="DOSBox">
+  <param name="Keyword" value="D-Fend Reloaded">
+  <param name="Keyword" value="Verzeichnisstruktur">    
+</OBJECT>
+  
+<p class="content">
+Inhalt dieser Seite
+&nbsp;&nbsp;
+<a href="#DOSBox">DOSBox</a>
+&nbsp;&nbsp;
+<a href="#D-Fend-Reloaded">D-Fend Reloaded</a>
+&nbsp;&nbsp;
+<a href="#DirectoryStructure">Verzeichnisstruktur</a>
+&nbsp;&nbsp;
+<a href="#AddingProfiles">Hinzuf&uuml;gen von Profilen</a>
+&nbsp;&nbsp;
+<a href="#RunningGames">Ausf&uuml;hrunen von Spielen</a>
+</p>
+ 
+<h1>Einf&uuml;hrung in D-Fend Reloaded</h1>
+
+<p>
+Die Informationen auf dieser Seite stellen einen groben &Uuml;berblick &uuml;ber D-Fend Reloaded
+war und erkl&auml;ren, wie es zu verwenden ist.
+</p>
+
+<a onclick="Work('DOSBox')" name="DOSBox" href="#"><h2>&raquo; Was ist DOSBox ?</h2></a>
+
+<div id="DOSBox"><p>
+DOSBox emuliert eine nx86 PC inklusiver aller Hardware, die ben&ouml;tigt wird, um DOS-Programme auszuf&uuml;hren.
+Mit Hilfe von DOSBox k&ouml;nnen nahezu alle alten DOS-Spiele und Programme auf modernen Systemen unter
+Windows und Linux ausgef&uuml;hrt werden.
+</p>
+<p>
+Im Gegensatz zu den meisten anderen Emulatoren im PC-Bereich (wie z.B. Bochs und QEmu), bildet DOSBox nicht
+nur die Hardware eines x86 PCs nach, sondern stellt auch gleich eine MS-DOS kompatible Betriebssystem-Umgebung
+zur Verf&uuml;gung. Das hat zur Folge, dass Sie ihre alten DOS-Spiele fast unmittelbar in DOSBox starten
+k&ouml;nnen, ohne daf&uuml;r erst ein Betriebssystem auf einer virtuellen Festplatte installieren zu m&uuml;ssen.
+(Falls Sie jedoch mit Imagesdateien arbeiten m&ouml;chten und alternative Betriebssysteme einsetzen
+m&ouml;chten, so ist dies in DOSBox auch kein Problem.) Dar&uuml;berhinaus ist DOSBox auch einfacher zu handhaben,
+als viele der anderen Emulatoren: Es m&uuml;ssen weder Systemtreiber noch virtuelle Netzwerkkarten auf dem
+Host-System installiert werden, um DOSBox verwenden zu k&ouml;nnen. Es ist sogar problemlos m&ouml;glich,
+DOSBox direkt von einem USB-Stick aus ohne jegliche Installation auszuf&uuml;hren. Sie k&ouml;nnen einfach
+jeden beliebigen Ordner als Laufwerk in der virtuellen DOS-Umgebung von DOSBox einbinden, damit m&uuml;ssen Sie
+also auch keine Imagedateien erstellen (was aber trotzdem bei Bedarf m&ouml;glich ist).
+</p></div>
+
+<a onclick="Work('D-Fend-Reloaded')" name="D-Fend-Reloaded" href="#"><h2>&raquo; Was ist D-Fend Reloaded ?</h2></a>
+
+<div id="D-Fend-Reloaded"><p>
+Auch wenn DOSBox verglichen mit vielen anderen Emulatoren sehr leicht zu bedienen ist, gibt es doch keine
+grafische Oberfl&auml;che zum Einrichten der virtuellen Hardware, die von den Spielen verwendet werden soll
+und wenn Sie verschiedene Spiele ausf&uuml;hren wollen, die verschiedene Hardware-Umgebungen ben&ouml;tigen,
+m&uuml;ssen Sie mehrere DOSBox-Konfigurationen parallel pflegen und stets daf&uuml;r sorgen, dass DOSBox
+f&uuml;r jedes Spiel jeweils mit der richtigen Konfiguration gestartet wird.
+</p>
+
+<p>
+Um diese Aufgaben f&uuml;r den Anwender einfacher zu gestalten, gibt es eine Reihe von Frontends f&uuml;r DOSBox.
+Diese Frontends bieten Dialoge, um DOSBox f&uuml;r verschiedene Spiele individuell zu konfigurieren. Auch
+erlauben es einige Frontends, zus&auml;tzliche Datendateien (z.B. Handb&uuml;cher und aufgezeichnete Screenshots)
+zu den Spielen zu verwalten.
+</p>
+
+<p>
+D-Fend Reloaded ist ein DOSBox-Frontend f&uuml;r die Windows-Plattform. In D-Fend Reloaded k&ouml;nnen Sie
+ihre DOS-Spiele fast so wie Eintr&auml;ge im Startmen&uuml; verwalten. &Uuml;ber den in D-Fend Reloaded
+eingebauten <a href="ProfilesEdit.html">Profileditor</a> k&ouml;nnen Sie alle Optionen, die DOSBox bietet,
+f&uuml;r jedes Spiel individuell festlegen. Um die Erfassung neuer Spiele in D-Fend Reloaded so einfach
+wie m&ouml;glich zu gestalten, gibt es einen <a href="ProfilesWizard.html">Assistenten</a> zum Hinzuf&uuml;gen
+von Spielen, der nur sehr wenige Informationen vom Benutzer abfragt und die meisten Einstellungen automatisch
+vornehmen kann. Au&szlig;erdem kann D-Fend Reloaded beliebige zus&auml;tzliche Dateien zu den Profilen
+speichern (wie z.B. Handb&uuml;cher, aber auch aufgezeichnete Screenshots, Sounds und Videos). Auf diese
+zus&auml;tzlichen Dateien kann dann sehr bequem &uuml;ber denn Vorschau-Bereich am unteren Rand des
+Programmfensters zugegriffen werden. Anstatt einfacher Text-Verkn&uuml;pfungen k&ouml;nnen in der Spieleliste
+auch die erfassten Screenshots als Verkn&uuml;pfungen zu den Spielen angezeigt werden.
+</p>
+
+<p>
+Vor l&auml;ngerer Zeit gab es ein Freeware DOSBox-Frontend mit dem Namen "D-Fend" (f&uuml;r <b>D</b>OSBox <b>F</b>ront<b>end</b>).
+Allerdings wurde die Entwicklung von D-Fend 2007 gestoppt und die Projekt-Webseite (von der das Programm
+heruntergeladen werden konnte) wurde geschlossen. Bei dem vorliegenden D-Fend Reloaded handelt es sich um eine
+vollst&auml;ndige Neuentwicklung, die mit dem Ziel, m&ouml;glichst 100%ige D-Fend Kompatibilit&auml;t zu erreichen,
+durchgef&uuml;hrt wurde. Und in der Tat kann D-Fend Reloaded nicht nur die D-Fend Konfigurationsdateien lesen
+und unmittelbar weiterverwenden, sondern es kann in einer bestehenden D-Fend Installation sogar die <tt>DFend.exe</tt>
+gegen die Programmdatei von D-Fend Reloaded (mit dem selben Namen) ausgetauscht werden und alles andere kann
+bestehen bleiben. Allerdings verf&uuml;gt D-Fend Reloaded &uuml;ber eine Vielzahl an neuen Features gegen&uuml;ber
+D-Fend. Au&szlig;erdem handelt es sich bei D-Fend Reloaded nicht nur um Freeware, sondern um ein unter der GPL3
+ver&ouml;ffentlichtes Opensource-Programm.
+</p></div>
+
+<a onclick="Work('DirectoryStructure')" name="DirectoryStructure" href="#"><h2>&raquo; Verzeichnisstruktur</h2></a>
+
+<div id="D-Fend-Reloaded"><p>
+Sie k&ouml;nnen die Spiele, die Sie mit D-Fend Reloaded verwalten und starten wollen, in jedem beliebigen
+Verzeichnis ablegen, allerdings ergeben sich einige Vorteile (wie das leichtere &Uuml;bertragen von Spielen
+von einer Installation zu einer anderen), wenn Sie einige Regeln beim Ablegen der Spiele beachten.
+</p>
+
+<p>
+Bei der Verwendung einer normalen D-Fend Reloaded Installation (d.h. im "Benutzerverzeichnis-Modus") gibt
+es zwei Verzeichnisse, in denen Dateien abgelegt werden: Das Programmverzeichnis und das Datenverzeichnis.
+</p>
+
+<h3>Das Programmverzeichnis (&uuml;blicherweise <tt>C:\Program files\D-Fend Reloaded</tt>)</h3>
+
+<p>
+In dem Programmverzeichnis werden w&auml;hrend der Installation alle Dateien, die f&uuml;r den Betrieb von
+D-Fend Reloaded und DOSBox n&ouml;tig sind, abgelegt. Beim Betrieb von D-Fend Reloaded wird dieses keinerlei
+Schreibzugriffe auf das Programmverzeichnis mehr aus&uuml;ben. (Dies bedeutet insbesondere, dass D-Fend Reloaded
+sich an die Vista-Vorgaben zur Trennung von Programmdateien und Datendateien h&auml;lt.)
+</p>
+
+<h3>Das Datenverzeichnise (&uuml;blicherweise <tt>C:\Users\<i>IhrName</i>\D-Fend Reloaded</tt>)</h3>
+
+<p>
+Alle vom Benutzer angelegten Dateien (Programm-Konfigurationen, Spieledateien, Handb&uuml;cher, aufgezeichnete
+Screenshots usw.) sollten in diesem Verzeichnis und seinen Unterverzeichnissen abgelegt werden. 
+Die Spieledateien und Daten werden sollten in den folgenden Unterverzeichnissen des Datenverzeichnisses
+abgelegt werden:
+</p></div>
+
+<ul class="big">
+  <li><b>Settings:</b> In diesem Verzeichnis legt D-Fend Reloaded seine Konfigurationsdateien ab.</li>
+  <li><b>VirtualHD:</b> Dieses Verzeichnis wird in DOSBox normalerweise als Laufwerk "<tt>C:</tt>" eingebunden
+  (so lange Sie diese Standardeinstellung in den Profilen nicht &auml;ndern). wenn Sie die Spieledateien in 
+  Unterverzeichnissen dieses Ordners ablegen, k&ouml;nnen Sie direkt in DOSBox darauf zugreifen, ohne irgendetwas
+  in D-Fend Reloaded daf&uuml;r konfigurieren zu m&uuml;ssen. So lange Sie nur dieses Verzeichnis als Laufwerk in
+  DOSBox eingebunden haben, k&ouml;nnen Sie auch ihre normale Windows-Installation nicht besch&auml;digen, selbst
+  wenn Sie in DOSBox versehentlich ihre komplette virtuelle Festplatte l&ouml;schen.</tt></li>
+  <li><b>Capture:</b> In diesem Ordner bzw. in den Unterordnern dieses Ordners legt D-Fend Reloaded standardm&auml;&szlig;ig
+  die zu den einzelnen Spielen erfassten Screenshots, Sounds und Videos ab. (Selbstverst&auml;ndlich k&ouml;nnen
+  Sie sogar f&uuml;r jedes Spiel individuell festlegen, wo aufgezeichnete Screenshots usw. abgelegt werden sollen.)
+  Dieser Capture-Ordner wird dann von DOSBox zum Speichern der Screenshots usw. verwendet und D-Fend Reloaded zeigt
+  seinen Inhalt in der Screenshot-Vorschau am unteren Rand des Programmfensters an.</li>
+  <li><b>GameData:</b> Zu jedem Spiel k&ouml;nnen Sie in D-Fend Reloaded optional einen Datenordner anlegen.
+  In diesem Ordner k&ouml;nnen Sie z.B. Handb&uuml;cher usw. ablegen. Sp&auml;ter haben Sie &uuml;ber das Kontextmen&uuml;
+  der Spieleliste sowie &uuml;ber den Vorschaubereich am unteren Rand des Programmfensters jederzeit Zugriff
+  auf die in diesem Verzeichnis abgelegten Dateien. Standardm&auml;&szlig;ig bietet D-Fend Reloaded an, einen
+  Unterordner unter diesem Ordner als Datenverzeichnis zu verwenden.</li>
+  <li><b>Confs:</b> Dieses Verzeichnis wird verwendet,um die <tt>prof</tt>-Konfigurationsdateien zu den Spielen zu speichern.
+  Jede <tt>prof</tt>-Datei enth&auml;lt dabei genau ein Spieleprofile. Sie k&ouml;nnen ihre alten D-Fend <tt>prof</tt>-Dateien
+  zu der D-Fend Reloaded Spieleliste hinzuf&uuml;gen, in dem Sie sie einfach in dieses Verzeichnis kopieren.
+  (Achtung: D-Fend speichert zu jedem Profil eine DOSBox-<tt>conf</tt>-Datei und eine <tt>prof</tt>-Datei. Wenn Sie
+  den gesamten Inhalt ihres D-Fend Konfigurationsverzeichnisses &uuml;ber die Importieren-Funktion des Men&uuml;s
+  in D-Fend Reloaded einf&uuml;gen, wird bei Ihnen jedes Profil zweimal erscheinen, da D-Fend Reloaded jede Datei als
+  eigenst&auml;ndiges Profil auffasst. Die <tt>conf</tt>-Dateien werden nicht ben&ouml;tigt, es ist vollkommen ausreichend,
+  nur die <tt>prof</tt>-Dateien zu importieren, diese enthalten auch alle Informationen der <tt>conf</tt>-Dateien.)</li>
+  <li><b>AutoSetup, Lang, Templates:</b> Diese Verzeichnisse werden intern von D-Fend Reloaded zum Speichern der
+  Autosetup-Vorlagen, der Sprachdateien und der normalen Vorlagen verwendet. Selbstverst&auml;ndlich k&ouml;nnen Sie
+  manuell Vorlagen erstellen und diese in den entsprechenden Ordner kopieren, aber die Verwendung des in D-Fend Reloaded
+  eingebauten <a href="ExtrasTemplates.html">Vorlageneditors</a> ist wesentlich bequemer.</li>
+</ul>
+
+<a onclick="Work('AddingProfiles')" name="AddingProfiles" href="#"><h2>&raquo; Hinzuf&uuml;gen von Profilen</h2></a>
+
+<div id="AddingProfiles"><p>
+Der allereinfachste Weg zum Hinzufügen von Spielen besteht darin (sofern das Spiel in Form einer
+<tt>zip</tt>-Datei vorliegt), die <tt>zip</tt>-Datei auf das D-Fend Reloaded Programmfenster zu ziehen.
+D-Fend Reloaded kopiert die Dateien dann in einen neuen Unterordner das <tt>VirtualHD</tt>-Verzeichnisses
+und versucht das Spiel mit Hilfe der AutoSetup-Vorlagen automatisch zu konfigurieren. Gibt es keine passende
+AutoSetup-Vorlage für das Spiel, so verwendet D-Fend Reloaded die Standardvorlage für das neue Profil.
+In den meisten Fällen führt diese Methode ohne jegliche Rückfragen zu einem korrekt konfigurierten neuen Profil.
+Allerdings besteht bei der Verwendung dieser Methode auch keine Eingriffsmöglichkeit bei der Erstellung des
+Profils. (Selbstverständlich kann das neu erstellte Profil wie jedes andere Profil auf über den Profileditor
+bearbeitet werden.)</p>
+<p>
+Der einfachste Weg mit Benutzereingriffsmöglichkeiten zum Hinzuf&uuml;gen von Profilen f&uuml;r Spiele besteht in der Verwendung des
+<a href="ProfilesWizard.html">Assistenten</a> ("Hinzuf&uuml;gen mit Assistent..." im "Profil"-Men&uuml; oder
+<span class="key">F3</span>-Taste). Der Profil-Assistent fragt nur die f&uuml;r die Konfiguration wirklich notwendigen
+Dinge vom Benutzer ab: Der Name des neuen Profiles, die in DOSBox zu startende <tt>exe</tt> und einige einfache
+Einstellungen dazu. D-Fend Reloaded kennt im Auslieferungszustand bereits &uuml;ber 400 Spiele (in Form von sogenannten
+Autosetup-Vorlagen). Wenn Sie ein Spiel zu Ihrer Datenbank hinzuf&uuml;gen wollen, f&uuml;r dass es bereits eine
+Autosetup-Vorlage gibt, so bietet Ihnen D-Fend Reloaded an, das Spiel vollst&auml;ndig automatisch zu konfigurieren.
+Wenn Sie ein Spiel hinzuf&uuml;gen wollen, f&uuml;r dass es keine Autosetup-Vorlage gibt, so m&uuml;ssen Sie dennoch
+keine umfangreichen Konfigurationen vornehmen, sondern m&uuml;ssen nur eine der generischen Vorlagen (wie z.B.
+"niedrige CPU-Leistung", "Normal" und "3D-Grafik") w&auml;hlen. Dar&uuml;ber hinaus k&ouml;nnen Sie in dem Assistenten
+auch gleich (optional) weitere Informationen zu dem Spiel festlegen, wie z.B. Genre, Erscheinungsjahr, Entwickler,
+Herausgeber, Sprache usw. In der Spieleliste k&ouml;nnen die einzelnen Eintr&auml;ge dann nach diesen Feldern gefiltert
+werden.
+</p></div>
+
+<a onclick="Work('RunningGames')" name="RunningGames" href="#"><h2>&raquo; Ausf&uuml;hrunen von Spielen</h2></a>
+
+<div id="RunningGames"><p>
+Wenn Sie ein Profil f&uuml;r ein Spiel erstellt haben, ist das Starten dieses Profils sehr einfach: Sie m&uuml;ssen
+lediglich den Namen des Profils in der Spieleliste auf der rechten Seite des D-Fend Reloaded Programmfensters
+doppelt anklicken. (Alternativ k&ouml;nnen Sie das Profil auch durch einen Einfachklick ausw&auml;hlen und dann die
+<span class="key">Enter</span>-Taste dr&uuml;cken oder aber das Profil mit der rechten Maustaste anklicken und dann
+in dem Kontextmen&uuml; auf "Programm ausf&uuml;hren" klicken oder aber das Profil ausw&auml;hlen und dann auf die
+Symbolleisten Schaltfl&auml;che "Starten" klicken.) D-Fend Reloaded startet das Spiel dann innerhalb von DOSBox.
+Wenn Sie in DOSBox Screenshots erfasst haben (&uuml;ber die Tastenkombination
+<span class="key">Strg</span>+<span class="key">F5</span>) oder Sound aufgezeichnet haben (&uuml;ber die Tastenkombination
+<span class="key">Strl</span>+<span class="key">F6</span> f&uuml;r Start und Stopp) oder Videos aufgezeichnet haben
+(&uuml;ber die Tastenkombination <span class="key">Strg</span>+<span class="key">Alt</span>+<span class="key">F5</span>
+f&uuml;r Start und Stopp), wird Ihnen D-Fend Reloaded diese im unteren Rand des Programmfensters (dem sogenannten
+Vorschaubereich) anzeigen, sobald Sie das entsprechende Profil in der Spieleliste ausgew&auml;hlt haben. Wenn Sie
+einen Screenshot doppelt anklicken, &ouml;ffnet sich ein gr&ouml;&szlig;eres Vorschaufenster. Beim doppelten Anklicken
+von aufgezeichneten Sounds und Videos werden diese abgespielt.
+</p></div>
+
+<p>&nbsp;</p>
+
+<p class="smallH">Siehe auch:</p>
+<p class="smallT">
+  <a href="index.html">Inhalt dieser Hilfedatei</a><br />
+  <a href="ProfileWizard.html">Profile mit dem Assistenten hinzuf&uuml;gen</a><br />
+  Internet link: <a href="http://dfendreloaded.sourceforge.net/" target="_blank">D-Fend Reloaded Homepage</a><br />
+  Internet link: <a href="http://www.dosbox.com/" target="_blank">DOSBox Homepage</a>  
+</p>
+
+</body>
+</html>

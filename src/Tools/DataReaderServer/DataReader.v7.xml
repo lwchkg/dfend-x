@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE DataReader SYSTEM "http://dfendreloaded.sourceforge.net/DataReader/DataReader.dtd">
+
+<DataReader Version="7">
+
+  <GamesList URL="http://www.mobygames.com/search/quick/q,%s/sFilter,1/sG,1/p,2/" AllPlatformsURL="http://www.mobygames.com/search/quick/q,%s/sFilter,1/sG,1/">
+    <Element Type="div" Key="id" Value="searchResults">
+      <PerGameBlock Type="div" Key="class" Value="searchResult">
+        <Element Type="div" Key="class" Value="searchTitle">
+          <Link  HrefSubstring="/game/" />
+        </Element>
+      </PerGameBlock>
+    </Element>
+  </GamesList>
+
+  <GamePage URL="http://www.mobygames.com">
+  
+    <Element Type="div" Key="class" Value="rightPanel">  
+      <Element Type="div" Key="id" Value="floatholder coreGameInfo">
+        <Element Type="table">
+          <Element Type="div" Key="id" Value="coreGameCover">
+            <Link/>
+          </Element>
+          <Element Type="div" Key="id" Value="coreGameRelease">
+            <SearchGameData Publisher="Published by" Developer="Developed by" Year="Released" />
+          </Element>
+          <Element Type="div" Key="id" Value="coreGameGenre">
+            <SearchGameData Genre="Genre" />
+          </Element>
+        </Element>		
+      </Element>
+	  <Element Type="div" Key="class" Value="rightPanelMain">
+	    <SearchGameData Notes="Notes" />
+	  </Element>
+    </Element>	  
+	
+  </GamePage>
+  
+  <CoverPage URL="http://www.mobygames.com">
+    <Element Type="div" Key="class" Value="rightPanelMain">
+	  <Img/>
+	</Element>
+  </CoverPage>
+
+</DataReader>

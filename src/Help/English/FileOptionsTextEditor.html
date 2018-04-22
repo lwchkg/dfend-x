@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Program options | Text editor</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Menu, File, Program options, Text editor">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Menu">
+  <param name="Keyword" value="File">
+  <param name="Keyword" value="Program options">
+  <param name="Keyword" value="Text editor">
+</OBJECT>
+  
+<p class="content">
+Menu: &nbsp; <b>File</b> | <b>Program options</b>  | <b>Text editor</b>
+</p>
+
+<h1>Program options dialog page "Text editor"</h1>
+
+<p class="small">
+This page will only be visible if the advanced setup mode is selected at the bottom of the program options dialog.
+</p>
+
+<p>
+On this page you can setup which text editor D-Fend Reloaded should use for opening text files (like DOSBox <tt>conf</tt> files or ScummVM <tt>ini</tt> files).
+</p>
+
+<ul class="big">
+  <li><b>Use default editor for file type</b><br />
+  If this option is activated, D-Fend Reloaded will use the editor defined in the registry for opening files.
+  <br />(This option is the default value.)
+  </li>
+  <li><b>If no default editor is registered for given file type use default editor for txt files</b><br />
+  If this checkbox is checked in conjunction with the option above, D-Fend Reloaded will also use the editor
+  defined in the registry for opening files. But if there is no editor defined (for example for <tt>prof</tt> files)
+  it will use the editor defined for <tt>txt</tt> files.
+  <br />(Default value for this option: on)
+  </li>
+  <li><b>Always use Notepad</b><br />
+  If this option is activated, text files will always be opened in Windows Notepad.
+  </li>
+  <li><b>Use custom editor</b><br />
+  By entering the name of a text editor in the input field you can instruct D-Fend Reloaded to always use the
+  given text editor when opening text files.
+  </li>
+  <li><b>Automatically fix line wrap on openinfg files if needed</b><br />
+  If this option is activated D-Fend Reloaded will check each text file before opening it if the line wraps are in DOS/Windows style
+  and not in Unix style. Text files with Unix style line wraps are shown in some editors (like Notepad) as a single line. Activating this
+  option will fix files automatically id needed so even editor not understanding Unix style text file can handle them.
+  <br />(Default value for this option: off)
+  </li>
+</ul>
+ 
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="FileOptions.html">Program options dialog</a>
+</p>
+
+</body>
+</html>

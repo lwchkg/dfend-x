@@ -1,0 +1,22 @@
+0.1.2
+http://home.tu-clausthal.de/~ifalh/UpdateInfo.txt
+DFendReloadedUpdate.exe
+C:\Program Files\D-Fend Reloaded
+normal
+Cannot find file
+Download failed
+URL
+Downloading...
+Connecting...
+File name
+Transfered
+File size
+Remaining time
+Total time
+Cannot read file
+No updates available at the moment.
+New version
+on server. Do you want to update now ?
+Ok
+Yes
+No

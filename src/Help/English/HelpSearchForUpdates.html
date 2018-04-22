@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Search for updates</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Menu, Help, Search for updates">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Menu">
+  <param name="Keyword" value="Help">
+  <param name="Keyword" value="Search for updates">
+</OBJECT>
+
+<p class="content">
+Menu: &nbsp; <b>Help</b> | <b>Search for updates</b>
+</p>
+
+<h1>Search for updates</h1>
+
+<p>
+By clicking this option you can manually look for updates for D-Fend Reloaded.
+You can also configurate on the <a href="FileOptionsSearchForUpdates.html">Search for updates</a> page
+of the <a hre="FileOptions.html">program options</a> dialog to look for updates automatically
+at a chosen interval.
+</p>
+
+<p>
+The update checker will <b>not</b> transfer any of your private data to the internet.
+It will just read the content of a text file offered on the D-Fend Reloaded homepage.
+If the version named in this file is bigger than the current version number it will
+offer to you to download und run the update installer also named in this text file.
+That all.
+</p>
+
+<h2>Details on the function of the update checker</h2>
+
+<p>
+The update checker is reading this file from Sourceforge:
+"<a href="http://dfendreloaded.sourceforge.net/UpdateInfo.txt" target="_blank">http://dfendreloaded.sourceforge.net/UpdateInfo.txt</a>" The file contains two
+lines; in the first line the version number of the current D-Fend Reloaded
+version on the server is given ("<tt>0.5.0</tt>" for example) and in the second line
+the download URL of the update installer for this version is given
+("<tt>http://downloads.sourceforge.net/dfendreloaded/D-Fend-Reloaded-0.5.0-UpdateSetup.exe</tt>"
+for example). If the version number in the <tt>UpdateInfo.txt</tt> is bigger than the
+version number of the currently installed D-Fend Reloaded version, the update
+checker will ask you, if you want to update to the new version. If you say
+"yes", it will download the file from the second line of the <tt>UpdateInfo.txt</tt> to
+your temporary directory and will launch it. As the last step it tells Windows
+to delete this file as soon as possible. Because the installer is just running,
+Windows cannot delete the file and will put it on its "delete on next system
+start" list.
+</p>
+
+<p>
+At the moment the <tt>UpdateInfo.txt</tt> is a static file, but in the future there
+could be version depending updates (smaller file to bring you from 0.5.0 to
+0.5.1 and a bigger file to bring you from 0.4.1 to 0.5.1). Therefor D-Fend
+Reloaded is adding a "<tt>?Version=0.5.0</tt>" (or whatever the current version is) to
+the request URL. There is not
+privacy risk in sending the current version number because php scripts on
+Sourceforge are not allowed to write anything to a file and therefore cannot
+log any request.
+</p>
+
+<p>
+The update checker does nothing else you would do when you look for updates.
+The update checker can automatically check for updates when D-Fend Reloaded
+is started. But because many people do not like applications "phoning home"
+without their permission, this feature is turned off by default. (You can turn
+it on in the category "Search for updates" in the program options dialog.
+And you can manually start the update checker at any time by choosing
+"Check for updates..." from the "Help" menu.)
+</p>
+
+<p>
+The update checker will use the windows connection settings (which you can edit
+in the Internet Explorer). This means: If you have setup a proxy server in the
+Internet Explorer, the D-Fend Reloaded update checker will use this proxy, too.
+</p>
+
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="FileOptions.html">Program options dialog</a>
+</p>
+
+</body>
+</html>

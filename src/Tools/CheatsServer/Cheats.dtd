@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!ELEMENT CheatDB (GameRecord)+>
+<!ATTLIST CheatDB
+	Version CDATA #IMPLIED
+>
+
+<!ELEMENT GameRecord (Action)+>
+<!ATTLIST GameRecord
+	Name CDATA #REQUIRED
+>
+
+<!ELEMENT Action (ChangeAddress | ChangeAddressWithDialog | Internal)+>
+<!ATTLIST Action
+	Name CDATA #REQUIRED
+	FileMask CDATA #REQUIRED
+>
+
+<!ELEMENT ChangeAddress EMPTY>
+<!ATTLIST ChangeAddress
+	Addresses CDATA #REQUIRED
+	Bytes CDATA #REQUIRED
+	NewValue CDATA #REQUIRED
+>
+
+<!ELEMENT ChangeAddressWithDialog EMPTY>
+<!ATTLIST ChangeAddressWithDialog
+	Addresses CDATA #REQUIRED
+	Bytes CDATA #REQUIRED
+	DefaultValue CDATA #IMPLIED
+	DefaultValueAddress CDATA #IMPLIED
+	Prompt CDATA #IMPLIED
+	MinValue CDATA #IMPLIED
+	MaxValue CDATA #IMPLIED
+>
+
+<!ELEMENT Internal EMPTY>
+<!ATTLIST Internal
+	Nr CDATA #REQUIRED
+>

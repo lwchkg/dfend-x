@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Programeinstellungen | Wavedatei-Encoder</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Men&uuml;, Datei, Programeinstellungen, Wavedatei-Encoder">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Men&uuml;">
+  <param name="Keyword" value="Datei">
+  <param name="Keyword" value="Programeinstellungen">
+  <param name="Keyword" value="Wavedatei-Encoder">
+</OBJECT>
+  
+<p class="content">
+Men&uuml;: &nbsp; <b>Datei</b> | <b>Programeinstellungen</b>  | <b>Wavedatei-Encoder</b>
+</p>
+
+<h1>Programmeinstellungen-Dialogseite "Wavedatei-Encoder"</h1>
+
+<p>
+D-Fend Reloaded kann (mit Hilfe externer Programme) in DOSBox aufgezeichnete Wave-Dateien
+in die Formate mp3 und ogg umwandeln. Der Wave-zu-ogg-Encoder <tt>oggenc2.exe</tt> ist
+bereits im Lieferumgang von D-Fend Reloaded enthalten (da es sich bei ihm ebenfalls um
+ein Opensource-Programm handelt). Aufgrund ungekl&auml;rter Lizenzfragen kann jedoch der
+Lame-Encoder zur Erstellung von mp3-Dateien nicht direkt in das D-Fend Reloaded
+Installationspaket aufgenommen werden und muss separat installiert werden.
+</p>
+
+<p>
+Auf dieser Seite k&ouml;nnen Sie angeben, in welchen Verzeichnissen sich die Wave-zu-ogg
+und Wave-zu-mp3 Encoder befinden und mit welchen Kommandozeilenschaltern sie aufgerufen
+werden m&uuml;ssen. In die Kommandozeilenparameter müssen dabei dir Platzhalter
+"<tt>%1</tt>" und "<tt>%2</tt>" eingef&uuml;gt werden. Der "<tt>%1</tt>" Platzhalter wird dabei
+durch den Pfad und Namen der Ausgangsdatei ersetzt und der "<tt>%2</tt>" Platzhalter
+wird durch den Pfad und Namen der Zieldatei ersetzt.
+</p>
+
+<p>
+Die Vorgabekommandozeilenparameter f&uuml;r den mp3-Encoder (z.B. Lame) lauten:<br />
+<tt>-h -V 0 "%1" "%2"</tt>
+</p>
+
+<p>
+Die Vorgabekommandozeilenparameter f&uuml;r den ogg-Encoder (Oggenc2) lauten:<br />
+<tt>"%1" --output="%2" --quality=10</tt>
+</p>
+
+<p>
+Der Platzhalter <tt>%1</tt> wird dabei durch den Namen der Eingabedatei (inkl. vollständigem Pfad)
+ersetzt und <tt>%2</tt> durch den Dateinamen der Ausgabedatei (ebenfalls inkl. dem vollständigen Pfad).
+</p>
+ 
+<p>&nbsp;</p>
+
+<p class="smallH">Siehe auch:</p>
+<p class="smallT">
+  <a href="FileOptions.html">Programeinstellungen-Dialog</a>
+</p>
+
+</body>
+</html>

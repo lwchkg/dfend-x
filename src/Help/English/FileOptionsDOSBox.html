@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Program options | DOSBox</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Menu, File, Program options, DOSBox">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Menu">
+  <param name="Keyword" value="File">
+  <param name="Keyword" value="Program options">
+  <param name="Keyword" value="DOSBox">
+</OBJECT>
+  
+<p class="content">
+Menu: &nbsp; <b>File</b> | <b>Program options</b>  | <b>DOSBox</b>
+</p>
+
+<h1>Program options dialog page "DOSBox"</h1>
+
+<p>
+On this page you can configurate the DOSBox versions to use with D-Fend Reloaded.
+</p>
+
+<ul class="big">
+  <li>
+    <b>DOSBox installation</b><br>
+    D-Fend Reloaded can manage multiple DOSBox installations. From this dropdown box you can choose which
+    installation you want to configurare. You can add and delete as many installations as you want to,
+    but on installation - called "Default" - is marked as undeleteable. You can choose for each profile 
+    from the <a href="ProfileEdit.html">profile editor</a> which DOSBox installation to use.
+    <br />(Default value for this option: "Default")
+  </li>
+  <li>
+    <b>DOSBox folder</b><br />
+    In this edit field you can enter the path of the DOSBox installation you want to use.<br /><br />
+    In portable mode this directory is stored relatively to the program folder <b>at program end</b>.
+    When D-Fend Reloaded is started again it <b>will make absolute paths for the three directories again</b>.
+    So this directory is shown here with absolute paths in any operation mode.
+  </li>
+</ul>
+
+<h2>"More settings for this DOSBox installation" dialog</h2>
+
+<p>
+This button will only be visible if the advanced setup mode is selected at the bottom of the program options dialog.
+</p>
+
+<ul class="big">
+  <li>
+    <b>DOSBox folder</b><br />
+    (The path in this edit field is the same as in the main program options window.)
+    In this edit field you can enter the path of the DOSBox installation you want to use.<br /><br />
+    In portable mode this directory is stored relatively to the program folder <b>at program end</b>.
+    When D-Fend Reloaded is started again it <b>will make absolute paths for the three directories again</b>.
+    So this directory is shown here with absolute paths in any operation mode. 
+  </li>
+  <li>
+    <b>DOSBox language file</b><br />
+    In this box you can select the language that should be used inside DOSBox for messages.
+    D-Fend Reloaded will list all available <tt>*.lng</tt> files from your DOSBox directory.
+    To add a new (downloaded) DOSBox language just copy the <tt>*.lng</tt> file to your
+    DOSBox directory and reopen the program options dialog.
+  </li>
+  <li>
+    <b>Keyboard layout</b><br />
+	From this dropdown box you can select the keyboard layout you want to use in DOSBox.
+	If you choose "default", the default keyboard layout from your language file will be
+	used. (Or the keyboard layout from the started profile if you have selected a custom
+	keyboard layout in the profile.)
+  </li>
+  <li>
+    <b>Codepage</b><br />
+	From this dropdown box you can select the codepage you want to use in DOSBox.
+	If you choose "default", the codepage layout from your language file will be
+	used. (Or the codepage from the started profile if you have selected a custom
+	codepage in the profile.)
+  </li>
+  <li>
+    <b>Keymapper config file</b><br />
+    In the keymapper configuration file changes to the default keyboard setup
+    made via the <a href="RunDOSBoxKeymapper.html">DOSBox keymapper</a> are stored.
+    The path to the keymapper file can be absolute or relative to the
+    <a href="FileOptionsDirectories.html">base directory</a>.
+    <br />(Default value for this option: ".\mapper.txt")
+  </li>
+  <li>
+    <b>Additional command line parameters when calling DOSBox</b><br />
+    In this edit field you can specify additional command line parameters which
+    will be used when starting DOSBox.
+    <br />(Default value for this option: none)
+  </li>  
+  <li>
+    <b>Hide DOSBox console</b><br />
+    The DOSBox console will show additional status and error messages while DOSBox is running.
+    When running a normal game the colsole is not needed and can be hidden by activating this checkbox.
+    <br />(Default value for this option: on)
+  </li>  
+  <li>
+    <b>Center DOSBox window</b><br />
+    If this option is turned on, the DOSBox window will be centered on the desktop
+    if starting an non-fullscreen profile.
+    <br />(Default value for this option: off)
+  </li>
+  <li>
+    <b>Disable screensaver when DOSBox is running</b><br />
+    By activating the option you can avoid the starting of the Windows screensaver while
+    DOSBox is running even if you do no enter anything via mouse or keyboard.
+    <br />(Default value for this option: off)
+  </li>
+  <li>
+    <b>Wait before closing the console if DOSBox has an error</b><br />
+    If this option is activated, the DOSBox console will not automatically
+    close on DOSBox close if an error occured while DOSBox was running.
+    <br />(Default value for this option: on)
+  </li>
+  <li>
+    <b>SDL videodriver</b><br />
+    In this dropdown box you can select the videodriver SDL should use.
+    SDL is the system-backend of DOSBox.
+    <br />(Default value for this option: "DirectX")
+  </li>
+  <li>
+    <b>Custom settings</b><br />
+    The lines entered in this edit field are added to the DOSBox configuration
+    file when running DOSBox. You can overwrite all other settings by writing
+    something in this box. Also settings perhaps offered by some newer DOSBox
+    versions can be used by writing the configuration lines to this field.
+  </li>
+</ul>
+ 
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="FileOptions.html">Program options dialog</a><br>
+  <a href="FileOptionsDOSBoxGeneral.html">Global DOSBox settings</a>
+</p>
+
+</body>
+</html>

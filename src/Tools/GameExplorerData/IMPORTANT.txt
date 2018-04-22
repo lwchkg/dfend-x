@@ -1,0 +1,2 @@
+After compiling the dll open it in ResHacker and replace the default icon ICON/1 with D-Fend Reloaded.ico.
+Otherwise the games explorer will use this Delphi default icon and ignore the DFR icons.

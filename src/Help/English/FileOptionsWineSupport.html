@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Program options | Wine support</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Menu, File, Program options, Wine support">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Menu">
+  <param name="Keyword" value="File">
+  <param name="Keyword" value="Program options">
+  <param name="Keyword" value="Wine support">
+</OBJECT>
+  
+<p class="content">
+Menu: &nbsp; <b>File</b> | <b>Program options</b>  | <b>Wine support</b>
+</p>
+
+<h1>Program options dialog page "Wine support"</h1>
+
+<p class="small">
+This page will only be visible if the advanced setup mode is selected at the bottom of the program options dialog.
+</p>
+
+<p>
+D-Fend Reloaded and DOSBox (Windows version) can run in a Wine environment under Linux.
+But D-Fend Reloaded can also be used together with a Linux version of DOSBox.
+</p>
+
+<ul class="big">
+  <li><b>Enable Wine mode</b><br />
+  With this option you can enable or disable the whole Wine support in D-Fend Reloaded.
+  If this option is disabled, all other setup option from this page are ignored.<br />  
+  You can use the same D-Fend Reloaded installation in Windows and Wine (without
+  changing the setup settings): By calling D-Fend Reloaded with a command line
+  parameter including "WineMode" or "WineSupportEnabled" you can override the
+  setting from the setup dialog and activate the Wine support. By calling D-Fend
+  Reloaded with a command line parameter including "WindowsMode", "NoWineSupport"
+  or "WineSupportDisabled" you can override the setting from the setup dialog
+  and disable the Wine support. The parameters are case insensitive and you can
+  also write a "-" or a "/" before them if you like to ("-winemode" for example
+  will also be recognized).
+  <br />(Default value for this option: off)
+  </li>
+  <li><b>Remapping list</b><br />
+  In this list you can define to which Linux path names (/mnt/sta3, /mnt/stb1 etc.)
+  the Wine drive letters (C: D: etc.) should be remapped when creating conf files.  
+  </li>
+  <li><b>Remap mount commands</b><br />
+  Will remap the commands for mounting drives in the conf file via the remapping list.
+  <br />(Default value for this option: off)
+  </li>
+  <li><b>Remap screenshot folder name</b><br />
+  Will remap the capture folder name in the conf file via the remapping list.
+  <br />(Default value for this option: off)
+  </li>
+  <li><b>Remap keymapper file</b><br />
+  Will remap the path to the keymapper file in the conf file via the remapping list.
+  <br />(Default value for this option: off)
+  </li>
+  <li><b>Remap DOSBox path</b><br />
+  Will remap path to the DOSBox program file when trying to run DOSBox.
+  <br />(Default value for this option: off)
+  </li>
+  <li><b>Switch link creation menu item to create Linux shell scripts</b><br />
+  If this option is activated the "Create link" menu option will create Linux
+  shell scripts for running DOSBox with the selected game profile instead of
+  creating a Windows link.
+  <br />(Default value for this option: off)
+  </li>
+  <li><b>Shell script preamble</b><br />
+  When using the "Create link" function for creating Linux shell scripts this
+  preamble will be inserted as the first line of the script.  
+  <br />(Default value for this option: "<tt>#!/bin/bash</tt>")
+  </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="FileOptions.html">Program options dialog</a>
+</p>
+
+</body>
+</html>

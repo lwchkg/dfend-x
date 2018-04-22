@@ -1,0 +1,7 @@
+LangString welcome ${LANG_TURKISH} "Bu sihirbaz ${NAME} kurulumu boyunca size rehberlik edecektir. \r\n\r\nEðer var olan bir ${NAME} kurulumunu yükseltiyorsanýz , lütfen onu kapatarak ilerleyiniz.\r\n\r\nDevam etmek için ileriyi týklayýnýz."
+LangString finish ${LANG_TURKISH} "${NAME} cihazýnýza kuruldu.\r\n\r\nBitire basarak sihirbazý kapatýnýz."
+LangString runwarning ${LANG_TURKISH} "Lütfen bütün ${CLOSENAME} çalýþan pencerelerini kapatýp tamama týklayýn. Program çalýþýrken yükseltme yapýlamaz."
+LangString invaliddirectory ${LANG_TURKISH} "Seçtiðiniz hedef klasörü geçersiz. Lütfen geçerli bir klasör seçiniz."
+LangString notenoughspace ${LANG_TURKISH} "Kurulum için seçilen cihazda yeterli boþ alan yok."
+LangString checkforplatform ${LANG_TURKISH} "PortableApps.com Platform kontrolü"
+LangString refreshmenu ${LANG_TURKISH} "PortableApps.com Menü tazeleme"

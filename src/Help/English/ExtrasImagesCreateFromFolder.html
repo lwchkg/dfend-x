@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Create image file from folder content</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Menu, Extras, Create image file from folder content">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Menu">
+  <param name="Keyword" value="Extras">
+  <param name="Keyword" value="Create image file from folder content">
+</OBJECT>
+  
+<p class="content">
+Menu: &nbsp; <b>Extras</b> | <b>Image files</b> | <b>Create image file from folder content</b>
+</p>
+
+<h1>Create image file from folder content</h1>
+
+<p>
+In this dialog you can create floppy disk images from the content of any hard disk
+folder.
+</p>
+
+<ul class="big">
+  <li><b>Image type</b><br />
+  From this box you can choose whether to create a floppy or a harddisk
+  image. Floppy images will be 1.44MB sized, harddisk images will be sized
+  to be big enough for the files to be copied to the image (plus 5MB).
+  </li>
+  <li><b>Make image bootable</b><br />
+  If this option is activated, D-Fend Reloaded will transfer the
+  FreeDOS boot files to the disk image and will create a
+  bootsector for making it bootable. (For using this option
+  you will need to have FreeDOS installed. You can configurate
+  the path a you FreeDOS installation on the
+  <a href="FileOptionsFreeDOS.html">FreeDOS</a> page of
+  the <a href="FileOptions.html">program options</a> dialog.)
+  </li>
+  <li><b>Use DOSBox default keyboard layout</b><br />
+  If this option is activated, D-Fend Reloaded will also transfer
+  the keyboard driver to the disk image and will add a line to the
+  <tt>autoexec.bat</tt> file to activate the
+  keyboard layout which is defined as default for the current
+  D-Fend Reloaded program language.
+  </li>
+  <li><b>Include mouse driver</b><br />
+  If this option is activated, D-Fend Reloaded will transfer
+  the mouse driver to the disk image and will add a line to the
+  <tt>autoexec.bat</tt> file to activate it.
+  </li>
+  <li><b>Use memory manager on disk image</b><br />
+  If this option is activated, the memory management tools <tt>himem</tt>
+  and <tt>emm386</tt> will be copied to the disk image and activated,
+  so there is more free conventional memory for running programs.
+  </li>
+  <li><b>Add disk management utilities</b><br />
+  If this option is activated, utilities for creating partitions,
+  formating and checking drives will be added to the disk image.
+  </li>
+  <li><b>Add text editor</b><br />
+  If this option is activated, a text editor will be transfered
+  to the image.
+  </li>
+  <li><b>Write image file to real floppy after creation</b><br />
+  If this option is activated, the floppy image will be written
+  to a real floppy disk after creation.  
+  </li> 
+</ul>
+
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="ExtrasImagesCreateImage.html">"Create images file" dialog</a><br />
+  <a href="ExtrasImagesWriteImageToFloppy.html">"Write IMG image to floppy" dialog</a><br />
+  <a href="FileOptionsFreeDOS.html">"FreeDOS" page of the program options dialog</a>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Profileditor | Profil</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Men&uuml;, Profil, Bearbeiten, Profil">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Men&uuml;">
+  <param name="Keyword" value="Profil">
+  <param name="Keyword" value="Profil bearbeiten">
+  <param name="Keyword" value="Bearbeiten">
+  <param name="Keyword" value="Profil">
+</OBJECT>
+  
+<p class="content">
+Men&uuml;: &nbsp; <b>Profil</b> | <b>Bearbeiten</b> | <b>Profil</b>
+</p>
+
+<h1>Profileditor-Dialogseite "Profil"</h1>
+
+<p>
+Auf dieser Dialogseite k&ouml;nnen Sie die Basiseinstellungen f&uuml;r
+das Profil vornehmen. Der Inhalt dieser Seite variiert in Abh&auml;ngigkeit
+von dem Typ des Profils, dass die gerade bearbeiten (DOSBox Profil,
+ScummVM Profil oder Profil f&uuml;r ein Windows-Spiel).
+</p>
+
+<ul class="big">
+  <li>
+    <b>Icon ausw&auml;hlen</b><br />
+    Sie k&ouml;nnen f&uuml;r jedes Profil ein Icon festlegen.
+    Das Icon wird in den meisten der verf&uuml;gbaren
+    <a href="ViewModes.html">Ansichtsmodi</a> in der Spieleliste
+    angezeigt. Icons k&ouml;nnen global &uuml;ber den
+    <a href="ExtrasManageIcons.html">Icons-Manager</a> verwaltet
+    werden. Allerdings k&ouml;nnen Sie auch eine individuelle 
+    beliebige Icondatei f&uuml;r das Profil festlegen. Falls
+    Sie eine individuelle Icondatei verwenden, so k&ouml;nnen
+    Sie f&uuml;r den Pfad zu dem Icon auch relative Pfadangaben
+    verwenden, genauso wie auch f&uuml;r alle anderen Spieledateien.
+  </li>
+  <li>
+    <b>Icon l&ouml;schen</b><br />
+    &Uuml;ber diese Schaltfl&auml;che k&ouml;nnen Sie das gew&auml;hlte
+    Icon wieder aus dem Profil entfernen. Die Icondatei selber wird dabei
+    nicht gel&ouml;scht (unabh&auml;ngig davon, ob es sich um ein Icon
+    aus der Icon-Manager Liste oder um ein individuell festgelegtes Icon
+    handelt), sondern es wird lediglich der Eintrag in dem Profil entfernt.
+  </li>
+  <li>
+    <b>Profilname</b><br />
+      Der Name, den Sie in diesem Eingabefeld festlegen k&ouml;nnen, wird in der
+      Spieleliste zur Identifikation des Profils angezeigt. Im Gegensatz zu
+      D-Fend v2 wird der hier eingegebene Name nicht gleichzeitig als Dateiname
+      f&uuml;r das Profil verwendet, d.h. sie k&ouml;nnen beliebige Zeichen
+      (einschlie&szlig;lich derer, die in Dateinamen nicht zul&auml;ssig sind)
+      in dem Profilnamen verwenden.
+  </li>
+  <li>
+    <b>Dateiname</b><br />
+    In diesem Eingabefeld k&ouml;nnen Sie den Dateinamen (ohne Erweiterung), unter
+    dem das Profil gespeichert werden soll angeben. Alle nicht zul&auml;ssigen
+    Zeichen werden beim Schlie&szlig;en des Dialogs automatisch aus dem Dateinamen
+    entfernt. Beim Anlegen eines neuen Profils ist dieses Feld deaktiviert; der
+    initiale Dateiname eines Profils wird stets automatisch aus dem Profilnamen
+    abgeleitet.
+  </li>
+  <li>
+    <b>Programmdatei</b> (nur verf&uuml;gbar f&uuml;r DOSBox und Windows-Profile)<br />
+    In dieser Box k&ouml;nnen Sie die zu startende Programmdatei und ihre
+    Parameter festlegen. Der Dateiname wird, sofern m&ouml;glich, relativ zu
+    dem Basisverzeichnis (welches auf der <a href="FileOptionsDirectories.html">Verzeichnisse</a>
+    Dialogseite des <a href="FileOptions.html">Programmeinstellungen</a>-Dialogs festgelegt
+    werden kann) gespeichert. D-Fend Reloaded &uuml;bersetzt den Pfad in der
+    System-Verzeichnisstruktur in einen Pfad in der DOSBox-Verzeichnisstruktur
+    gem&auml;&szlig; der eingebundenen DOSBox-Laufwerke beim Start von DOSBox.
+    Wenn es sich beim dem Profil um ein DOSBox-Profil handelt, k&ouml;nnen Sie
+    au&szlig;erdem die Option <b>Dateipfad relativ zur DOSBox-Verzeichnisstruktur interpretieren</b>
+    aktivieren. In diesem Fall wird D-Fend Reloaded den hier eingegebenen
+    Pfad und Dateinamen als Pfad innerhalb des DOSBox-Verzeichnisstruktur
+    interpretieren und wird nicht versuchen, ihn beim Aufruf von DOSBox
+    aus der Windows-Verzeichnisstruktur in die DOSBox-Verzeichnisstruktur
+    zu &uuml;bersetzen. (Dies ist insbesondere hilfreich beim Arbeiten mit
+    Images, da der Inhalt einer Image-Datei &uuml;berhaupt nicht in der
+    Windows-Verzeichnisstruktur zur Verf&uuml;gung steht.)
+  </li>
+  <li>
+    <b>Setupdatei</b> (nur verf&uuml;gbar f&uuml;r DOSBox und Windows-Profile)<br />
+    In dieser Box k&ouml;nnen Sie die zu startende Setupdatei und ihre
+    Parameter festlegen. Der Dateiname wird, sofern m&ouml;glich, relativ zu
+    dem Basisverzeichnis (welches auf der <a href="FileOptionsDirectories.html">Verzeichnisse</a>
+    Dialogseite des <a href="FileOptions.html">Programmeinstellungen</a>-Dialogs festgelegt
+    werden kann) gespeichert. D-Fend Reloaded &uuml;bersetzt den Pfad in der
+    System-Verzeichnisstruktur in einen Pfad in der DOSBox-Verzeichnisstruktur
+    gem&auml;&szlig; der eingebundenen DOSBox-Laufwerke beim Start von DOSBox.
+    Wenn es sich beim dem Profil um ein DOSBox-Profil handelt, k&ouml;nnen Sie
+    au&szlig;erdem die Option <b>Dateipfad relativ zur DOSBox-Verzeichnisstruktur interpretieren</b>
+    aktivieren. In diesem Fall wird D-Fend Reloaded den hier eingegebenen
+    Pfad und Dateinamen als Pfad innerhalb des DOSBox-Verzeichnisstruktur
+    interpretieren und wird nicht versuchen, ihn beim Aufruf von DOSBox
+    aus der Windows-Verzeichnisstruktur in die DOSBox-Verzeichnisstruktur
+    zu &uuml;bersetzen. (Dies ist insbesondere hilfreich beim Arbeiten mit
+    Images, da der Inhalt einer Image-Datei &uuml;berhaupt nicht in der
+    Windows-Verzeichnisstruktur zur Verf&uuml;gung steht.)
+  </li>
+  <li>
+    <b>Zus&auml;tzliche Programmdateien</b> (nur verf&uuml;gbar f&uuml;r DOSBox und Windows-Profile)<br />
+    Zus&auml;tzlich zu der Programm- und der Setupdatei k&ouml;nnen Sie in
+    diesem Dialog weitere Programmdateien festlegen, die zu dem gew&auml;hlten
+    Spiel geh&ouml;ren (z.B. Level-Editoren usw.). Diese zus&auml;tzlichen
+    Programmdateien k&ouml;nnen dann direkt &uuml;ber das Kontextmen&uuml;
+    des Profils gestartet werden.
+  </li>
+  <li>
+    <b>Keine Windows-Dateiwarnungen für dieses Profil</b> (nur verf&uuml;gbar f&uuml;r DOSBox-Profile)<br />
+	Normalerweise warnt Sie D-Fend Reloaded, wenn Sie versuchen, eine Windows-EXE-Datei mit
+	DOSBox auszuführen, da DOSBox nicht in der Lage ist, Windows-Dateien auszuführen.
+	Es gibt jedoch einige wenige Spiele, die kombinierte DOS/Windows-EXE-Dateien besitzen,
+	die sowohl unter DOS als auch unter Windows ausgeführt werden können. D-Fend Reloaded würde
+	den Windows-Anteil in diesen Dateien erkennen und folglich vor jedem Aufruf dieses Profils
+	entsprechend warnen. Um diese in diesem Fall unnötigen Warnungen zu deaktivieren, kann diese
+	Option aktiviert werden. (Dieser Schalter wird nur sichtbar, wenn es Programm- oder Setup-Datei
+	eine Windows-EXE-Datei gewählt wurde.)
+  </li>
+  <li>
+    <b>Spiel</b> (nur verf&uuml;gbar f&uuml;r ScummVM-Profile)<br />
+    In dieser Auswahlbox k&ouml;nnen Sie den Namen des zu startenden Spiels festlegen.
+    (ScummVM ben&ouml;tigt diese Information, da es beim Starten der unterschiedlichen
+    unterst&uuml;tzten Spiele unterschiedliche Einstellungen aktiviert.)
+  </li>
+  <li>
+    <b>Verzeichnis des Spiels</b> (nur verf&uuml;gbar f&uuml;r ScummVM-Profile)<br />
+    In diesem Feld k&ouml;nnen Sie das Verzeichnis, in dem ScummVM nach den Dateien
+    des Spiels suchen soll, festlegen.
+  </li>
+  <li>
+    <b>Archivdatei in das Spiel-Verzeichnis entpacken (und sp&auml;ter wieder einpacken)</b> (nur verf&uuml;gbar f&uuml;r ScummVM-Profile)<br />
+    Wenn diese Option aktiviert ist (und Sie in dem folgenden Eingabefeld eine Zip-Datei angegeben haben),
+    wird D-Fend Reloaded diese Zip-Datei vor dem Aufruf von ScummVM in das angegebene Spiel-Verzeichnis
+    entpacken. Nach dem Programmende von ScummVM wird der Inhalt des Verzeichnisses wieder inde
+    die Zip-Datei eingepackt und das Verzeichnis wird gel&ouml;scht. Auf diese Art k&ouml;nnen Sie
+    praktisch direkt Spiele in Zip-Dateien in ScummVM ausf&uuml;hren.
+  </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p class="smallH">Siehe auch:</p>
+<p class="smallT">
+  <a href="ProfileEdit.html">Profileditor-Dialog</a>
+</p>
+
+</body>
+</html>

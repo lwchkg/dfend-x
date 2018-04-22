@@ -1,0 +1,7 @@
+LangString welcome ${LANG_CZECH} "Tento pomocník vás provede instalací ${NAME}.\r\n\r\nPokud chcete aktualizovat již existující instalaci ${NAME}, prosíme ukonèete ji pøedtím, než budete pokraèovat.\r\n\r\nPokraèujte kliknutím na NEXT."
+LangString finish ${LANG_CZECH} "${NAME} byl nainstalován na váš poèítaè.\r\n\r\nKliknutím na FINISH zavøete tohoto prùvodce."
+LangString runwarning ${LANG_CZECH} "Prosím ukonèete všechny instance ${CLOSENAME} a poté stisknìte OK. Pøenosná aplikace nemùže být aktualizována, pokud je právì spuštìna."
+LangString invaliddirectory ${LANG_CZECH} "Zvolený cílový adresáø je neplatný.  Prosím zvolte správný adresáø."
+LangString notenoughspace ${LANG_CZECH} "Zvolené zaøízení nemá dostatek volného místa potøebného pro instalaci této aplikace."
+LangString checkforplatform ${LANG_CZECH} "Kontroluji portál PortableApps.com"
+LangString refreshmenu ${LANG_CZECH} "Aktualizuji Menu PortableApps.com"

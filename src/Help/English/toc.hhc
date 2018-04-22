@@ -1,0 +1,1158 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Contents">
+		<param name="Local" value="Index.html">
+		<param name="ImageNumber" value="17">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Introduction">
+		<param name="Local" value="Introduction.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="How to get games">
+		<param name="Local" value="HelpGetGames.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="How to add games">
+		<param name="Local" value="Introduction2.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Menu">
+		<param name="ImageNumber" value="1">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="File">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Import">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Import conf file">
+					<param name="Local" value="FileImportConf.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Import prof file">
+					<param name="Local" value="FileImportProf.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Import archive file">
+					<param name="Local" value="FileImportZip.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Import folder">
+					<param name="Local" value="FileImportFolder.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Download packages">
+					<param name="Local" value="FileImportPackage.html">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Export">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Export gamelist">
+					<param name="Local" value="FileExportList.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Create conf files">
+					<param name="Local" value="FileExportConf.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Create prof files">
+					<param name="Local" value="FileExportProf.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Create archive file">
+					<param name="Local" value="FileExportZip.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Create installer package">
+					<param name="Local" value="FileExportInstaller.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Build installer for multiple games">
+					<param name="Local" value="FileExportBuildInstallers.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Build archive file packages for multiple games">
+					<param name="Local" value="FileExportBuildZipPackages.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Transfer profiles">
+					<param name="Local" value="ExtrasTransferProfiles.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Create package list file">
+					<param name="Local" value="FileExportPackageList.html">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Program options">
+				<param name="Local" value="FileOptions.html">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="General">
+					<param name="Local" value="FileOptionsGeneral.html">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Directories">
+						<param name="Local" value="FileOptionsDirectories.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Security">
+						<param name="Local" value="FileOptionsSecurity.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Data privacy">
+						<param name="Local" value="FileOptionsDataPrivacy.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Compression settings">
+						<param name="Local" value="FileOptionsCompressionSettings.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Wine support">
+						<param name="Local" value="FileOptionsWineSupport.html">
+						</OBJECT>
+				</UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="User interface">
+					<param name="Local" value="FileOptionsUserInterface.html">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Language">
+						<param name="Local" value="FileOptionsLanguage.html">
+						</OBJECT>
+					<UL>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Non English translations for the games list">
+							<param name="Local" value="FileOptionsGamesListTranslations.html">
+							</OBJECT>
+					</UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Menubar">
+						<param name="Local" value="FileOptionsMenubar.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Toolbar">
+						<param name="Local" value="FileOptionsToolbar.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Tree structure">
+						<param name="Local" value="FileOptionsAppearanceTree.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Games list">
+						<param name="Local" value="FileOptionsAppearanceList.html">
+						</OBJECT>
+					<UL>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Columns in the games list">
+							<param name="Local" value="FileOptionsColumnsInTheGamesList.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="List in screenshot mode">
+							<param name="Local" value="FileOptionsListInScreenshotMode.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="List in icons mode">
+							<param name="Local" value="FileOptionsListInIconsMode.html">
+							</OBJECT>
+					</UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Media preview">
+						<param name="Local" value="FileOptionsAppearanceScreenshots.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Image scaling">
+						<param name="Local" value="FileOptionsImageScaling.html">
+						</OBJECT>
+				</UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Profile editor">
+					<param name="Local" value="FileOptionsProfileEditor.html">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Default values">
+						<param name="Local" value="FileOptionsDefaultValues.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Automatic game configuration">
+						<param name="Local" value="FileOptionsAutomaticConfiguration.html">
+						</OBJECT>
+				</UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="External programs">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="DOSBox">
+						<param name="Local" value="FileOptionsDOSBox.html">
+						</OBJECT>
+					<UL>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Global DOSBox settings">
+							<param name="Local" value="FileOptionsDOSBoxGeneral.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="DOSBox CVS features">
+							<param name="Local" value="FileOptionsDOSBoxCVSFeatures.html">
+							</OBJECT>
+					</UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="FreeDOS">
+						<param name="Local" value="FileOptionsFreeDOS.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="QBasic">
+						<param name="Local" value="FileOptionsQBasic.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="User-defined interpreters">
+						<param name="Local" value="FileOptionsUserInterpreters.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="ScummVM">
+						<param name="Local" value="FileOptionsScummVM.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Other emulators">
+						<param name="Local" value="FileOptionsOtherEmulators.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Wave encoder">
+						<param name="Local" value="FileOptionsWaveEncoder.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Archiving programs">
+						<param name="Local" value="FileOptionsZipPackers.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Text editor">
+						<param name="Local" value="FileOptionsTextEditor.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Media viewers">
+						<param name="Local" value="FileOptionsMediaViewers.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Windows games">
+						<param name="Local" value="FileOptionsWindowsGames.html">
+						</OBJECT>
+				</UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Service">
+					<param name="Local" value="FileOptionsService.html">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Search for updates">
+						<param name="Local" value="FileOptionsSearchForUpdates.html">
+						</OBJECT>
+				</UL>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Quit">
+				<param name="Local" value="FileQuit.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="View">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Show menubar">
+				<param name="Local" value="ViewShowMenubar.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Show toolbar">
+				<param name="Local" value="ViewShowTree.html">
+				</OBJECT>
+				
+				
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Show groups tree">
+				<param name="Local" value="ViewShowTree.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Show screenshots and sound files">
+				<param name="Local" value="ViewShowScreenshots.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Show searchbox">
+				<param name="Local" value="ViewShowSearchbox.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Show infocolumns in games list">
+				<param name="Local" value="ViewShowInfocolumns.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Show tooltops in games list">
+				<param name="Local" value="ViewShowTooltips.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="View modes">
+				<param name="Local" value="ViewModes.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Show quick starter window">
+				<param name="Local" value="ViewQuickStarter.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Run">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Run program">
+				<param name="Local" value="RunProgram.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Run setup">
+				<param name="Local" value="RunSetup.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Run DOSBox">
+				<param name="Local" value="RunDOSBox.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Run DOSBox keymapper">
+				<param name="Local" value="RunDOSBoxKeymapper.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Open DOSBox configuration file">
+				<param name="Local" value="RunDOSBoxConfig.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="DOSBox output methods test">
+				<param name="Local" value="RunDOSBoxOutputTest.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Run ScummVM">
+				<param name="Local" value="RunScummVM.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Open ScummVM configuration file">
+				<param name="Local" value="RunScummVMConfig.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Profile">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Add">
+				<param name="Local" value="ProfileAdd.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Add ScummVM profile">
+				<param name="Local" value="ProfileAddScummVM.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Add Windows game profile">
+				<param name="Local" value="ProfileAddWindows.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Add from template">
+				<param name="Local" value="ProfileAddFromTemplate.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Add with wizard">
+				<param name="Local" value="ProfileWithWizard.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Install from source media">
+				<param name="Local" value="ProfileAddFromMedia.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Edit">
+				<param name="Local" value="ProfileEdit.html">
+				</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Profile">
+						<param name="Local" value="ProfileEditProfile.html">
+						</OBJECT>
+					<UL>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Additional checksums">
+							<param name="Local" value="ProfileEditAdditionalChecksums.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Program information">
+							<param name="Local" value="ProfileEditProgramInformation.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Directories">
+							<param name="Local" value="ProfileEditProgramDirectories.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Helper programs">
+							<param name="Local" value="ProfileEditHelperPrograms.html">
+							</OBJECT>
+					</UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="DOSBox settings">
+						<param name="Local" value="ProfileEditDOSBox.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="ScummVM settings">
+						<param name="Local" value="ProfileEditScummVM.html">
+						</OBJECT>
+					<UL>	
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Game specific settings">
+							<param name="Local" value="ProfileEditScummVM.html">
+							</OBJECT>						
+					</UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Hardware">
+						<param name="Local" value="ProfileEditHardware.html">
+						</OBJECT>
+					<UL>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="CPU">
+							<param name="Local" value="ProfileEditCPU.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Memory">
+							<param name="Local" value="ProfileEditMemory.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Graphics">
+							<param name="Local" value="ProfileEditGraphics.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Keyboard">
+							<param name="Local" value="ProfileEditKeyboard.html">
+							</OBJECT>
+						<UL>
+							<LI> <OBJECT type="text/sitemap">
+								<param name="Name" value="Liste of possible keyboard layout and codepage combinations">
+								<param name="Local" value="ProfileEditKeyboardList.html">
+								</OBJECT>
+						</UL>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Mouse">
+							<param name="Local" value="ProfileEditMouse.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Sound">
+							<param name="Local" value="ProfileEditSound.html">
+							</OBJECT>
+						<UL>
+							<LI> <OBJECT type="text/sitemap">
+								<param name="Name" value="Volume">
+								<param name="Local" value="ProfileEditSoundVolume.html">
+								</OBJECT>
+							<LI> <OBJECT type="text/sitemap">
+								<param name="Name" value="SoundBlaster">
+								<param name="Local" value="ProfileEditSoundSoundBlaster.html">
+								</OBJECT>
+							<LI> <OBJECT type="text/sitemap">
+								<param name="Name" value="GUS">
+								<param name="Local" value="ProfileEditSoundGUS.html">
+								</OBJECT>
+							<LI> <OBJECT type="text/sitemap">
+								<param name="Name" value="MIDI">
+								<param name="Local" value="ProfileEditSoundMIDI.html">
+								</OBJECT>
+							<LI> <OBJECT type="text/sitemap">
+								<param name="Name" value="Innovation SSI-2001">
+								<param name="Local" value="ProfileEditSoundInnova.html">
+								</OBJECT>
+						</UL>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Joystick">
+							<param name="Local" value="ProfileEditJoystick.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Drives">
+							<param name="Local" value="ProfileEditDrives.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Serial ports">
+							<param name="Local" value="ProfileEditSerialPorts.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Network">
+							<param name="Local" value="ProfileEditNetwork.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Printer">
+							<param name="Local" value="ProfileEditPrinter.html">
+							</OBJECT>
+					</UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="DOS environment">
+						<param name="Local" value="ProfileEditDOSEnvironment.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Starting">
+						<param name="Local" value="ProfileEditStarting.html">
+						</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Copy">
+				<param name="Local" value="ProfileCopy.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Uninstall">
+				<param name="Local" value="ProfileUninstall.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Make installer package">
+				<param name="Local" value="ProfileMakeInstallerPackage.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Make archive file package">
+				<param name="Local" value="ProfileMakeZipPackage.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Change saved game">
+				<param name="Local" value="ProfileCheating.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="View DOSBox conf file">
+				<param name="Local" value="ProfileViewDOSBoxConfFile.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="View ScummVM ini file">
+				<param name="Local" value="ProfileViewScummVMIniFile.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Open program folder">
+				<param name="Local" value="ProfileOpenProgramFolder.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Open capture folder">
+				<param name="Local" value="ProfileOpenCaptureFolder.html">
+				</OBJECT>				
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Open data folder">
+				<param name="Local" value="ProfileOpenDataFolder.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Open file in data folder">
+				<param name="Local" value="ProfileOpenFileInDataFolder.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Internet address">
+				<param name="Local" value="ProfileInternetAddress.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Mark as favorite">
+				<param name="Local" value="ProfileMarkAsFavorite.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Create shortcut">
+				<param name="Local" value="ProfileCreateShortCut.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Search game">
+				<param name="Local" value="ProfileSearchGame.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Change saved game">
+				<param name="Local" value="ProfileCheating.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Extras">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Manage icons">
+				<param name="Local" value="ExtrasManageIcons.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="View history">
+				<param name="Local" value="ExtrasViewHistory.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Open games folder">
+				<param name="Local" value="ExtrasOpenGamesFolder.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Templates">
+				<param name="Local" value="ExtrasTemplates.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Cheating">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Change saved game">
+					<param name="Local" value="ProfileCheating.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Edit cheats data base">
+					<param name="Local" value="ExtrasEditCheatDB.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Search for address in saved game">
+					<param name="Local" value="ExtrasSearchAddress.html">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Image files">
+				</OBJECT>
+      <UL>
+  			<LI> <OBJECT type="text/sitemap">
+	  			<param name="Name" value="Create image file">
+		  		<param name="Local" value="ExtrasImagesCreateImage.html">
+			  	</OBJECT>
+  			<LI> <OBJECT type="text/sitemap">
+	  			<param name="Name" value="Create IMG image from floppy">
+		  		<param name="Local" value="ExtrasImagesCreateImageFromFloppy.html">
+			  	</OBJECT>
+  			<LI> <OBJECT type="text/sitemap">
+	  			<param name="Name" value="Write IMG to floppy">
+		  		<param name="Local" value="ExtrasImagesWriteImageToFloppy.html">
+			  	</OBJECT>
+  			<LI> <OBJECT type="text/sitemap">
+	  			<param name="Name" value="Create image file from folder content">
+		  		<param name="Local" value="ExtrasImagesCreateFromFolder.html">
+			  	</OBJECT>
+  			<LI> <OBJECT type="text/sitemap">
+	  			<param name="Name" value="Extract image to folder">
+		  		<param name="Local" value="ExtrasImagesExtractToFolder.html">
+			  	</OBJECT>
+  			<LI> <OBJECT type="text/sitemap">
+	  			<param name="Name" value="Create ISO image from CD">
+		  		<param name="Local" value="ExtrasImagesCreateImageFromCD.html">
+			  	</OBJECT>
+  			<LI> <OBJECT type="text/sitemap">
+	  			<param name="Name" value="Create image file based profile from normal profile">
+		  		<param name="Local" value="ExtrasImagesCreateFromProfile.html">
+			  	</OBJECT>
+      </UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Scan games folder for new games">
+				<param name="Local" value="ExtrasScanGamesFolder.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Check profiles for not existing files">
+				<param name="Local" value="ExtrasCheckProfiles.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Edit multiple profiles">
+				<param name="Local" value="ExtrasEditMultipleProfiles.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Uninstall multiple games">
+				<param name="Local" value="ExtrasUninstallMultipleGames.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Transfer profiles">
+				<param name="Local" value="ExtrasTransferProfiles.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Create shortcuts for multiple games">
+				<param name="Local" value="ExtrasCreateShortcuts.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Language editor">
+				</OBJECT>
+      <UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="D-Fend Reloaded language editor">
+				<param name="Local" value="ExtrasLanguageEditor.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="DOSBox language editor">
+				<param name="Local" value="ExtrasLanguageEditorDOSBox.html">
+				</OBJECT>
+      </UL>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Help">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="How to get games">
+				<param name="Local" value="HelpGetGames.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Adding games">
+				<param name="Local" value="Introduction2.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Forum">
+				<param name="Local" value="HelpForum.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Old games">
+				<param name="Local" value="HelpOldGames.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Statistics">
+				<param name="Local" value="HelpStatistics.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Operation mode">
+				<param name="Local" value="HelpOperationMode.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Search for updates">
+				<param name="Local" value="HelpSearchForUpdates.html">
+				</OBJECT>
+		</UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Dialogs">
+		<param name="ImageNumber" value="1">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="First run wizard">
+			<param name="Local" value="FirstRunWizard.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Build installer for multiple games">
+			<param name="Local" value="FileExportBuildInstallers.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Build archive file packages for multiple games">
+			<param name="Local" value="FileExportBuildZipPackages.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Program options">
+			<param name="Local" value="FileOptions.html">
+			</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="General">
+					<param name="Local" value="FileOptionsGeneral.html">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Directories">
+						<param name="Local" value="FileOptionsDirectories.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Security">
+						<param name="Local" value="FileOptionsSecurity.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Data privacy">
+						<param name="Local" value="FileOptionsDataPrivacy.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Compression settings">
+						<param name="Local" value="FileOptionsCompressionSettings.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Wine support">
+						<param name="Local" value="FileOptionsWineSupport.html">
+						</OBJECT>
+				</UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="User interface">
+					<param name="Local" value="FileOptionsUserInterface.html">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Language">
+						<param name="Local" value="FileOptionsLanguage.html">
+						</OBJECT>
+					<UL>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Non English translations for the games list">
+							<param name="Local" value="FileOptionsGamesListTranslations.html">
+							</OBJECT>
+					</UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Menubar">
+						<param name="Local" value="FileOptionsMenubar.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Toolbar">
+						<param name="Local" value="FileOptionsToolbar.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Tree structure">
+						<param name="Local" value="FileOptionsAppearanceTree.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Games list">
+						<param name="Local" value="FileOptionsAppearanceList.html">
+						</OBJECT>
+					<UL>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Columns in the games list">
+							<param name="Local" value="FileOptionsColumnsInTheGamesList.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="List in screenshot mode">
+							<param name="Local" value="FileOptionsListInScreenshotMode.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="List in icons mode">
+							<param name="Local" value="FileOptionsListInIconsMode.html">
+							</OBJECT>
+					</UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Media preview">
+						<param name="Local" value="FileOptionsAppearanceScreenshots.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Image scaling">
+						<param name="Local" value="FileOptionsImageScaling.html">
+						</OBJECT>
+				</UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Profile editor">
+					<param name="Local" value="FileOptionsProfileEditor.html">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Default values">
+						<param name="Local" value="FileOptionsDefaultValues.html">
+						</OBJECT>
+				</UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="External programs">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="DOSBox">
+						<param name="Local" value="FileOptionsDOSBox.html">
+						</OBJECT>
+					<UL>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Global DOSBox settings">
+							<param name="Local" value="FileOptionsDOSBoxGeneral.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="DOSBox CVS features">
+							<param name="Local" value="FileOptionsDOSBoxCVSFeatures.html">
+							</OBJECT>
+					</UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="FreeDOS">
+						<param name="Local" value="FileOptionsFreeDOS.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="QBasic">
+						<param name="Local" value="FileOptionsQBasic.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="User-defined interpreters">
+						<param name="Local" value="FileOptionsUserInterpreters.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="ScummVM">
+						<param name="Local" value="FileOptionsScummVM.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Other emulators">
+						<param name="Local" value="FileOptionsOtherEmulators.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Wave encoder">
+						<param name="Local" value="FileOptionsWaveEncoder.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Archiving programs">
+						<param name="Local" value="FileOptionsZipPackers.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Text editor">
+						<param name="Local" value="FileOptionsTextEditor.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Media viewers">
+						<param name="Local" value="FileOptionsMediaViewers.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Windows games">
+						<param name="Local" value="FileOptionsWindowsGames.html">
+						</OBJECT>
+				</UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Service">
+					<param name="Local" value="FileOptionsService.html">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Search for updates">
+						<param name="Local" value="FileOptionsSearchForUpdates.html">
+						</OBJECT>
+				</UL>
+			</UL>
+		<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Quick starter window">
+				<param name="Local" value="ViewQuickStarter.html">
+				</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="DOSBox output methods test">
+			<param name="Local" value="RunDOSBoxOutputTest.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Profile editor">
+			<param name="Local" value="ProfileEdit.html">
+			</OBJECT>
+			<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Profile">
+						<param name="Local" value="ProfileEditProfile.html">
+						</OBJECT>
+					<UL>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Additional checksums">
+							<param name="Local" value="ProfileEditAdditionalChecksums.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Program information">
+							<param name="Local" value="ProfileEditProgramInformation.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Directories">
+							<param name="Local" value="ProfileEditProgramDirectories.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Helper programs">
+							<param name="Local" value="ProfileEditHelperPrograms.html">
+							</OBJECT>
+					</UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="DOSBox settings">
+						<param name="Local" value="ProfileEditDOSBox.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="ScummVM settings">
+						<param name="Local" value="ProfileEditScummVM.html">
+						</OBJECT>
+					<UL>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Game specific settings">
+							<param name="Local" value="ProfileEditScummVMGame.html">
+							</OBJECT>					
+					</UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Hardware">
+						<param name="Local" value="ProfileEditHardware.html">
+						</OBJECT>
+					<UL>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="CPU">
+							<param name="Local" value="ProfileEditCPU.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Memory">
+							<param name="Local" value="ProfileEditMemory.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Graphics">
+							<param name="Local" value="ProfileEditGraphics.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Keyboard">
+							<param name="Local" value="ProfileEditKeyboard.html">
+							</OBJECT>
+						<UL>
+							<LI> <OBJECT type="text/sitemap">
+								<param name="Name" value="Liste of possible keyboard layout and codepage combinations">
+								<param name="Local" value="ProfileEditKeyboardList.html">
+								</OBJECT>
+						</UL>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Mouse">
+							<param name="Local" value="ProfileEditMouse.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Sound">
+							<param name="Local" value="ProfileEditSound.html">
+							</OBJECT>
+						<UL>
+							<LI> <OBJECT type="text/sitemap">
+								<param name="Name" value="Volume">
+								<param name="Local" value="ProfileEditSoundVolume.html">
+								</OBJECT>
+							<LI> <OBJECT type="text/sitemap">
+								<param name="Name" value="SoundBlaster">
+								<param name="Local" value="ProfileEditSoundSoundBlaster.html">
+								</OBJECT>
+							<LI> <OBJECT type="text/sitemap">
+								<param name="Name" value="GUS">
+								<param name="Local" value="ProfileEditSoundGUS.html">
+								</OBJECT>
+							<LI> <OBJECT type="text/sitemap">
+								<param name="Name" value="MIDI">
+								<param name="Local" value="ProfileEditSoundMIDI.html">
+								</OBJECT>
+							<LI> <OBJECT type="text/sitemap">
+								<param name="Name" value="Innovation SSI-2001">
+								<param name="Local" value="ProfileEditSoundInnova.html">
+								</OBJECT>
+						</UL>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Joystick">
+							<param name="Local" value="ProfileEditJoystick.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Drives">
+							<param name="Local" value="ProfileEditDrives.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Serial ports">
+							<param name="Local" value="ProfileEditSerialPorts.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Network">
+							<param name="Local" value="ProfileEditNetwork.html">
+							</OBJECT>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Printer">
+							<param name="Local" value="ProfileEditPrinter.html">
+							</OBJECT>
+					</UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="DOS environment">
+						<param name="Local" value="ProfileEditDOSEnvironment.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Starting">
+						<param name="Local" value="ProfileEditStarting.html">
+						</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Profile editor dialog (classic, D-Fend style)">
+			<param name="Local" value="ProfileEditClassic.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Mount dialog">
+			<param name="Local" value="ProfileEditDrives.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Profile wizard dialog">
+			<param name="Local" value="ProfileWithWizard.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Install from source media">
+			<param name="Local" value="ProfileAddFromMedia.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Uninstall game dialog">
+			<param name="Local" value="ProfileUninstall.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Make installer package dialog">
+			<param name="Local" value="ProfileMakeInstallerPackage.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Manage icons dialog">
+			<param name="Local" value="ExtrasManageIcons.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="View history dialog">
+			<param name="Local" value="ExtrasViewHistory.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Templates editor dialog">
+			<param name="Local" value="ExtrasTemplates.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Create IMG image from floppy">
+  		<param name="Local" value="ExtrasImagesCreateImageFromFloppy.html">
+  	</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+ 			<param name="Name" value="Write IMG to floppy">
+  		<param name="Local" value="ExtrasImagesWriteImageToFloppy.html">
+  	</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+ 			<param name="Name" value="Create image file">
+  		<param name="Local" value="ExtrasImagesCreateImage.html">
+  	</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+ 			<param name="Name" value="Create ISO image from CD">
+  		<param name="Local" value="ExtrasImagesCreateImageFromCD.html">
+  	</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+ 			<param name="Name" value="Extract image to folder">
+  		<param name="Local" value="ExtrasImagesExtractToFolder.html">
+  	</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+ 			<param name="Name" value="Create image file from folder content">
+  		<param name="Local" value="ExtrasImagesCreateFromFolder.html">
+  	</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+ 			<param name="Name" value="Create image file based profile from normal profile">
+  		<param name="Local" value="ExtrasImagesCreateFromProfile.html">
+  	</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Scan games folder for new games">
+			<param name="Local" value="ExtrasScanGamesFolder.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Edit multiple profiles">
+			<param name="Local" value="ExtrasEditMultipleProfiles.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Uninstall multiple games">
+			<param name="Local" value="ExtrasUninstallMultipleGames.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Transfer profiles">
+			<param name="Local" value="ExtrasTransferProfiles.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="D-Fend Reloaded language editor">
+			<param name="Local" value="ExtrasLanguageEditor.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="DOSBox language editor">
+			<param name="Local" value="ExtrasLanguageEditorDOSBox.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Edit cheats data base">
+			<param name="Local" value="ExtrasEditCheatDB.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Search for address in saved game">
+			<param name="Local" value="ExtrasSearchAddress.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Reset multiple profiles to values from templates">
+			<param name="Local" value="FileOptionsResetProfiles.html">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Additional information">
+		<param name="ImageNumber" value="1">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Version history">
+			<param name="Local" value="Changelog.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Frequently asked questions">
+			<param name="Local" value="FAQ.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GPL 3 license">
+			<param name="Local" value="GPL3.html">
+			</OBJECT>
+	</UL>
+</UL>
+</BODY></HTML>

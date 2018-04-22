@@ -1,0 +1,315 @@
+[OPTIONS]
+Auto Index=Yes
+Binary TOC=Yes
+Compatibility=1.1 or later
+Compiled file=German.chm
+Contents file=toc.hhc
+Default Window=default
+Default topic=Index.html
+Display compile progress=No
+Full-text search=Yes
+Index file=Index.hhk
+Language=0x407 Deutsch (Deutschland)
+Title=D-Fend Reloaded Hilfe
+
+[WINDOWS]
+default="D-Fend Reloaded help","toc.hhc","Index.hhk","Index.html","Index.html",,,,,0x2520,200,0x3046,[0,0,649,513],0xb0000,,,,,,0
+
+
+[FILES]
+Global.css
+Global.js
+Index.html
+Menu.html
+Introduction.html
+Introduction2.html
+FirstRunWizard.html
+FileImportConf.html
+FileImportProf.html
+FileImportZip.html
+FileImportFolder.html
+FileImportPackage.html
+FileExportList.html
+FileExportConf.html
+FileExportProf.html
+FileExportZip.html
+FileExportInstaller.html
+FileExportBuildInstallers.html
+FileExportBuildZipPackages.html
+FileExportPackageList.html
+FileOptions.html
+FileOptionsGeneral.html
+FileOptionsDirectories.html
+FileOptionsSecurity.html
+FileOptionsDataPrivacy.html
+FileOptionsCompressionSettings.html
+FileOptionsWineSupport.html
+FileOptionsUserInterface.html
+FileOptionsLanguage.html
+FileOptionsGamesListTranslations.html
+FileOptionsMenubar.html
+FileOptionsToolbar.html
+FileOptionsColumnsInTheGamesList.html
+FileOptionsAppearanceList.html
+FileOptionsListInScreenshotMode.html
+FileOptionsListInIconsMode.html
+FileOptionsAppearanceTree.html
+FileOptionsAppearanceScreenshots.html
+FileOptionsProfileEditor.html
+FileOptionsDefaultValues.html
+FileOptionsAutomaticConfiguration.html
+FileOptionsDOSBox.html
+FileOptionsDOSBoxGeneral.html
+FileOptionsDOSBoxCVSFeatures.html
+FileOptionsFreeDOS.html
+FileOptionsScummVM.html
+FileOptionsQBasic.html
+FileOptionsUserInterpreters.html
+FileOptionsWaveEncoder.html
+FileOptionsZipPackers.html
+FileOptionsTextEditor.html
+FileOptionsMediaViewers.html
+FileOptionsWindowsGames.html
+FileOptionsService.html
+FileOptionsSearchForUpdates.html
+FileOptionsImageScaling.html
+FileOptionsOtherEmulators.html
+FileOptionsResetProfiles.html
+FileQuit.html
+ViewShowMenubar.html
+ViewShowToolbar.html
+ViewShowTree.html
+ViewShowScreenshots.html
+ViewShowSearchbox.html
+ViewShowInfocolumns.html
+ViewShowTooltips.html
+ViewModes.html
+ViewQuickStarter.html
+RunProgram.html
+RunSetup.html
+RunDOSBox.html
+RunDOSBoxKeymapper.html
+RunDOSBoxConfig.html
+RunDOSBoxOutputTest.html
+RunScummVM.html
+RunScummVMConfig.html
+ProfileAdd.html
+ProfileAddScummVM.html
+ProfileAddWindows.html
+ProfileAddFromTemplate.html
+ProfileWithWizard.html
+ProfileAddFromMedia.html
+ProfileCheating.html
+ProfileEdit.html
+ProfileEditProfile.html
+ProfileEditAdditionalChecksums.html
+ProfileEditProgramInformation.html
+ProfileEditProgramDirectories.html
+ProfileEditHelperPrograms.html
+ProfileEditDOSBox.html
+ProfileEditScummVM.html
+ProfileEditScummVMGame.html
+ProfileEditHardware.html
+ProfileEditCPU.html
+ProfileEditMemory.html
+ProfileEditGraphics.html
+ProfileEditKeyboard.html
+ProfileEditKeyboardList.html
+ProfileEditMouse.html
+ProfileEditSound.html
+ProfileEditSoundVolume.html
+ProfileEditSoundSoundBlaster.html
+ProfileEditSoundGUS.html
+ProfileEditSoundMIDI.html
+ProfileEditSoundInnova.html
+ProfileEditJoystick.html
+ProfileEditDrives.html
+ProfileEditSerialPorts.html
+ProfileEditNetwork.html
+ProfileEditPrinter.html
+ProfileEditDOSEnvironment.html
+ProfileEditStarting.html
+ProfileEditClassic.html
+ProfileCopy.html
+ProfileUninstall.html
+ProfileMakeInstallerPackage.html
+ProfileMakeZipPackage.html
+ProfileViewDOSBoxConfFile.html
+ProfileViewScummVMIniFile.html
+ProfileOpenProgramFolder.html
+ProfileOpenCaptureFolder.html
+ProfileOpenDataFolder.html
+ProfileOpenFileInDataFolder.html
+ProfileInternetAddress.html
+ProfileMarkAsFavorite.html
+ProfileCreateShortCut.html
+ProfileSearchGame.html
+ExtrasManageIcons.html
+ExtrasViewHistory.html
+ExtrasOpenGamesFolder.html
+ExtrasTemplates.html
+ExtrasImagesCreateImageFromFloppy.html
+ExtrasImagesWriteImageToFloppy.html
+ExtrasImagesCreateImage.html
+ExtrasImagesCreateImageFromCD.html
+ExtrasImagesExtractToFolder.html
+ExtrasImagesCreateFromFolder.html
+ExtrasImagesCreateFromProfile.html
+ExtrasEditCheatDB.html
+ExtrasSearchAddress.html
+ExtrasScanGamesFolder.html
+ExtrasEditMultipleProfiles.html
+ExtrasUninstallMultipleGames.html
+ExtrasTransferProfiles.html
+ExtrasCreateShortcuts.html
+ExtrasCheckProfiles.html
+ExtrasLanguageEditor.html
+ExtrasLanguageEditorDOSBox.html
+HelpForum.html
+HelpOldGames.html
+HelpStatistics.html
+HelpOperationMode.html
+HelpSearchForUpdates.html
+HelpGetGames.html
+Changelog.html
+FAQ.html
+GPL3.html
+
+[MAP]
+#define Index 1
+#define Introduction 2
+#define FAQ 3
+#define FirstRunWizard 4
+#define Introduction2 5
+#define Menu 6
+
+#define FileExportConf 1001
+#define FileExportProf 1002
+#define FileExportList 1003
+#define FileImportZip 1011
+#define FileImportPackage 1014
+#define FileExportBuildInstallers 1012
+#define FileExportBuildZipPackages 1013
+#define FileExportPackageList 1015
+
+#define FileOptions 1100
+#define FileOptionsGeneral 1101
+#define FileOptionsDirectories 1102
+#define FileOptionsSecurity 1103
+#define FileOptionsCompressionSettings 1104
+#define FileOptionsWineSupport 1105
+#define FileOptionsUserInterface 1106
+#define FileOptionsLanguage 1107
+#define FileOptionsToolbar 1108
+#define FileOptionsColumnsInTheGamesList 1109
+#define FileOptionsAppearanceList 1110
+#define FileOptionsListInScreenshotMode 1111
+#define FileOptionsAppearanceTree 1112
+#define FileOptionsAppearanceScreenshots 1113
+#define FileOptionsProfileEditor 1114
+#define FileOptionsDefaultValues 1115
+#define FileOptionsDOSBox 1116
+#define FileOptionsDOSBoxGeneral 1135
+#define FileOptionsDOSBoxCVSFeatures 1117
+#define FileOptionsFreeDOS 1118
+#define FileOptionsScummVM 1119
+#define FileOptionsQBasic 1120
+#define FileOptionsWaveEncoder 1121
+#define FileOptionsTextEditor 1122
+#define FileOptionsMediaViewers 1123
+#define FileOptionsService 1124
+#define FileOptionsSearchForUpdates 1125
+#define FileOptionsWindowsGames 1126
+#define FileOptionsZipPackers 1127
+#define FileOptionsGamesListTranslations 1128
+#define FileOptionsListInIconsMode 1129
+#define FileOptionsMenubar 1130
+#define FileOptionsUserInterpreters 1131
+#define FileOptionsImageScaling 1132
+#define FileOptionsOtherEmulators 1133
+#define FileOptionsAutomaticConfiguration 1134
+#define FileOptionsDataPrivacy 1136
+#define FileOptionsResetProfiles 1137
+
+#define ViewQuickStarter 1501
+
+#define RunDOSBoxOutputTest 1751
+
+#define ProfileWithWizard 2001
+#define ProfileEditClassic 2002
+#define ProfileCopy 2003
+#define ProfileUninstall 2004
+#define ProfileMakeInstallerPackage 2005
+#define ProfileMakeZipPackage 2006
+#define ProfileViewDOSBoxConfFile 2007
+#define ProfileViewScummVMIniFile 2008
+#define ProfileOpenProgramFolder 2009
+#define ProfileOpenDataFolder 2010
+#define ProfileOpenFileInDataFolder 2011
+#define ProfileInternetAddress 2012
+#define ProfileMarkAsFavorite 2013
+#define ProfileCreateShortCut 2014
+#define ProfileSearchGame 2015
+#define ProfileAddFromMedia 2016
+#define ProfileCheating 2017
+
+#define ProfileEdit 2100
+#define ProfileEditProfile 2101
+#define ProfileEditProgramInformation 2102
+#define ProfileEditProgramDirectories 2103
+#define ProfileEditDOSBox 2104
+#define ProfileEditScummVM 2105
+#define ProfileEditScummVMGame 2106
+#define ProfileEditCPU 2107
+#define ProfileEditMemory 2108
+#define ProfileEditGraphics 2109
+#define ProfileEditKeyboard 2110
+#define ProfileEditMouse 2111
+#define ProfileEditSound 2112
+#define ProfileEditSoundVolume 2113
+#define ProfileEditSoundSoundBlaster 2114
+#define ProfileEditSoundGUS 2115
+#define ProfileEditSoundMIDI 2116
+#define ProfileEditJoystick 2117
+#define ProfileEditDrives 2118
+#define ProfileEditSerialPorts 2119
+#define ProfileEditNetwork 2120
+#define ProfileEditPrinter 2121
+#define ProfileEditDOSEnvironment 2122
+#define ProfileEditStarting 2123
+#define ProfileEditHelperPrograms 2124
+#define ProfileEditHardware 2125
+#define ProfileEditAdditionalChecksums 2126
+#define ProfileEditSoundInnova 2127
+
+#define ExtrasManageIcons 3001
+#define ExtrasViewHistory 3002
+#define ExtrasOpenGamesFolder 3003
+#define ExtrasTemplates 3004
+#define ExtrasImagesCreateImageFromFloppy 3005
+#define ExtrasImagesWriteImageToFloppy 3006
+#define ExtrasImagesCreateImage 3007
+#define ExtrasImagesCreateImageFromCD 3008
+#define ExtrasImagesExtractToFolder 3009
+#define ExtrasImagesCreateFromFolder 3010
+#define ExtrasScanGamesFolder 3011
+#define ExtrasEditMultipleProfiles 3012
+#define ExtrasUninstallMultipleGames 3013
+#define ExtrasTransferProfiles 3014
+#define ExtrasCheckProfiles 3017
+#define ExtrasCreateShortcuts 3018
+#define ExtrasLanguageEditor 3019
+#define ExtrasImagesCreateFromProfile 3020
+#define ExtrasEditCheatDB 3021
+#define ExtrasSearchAddress 3022
+#define ExtrasLanguageEditorDOSBox 3023
+
+#define HelpForum 4001
+#define HelpStatistics 4003
+#define HelpOperationMode 4004
+#define HelpSearchForUpdates 4005
+#define HelpOldGames 4006
+#define HelpGetGames 4007
+
+[INFOTYPES]
+

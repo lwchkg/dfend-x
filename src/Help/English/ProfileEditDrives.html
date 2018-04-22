@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Profile editor | Drives</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Menu, Profile, Edit, Drives">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Menu">
+  <param name="Keyword" value="Profile">
+  <param name="Keyword" value="Edit profile">
+  <param name="Keyword" value="Edit">
+  <param name="Keyword" value="Drives">
+</OBJECT>
+  
+<p class="content">
+Menu: &nbsp; <b>Profile</b> | <b>Edit</b> | <b>Drives</b>
+</p>
+
+<h1>Profile editor dialog page "Drives"</h1>
+
+<p>
+On this page you can setup the virtual drives DOSBox should emulate for
+the games running inside it. DOSBox can use physical drives, folders,
+image files or (if you are using a special CVS build) zip files as drives.
+Additionally D-Fend Reloaded allows to use zip files as drives even with
+the default DOSBox build (by extracting them before running DOSBox and
+automatically repacking them when DOSBox quits.)
+</p>
+
+<p>
+You can add, edit and delete drives by clicking the buttons at the
+bottom of the page. Additionally you can also add drives by pressing
+<span class="key">Ins</span>, edit the selected drive by pressing
+<span class="key">Return</span> and delete drives by pressing
+<span class="key">Del</span>.
+</p>
+
+<p>
+You can also let D-Fend Reloaded try to create the needed connections
+from physical folders to DOSBox drives automatically by clicking the
+"<b>Auto create</b>" button. This should work fine for games only needing
+their game directories to run. For games needing drive images or
+CD drive connections D-Fend Reloaded will not be able to setup all needed
+drive records automatically.
+</p>
+
+<ul class="big">
+  <li><b>Additional automatically mount all available CDs</b><br />
+    If this option is activated, D-Fend Reloaded will also mount all not explicitely mounted CD drives
+	when starting DOSBox.
+  </li>
+  <li><b>Disable mounting of drives after DOSBox start</b><br />
+    If this secure mode is activated, you (or any program inside DOSBox) will not be able to
+	mount any further drives as soon as DOSBox is started. Whis this option activated you can be
+	sure even a virus will not be able to damage any data you have not explicitely mounted
+	in this dialog.
+  </li>
+</ul>
+
+<h2>The "Edit drive" dialog</h2>
+
+<p>
+From this dialog you can choose the type of drive DOSBox should emulate and
+configurate it. From the "<b>Type</b>" dropdown box you can select on of the
+following drive types:
+</p>
+
+<ul class="big">
+  <li><b>Folder as hard disk</b><br />
+  This option allows you to mount any folder as a hard disk in DOSBox.
+  (Advice: You should <b>not</b> mount the root folder of a drive as
+  a DOSBox drive. Mounting a complete drive as a DOSBox drive will
+  allow applications running inside DOSBox to change or delete any file
+  on the real hard disk.) 
+  </li>
+  <li><b>Folder as floppy</b><br />
+  This option allows you to mount a folder as a virtual floppy disk.
+  </li>
+  <li><b>CD-drive</b><br />
+  This options allows you to mount a real CD drive a a virtual CD drive
+  inside DOSBox. You can select the CD drive via a fixed path (which should
+  be the root folder of a real CD drive) or let D-Fend Reloaded automatically
+  select the CD drive on DOSBox start via a file or a folder on the CD or
+  via the name of the CD.
+  </li>
+  <li><b>Floppy image</b><br />
+  This options allows you to mount an image file as a virtual floppy drive.
+  Via the "Create image file" on the right you can
+  <a href="ExtrasImagesCreateImageFromFloppy.html">create a new floppy image from a real floppy disk</a>
+  or <a href="ExtrasImagesCreateImage.html">create a new, empty floppy disk image</a>.
+  </li>
+  <li><b>ISO image</b><br />
+  This options allows you to mount an image file as a virtual CD drive.
+  Via the "<a href="ExtrasImagesCreateImageFromCD.html">Create image file</a>" on the right you can create a new ISO image
+  from a real CD drive.
+  </li>
+  <li><b>Hard disk image</b><br />
+  This options allows you to mount an image file as a virtual hard disk.
+  Via the "<a href="ExtrasImagesCreateImage.html">Create image file</a>" on the right you can create new, empty hard disk images.
+  </li>
+  <li><b>DOSBox PhysFS</b> <font color="red">(*)</font><br />
+  By selecting this option you can mount a zip file as a drive in DOSBox.
+  DOSBox will make a drive from a zip file and a folder. It will read from the
+  zip file and perform all write operations to the given folder (the zip file is read only).
+  Wehn DOSBox terminates the content of the folder can optionally be added to the
+  zip file.
+  </li>
+  <li><b>Zip file</b><br />
+  By selecting this option you can mount a zip file as a drive in DOSBox
+  without using the DOSBox PhysFS support (which is not available in all DOSBox versions).
+  D-Fend Reloaded will extract the content of the zip file to the given folder,
+  mount this folder as a drive in DOSBox, run DOSBox, waits for DOSBox to terminate
+  and then optionally repack to folder content to the zip file.
+  </li>
+</ul>
+
+<p>
+The option marked with <font color="red">(*)</font> is only available if the corresponding
+DOSBox CVS feature is enabled on the <a href="FileOptionsDOSBoxCVSFeatures.html">DOSBox CVS features</a>
+page of the <a href="FileOptionsDOSBox.html">program options</a> dialog. The official DOSBox 0.73 build
+delivered with D-Fend Reloaded does not support this mount type and does not support the secure mode.
+</p>
+
+<p>
+Via the "<b>Drive letter</b>" dropdown box you can choose which drive letter DOSBox should use
+for the mounted folder or image. When mounting a floppy or hard disk image you can also choose
+a number from 0 to 3 instead of a drive letter. Choosing one of this numbers will connect to image
+to the internal floppy / hard disk controller instead of connecting it to a drive letter. By doing this
+the drive will also stay available when booting a custom operation system inside DOSBox.
+</p>
+
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="ProfileEdit.html">Profile editor dialog</a>
+</p>
+
+</body>
+</html>

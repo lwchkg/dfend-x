@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Profileditor | Grafikkarte</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Men&uuml;, Profil, Bearbeiten, Grafikkarte">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Men&uuml;">
+  <param name="Keyword" value="Profil">
+  <param name="Keyword" value="Profil bearbeiten">
+  <param name="Keyword" value="Bearbeiten">
+  <param name="Keyword" value="Grafikkarte">
+</OBJECT>
+  
+<p class="content">
+Men&uuml;: &nbsp; <b>Profil</b> | <b>Bearbeiten</b> | <b>Grafikkarte</b>
+</p>
+
+<h1>Profileditor-Dialogseite "Grafikkarte"</h1>
+
+<p>
+Auf dieser Seite k&ouml;nnen Sie die virtuelle Grafikkarte, die DOSBox bzw. ScummVM dem Spiel
+zur Verf&uuml;gung stellt, konfigurieren.
+</p>
+
+<h2>Für DOSBox-Profile</h2>
+
+<ul class="big">
+  <li>
+    <b>Fenster-Aufl&ouml;sung</b><br />
+    In diesem Auswahlfeld k&ouml;nnen Sie die Aufl&ouml;sung w&auml;hlen,
+    die DOSBox verwenden soll, wenn das Spiel als Fenster auf dem Windows
+    Desktop l&auml;uft. "Original" bedeutet dabei, dass DOSBox ohne jegliche
+    Skalierung die Aufl&ouml;sung verwenden soll, die das Spiel vorgibt.
+    In allen anderen F&auml;llen skaliert DOSBox die Ausgabe entsprechend.
+    (Siehe dazu auch die Option "Skalierung" weiter unten.)
+  </li>
+  <li>
+    <b>Vollbild-Aufl&ouml;sung</b><br />
+    In diesem Auswahlfeld k&ouml;nnen Sie die Aufl&ouml;sung w&auml;hlen,
+    die DOSBox verwenden soll, wenn das Spiel im Vollbildmodus l&auml;uft.
+    "Original" bedeutet dabei, dass DOSBox ohne jegliche Skalierung die Aufl&ouml;sung
+    verwenden soll, die das Spiel vorgibt. In allen anderen F&auml;llen skaliert
+    DOSBox die Ausgabe entsprechend. (Siehe dazu auch die Option "Skalierung" weiter unten.)
+    Zur Darstellung der gew&uuml;nschten Aufl&ouml;sung im Vollbildmodus
+    wechselt DOSBox ggf. tempor&auml;r die Windows-Aufl&ouml;sung.    
+  </li>
+  <li>
+    <b>Vollbild beim Start</b><br />
+    Wenn diese Option aktiviert ist, startet DOSBox im Vollbildmodus;
+    andernfalls startet es als normales Fenster auf dem Windows Desktop.
+  </li>  
+  <li>
+    <b>Doublebuffering verwenden</b><br />
+    Durch das Aktivieren dieser Option k&ouml;nnen Sie DOSBox anweisen, im Vollbildmodus
+    Doublebuffering zu verwenden. Die Verwendung von Doublebuffering kann diverse Grafikprobleme
+    l&ouml;sen aber auch neue verursachen, in Abh&auml;ngigkeit von Ihrem Windows-Grafiktreiber,
+    der verwendeten Betriebssystemversion und dem Spiel, das Sie ausf&uuml;hren m&ouml;chten.
+  </li>
+  <li>
+    <b>Seitenverh&auml;ltnis korrigieren</b><br />
+    Die Verwendung dieser Option ist sinnvoll, wenn Sie ein Spiel mit der Aufl&ouml;sung
+    von 320x200 Pixeln auf einem modernen Bildschirm darstellen woll. Bei einer Verwendung
+    von 320x200 Pixeln wurden fr&uuml;her auf R&ouml;hrenmonitoren nicht quadratische Pixel
+    verwendet; auf heutigen LCD-Monitoren sind die Pixel aber bauartbedingt stets quadratisch,
+    so dass ein 320x200 Pixel Bild verzerrt wirkt. Die Option zu Korrektur des
+    Seitenverh&auml;ltnisses streckt in dem oben beschriebenen Fall das Bild von 320x200
+    auf 320x240 Pixel. In Abh&auml;ngigkeit von dem verwendeten Interpolationsalgorithmus
+    sieht das Bild dann meistens wesentlich besser aus.
+  </li>
+  <li>
+    <b>Glide-Emulation <font color="red">(*)</font></b><br />
+    Wenn diese Option aktiviert ist, stellt DOSBox dem Spiel eine Glide-Emulation
+    zur Verf&uuml;gung.
+  </li>
+  <li>
+    <b>Darstellungsmethode</b><br />
+    In dieser Aufwahlbox k&ouml;nnen Sie festlegen, wie DOSBox den Bildschirminhalt
+    der virtuellen Grafikkarte an die reale Grafikkarte &uuml;bertragen soll.
+    Die Einstellung "surface" ist zwar verh&auml;ltnism&auml;&szlig;ig langsam, sollte
+    aber mit praktisch allen Windows-Grafiktreibern funktionieren. Sollten bei einem
+    Spiel Grafikprobleme auftreten (inklusive der Tatsache dass Ein- und Ausblendeeffekte
+    extrem langsam ablaufen), k&ouml;nnen Sie hier andere Einstellungen ausprobieren;
+    so sollte z.B. "Overlay" mittlerweile von praktisch allen Grafikkarten unterst&uuml;tzt
+    werden und ist wesentlich schneller.
+  </li>
+  <li>
+    <b>Grafikkarte</b><br />
+    In dieser Auswahlbox k&ouml;nnen Sie w&auml;hlen, welchen Grafikkartentyp DOSBox
+    emulieren soll. Bei den meisten Spielen sollte die Verwendung von "vga" funktionieren
+    (da VGA-Karten ebenfalls die niedrigeren Grafikmodi der fr&uuml;heren CGA- und EGA-Karten
+    anbieten). Sollten Sie jedoch ein Spiel ausf&uuml;hren wollen, welches explizit z.B. nur
+    mit CGA-Karten zusammenarbeitet, so k&ouml;nnen Sie hier einen anderen Grafikkartentyp
+    festlegen.
+  </li>
+  <li>
+    <b>Pixel-Shader <font color="red">(*)</font><b><br />
+	Über diese Asuwahlbox können Sie das zu verwendende Pixel-Shader Programm für DOSBox
+	festlegen. Die hier angezeigten Programme sind <tt>fx</tt>-Dateien im
+	<tt>Shaders</tt>-Unterverzeichnis des DOSBox-Verzeichnisses der gewählten
+	DOSBox-Installation.
+  </li>
+  <li>
+    <b>Einstellungen f&uuml;r Grafikkartentyp "VGA" <font color="red">(*)</font></b><br />
+    In dieser Box k&ouml;nnen Sie den genauen Typ der emulierten VGA-Karte einstellen
+    (d.h. diese Einstellung kommen nur dann zum Tragen, wenn Sie als Grafikkartentyp "vga"
+    gew&auml;hlt haben). Diese Einstellungen k&ouml;nnen bei DOS-Spielen, die einen
+    bestimmten VGA-Chipsatz voraussetzen, hilfreich sein.
+  </li>
+  <li>
+    <b>Skalierung</b><br />
+    In diesm Aufwahlfeld k&ouml;nnen Sie den Algorithmus bestimmen, nach dem Bildinhalte,
+    die in einer h&ouml;heren Aufl&ouml;sung auf dem physikalischen Bildschirm dargestellt
+    werden sollen, als es das Spiel vorgibt, hochskaliert werden sollen. Die jeweils
+    beste Skalierungsmethode h&auml;ngt von dem Spiel, das Sie ausf&uuml;hren wollen, ab.
+    Allgemein gilt, dass Algorithmen, die weiter oben in der Liste aufgef&uuml;hrt sind,
+    eher schneller sind (d.h. weniger Rechenleistung ben&ouml;tigen) und Algorithmen,
+    die weiter unten stehen meist eher bessere Ergebnisse, d.h. glattere Bilder, liefern.
+  </li>
+  <li>
+    <b>Frameskip</b><br />
+    In diesem Eingabefeld k&ouml;nnen Sie festlegen, wie viele Bilder, die das Spiel darstellen
+    m&ouml;chte, DOSBox jeweils zwischen der realen Darstellung von zwei Bildern auf dem Bildschirm
+    auslassen soll. Ein h&ouml;herer Frameskipwert bedeutet, dass weniger Daten an die reale
+    Grafikkarte &uuml;bertragen werden m&uuml;ssen und damit die gesamte Darstellung schneller
+    ablaufen kann, d.h. dass das Spiel dadurch schneller wird. Die Bedeutung des Frameskips
+    ist nicht an die Anzahl der Bilder, die das Spiel pro Sekunde berechnet (fps, frames per second)
+    gekoppelt, sondern h&auml;ngt mit der virtuellen Darstellungsrate des virtuellen
+    Monitors in DOSBox zusammen. Der virtuelle Monitor arbeitet in den meisten Aufl&ouml;sungsstufen
+    mit 70fps und im 640x480 VGA-Modus mit 60fps. Ein Frameskip von 1 bedeutet damit,
+    dass 35 bzw. 30 Bilder pro Sekunde an die reale Grafikkarte &uuml;bertragen werden, ein
+    Frameskip von 2 bedeutet damit, dass 23.3 bzw. 20 Bilder pro Sekunde an die reale Grafikkarte
+    &uuml;bertragen werden und schlie&szlig;tlich werden bei einem Frameskip von 3 je nach Aufl&ouml;sungseinstellung
+    17.5 bzw. 15 Bilder pro Sekunde &uuml;bertragen.
+  </li>
+  <li>
+    <b>Zeilen im Textmodus <font color="red">(*)</font></b><br />
+    In dieser Box k&ouml;nnen Sie festlegen, wie viele Textzeilen DOSBox im
+    normalen Textmodus (z.B. w&auml;hrend die Eingabeaufforderung angezeigt wird)
+    verwenden soll. Der Vorgabewert f&uuml;r diese Option ist 25.
+  </li>
+</ul>
+
+<p>
+Die mit <font color="red">(*)</font> markierten Optionen sind nur sichtbar, wenn Sie das zugeh&ouml;rige
+DOSBox CVS-Feature auf der Dialogseite <a href="FileOptionsDOSBoxCVSFeatures.html">DOSBox CVS-Features</a>
+des <a href="FileOptionsDOSBox.html">Programmeinstellungen</a>-Dialogs aktiviert haben. Die offizelle
+DOSBox 0.72 Version, die mit D-Fend Reloaded ausgeliefert wird, unterst&uuml;tzt diese zus&auml;tzlichen
+Optionen nicht.
+</p>
+
+<h2>Für ScummVM-Profile</h2>
+
+<ul class="big">
+  <li>
+    <b>Filter</b><br />
+	In diesem Feld können Sie auswählen, nach welcher Methode ScummVM die Spielegrafiken auf die
+	physikalische Auflösung des Systems hochskalieren soll.
+  </li>
+  <li>
+    <b>Darstellungsart</b><br />
+	In diesem Feld können Sie die zu verwendende Grafikkartenemulation festlegen. Im Normalfall
+	sollte der Vorgabewert "default" beibehalten werden.
+  </li>
+  <li>
+    <b>Vollbild beim Start</b><br />
+    Wenn diese Option aktiviert ist, startet ScummVM im Vollbildmodus;
+    andernfalls startet es als normales Fenster auf dem Windows Desktop.
+  </li>  
+  <li>
+    <b>Seitenverh&auml;ltnis korrigieren</b><br />
+    Die Verwendung dieser Option ist sinnvoll, wenn Sie ein Spiel mit der Aufl&ouml;sung
+    von 320x200 Pixeln auf einem modernen Bildschirm darstellen woll. Bei einer Verwendung
+    von 320x200 Pixeln wurden fr&uuml;her auf R&ouml;hrenmonitoren nicht quadratische Pixel
+    verwendet; auf heutigen LCD-Monitoren sind die Pixel aber bauartbedingt stets quadratisch,
+    so dass ein 320x200 Pixel Bild verzerrt wirkt. Die Option zu Korrektur des
+    Seitenverh&auml;ltnisses streckt in dem oben beschriebenen Fall das Bild von 320x200
+    auf 320x240 Pixel. In Abh&auml;ngigkeit von dem verwendeten Interpolationsalgorithmus
+    sieht das Bild dann meistens wesentlich besser aus.
+  </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p class="smallH">Siehe auch:</p>
+<p class="smallT">
+  <a href="ProfileEdit.html">Profileditor-Dialog</a>
+</p>
+
+</body>
+</html>

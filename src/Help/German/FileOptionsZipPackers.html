@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Programeinstellungen | Packprogramme</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Men&uuml;, Datei, Programeinstellungen, Packprogramme">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Men&uuml;">
+  <param name="Keyword" value="Datei">
+  <param name="Keyword" value="Programeinstellungen">
+  <param name="Keyword" value="Packprogramme">
+</OBJECT>
+  
+<p class="content">
+Men&uuml;: &nbsp; <b>Datei</b> | <b>Programeinstellungen</b>  | <b>Packprogramme</b>
+</p>
+
+<h1>Programmeinstellungen-Dialogseite "Packprogramme"</h1>
+
+<p>
+Auf dieser Seite können externe Packprogramme angegeben werden, mit deren Hilfe D-Fend Reloaded
+dann weitere Archivformate lesen und schreiben kann. (Eingebaut ist bereits eine Unterstützung
+für die Formate zip und 7z.)
+</p>
+
+<ul class="big">
+  <li><b>Name des Packprogramms</b><br />
+  Über diese Auswahlbox können Sie das Programm, das Sie konfigurieren möchten, auswählen.
+  Über die vier Schaltflächen rechts der Auswahlbox können Einträge hinzugefügt, gelöscht oder
+  verschoben werden.</li>
+  <li><b>Programmdateiname</b><br />
+  In dieser Eingabezeile können Sie den Pfad und Dateinamen des zu verwendenden externen
+  Packprogrammes eingeben.</li>
+  <li><b>Dateinamenserweiterungen für das Packprogramm</b><br />
+  In dieser Eingabezeile können Sie festlegen, Dateien welchen Typs durch das angegebene
+  Packprogramm gelesen und geschrieben werden können. Die einzelnen Erweiterungen müssen
+  dabei durch ";" getrennt werden und ohne "*." eingegeben werden. Wenn Sie die Erweiterungen
+  "ZIP" oder "7Z" für ein externes Packprogramm als unterstützte Formate angeben, so wird
+  D-Fend Reloaded in Zukunft dieses Programm zum Packen und Entpacken entsprechender
+  Archive statt der internen Routinen verwenden.</li>
+  <li><b>Parameter um Archivdateien zu entpacken</b><br />
+  Die in diesem Eingabefeld festgelegten Parameter werden beim Aufruf des Packprogrammes
+  zum Entpacken bestehender Archive verwendet. Der Platzhalter "<tt>%1</tt>" wird dabei
+  durch den Pfad und Namen der Archivdatei ersetzt und der Platzhalter "<tt>%2</tt>" wird
+  durch den Pfad des Verzeichnisses, in das die Dateien entpackt werden sollen, ersetzt.</li>
+  <li><b>Parameter um neue Archivdateien zu erzeugen</b><br />
+  Die in diesem Eingabefeld festgelegten Parameter werden beim Aufruf des Packprogrammes
+  zum Erstellen neuer Archive verwendet. Der Platzhalter "<tt>%1</tt>" wird dabei
+  durch den Pfad und Namen der zu erstellenden Archivdatei ersetzt und der Platzhalter
+  "<tt>%2</tt>" wird durch den Pfad des Verzeichnisses, das eingepackt werden soll, ersetzt.</li>
+  <li><b>Parameter um Dateien zu einer Archivdatei hinzuzufügen</b><br />
+  Die in diesem Eingabefeld festgelegten Parameter werden beim Aufruf des Packprogrammes
+  zum Aktualisieren von Archiven verwendet. Der Platzhalter "<tt>%1</tt>" wird dabei
+  durch den Pfad und Namen der zu aktualisierenden Archivdatei ersetzt und der Platzhalter
+  "<tt>%2</tt>" wird durch den Pfad des Verzeichnisses, dessen Dateien zu dem Archiv hinzugefügt
+  werden sollen eingepackt werden sollen, ersetzt.</li>
+  <li><b>Abschließendes "\" an Pfadnamen anfügen.</b><br />
+  Gibt an, ob der Pfadname, der angeibt, wo sich die zu packenden Dateien befinden bzw. wohin
+  das Archiv entpackt werden soll, mit einem abschießenden "\" versehen werden soll oder nicht.
+  (Uha z.B. funktioniert nicht korrekt, wenn der Pfadname mit einem "\" abgeschlossen wird.)
+  </li>
+  <li><b>Vorgabewerte setzen für ...</b><br />
+  Für einige Packprogramme kennt D-Fend Reloaded bereits die korrekten Parameter zum Packen und
+  Entpacken von Archiven. Wenn das aktuell gewählte Programm bereits bekannt ist, können die
+  Standardparameter über diese Schaltfläche in die drei obigen Eingabezeilen eingetragen werden.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p class="smallH">Siehe auch:</p>
+<p class="smallT">
+  <a href="FileOptions.html">Programeinstellungen-Dialog</a>
+</p>
+
+</body>
+</html>

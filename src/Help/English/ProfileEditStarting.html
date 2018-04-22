@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Profile editor | Starting</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Menu, Profile, Edit, Starting">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="Menu">
+  <param name="Keyword" value="Profile">
+  <param name="Keyword" value="Edit profile">
+  <param name="Keyword" value="Edit">
+  <param name="Keyword" value="Starting">
+</OBJECT>
+  
+<p class="content">
+Menu: &nbsp; <b>Profile</b> | <b>Edit</b> | <b>Starting</b>
+</p>
+
+<h1>Profile editor dialog page "Starting"</h1>
+
+<p>
+On this page you can setup what DOSBox should do when it starts
+(that means you can setup here the way DOSBox will start the chosen game).
+</p>
+
+<ul class="big">
+  <li>
+    <b>Override game start</b><br />
+    If this option is activated the program file and the setup file
+    configurated on the <a href="ProfileEditProfile.html">Profile</a>
+    page are ignored when starting the profile.
+  </li>
+  <li>
+    <b>Override mounting</b><br />
+    If this option is activated the settings made on the
+    <a href="ProfileEditDrives.html">Drives</a> page are ignored when
+    starting DOSBox. This means no drives will be mounted when starting
+    DOSBox.
+  </li>
+  <li>
+    <b>Autoexec.bat</b><br />
+    The commands entered in this box will be executed when starting DOSBox
+    before starting the game. The lines entered in this box have the same
+    meaning as the <tt>Autoexec.bat</tt> in real DOS.
+  </li>
+  <li>
+    <b>Finalization</b><br />
+    The commands entered in this box will be executed after executing
+    of the game before closing DOSBox.
+  </li>
+  <li>
+    <b>Start DOSBox normally</b><br />
+    If this option is activated the game or setup file entered on the
+    <a href="ProfileEditProfile.html">Profile</a> page will be started
+    when starting the profile. This should be the right setting for
+    all most all games. You should only use one of the two following
+    options if you want to boot an image file.
+  </li>
+  <li>
+    <b>Start hard disk image</b><br />
+    If you have configurated a hard disk image without a DOSBox
+    drive letter on the <a href="ProfileEditDrives.html">Drives</a> page,
+    you can setup to boot from this image from the dropdown box
+    next to this option.
+  </li>
+  <li>
+    <b>Start floppy image</b><br />
+    By activating this option you can boot from any floppy disk image.
+    There is no need to mount the floppy images you want to boot from.
+    You can also specifiy multiple floppy images for booting. DOSBox
+    will use the first image for inital boot and you can swap the
+    virtual floppies in the virtual drive by pressing
+    <span class="key">Ctrl</span>+<span class="key">F4</span>.
+  </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p class="smallH">See also:</p>
+<p class="smallT">
+  <a href="ProfileEdit.html">Profile editor dialog</a>
+</p>
+
+</body>
+</html>

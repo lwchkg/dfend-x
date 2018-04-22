@@ -1,0 +1,316 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Frequently asked questions (FAQ)</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script language="JavaScript" type="text/javascript" src="Global.js"></script>
+  <meta name="keywords" content="Frequently asked questions, FAQ">
+</head>
+<body>
+<Object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<param name="Keyword" value="FAQ">
+  <param name="Keyword" value="Frequently asked questions">
+</OBJECT>
+ 
+<h1>Frequently asked questions (FAQ)</h1>
+
+<p class="small">
+  1. <a href="#FAQ01">How does the update checker operate ?</a><br />
+  2. <a href="#FAQ02">I get an "DFend.dat not found" error when running a self made installer package.</a><br />
+  3. <a href="#FAQ03">I know exactly which setting is on which tab in the D-Fend profile editor dialog. Where is this dialog gone in D-Fend Reloaded ?</a><br />
+  4. <a href="#FAQ04">I am using a special DOSBox build with some more features. Does D-Fend Reloaded support some of this features ?</a><br />
+  5. <a href="#FAQ05">I have setup "<tt>C:\Users\me\D-Fend Reloaded\VritualHD</tt>" as drive C but DOSBox says it has mounted "<tt>C:\Users\me\D-FEND~1\VIRTUA~1</tt>". What's wrong ?</a><br />
+  6. <a href="#FAQ06">How can I create an other language for D-Fend Reloaded ?</a><br />
+  7. <a href="#FAQ07">Is there an easy way of spell checking my new language file ?</a><br />
+  8. <a href="#FAQ08">Where has the "Edit default profile... (F5)" menu item gone ?</a><br />
+  9. <a href="#FAQ09">Can I use D-Fend Reloaded in Wine under Linux ?</a><br />
+  10. <a href="#FAQ10">I have keyboard problems the DOSBox keymapper cannot fix.</a><br />
+  11. <a href="#FAQ11">I get an error message when I try to install the DOSBox movie codec.</a><br />
+</p>
+
+<a onclick="Work('FAQ01')" name="FAQ01" href="#"><h2>&raquo; How does the update checker operate ?</h2></a>
+<div id="FAQ01"><p>
+The update checker is reading this file from Sourceforge:
+"<a href="http://dfendreloaded.sourceforge.net/UpdateInfo.txt" target="_blank">http://dfendreloaded.sourceforge.net/UpdateInfo.txt</a>".
+The file contains two lines; in the first line the version number of the current D-Fend Reloaded
+version on the server is given ("<tt>0.6.0</tt>" for example) and in the second line
+the download URL of the update installer for this version is given
+("<tt>http://downloads.sourceforge.net/dfendreloaded/D-Fend-Reloaded-0.6.0-UpdateSetup.exe</tt>"
+for example). If the version number in the <tt>UpdateInfo.txt</tt> is bigger than the
+version number of the currently installed D-Fend Reloaded version, the update
+checker will ask you, if you want to update to the new version. If you say
+"yes", it will download the file from the second line of the <tt>UpdateInfo.txt</tt> to
+your temporary directory and will launch it. As the last step it tells Windows
+to delete this file as soon as possible. Because the installer is just running,
+Windows cannot delete the file and will put it on its "delete on next system
+start" list.
+</p>
+
+<p>
+At the moment the <tt>UpdateInfo.txt</tt> is a static file, but in the future there
+could be version depending updates (smaller file to bring you from 0.5.0 to
+0.5.1 and a bigger file to bring you from 0.4.1 to 0.5.1). Therefor D-Fend
+Reloaded is adding a "<tt>?Version=0.5.0</tt>" (or whatever the current version is) to
+the request URL. If you do not want the php script on Sourceforge to know
+your current D-Fend Reloaded version, you can change this behavior in the
+<a href="FileOptionsSearchForUpdates.html">Search for updates</a>
+page of the <a href="FileOptions.html">program options</a> dialog. There is not
+privacy risk in sending the current version number because php scripts on
+Sourceforge are not allowed to write anything to a file and therefor cannot
+log any request.
+</p>
+
+<p>
+The update checker does nothing else you would do when you look for updates.
+The update checker can automatically check for updates when D-Fend Reloaded
+is started. But because many people do not like applications "phoning home"
+without their permission, this feature is turned off by default. (You can turn
+it on in the <a href="FileOptionsSearchForUpdates.html">Search for updates</a>
+page of the <a href="FileOptions.html">program options</a> dialog.
+And you can manually start the update checker at any time by choosing
+<a href="HelpSearchForUpdates.html">Search for updates</a> from the "Help" menu.)
+</p>
+
+<p>
+The update checker will use the Windows connection settings (which you can edit
+in the Internet Explorer). This means: If you have setup a proxy server in the
+Internet Explorer, the D-Fend Reloaded update checker will use this proxy, too.
+</p>
+</div>
+
+<a onclick="Work('FAQ02')" name="FAQ02" href="#"><h2>&raquo; I get an "DFend.dat not found" error when running a self made installer package.</h2></a>
+<div id="FAQ02"><p>
+The self made installer packages do not include D-Fend Reloaded or DOSBox. This
+means you have to install D-Fend Reloaded on the computer before you can use
+an installer package.
+</p>
+
+<p>
+If you have installed D-Fend Reloaded in "user directory" mode (the default
+installation type), the target directory is still the D-Fend Reloaded program
+folder ("<tt>C:\Program Files\D-Fend Reloaded</tt>" for example) and not the data
+directory (something like "<tt>C:\Users\you\D-Fend Reloaded</tt>"). The data package
+installer will only read from this directory and only copy files to the
+data directory, so it can run without admin rights under Vista.
+</p>
+
+<p>
+If you want to have an all inclusive package, install D-Fend Reloaded in
+portable mode to a directory, install or transfer the games to this installation
+and then make a zip archive of this directory or simply copy the whole folder
+to an USB stick. So you can show your games to others without any installation.
+</p>
+</div>
+
+<a onclick="Work('FAQ03')" name="FAQ03" href="#"><h2>&raquo; I know exactly which setting is on which tab in the D-Fend profile editor dialog. Where is this dialog gone in D-Fend Reloaded ?</h2></a>
+<div id="FAQ03"><p>
+D-Fend Reloaded has two profile editor dialogs integrated: The classic D-Fend
+style profile editor and the modern profile editor. Both dialogs offer all 
+normal settings (settings also available in D-Fend). Which profile editor
+should be used can be configured in the 
+<a href="FileOptions.html">program options</a> dialog in the category
+"<a href="FileOptionsProfileEditor.html">profile editor</a>".
+This category will only be visible, if you choose "Advanced" as mode in the dialog.
+</p>
+</div>
+
+<a onclick="Work('FAQ04')" name="FAQ04" href="#"><h2>&raquo; I am using a special DOSBox build with some more features. Does D-Fend Reloaded support some of this features ?</h2></a>
+<div id="FAQ04"><p>
+Yes, D-Fend Reloaded supports the following CSV build features:
+</p>
+<ul>
+  <li>Multiple floppy images per drive</li>
+  <li>Mounting zip files (PhysFS support)</li>
+  <li>28 or 50 lines text mode</li>
+  <li>Glide emulation</li>
+  <li>VGA chipset and video RAM settings</li>
+  <li>Printer emulation</li>
+  <li>Some more things (new render types, new graphic cards, new MIDI device) can
+  be activated by adding new default values. </li>
+</ul>
+<p>
+To activate the GUI for this settings, open the
+<a href="FileOptions.html">program options</a> dialog, switch it to
+advanced more and activate the settings you want to see in the 
+"<a href="FileOptionsDOSBoxCVSFeatures.html">DOSBox CVS features</a>" category.
+</p>
+
+<p>
+All other special functions of the custom builds are not supported directly at
+the moment. But you can tell D-Fend Reloaded to write custom strings in the
+DOSBox conf file: All you have to do is writing the lines you want to have
+in the conf file in the "Custom settings" edit field in the "DOSBox settings"
+category (or in the edit field in the "Custom settings" sheet if you use the
+classic profile editor).
+</p>
+</div>
+
+<a onclick="Work('FAQ05')" name="FAQ05" href="#"><h2>&raquo; I have setup "<tt>C:\Users\me\D-Fend Reloaded\VritualHD</tt>" as drive C but DOSBox says it has mounted "<tt>C:\Users\me\D-FEND~1\VIRTUA~1</tt>". What's wrong ?</h2></a>
+<div id="FAQ05"><p>	
+"<tt>C:\Users\me\D-FEND~1\VIRTUA~1</tt>" is the short name for "<tt>C:\Users\me\D-Fend
+Reloaded\VritualHD</tt>". D-Fend Reloaded translates the long name to the short name
+when building the DOSBox configuration file. The Cause is DOSBox can only handle
+134 chars per command. So if the path is too long DOSBox perhaps will not mount
+it. To avoid this, D-Fend Reloaded changes the path name to the short version.
+If you want to turn this off anyway, you can disable the "Use short path
+names for mount commands" option in the "<a href="FileOptionsDOSBox.html">DOSBox</a>"
+category of the <a href="FileOptions.html">program options</a> dialog.
+(The option is only visible in advanced setup mode.)
+</p>
+</div>
+
+<a onclick="Work('FAQ06')" name="FAQ06" href="#"><h2>&raquo; How can I create an other language for D-Fend Reloaded ?</h2></a>
+<div id="FAQ06"><p>	
+Just choose the menu item "Translate the program to your language" from the
+"Help making D-Fend Reloaded" better sub menu of the "Help" menu. Then choose
+"Start new language" and enter the name of the new language.
+</p>
+
+<p>
+D-Fend Reloaded will then create a new language file and open it in the
+build-in language editor. The language editor shows tables for the different
+categories (menu, profile editor, setup dialog) with the English texts on
+the left side and (editable) your translations on the right side. All you
+have to do is make translations of the shown English strings. After closing
+the language editor you can activate your language from the setup dialog (its
+handled just like the predefined languages).
+</p>
+
+<p>
+If you want to have your language in the next official D-Fend Reloaded release
+just mail the language file to me. (You can find the user defined language
+files in the folder "<tt>C:\Users\me\D-Fend Reloaded\Lang</tt>".) And of course you will
+get mentioned in the language files section of the program info dialog.
+Therefor you should attend one thing: Your name and the name of the language
+file are shown in any D-Fend Reloaded installation so make sure this two
+strings appear right under any chosen codepage/charset. (This means for
+example Cyrillic letters which are not defined in the English charset should
+not be used in the language name and in the author name.)
+</p>
+
+<p>
+If your language file uses a special charset (like cyrillic) and this is the
+default charset on your computer, everything will look fine for you (and other
+people having the same Windows charset). But on systems with another default
+charset your language will look broken. To avoid this, you can tell D-Fend
+Reloaded to always use a special charset with your language file by setting
+the "Name=" key in the [CharsetSettings] section to one of the following
+values: ANSI_CHARSET, DEFAULT_CHARSET, SYMBOL_CHARSET, SHIFTJIS_CHARSET,
+HANGEUL_CHARSET, GB2312_CHARSET, CHINESEBIG5_CHARSET, OEM_CHARSET,
+JOHAB_CHARSET, HEBREW_CHARSET, ARABIC_CHARSET, GREEK_CHARSET, TURKISH_CHARSET,
+VIETNAMESE_CHARSET, THAI_CHARSET, EASTEUROPE_CHARSET, RUSSIAN_CHARSET.
+The default value "DEFAULT_CHARSET" tells D-Fend Reloaded to use the Windows
+default charset. There is one more thing to mention: The charset setting
+applys to all D-Fend Reloaded windows but sadly not to message boxes
+which are controled by Windows itself and will always use the Windows
+default charset.
+</p>
+</div>
+
+<a onclick="Work('FAQ07')" name="FAQ07" href="#"><h2>&raquo; Is there an easy way of spell checking my new language file ?</h2></a>
+<div id="FAQ07"><p>	
+Word processors usualy have quite good spell checkers but if you copy the whole
+language file to a word processor you will get a lot of false error messages
+because the word processor also trys to correct the "CouldNotDeleteFile=" parts
+of the records. To avoid this you can use the following trick: Open the Windows
+Notepad, press the tab key, mark the inserted tabulator (8 fields of space)
+and copy it to the clipboard. Open the language file, open the replace dialog
+in notepad, write in the "search for" field "=" and paste in the tab in the
+"replace by" field. (This means replace all "=" by tabs.) Mark the whole file
+and copy it in an spread sheet. Mark the second column (only the values
+without the "CouldNotDeleteFile=" keys) and copy them to the word processor.
+</p>
+</div>
+
+<a onclick="Work('FAQ08')" name="FAQ08" href="#"><h2>&raquo; Where has the "Edit default profile... (F5)" menu item gone ?</h2></a>
+<div id="FAQ08"><p>	
+Because the default template is also a template the option to edit the default
+template has moved to the templates editor. The default template will appear in
+the templates list of the template editor. To distinguish it from the normal
+templates the "Default template" text will appear in blue and you can not
+delete it.
+</p>
+
+<p>
+Also the separate menu item to edit the default template has gone, the hotkey
+is still available. You can still reach the template profile editor via the
+F5 key.
+</p>
+</div>
+
+<a onclick="Work('FAQ09')" name="FAQ09" href="#"><h2>&raquo; Can I use D-Fend Reloaded in Wine under Linux ?</h2></a>
+<div id="FAQ09"><p>	
+Running D-Fend Reloaded in Wine is only half-official supported. In the
+<a href="FileOptions.html">program options</a> dialog in the category
+"<a href="FileOptionsWineSupport.html">Wine support</a>" (only visible in advanced setup mode)
+you can configurate D-Fend Reloaded to remap the Wine drive letters (<tt>C:</tt>, <tt>D:</tt>
+etc.) back to the Linux path names (<tt>/mnt/sta3</tt>, <tt>/mnt/stb1</tt> etc.) when creating
+conf files.
+</p>
+
+<p>
+The way the create link menu command works can also be changed for use on a
+Linux system: If you activate "Switch link creation menu item to create Linux
+shell scripts", the create link menu command will create shell scripts for
+running DOSBox with the selected profile.
+</p>
+
+<p>
+You can use the same D-Fend Reloaded installation in Windows and Wine (without
+changing the setup settings): By calling D-Fend Reloaded with a command line
+parameter including "<tt>WineMode</tt>" or "<tt>WineSupportEnabled</tt>" you can override the
+setting from the setup dialog and activate the Wine support. By calling D-Fend
+Reloaded with a command line parameter including "<tt>WindowsMode</tt>", "<tt>NoWineSupport</tt>"
+or "<tt>WineSupportDisabled</tt>" you can override the setting from the setup dialog
+and disable the Wine support. The parameters are case insensitive and you can
+also write a "-" or a "/" before them if you like to ("<tt>-winemode</tt>" for example
+will also be recognized).
+</p>
+</div>
+
+<a onclick="Work('FAQ10')" name="FAQ10" href="#"><h2>&raquo; I have keyboard problems the DOSBox keymapper cannot fix.</h2></a>
+<div id="FAQ10"><p>	
+First of all try setting the SDL video driver to "Win DIB" in the DOSBox
+section of the D-Fend Reloaded setup dialog. If you still experience keyboard
+problems (in particular keys not recogniced by the keymapper, even more in
+particular the right shift key) and have pluged a Microsoft eHome receiver (the
+official remote control for the Microsoft media centre) to your system, please
+follow these steps:
+</p>
+
+<ol>
+  <li>Open the "Keyboards" section in the Device Manager.</li>
+  <li>Right-click "Microsoft eHome MCIR 109 Keyboard" and choose "Update Driver"
+   (called "Update Driver Software" on Vista).</li>
+  <li>Choose "Browse my computer for software" (XP users have to tell it not to
+   install automatically and say you will specify the location, then when it
+   asks you where you would like it to search for drivers choose the option to
+   choose from a list) then "Let me pick from a list of device drivers on my
+   computer".</li>
+  <li>Make sure "show compatible hardware" is checked, then select "HID-compliant
+   device" and click next. Click any remaining "OK" or "Finish" buttons after
+   Windows has installed the driver.</li>
+</ol>
+
+<p>
+The 109 keys driver is a Japanese keyboard driver. As long as you do not use a
+109 keys keyboard doing this will not influence the functionallity of your
+keyboard or your remote control. (See also <a href="http://forums.logitech.com/logitech/board/message?board.id=general&amp;message.id=6123" target="_blank">http://forums.logitech.com/logitech/board/message?board.id=general&amp;message.id=6123</a>)
+</p>
+</div>
+
+<a onclick="Work('FAQ11')" name="FAQ11" href="#"><h2>&raquo; I get an error message when I try to install the DOSBox movie codec.</h2></a>
+<div id="FAQ11"><p>	
+To install a video codec you need admin rights on your system. On Windows XP
+most user always have admin rights and so can install the codec directly from
+the start menu. Under Windows Vista you need to give a program admin rights
+manually. Becuase the codec installer is a simple rundll call, it will not
+ask for admin rights automatically (like normal installers do). So you need
+to click on the start menu item with the right mouse key and have to choose
+"Start as admin". 
+</p>
+</div>
+
+</body>
+</html>
