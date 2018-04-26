@@ -14,6 +14,7 @@ settings makes it almost impossible to run DOSBox-X.
 * Add "no setting" and "windows" to the list of video drivers.
 * Unicode text handling (if possible - I'm not sure yet).
 * Bug fixes and simple changes to the code
+* Fix vulnerabilities (e.g. usage of ZLib 1.1.4).
 
 ## Non-goals
 
