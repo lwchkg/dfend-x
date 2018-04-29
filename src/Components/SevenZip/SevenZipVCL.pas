@@ -1108,7 +1108,8 @@ begin
   if isUnicode then
    SearchHandle := FindFirstFilew( PWideChar( fn ), FindDataW )
   else
-    SearchHandle := FindFirstFile( PAnsiChar( Ansistring( fn ) ), FindDataA );
+    SearchHandle := FindFirstFilew( PWideChar( fn ), FindDataW );
+    //SearchHandle := FindFirstFile( PAnsiChar( Ansistring( fn ) ), FindDataA );
 
   if SearchHandle = INVALID_HANDLE_VALUE then
    begin
