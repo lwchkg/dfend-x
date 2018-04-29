@@ -1,173 +1,108 @@
-// VER80 = Delphi 1 but DelZip is not made for it.
+{$IfDef CLR}
+   {$DEFINE BADCOMPILER}
+    YOU ARE USING A COMPILER FOR WHICH THIS PACKAGE IS NOT DESIGNED!
 
-(*{$IfDef VER90}
-   {$Define KNOWNCOMPILER}
-   {$Define DELPHI}
-   {$Define VERD2D3} 
-   {$DEFINE VERD5-}
-{$EndIf}
-{$IfDef VER93}
-   {$DEFINE KNOWNCOMPILER}
-   {$DEFINE CBUILDER}
-   {$DEFINE CBUILDER1}  
-   {$DEFINE VERD5-}
-{$EndIf}
-{$IfDef VER100}
-   {$DEFINE KNOWNCOMPILER}
-   {$DEFINE DELPHI}
-   {$DEFINE DELPHI3}
-   {$Define VERD2D3}  
-   {$DEFINE VERD5-}
-{$EndIf}
-{$IfDef VER110}
-   {$DEFINE KNOWNCOMPILER}
-   {$DEFINE CBUILDER}
-   {$ObjExportAll On}
-   {$DEFINE CBUILDER3} 
-   {$DEFINE VERD5-}
-{$EndIf}*)
-{$IfDef VER120}
-   {$DEFINE KNOWNCOMPILER}
-   {$DEFINE DELPHI}
-   {$DEFINE DELPHI4}
-   {$Define VERD4+} 
-   {$DEFINE VERD5-}
-{$EndIf}
-{$IfDef VER125}
-   {$DEFINE KNOWNCOMPILER}
-   {$DEFINE CBUILDER}
-   {$DEFINE CBUILDER4}
-   {$ObjExportAll On}
-   {$DEFINE VERD4+}  
-   {$DEFINE VERD5-}
-{$EndIf}
-{$IfDef VER130}
- {$IfNDef BCB}   
-   {$DEFINE KNOWNCOMPILER}
-   {$DEFINE DELPHI}
-   {$DEFINE DELPHI5}
-   {$Define VERD4+} 
-   {$DEFINE VERD5-}
- {$EndIf}
-{$EndIf}
-{$IfDef VER130}
- {$IfDef BCB}
-   {$DEFINE KNOWNCOMPILER}
-   {$DEFINE CBUILDER}
-   {$DEFINE CBUILDER5}
-   {$ObjExportAll On}
-   {$DEFINE VERD4+}
-   {$DEFINE VERD5-}
- {$EndIf}
-{$EndIf}
-{$IfDef VER140}  // EWE: Support Delphi 6 and BCB 6
- {$IfNDef BCB}
-	 {$DEFINE KNOWNCOMPILER}
-	 {$DEFINE DELPHI}
-	 {$DEFINE DELPHI6}
-   {$Define VERD6up}
-	 {$Define VERD4+}
- {$EndIf}
-{$EndIf}
-{$IfDef VER140}
- {$IfDef BCB}
-	 {$DEFINE KNOWNCOMPILER}
-	 {$DEFINE CBUILDER}
-	 {$DEFINE CBUILDER6}
-	 {$ObjExportAll On}
-	 {$DEFINE VERD4+}  
-   {$Define VERD6up}
- {$EndIf}
-{$EndIf}
-{$IfDef VER150}  // RP: ?? Support Delphi 7 and BCB 7?
- {$IfNDef BCB}
-	 {$DEFINE KNOWNCOMPILER}
-	 {$DEFINE DELPHI}
-	 {$DEFINE DELPHI7}
-	 {$Define VERD4+}
-   {$Define VERD6up}
- {$EndIf}
-{$EndIf}
-{$IfDef VER150}
- {$IfDef BCB}
-	 {$DEFINE KNOWNCOMPILER}
-	 {$DEFINE CBUILDER}
-	 {$DEFINE CBUILDER7}
-	 {$ObjExportAll On}
-	 {$DEFINE VERD4+}   
-   {$Define VERD6up}
- {$EndIf}
-{$EndIf}      
-{$IfDef VER160}  // RP: ?? Support Delphi 8
- {$IfNDef BCB}
-	 {$DEFINE KNOWNCOMPILER}
-	 {$DEFINE DELPHI}
-	 {$DEFINE DELPHI8}
-	 {$Define VERD4+}
-   {$Define VERD6up}
- {$EndIf}
-{$EndIf}
-{$IfDef VER170}  // RP: Support Delphi 2005
- {$IfNDef BCB}
-	 {$DEFINE KNOWNCOMPILER}
-	 {$DEFINE DELPHI}
-	 {$DEFINE DELPHI9}
-	 {$Define VERD4+}
-   {$Define VERD6up}
-   {$Define VERD9up}
- {$EndIf}
-{$EndIf}    
-{$IfDef VER180}  // RP: Support Delphi 2006
- {$IfNDef BCB}
-	 {$DEFINE KNOWNCOMPILER}
-	 {$DEFINE DELPHI}
-	 {$DEFINE DELPHI10}
-	 {$Define VERD4+}
-   {$Define VERD6up}  
-   {$Define VERD9up}
-   {$Define VERD10up}
- {$EndIf}
-{$EndIf}
-{$IfDef VER185}  // RP: Support Delphi 2007
- {$IfNDef BCB}
-	 {$DEFINE KNOWNCOMPILER}
-	 {$DEFINE DELPHI}
-	 {$DEFINE DELPHI10}
-	 {$Define VERD4+}
-   {$Define VERD6up}  
-   {$Define VERD9up}
-   {$Define VERD10up}
-   {$Define VERD11up}
- {$EndIf}
+    YOU HAVE BEEN WARNED !!!
 {$EndIf}
 
-{$IfNDef KNOWNCOMPILER}
- {$DEFINE KNOWNCOMPILER}
- {$IfNDef BCB}
-	 {$DEFINE CBUILDER}
-	 {$DEFINE CBUILDER6}
-	 {$ObjExportAll On}
- {$Endif}
- {$DEFINE VERD4+}
+{$IFDEF CONDITIONALEXPRESSIONS}
+  {$WARN UNIT_PLATFORM OFF}
+  {$WARN SYMBOL_PLATFORM OFF}
+  {$IF (CompilerVersion >= 14)} // Delphi 6.0 or newer
+    {$DEFINE VERD6up}
+  {$IFEND}
+  {$IF (CompilerVersion >= 15)} // Delphi 7.0 or newer
+    {$WARN UNSAFE_CODE OFF} 
+    {$WARN UNSAFE_TYPE OFF}
+    {$WARN UNSAFE_CAST OFF}
+    {$DEFINE VERD7up}
+  {$IFEND}
+  {$IF (CompilerVersion >= 17)} // Delphi 2005 or newer
+    {$DEFINE VERD2005up}
+    {$DEFINE ZM_INLINE}
+    {$WARN SYMBOL_DEPRECATED OFF}
+  {$IFEND}
+  {$IF (CompilerVersion >= 18.5)} // Delphi 2007 or newer
+    {$DEFINE VERD2007up}
+  {$IFEND}
+  {$IF (CompilerVersion >= 20)} // Delphi 2009 or newer   - UNICODE
+    {$DEFINE VERD2009up}
+  {$IFEND}
+  {$IF (CompilerVersion >= 21)} // Delphi 2010 or newer   - UNICODE
+    {$DEFINE VERD2010up}
+  {$IFEND}
+  {$IF (CompilerVersion >= 22)} // Delphi XE or newer   - UNICODE
+    {$DEFINE VERDXEup}
+  {$IFEND}
+  {$IF (CompilerVersion >= 23)} // Delphi XE2 or newer   - UNICODE
+    {$DEFINE VERDXE2up}
+  {$IFEND}
+  {$IF (CompilerVersion >= 24)} // Delphi XE3 or newer   - UNICODE
+    {$DEFINE VERDXE3up}
+  {$IFEND}
+  {$IF (CompilerVersion >= 25)} // Delphi XE4 or newer   - UNICODE
+    {$DEFINE VERDXE4up}
+	{$IFDEF WIN64}
+    {$DEFINE VERDXE464up}
+	{$ENDIF}
+  {$IFEND}
+  {$IF (CompilerVersion >= 26)} // Delphi XE5 or newer   - UNICODE
+    {$DEFINE VERDXE5up}
+	{$IFDEF WIN64}
+    {$DEFINE VERDXE564up}
+	{$ENDIF}
+  {$IFEND}
+  {$IF (CompilerVersion >= 27)} // Delphi XE6 or newer   - UNICODE
+    {$DEFINE VERDXE5up}
+	{$IFDEF WIN64}
+    {$DEFINE VERDXE564up}
+	{$ENDIF}
+  {$IFEND}
+  {$IF (CompilerVersion >= 28)} // Delphi XE7 or newer   - UNICODE
+    {$DEFINE VERDXE5up}
+	{$IFDEF WIN64}
+    {$DEFINE VERDXE564up}
+	{$ENDIF}
+  {$IFEND}
+  {$IF (CompilerVersion >= 29)} // Delphi XE8 or newer   - UNICODE
+    {$DEFINE VERDXE5up}
+	{$IFDEF WIN64}
+    {$DEFINE VERDXE564up}
+	{$ENDIF}
+  {$IFEND}
+  {$IF (CompilerVersion >= 30)} // Delphi DX Seattle or newer   - UNICODE
+    {$DEFINE VERDXE5up}
+	{$IFDEF WIN64}
+    {$DEFINE VERDXE564up}
+	{$ENDIF}
+  {$IFEND}
+  {$IF (CompilerVersion >= 31)} // Delphi DX London or newer   - UNICODE
+    {$DEFINE VERDXE5up}
+	{$IFDEF WIN64}
+    {$DEFINE VERDXE564up}
+	{$ENDIF}
+  {$IFEND}
+
+
+{$ENDIF}   // $IFDEF CONDITIONALEXPRESSIONS
+
+{$IfDef BADCOMPILER}
+  YOU ARE USING A COMPILER FOR WHICH THIS PACKAGE IS NOT DESIGNED!
+
+  YOU HAVE BEEN WARNED !!!
 {$EndIf}
 
-{$IfNDef KNOWNCOMPILER}
-YOU ARE USING A COMPILER FOR WHICH THIS PACKAGE IS NOT YET DESIGNED!
+{$IfDef BCB}
+  {$ObjExportAll On}
+{$Endif}
 
-YOU SHOULD ADD A COMPILER DEFINITION FIRST TO THE FILE ZipVers.inc
+{$ALIGN ON}
+{$BOOLEVAL OFF} // important: must be off!
+{$LONGSTRINGS ON}
+{$EXTENDEDSYNTAX ON}
+{$RANGECHECKS OFF}
+{$OVERFLOWCHECKS OFF}
+{$TYPEDADDRESS ON}
+{$WRITEABLECONST OFF}
 
-YOU CAN REMOVE THIS ERROR MESSAGE BY REMOVING THE DOT (.) ON THE LINE
-"{.$DEFINE KNOWNCOMPILER}"  ABOVE
 
-YOU HAVE BEEN WARNED !!!
-
-{$EndIf}
-
-{$IFNDEF VERD4+}
-  {$Message 'before Delphi 4 no longer supported - does not support Int64, dynamic arrays (plus others)'}
-  xxxxxxx // error
-{$ENDIF}
-{$IFDEF VERD6up}
-{$WARN UNIT_PLATFORM OFF}
-{$WARN SYMBOL_PLATFORM OFF}
-{$ENDIF}

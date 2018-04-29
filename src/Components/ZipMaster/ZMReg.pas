@@ -1,14 +1,14 @@
-unit ZMCtx;
+unit ZMReg;
 
-//  ZMCtx.pas - DialogBox help context values
+//  ZMReg.pas - register main component
 
 (* ***************************************************************************
 TZipMaster VCL originally by Chris Vleghert, Eric W. Engler.
   Present Maintainers and Authors Roger Aelbrecht and Russell Peters.
 Copyright (C) 1997-2002 Chris Vleghert and Eric W. Engler
 Copyright (C) 1992-2008 Eric W. Engler
- Copyright (C) 2009, 2010, 2011, 2012, 2013 Russell Peters and Roger Aelbrecht
- Copyright (C) 2014, 2015, 2016, 2017 Russell Peters and Roger Aelbrecht
+Copyright (C) 2009, 2010, 2011, 2012, 2013 Russell Peters and Roger Aelbrecht
+Copyright (C) 2014, 2015, 2016, 2017 Russell Peters and Roger Aelbrecht
 
 All rights reserved.
 For the purposes of Copyright and this license "DelphiZip" is the current
@@ -43,29 +43,28 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 contact: problems AT delphizip DOT org
 updates: http://www.delphizip.org
  *************************************************************************** *)
+//modified 2012-11-28
 
 interface
 
-const
-  DHCBase = 10000;
-  DHC_ZipMessage = DHCBase;
-  DHC_ExMessage = DHCBase + 1;
-  DHC_Password = DHCBase + 2; // just GetPassword default password
-  DHC_ExtrPwrd = DHCBase + 3;
-  DHC_AddPwrd1 = DHCBase + 4;
-  DHC_AddPwrd2 = DHCBase + 5;
-  DHC_WrtSpnDel = DHCBase + 6;
-  DHC_ExSFX2EXE = DHCBase + 7;
-  DHC_ExSFX2Zip = DHCBase + 8;
-  DHC_SpanNxtW = DHCBase + 9;
-  DHC_SpanNxtR = DHCBase + 10;  
-  DHC_SpanOvr = DHCBase + 11;
-  DHC_SpanNoOut = DHCBase + 12;
-  DHC_SpanSpace = DHCBase + 13;
-  DHC_CpyZipOvr = DHCBase + 14;
-  DHC_FormErase = DHCBase + 15;
-  DHC_ExSFXNew = DHCBase + 16;
-  
+uses
+  Classes;
+
+
+procedure Register;
+
+//----------------------------------------------------------------------------------------------------------------------
+
 implementation
 
+uses
+  ZipMstr;
+
+procedure Register;
+begin
+  RegisterComponents('DelphiZip', [TZipMaster]);
+end;
+
 end.
+
+

@@ -1,831 +1,705 @@
 unit ZMCore;
 
-(*
-  ZMCore.pas - event triggering
-  TZipMaster VCL by Chris Vleghert and Eric W. Engler
-  v1.79
-  Copyright (C) 2005  Russell Peters
+// ZMCore.pas -  Properties and methods used by all 'operations'
+(* ***************************************************************************
+  TZipMaster VCL originally by Chris Vleghert, Eric W. Engler.
+ Present Maintainers and Authors Roger Aelbrecht and Russell Peters.
+ Copyright (C) 1997-2002 Chris Vleghert and Eric W. Engler
+ Copyright (C) 1992-2008 Eric W. Engler
+ Copyright (C) 2009, 2010, 2011, 2012, 2013 Russell Peters and Roger Aelbrecht
+ Copyright (C) 2014, 2015, 2016, 2017 Russell Peters and Roger Aelbrecht
 
+ All rights reserved.
+ For the purposes of Copyright and this license "DelphiZip" is the current
+ authors, maintainers and developers of its code:
+ Russell Peters and Roger Aelbrecht.
 
-  This library is free software; you can redistribute it and/or
-  modify it under the terms of the GNU Lesser General Public
-  License as published by the Free Software Foundation; either
-  version 2.1 of the License, or (at your option) any later version.
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ * Redistributions of source code must retain the above copyright
+ notice, this list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright
+ notice, this list of conditions and the following disclaimer in the
+ documentation and/or other materials provided with the distribution.
+ * DelphiZip reserves the names "DelphiZip", "ZipMaster", "ZipBuilder",
+ "DelZip" and derivatives of those names for the use in or about this
+ code and neither those names nor the names of its authors or
+ contributors may be used to endorse or promote products derived from
+ this software without specific prior written permission.
 
-  This library is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-  Lesser General Public License (licence.txt) for more details.
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED. IN NO EVENT SHALL DELPHIZIP, IT'S AUTHORS OR CONTRIBUTERS BE
+ LIABLE FOR ANYDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ CONTRACT, STRICT LIABILITY, OR TORT(INCLUDING NEGLIGENCE OR OTHERWISE)
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
 
-  You should have received a copy of the GNU Lesser General Public
-  License along with this library; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-
-  contact: problems AT delphizip DOT org
-  updates: http://www.delphizip.org
-
-  modified 2005-11-05
----------------------------------------------------------------------------*)
+ contact: problems AT delphizip DOT org
+ updates: http://www.delphizip.org
+ *************************************************************************** *)
+// modified 2013-12-05
 
 interface
 
-{$INCLUDE ZipConfig.inc}  
-{$INCLUDE '.\ZipVers.inc'}
- {.$DEFINE DEBUG_PROGRESS}
+{$INCLUDE   '.\ZipVers.inc'}
+{.$DEFINE DEBUG_PROGRESS }
 
 uses
-  Classes, SysUtils, Controls, Forms, Dialogs,
-    ZipMstr, ZMMsgStr, ZMXcpt, ZMDelZip;
-
-
-type 
-  TZipEventsRec = packed record
-    OnCheckTerminate: TCheckTerminateEvent;
-    OnItemProgress: TItemProgressEvent;
-    OnMessage: TMessageEvent;
-    OnProgress: TProgressEvent;
-    OnProgressDetails: TProgressDetailsEvent;
-    OnTick: TTickEvent;
-    OnTotalProgress: TTotalProgressEvent;
-    OnZipDialog: TZipDialogEvent;
-    OnCopyZipOverwrite: TCopyZipOverwriteEvent;
-    OnCRC32Error: TCRC32ErrorEvent;
-    OnDirUpdate: TNotifyEvent;
-    OnExtractOverwrite: TExtractOverwriteEvent;
-    OnExtractSkipped: TExtractSkippedEvent;
-    OnFileComment: TFileCommentEvent;
-    OnFileExtra: TFileExtraEvent;
-    OnNewName: TNewNameEvent;
-    OnPasswordError: TPasswordErrorEvent;
-    OnSetAddName: TSetAddNameEvent;
-    OnSetExtName: TSetExtNameEvent;
-    OnSetNewName: TSetNewNameEvent;
-{$IFNDEF NO_SPAN}
-    OnGetNextDisk: TGetNextDiskEvent;
-    OnStatusDisk: TStatusDiskEvent;                     
+{$IFDEF VERDXE2up}
+  System.Classes, WinApi.Windows, System.SysUtils, VCL.Controls, VCL.Forms,
+  VCL.Dialogs, VCL.Graphics,
+{$ELSE}
+  Classes, Windows, SysUtils, Controls, Forms, Dialogs, Graphics,
+  IniFiles, {$IFNDEF VERD7up}ZMCompat, {$ENDIF}
 {$ENDIF}
-  end;      
-  pZipEventsRec = ^TZipEventsRec;
-    
-
-const
-  zprFile     = 0;
-  zprArchive  = 1;
-  zprCopyTemp = 2;
-  zprSFX      = 3;
-  zprHeader   = 4;
-  zprFinish   = 5;
-  zprCompressed = 6;
-  zprCentral  = 7;
-  zprChecking = 8;
-  zprLoading  = 9;
-  zprJoining  = 10;
-  zprSplitting = 11;
-      (*
-type 
-  ActionCodes = (zacTick, zacItem, zacProgress, zacEndOfBatch, zacMessage,
-    zacCount, zacSize, zacNewName, zacPassword, zacCRCError, zacOverwrite,
-    zacSkipped, zacComment, zacStream, zacData, zacXItem, zacXProgress,
-    zacExtName, zacNone);
-   *)
-type
-  TZipDelayedItems = (zdiList, zdiComment);
-  TZipDelays = set of TZipDelayedItems;
-
-  TZipShowProgress = (zspNone, zspFull, zspExtra);
-
-  TZipAllwaysItems = (zaaYesOvrwrt);//, zyaDummy);
-  TZipAnswerAlls = set of TZipAllwaysItems;
+  ZipMstr, ZMHandler;
 
 type
-  TProgDetails = class(TProgressDetails)
+  TZMVerbosity = (ZvOff, ZvVerbose, ZvTrace, ZvNoisy);
+
+type
+  TZMLog = class
   public
-    procedure Advance(adv: Cardinal);
-    procedure AdvanceXtra(adv: Cardinal);
-    procedure Clear;
-    procedure SetCount(Count: Cardinal);
-    procedure SetEnd;
-    procedure SetItem(const fname: String; fsize: Cardinal);
-    procedure SetItemXtra( const xmsg: String; fsize: Cardinal);
-    procedure SetSize(FullSize: Int64);
-    procedure Written(bytes: Int64);
+    procedure CloseLog; virtual; abstract;
+    // return true if successful
+    function Log(Err: Cardinal; const Msg: string): Boolean; virtual; abstract;
+    // return true if successful
+    function LogStrings(const Desc: string; const Strs: TStrings): Boolean;
+      virtual; abstract;
+    // 1 returns <0 _ error, 0 _ off, >0 _ available (>=8 = force verbosity)
+    function StartLog: Integer; virtual; abstract;
   end;
 
 type
-  TZMCore = class(TObject)//TZipInfos)
+  TZMStringList = class(TStringList)
   private
-    FCurWaitCount: Integer;
-    FEvents: TZipEventsRec;
-    FSaveCursor: TCursor;
-    function GetEventsRec: pZipEventsRec;
-    function GetMessage: String;
-    procedure SetEventsRec(const Value: pZipEventsRec);
-    procedure SetTempDir(const Value: String);
   protected
-    FActive: Boolean;
-    FAnswerAll: TZipAnswerAlls;
-    FBusy: Boolean;
-    fCancel: Boolean; 
-    FErrCode: Integer;
-    FEventErr: String;
-    fFullErrCode: Integer;
-    fIsDestructing: Boolean;
-    FMaster: TCustomZipMaster;
-    FMessage: String;
-    FNotMainTask: Boolean;
-    FProgDetails: TProgressDetails;
-    FReenter: Boolean;
-    FTempDir: String;
-    fTrace: Boolean;
-    FUnattended: Boolean;
-    fVerbose: Boolean;
-    function Call_back(ActionCode: ActionCodes; ErrorCode: Integer; Msg: String;
-        FileSize: Cardinal): Boolean; virtual;
-    procedure Done; virtual;
-    function GetTotalSizeToProcess: Int64;
-    procedure SetCancel(Value: Boolean); virtual;
-    procedure Starting; virtual;
-    function ZipMessageDialog(const title: String; var msg: String; context:
-        Integer; btns: TMsgDlgButtons): TModalResult;
-    procedure ZipMessageDlg(const msg: String; context: Integer); overload;
-    function ZipMessageDlgEx(const title, msg: String; context: Integer; btns:
-        TMsgDlgButtons): TModalResult; overload;     
-    property Events: TZipEventsRec read FEvents;// write FEvents;
+    function GetTextStr: string; override;
   public
-    constructor Create(AMaster: TCustomZipMaster);
-    destructor Destroy; override;
-    procedure Attacked(AnObject: TObject);
-    procedure Clear; virtual;
-    function MakeTempFileName(Prefix, Extension: String): String;
-    procedure Report(ActionCode: ActionCodes; ErrorCode: Integer; Msg: String;
-        FileSize: Int64); overload; 
-    procedure ShowExceptionError(const ZMExcept: EZipMaster);
-    procedure ShowZipFmtMessage(Id: Integer; const Args: array of const);
-    procedure ShowZipMessage(Ident: Integer; const UserStr: String);
-    procedure StartWaitCursor;
-    procedure StopWaitCursor; 
-//    property PrefLang: TZipInfoLanguages read GetPrefLang write SetPrefLang;
-    property Busy: Boolean read FBusy write fBusy;
-    property Cancel: Boolean read fCancel write SetCancel;
-    property ErrCode: Integer read fErrCode write fErrCode;
-    property EventsRec: pZipEventsRec read GetEventsRec write SetEventsRec;
-    property FullErrCode: Integer read FFullErrCode;
-    property Master: TCustomZipMaster read fMaster write fMaster;
-    property Message: String read GetMessage write fMessage;
-    property NotMainTask: Boolean read fNotMainTask write fNotMainTask;
-    property Reentry: Boolean read FReenter write FReenter;
-    property TempDir: String read FTempDir write SetTempDir;
-    property Trace: Boolean read FTrace write FTrace;
+    procedure Assign(Source: TPersistent); override;
+    procedure BeforeDestruction; override;
+    procedure Clear; override;
+    procedure Delete(Index: Integer); override;
+  end;
+
+type
+  TZMProblemItem = class(TZMProblem)
+  private
+    FErrCode: Integer;
+    FSkipCode: TZMSkipTypes;
+  protected
+    function GetErrCode: Integer; override;
+    function GetSkipCode: TZMSkipTypes; override;
+  public
+    constructor Create(Err: Integer; Skip: TZMSkipTypes);
+    function AsString: string;
+  end;
+
+type
+  TZMCore = class(TZMRoot)
+  private
+    FCancel: Integer;
+    FIsTrace: Boolean;
+    FIsVerbose: Boolean;
+    FLogger: TZMLog;
+    FLogging: Boolean;
+    FMaster: TCustomZipMaster;
+    FNoSkipping: TZMSkipAborts;
+    FNotMainThread: Boolean;
+    FProblemList: TStrings;
+    FUnattended: Boolean;
+    FVerbosity: TZMVerbosity;
+    procedure ScribeEx(LineNo, UnitNo: Integer; const Msg: string);
+    procedure SetLogger(const Value: TZMLog);
+    procedure ShowMsg(const Msg: string; ResID: Integer; Display: Boolean);
+  protected
+    procedure KillLogger;
+    function ReportSkipping(const FName: string; Err: Integer; Typ: TZMSkipTypes):
+        Boolean;
+    procedure Scribe(Err: Integer; const M: string);
+    property Logger: TZMLog read FLogger write SetLogger;
+  public
+    constructor Create(TheMaster: TCustomZipMaster);
+    procedure AfterConstruction; override;
+    procedure BeforeDestruction; override;
+    procedure Inform(const Msg: string; LineNo, UnitNo: Integer);
+    procedure InformFmt(const Msg: string; const Args: array of const;
+      LineNo, UnitNo: Integer);
+    procedure InformSys(const Msg: string; LineNo, UnitNo: Integer);
+    procedure InformSysFmt(const Msg: string; const Args: array of const;
+      LineNo, UnitNo: Integer);
+    function KeepAlive: Boolean;
+    procedure Log(Err: Cardinal; const Msg: string); virtual; abstract;
+    procedure ReportMessage(Err: Integer; const Msg: string);
+    procedure ReportMsg(Id: Integer; const Args: array of const);
+    procedure ShowError(Error: Integer);
+    function ShowErrorEx(Ident: Integer; LineNo, UnitNo: Integer): Integer;
+    // Show* optionally show ZipDialog before 'Report'
+    procedure ShowExceptionError(const ZMExcept: Exception);
+    procedure ShowFmtMessage(Id: Integer; const Args: array of const;
+      Display: Boolean);
+    procedure ShowMessage(Ident: Integer; const UserStr: string);
+    procedure Trace(const Msg: string; LineNo, UnitNo: Integer);
+    procedure TraceFmt(const Msg: string; const Args: array of const;
+      LineNo, UnitNo: Integer);
+    function ZipMessageDialog(const Title: string; var Msg: string;
+      Context: Integer; Btns: TMsgDlgButtons): TModalResult;
+    property Cancel: Integer read FCancel write FCancel;
+    property IsTrace: Boolean read FIsTrace write FIsTrace;
+    property IsVerbose: Boolean read FIsVerbose write FIsVerbose;
+    property Logging: Boolean read FLogging write FLogging;
+    property Master: TCustomZipMaster read FMaster;
+    property NoSkipping: TZMSkipAborts read FNoSkipping write FNoSkipping;
+    property NotMainThread: Boolean read FNotMainThread write FNotMainThread;
+    property ProblemList: TStrings read FProblemList;
     property Unattended: Boolean read FUnattended write FUnattended;
-    property Verbose: Boolean read FVerbose write FVerbose;
+    property Verbosity: TZMVerbosity read FVerbosity write FVerbosity;
+  end;
+
+type
+  TZMCanal = class(TStream)
+  private
+    FMyStream: TStream;
+    FOwned: Boolean;
+    FOwnsStream: Boolean;
+  public
+    constructor Create(AStream: TStream; OwnsTheStream: Boolean = False;
+      FreeMe: Boolean = True);
+    procedure BeforeDestruction; override;
+    function Read(var Buffer; Count: Longint): Longint; override;
+    function Seek(Offset: Longint; Origin: Word): Longint; overload; override;
+    function Seek(const Offset: Int64; Origin: TSeekOrigin): Int64; overload;
+{$IFDEF VERD7up} override {$ELSE} virtual{$ENDIF};
+    function Write(const Buffer; Count: Longint): Longint; override;
+    property MyStream: TStream read FMyStream;
+    property Owned: Boolean read FOwned;
   end;
 
 implementation
- 
 
-uses WinProcs, ZMUtils, ZMDlg, ZipMsg, ZMCtx;
+uses
+{$IFDEF VERDXE2up}
+  WinApi.Messages, System.TypInfo,
+{$ELSE}
+  Messages, TypInfo,
+{$ENDIF}
+  ZMUtils, ZMDlg, ZMCtx, ZMXcpt, ZMStructs, ZMMsg;
 
 const
-  RESOURCE_ERROR: String =
-    'ZipMsgXX.res is probably not linked to the executable' + #10 +
-    'Missing String ID is: %d ';
+  __UNIT__ = 8;
 
-  {TProgDetails}
-procedure TProgDetails.Advance(adv: Cardinal);
+const
+  SResourceMissingFor = 'Resource missing for ';
+  SNoLanguageStrings = 'Could not load language files';
+
+function ZM_Error(Line, Error: Integer): Integer;
 begin
-  Inc(FTotalPosition, adv);
-  Inc(FItemPosition, adv);
-  FProgType := ProgressUpdate;
+  Result := -((__UNIT__ shl ZERR_UNIT_SHIFTS) + (Line shl ZERR_LINE_SHIFTS) or
+    AbsErr(Error));
 end;
 
-procedure TProgDetails.AdvanceXtra(adv: Cardinal);
+constructor TZMCore.Create(TheMaster: TCustomZipMaster);
 begin
-  Inc(FItemPosition, adv);
-  FProgType := ExtraUpdate;
+  inherited Create(TheMaster);
+  FMaster := TheMaster;
 end;
 
-procedure TProgDetails.Clear;
+procedure TZMCore.AfterConstruction;
 begin
-  FProgType     := EndOfBatch;
-  FItemCount    := 0;
-  FWritten      := 0;
-  FTotalSize    := 0;
-  FTotalPosition := 0;
-  FItemSize     := 0;
-  FItemPosition := 0;
-  FItemName     := '';
-  FItemNumber   := 0;
-end;
-
-procedure TProgDetails.SetCount(Count: Cardinal);
-begin
-  Clear;
-  FItemCount  := Count;
-  FItemNumber := 0;
-  FProgType   := TotalFiles2Process;
-end;
-
-procedure TProgDetails.SetEnd;
-begin
-  FItemName := '';
-  FItemSize := 0;
-  FProgType := EndOfBatch;
-end;
-
-procedure TProgDetails.SetItem(const fname: String; fsize: Cardinal);
-begin
-  Inc(FItemNumber);
-  FItemName     := fname;
-  FItemSize     := fsize;
-  FItemPosition := 0;
-  FProgType     := NewFile;
-end;
-
-procedure TProgDetails.SetItemXtra(const xmsg: String; fsize: Cardinal);
-begin
-  FItemName     := xmsg;
-  FItemSize     := fsize;
-  FItemPosition := 0;
-  FProgType     := NewExtra;
-end;
-
-procedure TProgDetails.SetSize(FullSize: Int64);
-begin
-  FTotalSize := FullSize;
-  FTotalPosition := 0;
-  FItemName := '';
-  FItemSize := 0;
-  FItemPosition := 0;
-  FProgType := TotalSize2Process;
-  FWritten := 0;
-end;
-
-procedure TProgDetails.Written(bytes: Int64);
-begin
-  FWritten := bytes;
-end;
-
- {TZMCore}
-procedure TZMCore.Attacked(AnObject: TObject);
-begin
-  fReenter := True;
-  if Verbose then
-    Report(zacMessage, 0, 'Re-entry', 0);
-end;
-
-(*? TZMCore.Call_Back
-  return true if handled
-*)
-function TZMCore.Call_back(ActionCode: ActionCodes; ErrorCode: Integer;
-  Msg: String; FileSize: Cardinal): Boolean;
-begin
-  Result := False;
-end;
-
-procedure TZMCore.Clear;
-begin
-  SetZipMsgLanguage('');
-//  RestoreDefault;  // clear languages
-  FReenter := False;
-  FMessage := '';
-  fCancel := False;
-  FErrCode := 0;
-  fFullErrCode := 0;
+  inherited;
+  FNotMainThread := False;
+  FLogger := nil;
   FUnattended := False;
-  fVerbose := False;
-  fTrace := False;
-  TProgDetails(FProgDetails).Clear;
-  FEventErr      := '';
-  fIsDestructing := False;
+  FNoSkipping := DefNoSkips;
+  FProblemList := TZMStringList.Create;
 end;
 
-constructor TZMCore.Create(AMaster: TCustomZipMaster);
+procedure TZMCore.BeforeDestruction;
 begin
-  inherited Create;
-  FMaster  := AMaster;
-  FActive  := False;
-  FProgDetails := TProgDetails.Create;
-  FMessage := '';
-  FErrCode := -1;
-  FUnattended := True;                      // during construction
-  FCurWaitCount := 0;
-  FVerbose := False;
-  FTrace   := False;
-  FTempDir := '';
-  FNotMainTask := False;
-end;
-
-destructor TZMCore.Destroy;
-begin
-  FreeAndNil(FProgDetails);
+  FProblemList.Free;
+  FLogger.Free;
   inherited;
 end;
 
-procedure TZMCore.Done;
+procedure TZMCore.Inform(const Msg: string; LineNo, UnitNo: Integer);
 begin
-  fBusy := False;
-  if ( not fNotMainTask) and (FCurWaitCount > 0) then
-  begin
-    FCurWaitCount := 0;
-    Screen.Cursor := FSaveCursor;
-  end;
+  if Verbosity >= ZvVerbose then
+    ScribeEx(LineNo, UnitNo, Msg);
 end;
 
-function TZMCore.GetEventsRec: pZipEventsRec;
+procedure TZMCore.InformFmt(const Msg: string; const Args: array of const;
+  LineNo, UnitNo: Integer);
 begin
-  Result := @FEvents;
+  if Verbosity >= ZvVerbose then
+    ScribeEx(LineNo, UnitNo, Format(Msg, Args));
 end;
 
-(*? TZMCore.GetMessage
-1.73 13 July 2003 RP only return message if error
-*)
-function TZMCore.GetMessage: String;
+procedure TZMCore.InformSys(const Msg: string; LineNo, UnitNo: Integer);
 begin
-  Result := '';
-  if FErrCode <> 0 then
-  begin
-    Result := fMessage;
-    if Result = '' then
-      Result := ZipLoadStr(FErrCode);
-    if Result = '' then
-      Result := ZipFmtLoadStr(GE_Unknown, [FErrCode]);
-  end;
-end;
-//? TZMCore.GetMessage
-
-function TZMCore.GetTotalSizeToProcess: Int64;
-begin
-  Result := TProgDetails(FProgDetails).TotalSize;
+  if Verbosity >= ZvVerbose then
+    ScribeEx(LineNo, UnitNo, Msg + '  ' + SysErrorMsg(GetLastError));
 end;
 
-(*? TZMCore.MakeTempFileName
-  Make a temporary filename like: C:\...\zipxxxx.zip
-  Prefix and extension are default: 'zip' and '.zip'
-*)
-function TZMCore.MakeTempFileName(Prefix, Extension: String): String;
+procedure TZMCore.InformSysFmt(const Msg: string; const Args: array of const;
+  LineNo, UnitNo: Integer);
+begin
+  if Verbosity >= ZvVerbose then
+    ScribeEx(LineNo, UnitNo, Format(Msg, Args) + '  ' +
+      SysErrorMsg(GetLastError));
+end;
+
+function TZMCore.KeepAlive: Boolean;
 var
-  Buffer: Pchar;
-  len:    DWORD;
+  DoStop: Boolean;
+  TmpCheckTerminate: TZMCheckTerminateEvent;
+  TmpTick: TZMTickEvent;
 begin
-  Buffer := NIL;
-  if Prefix = '' then
-    Prefix := 'zip';
-  if Extension = '' then
-    Extension := '.zip';
-  try
-    if Length(FTempDir) = 0 then            // Get the system temp dir
-    begin
-      // 1. The path specified by the TMP environment variable.
-      // 2. The path specified by the TEMP environment variable, if TMP is not defined.
-      // 3. The current directory, if both TMP and TEMP are not defined.
-      len := GetTempPath(0, Buffer);
-      GetMem(Buffer, len + 12);
-      GetTempPath(len, Buffer);
-    end
-    else                                    // Use Temp dir provided by ZipMaster
-    begin
-      FTempDir := DelimitPath(FTempDir, True); 
-      GetMem(Buffer, Length(FTempDir) + 13);
-      StrPLCopy(Buffer, FTempDir, Length(FTempDir) + 1);
-    end;
-    if GetTempFileName(Buffer, PChar(Prefix), 0, Buffer) <> 0 then
-    begin
-      DeleteFile(Buffer); // Needed because GetTempFileName creates the file also.
-      Result := ChangeFileExt(Buffer, Extension); // And finally change the extension.
-    end;
-  finally
-    FreeMem(Buffer);
-  end;
-end;
-//? TZMCore.MakeTempFileName
-
-(*? TZMCore.Report
-1.77.2.0 14 September 2004 - RP fix setting ErrCode caused re-entry
-1.77.2.0 14 September 2004 - RP alter thread support & OnCheckTerminate
-1.77 16 July 2004 - RP preserve last errors message
-1.76 24 April 2004 - only handle 'progress' and information
-*)
-procedure TZMCore.Report(ActionCode: ActionCodes; ErrorCode: Integer;
-  Msg: String; FileSize: Int64);
-var
-  DoStop:  Boolean;
-  Details: TProgDetails;
-  Erm:     String;
-  tmpTick: TTickEvent;
-  tmpProgress: TProgressEvent;
-  tmpProgressDetails: TProgressDetailsEvent;
-  tmpItemProgress: TItemProgressEvent;
-  tmpTotalProgress: TTotalProgressEvent;
-  tmpMessage: TMessageEvent;
-  tmpCheckTerminate: TCheckTerminateEvent;
-begin
-  if fIsDestructing then
-    exit;
-  if ActionCode <> zacNone then
+  Result := FCancel <> 0;
+  TmpTick := Master.OnTick;
+  if Assigned(TmpTick) then
+    TmpTick(Self);
+  TmpCheckTerminate := Master.OnCheckTerminate;
+  if Assigned(TmpCheckTerminate) then
   begin
-    Details := FProgDetails as TProgDetails;
-    case ActionCode of
-      zacTick: { 'Tick' Just checking / processing messages}
-      begin
-        tmpTick := Events.OnTick;
-        if assigned(tmpTick) then
-          tmpTick(Master);
-      end;
-      zacItem: { progress type 1 = starting any ZIP operation on a new file }
-      begin
-        tmpProgress := Events.OnProgress;
-{$IFDEF ALLOW_2G}
-        if Assigned(tmpProgress) then
-          tmpProgress(Master, NewFile, Msg, FileSize);
-{$ELSE}                             
-        if Assigned(tmpProgress) then
-          tmpProgress(Master, NewFile, Msg, Lo64(FileSize));
-{$ENDIF}
-        Details.SetItem(Msg, Lo64(FileSize));//FileSize);
-{$IFDEF DEBUG_PROGRESS}
-        if Verbose then
-          with Details do
-            Report(zacMessage, 0, Format('#Item - "%s" %d', [ItemName, ItemSize]), 0);
-{$ENDIF}
-        tmpProgressDetails := Events.OnProgressDetails;
-        if Assigned(tmpProgressDetails) then
-          tmpProgressDetails(Master, Details);   
-        tmpItemProgress := Events.OnItemProgress;
-        if Assigned(tmpItemProgress) then
-          tmpItemProgress(Master, Details.ItemName, FileSize, 0);
-      end;
-      zacProgress:           { progress type 2 = increment bar }
-      begin          
-        tmpProgress := Events.OnProgress;
-{$IFDEF ALLOW_2G}
-        if Assigned(tmpProgress) then
-          tmpProgress(Master, ProgressUpdate, '', FileSize);
-{$ELSE}
-        if Assigned(tmpProgress) then
-          tmpProgress(Master, ProgressUpdate, '', Lo64(FileSize));
-{$ENDIF}
-        Details.Advance(Lo64(FileSize));//FileSize);
-{$IFDEF DEBUG_PROGRESS}
-        if Verbose then
-          with Details do
-            Report(zacMessage, 0,
-              Format('#Progress - [inc:%d] ipos:%d isiz:%d, tpos:%d tsiz:%d',
-              [FileSize, ItemPosition, ItemSize, TotalPosition, TotalSize]), 0);
-{$ENDIF}                            
-        tmpProgressDetails := Events.OnProgressDetails;
-        if Assigned(tmpProgressDetails) then
-          tmpProgressDetails(Master, Details);   
-        tmpItemProgress := Events.OnItemProgress;
-        if Assigned(tmpItemProgress) then
-          tmpItemProgress(Master, Details.ItemName, Details.ItemPosition,
-            Details.ItemPerCent);
-        tmpTotalProgress := Events.OnTotalProgress;
-        if Assigned(tmpTotalProgress) then
-          tmpTotalProgress(Master, Details.TotalSize, Details.TotalPerCent);
-      end;
-      zacEndOfBatch:          { end of a batch of 1 or more files }
-      begin                     
-        tmpProgress := Events.OnProgress;
-        if Assigned(tmpProgress) then
-          tmpProgress(Master, EndOfBatch, '', 0);
-        Details.SetEnd;
-{$IFDEF DEBUG_PROGRESS}
-        if Verbose then
-          Report(zacMessage, 0, '#End Of Batch', 0);
-{$ENDIF}                          
-        tmpProgressDetails := Events.OnProgressDetails;
-        if Assigned(tmpProgressDetails) then
-          tmpProgressDetails(Master, Details);
-        tmpItemProgress := Events.OnItemProgress;
-        if Assigned(tmpItemProgress) then
-          tmpItemProgress(Master, Details.ItemName, 0, 101);
-        tmpTotalProgress := Events.OnTotalProgress;
-        if Assigned(tmpTotalProgress) then
-          tmpTotalProgress(Master, 0, 101);
-      end;
-      zacMessage:              { a routine status message }
-      begin
-        Erm := Msg;
-        if ErrorCode <> 0 then      // W'll always keep the last ErrorCode
-        begin
-          FMessage := Msg;
-          FErrCode := Integer(ShortInt(ErrorCode and $FF));
-          if (FErrCode = 9) and (fEventErr <> '') then // user cancel
-          begin
-            FMessage := ZipFmtLoadStr(GE_EventEx, [fEventErr]);
-            Erm      := FMessage;
-          end;
-          fFullErrCode := ErrorCode;
-        end;
-        tmpMessage := Events.OnMessage;
-        if Assigned(tmpMessage) then
-          tmpMessage(Master, ErrorCode, Erm);
-      end;
-
-      zacCount:              { total number of files to process }
-      begin
-        Details.SetCount(FileSize);
-{$IFDEF DEBUG_PROGRESS}
-        if Verbose then
-          Report(zacMessage, 0, Format('#Count - %d', [Details.TotalCount]), 0);
-{$ENDIF}                                       
-        tmpProgressDetails := Events.OnProgressDetails;
-        if Assigned(tmpProgressDetails) then
-          tmpProgressDetails(Master, Details);
-        tmpProgress := Events.OnProgress;
-{$IFDEF ALLOW_2G}    
-        if Assigned(tmpProgress) then
-          tmpProgress(Master, TotalFiles2Process, '', FileSize);
-{$ELSE}              
-        if Assigned(tmpProgress) then
-          tmpProgress(Master, TotalFiles2Process, '', Lo64(FileSize));
-{$ENDIF}
-      end;
-      zacSize:           { total size of all files to be processed }
-      begin
-        Details.SetSize(FileSize);
-{$IFDEF DEBUG_PROGRESS}
-        if Verbose then
-          Report(zacMessage, 0, Format('#Size - %d', [Details.TotalSize]), 0);
-{$ENDIF}                                     
-        tmpProgressDetails := Events.OnProgressDetails;
-        if Assigned(tmpProgressDetails) then
-          tmpProgressDetails(Master, Details);
-        tmpProgress := Events.OnProgress;
-{$IFDEF ALLOW_2G}   
-        if Assigned(tmpProgress) then
-          tmpProgress(Master, TotalSize2Process, '', FileSize);
-{$ELSE}            
-        if Assigned(tmpProgress) then
-          tmpProgress(Master, TotalSize2Process, '', Lo64(FileSize));
-{$ENDIF}
-      end;
-
-      zacXItem:   { progress type 15 = starting new extra operation }
-      begin      
-        tmpProgress := Events.OnProgress;
-{$IFDEF ALLOW_2G}   
-        if Assigned(tmpProgress) then
-          tmpProgress(Master, NewExtra, Msg, FileSize);
-{$ELSE}           
-        if Assigned(tmpProgress) then
-          tmpProgress(Master, NewExtra, Msg, Lo64(FileSize));
-{$ENDIF}
-        Details.SetItemXtra(ZipLoadStr(PR_Progress + ErrorCode), FileSize);
-{$IFDEF DEBUG_PROGRESS}
-        if Verbose then
-          Report(zacMessage, 0, Format('#XItem - %s size = %d',
-            [Details.ItemName, FileSize]), 0);
-{$ENDIF}                                   
-        tmpProgressDetails := Events.OnProgressDetails;
-        if Assigned(tmpProgressDetails) then
-          tmpProgressDetails(Master, Details);   
-        tmpItemProgress := Events.OnItemProgress;
-        if Assigned(tmpItemProgress) then
-          tmpItemProgress(Master, Details.ItemName, FileSize, 0);
-      end;
-
-      zacXProgress: { progress type 16 = increment bar for extra operation}
-      begin    
-        tmpProgress := Events.OnProgress;
-{$IFDEF ALLOW_2G} 
-        if Assigned(tmpProgress) then
-          tmpProgress(Master, ExtraUpdate, Details.ItemName, FileSize);
-{$ELSE}           
-        if Assigned(tmpProgress) then
-          tmpProgress(Master, ExtraUpdate, Details.ItemName, Lo64(FileSize));
-{$ENDIF}
-        Details.AdvanceXtra(FileSize);
-{$IFDEF DEBUG_PROGRESS}
-        if Verbose then
-          Report(zacMessage, 0, Format('#XProgress - [inc:%d] pos:%d siz:%d',
-            [FileSize, Details.ItemPosition, Details.ItemSize]), 0);
-{$ENDIF}                                    
-        tmpProgressDetails := Events.OnProgressDetails;
-        if Assigned(tmpProgressDetails) then
-          tmpProgressDetails(Master, Details);
-        tmpItemProgress := Events.OnItemProgress;
-        if Assigned(tmpItemProgress) then
-          tmpItemProgress(Master, Details.ItemName, Details.ItemSize,
-            Details.ItemPerCent);
-      end;
-
-      else                                    {unhandled event}
-        Call_Back(ActionCode, ErrorCode, Msg, FileSize);
-    end;                                    {end case }
-  end;
-  tmpCheckTerminate := Events.OnCheckTerminate;
-  if assigned(tmpCheckTerminate) then
-  begin
-    DoStop := Cancel;
-    tmpCheckTerminate(Master, DoStop);
+    DoStop := FCancel <> 0;
+    TmpCheckTerminate(Self, DoStop);
     if DoStop then
-      Cancel := True;
+      FCancel := ZS_Canceled;
   end
   else
-  if not fNotMainTask then
-    Application.ProcessMessages;
+    if not NotMainThread then
+      Application.ProcessMessages;
 end;
-//? TZMCore.Report
 
-procedure TZMCore.SetCancel(Value: Boolean);
+procedure TZMCore.KillLogger;
 begin
-  fCancel := Value;
+  FLogging := False;
+  FreeAndNil(FLogger);
 end;
 
-procedure TZMCore.SetEventsRec(const Value: pZipEventsRec);
-begin
-  // TODO -cMM: TZMCore.SetEventsRec default body inserted
-end;
-
-procedure TZMCore.SetTempDir(const Value: String);
+procedure TZMCore.ReportMessage(Err: Integer; const Msg: string);
 var
-  drt: Integer;
-  Drive: string;
+  ECode: Integer;
+  M: string;
 begin
-  if FTempDir <> Value then
+  if Err < 0 then
+    Err := -Err;
+  ECode := AbsErr(Err);
+  M := Msg;
+  if ECode <> 0 then
   begin
-    if Value <> '' then
+    if M = '' then
+      M := ZipLoadStr(ECode);
+    if Errors.Code = 0 then // only catch first
     begin
-      Drive := ExtractFileDrive(value) + '\';
-      drt := GetDriveType(pChar(Drive));
-      // only fixed drive or ramdisk is fast enough to be used as tempdir
-      if((drt <> DRIVE_FIXED) and (drt <> DRIVE_RAMDISK)) then
-        raise EZipMaster.createResDrive( DS_NotChangeable, Value);
-    end;
-    FTempDir := Value;
-  end;
-end;
-
-(*? TZMCore.ShowExceptionError
-1.80 strings already formatted
-// Somewhat different from ShowZipMessage() because the loading of the resource
-// string is already done in the constructor of the exception class.
-*)
-procedure TZMCore.ShowExceptionError(const ZMExcept: EZipMaster);
-var
-  tmpMessage: TMessageEvent;
-begin
-  FErrCode := ZMExcept.ResId;
-  FMessage := ZMExcept.Message;
-
-  if ZMExcept.FDisplayMsg and not FUnattended then  
-    ZipMessageDlg(FMessage, zmtError + DHC_ExMessage);
-
-  tmpMessage := Events.OnMessage;
-  if Assigned(tmpMessage) then
-    tmpMessage(Master, FErrCode {0}, FMessage);
-end;
-//? TZMCore.ShowExceptionError
-
-(*? TZMCore.ShowZipFmtMessage
-1.79 added
-*)
-procedure TZMCore.ShowZipFmtMessage(Id: Integer; const Args: array of const);
-var
-  tmpMessage: TMessageEvent;
-begin
-  tmpMessage := Events.OnMessage;
-  if (not FUnattended) or Assigned(tmpMessage) then
-  begin
-    FMessage := ZipFmtLoadStr(Id, Args);
-    ErrCode  := Id;
-
-    if not FUnattended then
-      ZipMessageDlg(FMessage, zmtInformation + DHC_ZipMessage);
-
-    if Assigned(tmpMessage) then
-      tmpMessage(Master, FErrCode, FMessage);
-  end;
-end;
-//? TZMCore.ShowZipFmtMessage
-
-(*? TZMCore.ShowZipMessage
-*)
-procedure TZMCore.ShowZipMessage(Ident: Integer; const UserStr: String);
-var
-  Msg: String;
-  tmpMessage: TMessageEvent;
-begin
-  tmpMessage := Events.OnMessage;
-  if (not FUnattended) or Assigned(tmpMessage) then
-  begin
-    Msg := ZipLoadStr(Ident);
-    if Msg = '' then
-      Msg := Format(RESOURCE_ERROR, [Ident]);
-    Msg := Msg + UserStr;
-    FMessage := Msg;
-    ErrCode  := Ident;
-
-    if not FUnattended then
-      ZipMessageDlg(Msg, zmtInformation + DHC_ZipMessage);
-
-    if Assigned(tmpMessage) then
-      tmpMessage(Master, FErrCode, Msg);
-  end;
-end;
-//? TZMCore.ShowZipMessage
-
-(*? TZMCore.Starting
-*)
-procedure TZMCore.Starting;
-begin
-  fReenter := False;
-  fBusy    := True;
-  FAnswerAll := [];
-  if GetCurrentThreadID <> MainThreadID then
-    NotMainTask := true;
-end;
-//? TZMCore.Starting
-
-(*? TZMCore.StartWaitCursor
-1.75.0.5 10 March 2004 only set wait if forground task
-*)
-procedure TZMCore.StartWaitCursor;
-begin
-  if not fNotMainTask then
-  begin
-    if FCurWaitCount = 0 then
-    begin
-      FSaveCursor   := Screen.Cursor;
-      Screen.Cursor := crHourglass;
-    end;
-    Inc(FCurWaitCount);
-  end;
-end;
-//? TZMCore.StartWaitCursor
-
-(*? TZMCore.StopWaitCursor
-1.75.0.5 10 March 2004 only set wait if forground task
-*)
-procedure TZMCore.StopWaitCursor;
-begin
-  if ( not fNotMainTask) and (FCurWaitCount > 0) then
-  begin
-    Dec(FCurWaitCount);
-    if (FCurWaitCount = 0) then
-      Screen.Cursor := FSaveCursor;
-  end;
-end;
-//? TZMCore.StopWaitCursor
-
-function TZMCore.ZipMessageDialog(const title: String; var msg: String;
-  context: Integer; btns: TMsgDlgButtons): TModalResult;
-var
-  dlg: TZipDialogBox;
-  t, s:   String;
-  ctx: Integer;
-  tmpZipDialog: TZipDialogEvent;
-begin
-  t := title;
-  if title = '' then
-    t := Application.Title;
-  if Verbose then
-    t := Format('%s   (%d)',[t, context and $FFFF]);
-  tmpZipDialog := Events.OnZipDialog;
-  if assigned(tmpZipDialog) then
-  begin
-    s   := msg;
-    ctx := context;
-    tmpZipDialog(Master, t, s, ctx, btns);
-    if (ctx > 0) and (ctx <= Ord(mrYesToAll)) then
-    begin
-      msg := s;
-      Result := TModalResult(ctx);
-      exit;
+      Errors.Code := ECode;
+      Errors.ExtCode := Err;
+      Errors.ErrMessage := M;
     end;
   end;
-  dlg := TZipDialogBox.CreateNew2(Application,  context);
+  Scribe(Err, M);
+end;
+
+// for non-error reporting only
+procedure TZMCore.ReportMsg(Id: Integer; const Args: array of const);
+var
+  Msg: string;
+begin
+  Msg := ZipLoadStr(Id);
+
+  Msg := Format(Msg, Args);
+  Scribe(0, Msg);
+end;
+
+// return false if skipping allowed
+function TZMCore.ReportSkipping(const FName: string; Err: Integer;
+  Typ: TZMSkipTypes): Boolean;
+var
+  Ti: Integer;
+  TmpMessage: TZMMessageEvent;
+  TmpSkipped: TZMSkippedEvent;
+begin
+  Result := False;
+  if Typ in NoSkipping then
+  begin
+    if Err = 0 then
+      Err := ZE_NoSkipping;
+  end;
+  Ti := Err;
+  if Ti < 0 then
+    Ti := -Ti;
+  if (Ti <> 0) and (Typ in NoSkipping) then
+    Ti := -Ti; // default to abort
+  TmpSkipped := Master.OnSkipped;
+  if Assigned(TmpSkipped) then
+    TmpSkipped(Self, FName, Typ, Ti)
+  else
+    if Verbosity > ZvOff then
+    begin
+      TmpMessage := Master.OnMessage;
+      if Assigned(TmpMessage) then
+        TmpMessage(Self, Err, ZipFmtLoadStr(ZS_Skipped,
+          [FName, Ord(Typ)]));
+    end;
+  if Ti < 0 then
+    Result := True; // Skipping not allowed
+  if Logging then
+    Logger.Log(ZM_Error({_LINE_}332, 0), Format('[Skipped] IN=%d,%d OUT=%d',
+      [Err, Ord(Typ), Ord(Result)]));
+end;
+
+procedure TZMCore.Scribe(Err: Integer; const M: string);
+var
+  TmpMessage: TZMMessageEvent;
+begin
+  if Logging and (Logger <> nil) then
+    Logger.Log(Err, M);
+  TmpMessage := Master.OnMessage;
+  if Assigned(TmpMessage) then
+    TmpMessage(Self, AbsErr(Err), M);
+  KeepAlive; // process messages or check terminate;
+end;
+
+procedure TZMCore.ScribeEx(LineNo, UnitNo: Integer; const Msg: string);
+var
+  L: Integer;
+begin
+  if UnitNo > 0 then
+    L := (UnitNo shl ZERR_UNIT_SHIFTS) + (LineNo shl ZERR_LINE_SHIFTS)
+  else
+    L := LineNo; // assume error with extended information
+  Scribe(L, Msg);
+end;
+
+procedure TZMCore.SetLogger(const Value: TZMLog);
+begin
+  if FLogger <> Value then
+  begin
+    FLogger.Free;
+    FLogger := Value;
+    Logging := False; // until activated
+  end;
+  if FLogger = nil then
+    Logging := False;
+end;
+
+procedure TZMCore.ShowError(Error: Integer);
+begin
+  ShowMsg(ErrMsg(Error), Error, True);
+end;
+
+function TZMCore.ShowErrorEx(Ident: Integer; LineNo, UnitNo: Integer): Integer;
+begin
+  if UnitNo > 0 then
+    Result := -((UnitNo shl ZERR_UNIT_SHIFTS) + (LineNo shl ZERR_LINE_SHIFTS) or
+      AbsErr(Ident))
+  else
+    Result := Ident; // assume error with extended information
+  ShowError(Result);
+end;
+
+procedure TZMCore.ShowExceptionError(const ZMExcept: Exception);
+var
+  Msg: string;
+  ResID: Integer;
+begin
+  if ZMExcept is EZMException then
+  begin
+    ResID := EZMException(ZMExcept).ExtErr;
+{$IFDEF UNICODE}
+    Msg := ZMExcept.Message;
+{$ELSE}
+    if IsUtf8 then
+      Msg := EZMException(ZMExcept).UMessage
+    else
+      Msg := ZMExcept.Message;
+{$ENDIF}
+    if AbsErr(ResID) = ZS_Abort then
+      Msg := ZipLoadStr(ZS_Abort);
+  end
+  else
+  begin
+    ResID := ZM_Error({_LINE_}407, ZE_ExceptErr);
+    Msg := ZMExcept.Message;
+  end;
+  ShowMsg(Msg, ResID, True);
+end;
+
+procedure TZMCore.ShowMsg(const Msg: string; ResID: Integer; Display: Boolean);
+var
+  M: string;
+  MsgID: Integer;
+begin
+  if Display and not Unattended then
+  begin
+    MsgID := AbsErr(ResID);
+    if (MsgID <> ZS_Abort) and (MsgID <> ZS_Canceled) then
+    begin
+      M := Msg;
+      ZipMessageDialog('', M, ZmtInformation + DHC_ZipMessage, [MbOK]);
+    end;
+  end;
+
+  ReportMessage(ResID, Msg);
+end;
+
+procedure TZMCore.ShowFmtMessage(Id: Integer; const Args: array of const;
+  Display: Boolean);
+var
+  S: string;
+begin
+  S := ZipLoadStr(Id);
+
+  S := Format(S, Args);
+  ShowMsg(S, Id, Display);
+end;
+
+procedure TZMCore.ShowMessage(Ident: Integer; const UserStr: string);
+var
+  Msg: string;
+begin
+  Msg := ZipLoadStr(Ident);
+  if UserStr <> '' then
+    Msg := Msg + ': ' + UserStr;
+  ShowMsg(Msg, Ident, True);
+end;
+
+procedure TZMCore.Trace(const Msg: string; LineNo, UnitNo: Integer);
+begin
+  if Verbosity >= ZvTrace then
+    ScribeEx(LineNo, UnitNo, 'Trace: ' + Msg);
+end;
+
+procedure TZMCore.TraceFmt(const Msg: string; const Args: array of const;
+  LineNo, UnitNo: Integer);
+begin
+  if Verbosity >= ZvTrace then
+    ScribeEx(LineNo, UnitNo, 'Trace: ' + Format(Msg, Args));
+end;
+
+function TZMCore.ZipMessageDialog(const Title: string; var Msg: string;
+  Context: Integer; Btns: TMsgDlgButtons): TModalResult;
+var
+  Ctx: Integer;
+  Dlg: TZipDialogBox;
+  S: string;
+  T: string;
+  TmpZipDialog: TZMDialogEvent;
+begin
+  T := Title;
+  if Title = '' then
+    T := Application.Title;
+  if Verbosity > ZvOff then
+    T := Format('%s   (%d)', [T, Context and MAX_WORD]);
+  TmpZipDialog := Master.OnZipDialog;
+  if Assigned(TmpZipDialog) then
+  begin
+    S := Msg;
+    Ctx := Context;
+    TmpZipDialog(Self, T, S, Ctx, Btns);
+    if (Ctx > 0) and (Ctx <= Ord(MrYesToAll)) then
+    begin
+      Msg := S;
+      Result := TModalResult(Ctx);
+      Exit;
+    end;
+  end;
+  Dlg := TZipDialogBox.CreateNew2(Application, Context);
   try
-    dlg.Build(t, msg, btns);
-    dlg.ShowModal();
-    Result := dlg.ModalResult; 
-    if dlg.DlgType = zmtPassword then
+    Dlg.Build(T, Msg, Btns, Self);
+    Dlg.ShowModal();
+    Result := Dlg.ModalResult;
+    if Dlg.DlgType = ZmtPassword then
     begin
-      if (Result = mrOk) then
-        Msg := dlg.Pwrd
+      if (Result = MrOk) then
+        Msg := Dlg.PWrd
       else
         Msg := '';
     end;
   finally
-    FreeAndNil(dlg);
+    FreeAndNil(Dlg);
   end;
 end;
 
-procedure TZMCore.ZipMessageDlg(const msg: String;
-  context: Integer);
+{ TZMStringList }
+
+procedure TZMStringList.Assign(Source: TPersistent);
+var
+  I: Integer;
+  Src: TStrings;
 begin
-  ZipMessageDlgEx('', msg, context, [mbOk]);
+  Clear;
+  inherited;
+  // remove duplicate reference to object
+  if Source is TStrings then
+  begin
+    Src := TStrings(Source);
+    for I := 0 to Src.Count - 1 do
+      Src.Objects[I] := nil;
+  end;
 end;
 
-function TZMCore.ZipMessageDlgEx(const title, msg: String; context: Integer;
-  btns: TMsgDlgButtons): TModalResult;
-var
-  m: String;
+procedure TZMStringList.BeforeDestruction;
 begin
-  m      := msg;
-  Result := ZipMessageDialog(title, m, context, btns);
+  Clear; // delete any attached objects
+  inherited;
+end;
+
+// delete any attached objects
+procedure TZMStringList.Clear;
+var
+  I: Integer;
+  Obj: TObject;
+begin
+  for I := 0 to Count - 1 do
+  begin
+    if Objects[I] <> nil then
+    begin
+      Obj := TObject(Objects[I]);
+      Objects[I] := nil;
+      if (Obj is TZMCanal) then
+      begin
+        if (TZMCanal(Obj).Owned) then
+          Obj.Free;
+      end
+      else
+        if (Obj is TZMProblem) then
+          Obj.Free;
+    end;
+  end;
+  inherited;
+end;
+
+procedure TZMStringList.Delete(Index: Integer);
+var
+  Obj: TObject;
+begin
+  if (Index >= 0) and (Index < Count) then
+  begin
+    Obj := Objects[Index];
+    if Obj <> nil then
+    begin
+      Objects[Index] := nil;
+      if (Obj is TZMCanal) then
+      begin
+        if (TZMCanal(Obj).Owned) then
+          Obj.Free;
+      end
+      else
+        if (Obj is TZMProblem) then
+          Obj.Free;
+    end;
+  end;
+  inherited;
+end;
+
+function TZMStringList.GetTextStr: string;
+var
+  I: Integer;
+  O: TObject;
+  Obj: TObject;
+  S: string;
+begin
+  Result := '';
+  for I := 0 to Count - 1 do
+  begin
+    Result := Result + Strings[I] + #13#10;
+    Obj := Objects[I];
+    while Obj <> nil do
+    begin
+      O := Obj;
+      Obj := nil;
+      S := '<UNKNOWN>';
+      if O is TZMCanal then
+      begin
+        S := '<CANAL>';
+        if TZMCanal(O).Owned then
+          S := S + ', Owned';
+      end
+      else
+        if O is TStream then
+          S := '<STREAM>'
+        else
+          if O is TZMProblemItem then
+          begin
+            S := '<PROBLEM>, ' + TZMProblemItem(O).AsString;
+          end;
+      Result := Result + #9 + S + #13#10;
+    end;
+  end;
+end;
+
+constructor TZMProblemItem.Create(Err: Integer; Skip: TZMSkipTypes);
+begin
+  inherited Create;
+  FErrCode := Err;
+  FSkipCode := Skip;
+end;
+
+function TZMProblemItem.GetErrCode: Integer;
+begin
+  Result := FErrCode;
+end;
+
+function TZMProblemItem.GetSkipCode: TZMSkipTypes;
+begin
+  Result := FSkipCode;
+end;
+
+function TZMProblemItem.AsString: string;
+begin
+  Result := Format('%d, %d', [Ord(SkipCode), ErrCode]);
+end;
+
+constructor TZMCanal.Create(AStream: TStream; OwnsTheStream: Boolean = False;
+  FreeMe: Boolean = True);
+begin
+  inherited Create;
+  FMyStream := AStream;
+  FOwnsStream := OwnsTheStream;
+  FOwned := FreeMe;
+end;
+
+procedure TZMCanal.BeforeDestruction;
+begin
+  inherited;
+  if FOwnsStream then
+    MyStream.Free;
+end;
+
+function TZMCanal.Read(var Buffer; Count: Longint): Longint;
+begin
+  Result := FMyStream.Read(Buffer, Count);
+end;
+
+function TZMCanal.Seek(const Offset: Int64; Origin: TSeekOrigin): Int64;
+begin
+{$IFNDEF VERD7up}
+  if (Offset < low(Longint)) or (Offset > high(Longint)) then
+    raise ERangeError.Create('>2G not supported');
+  Result := Seek(Longint(Offset), Ord(Origin));
+{$ELSE}
+  Result := FMyStream.Seek(Offset, Origin);
+{$ENDIF}
+end;
+
+function TZMCanal.Seek(Offset: Longint; Origin: Word): Longint;
+begin
+{$IFNDEF VERD7up}
+  Result := FMyStream.Seek(Offset, Origin);
+{$ELSE}
+  Result := FMyStream.Seek(Int64(Offset), TSeekOrigin(Origin));
+{$ENDIF}
+end;
+
+function TZMCanal.Write(const Buffer; Count: Longint): Longint;
+begin
+  Result := FMyStream.Write(Buffer, Count);
 end;
 
 end.
-

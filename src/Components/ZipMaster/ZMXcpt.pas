@@ -1,158 +1,147 @@
 unit ZMXcpt;
 
-(*
-  ZMXcpt.pas - Exception class for ZipMaster
-  TZipMaster VCL by Chris Vleghert and Eric W. Engler
-  v1.79
-  Copyright (C) 2005  Russell Peters
+// ZMXcpt.pas - Exception class for ZipMaster
 
+(* ***************************************************************************
+  TZipMaster VCL originally by Chris Vleghert, Eric W. Engler.
+ Present Maintainers and Authors Roger Aelbrecht and Russell Peters.
+ Copyright (C) 1997-2002 Chris Vleghert and Eric W. Engler
+ Copyright (C) 1992-2008 Eric W. Engler
+ Copyright (C) 2009, 2010, 2011, 2012, 2013 Russell Peters and Roger Aelbrecht
+ Copyright (C) 2014, 2015, 2016, 2017 Russell Peters and Roger Aelbrecht
 
-  This library is free software; you can redistribute it and/or
-  modify it under the terms of the GNU Lesser General Public
-  License as published by the Free Software Foundation; either
-  version 2.1 of the License, or (at your option) any later version.
+ All rights reserved.
+ For the purposes of Copyright and this license "DelphiZip" is the current
+ authors, maintainers and developers of its code:
+ Russell Peters and Roger Aelbrecht.
 
-  This library is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-  Lesser General Public License (licence.txt) for more details.
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ * Redistributions of source code must retain the above copyright
+ notice, this list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright
+ notice, this list of conditions and the following disclaimer in the
+ documentation and/or other materials provided with the distribution.
+ * DelphiZip reserves the names "DelphiZip", "ZipMaster", "ZipBuilder",
+ "DelZip" and derivatives of those names for the use in or about this
+ code and neither those names nor the names of its authors or
+ contributors may be used to endorse or promote products derived from
+ this software without specific prior written permission.
 
-  You should have received a copy of the GNU Lesser General Public
-  License along with this library; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED. IN NO EVENT SHALL DELPHIZIP, IT'S AUTHORS OR CONTRIBUTERS BE
+ LIABLE FOR ANYDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ CONTRACT, STRICT LIABILITY, OR TORT(INCLUDING NEGLIGENCE OR OTHERWISE)
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
 
-  contact: problems AT delphizip DOT org
-  updates: http://www.delphizip.org
+ contact: problems AT delphizip DOT org
+ updates: http://www.delphizip.org
+ *************************************************************************** *)
+// modified 2013-12-06
 
-  modified 2007-02-22
----------------------------------------------------------------------------*)
+{$INCLUDE   '.\ZipVers.inc'}
 
 interface
 
 uses
-  SysUtils, ZMMsgStr;
+{$IFDEF VERDXE2up}
+  System.Classes, System.SysUtils,
+{$ELSE}
+  Classes, SysUtils,
+{$ENDIF}
+  ZMHandler;
 
 type
-  EZipMaster = class(Exception)
+  EZMException = class(Exception)
+  private
+{$IFNDEF UNICODE}
+    FUMessage: string; // only used if UsingUTF8 is set
+{$ENDIF}
+    FExtErr: Integer;
+    procedure SetExtErr(const Value: Integer);
   public
-    FDisplayMsg: Boolean; // We do not always want to see a message after an exception.
-    // We also save the Resource ID in case the resource is not linked in the application.
-    FResIdent: Integer;
-
-    constructor Create(const msg: String);
-    constructor CreateDisp(const Message: String; const Display: Boolean);
-
-    constructor CreateResFmt(Ident: Integer; const Args: array of const);
-    constructor CreateResDisp(Ident: Integer; const Display: Boolean);
-    constructor CreateResDisk(Ident: Integer; const DiskNo: Shortint);
-    constructor CreateResDrive(Ident: Integer; const Drive: String);
-    constructor CreateResFile(Ident: Integer; const File1, File2: String);
-    constructor CreateResMsgOS(Ident: Integer; const Msg: string; err: Integer);
-
-    property ResId: Integer Read FResIdent write FResIdent;
+    property ExtErr: Integer read FExtErr write SetExtErr;
+{$IFNDEF UNICODE}
+    property UMessage: string read FUMessage write FUMessage;
+{$ENDIF}
   end;
-             
-function WinErr(err: Integer): string;
+
+type
+  EZipMaster = class(EZMException)
+    constructor CreateMsg(Core: TZMRoot; Ident, LineNo, UnitNo: Integer);
+    constructor CreateMsgFmt(Core: TZMHandler; Ident: Integer;
+      const Args: array of const; LineNo, UnitNo: Integer);
+  public
+  end;
+
+type
+  EZMAbort = class(EZMException)
+  public
+    constructor Create;
+  end;
 
 implementation
 
 uses
-  ZipMsg, Windows;
+  ZMMsg, ZMUtils;
 
-const
-//  RESOURCE_ERROR1: String =
-//    #10 + 'ZipMsgXX.res is probably not linked to the executable';
-  ERRORMSG: String = 'Failed to Locate string';
-
-constructor EZipMaster.Create(const msg: String);
+procedure EZMException.SetExtErr(const Value: Integer);
 begin
-  inherited Create(msg);
-  FDisplayMsg := True;
-  FResIdent   := DS_UnknownError;
-end;
-
-constructor EZipMaster.CreateDisp(const Message: String; const Display: Boolean);
-begin
-  inherited Create(Message);
-  FDisplayMsg := Display;
-end;
-
-constructor EZipMaster.CreateResFmt(Ident: Integer; const Args: array of const);
-begin
-  inherited Create(ERRORMSG);
-  Message := ZipFmtLoadStr(Ident, Args);
-//  if Message = '' then  // should not happen
-//    Message := Format('id = %d %s', [ident, RESOURCE_ERROR1])
-//  else
-  Message := Format(Message, Args);
-  FDisplayMsg := True;
-  FResIdent := Ident;
-end; 
-
-constructor EZipMaster.CreateResDisp(Ident: Integer; const Display: Boolean);
-begin
-  inherited Create(ERRORMSG);
-  Message := ZipLoadStr(Ident);
-//  if Message = '' then
-//    Message := Format('id = %d %s', [ident, RESOURCE_ERROR1]);
-  FDisplayMsg := Display;
-  FResIdent := Ident;
-end;
-
-constructor EZipMaster.CreateResDisk(Ident: Integer; const DiskNo: Shortint);
-begin                           
-  inherited Create(ERRORMSG);
-  Message := ZipLoadStr(Ident);
-  Message := Format(Message, [DiskNo]);
-  FDisplayMsg := True;
-  FResIdent := Ident;
-end;
-
-constructor EZipMaster.CreateResDrive(Ident: Integer; const Drive: String);
-begin
-  inherited Create(ERRORMSG);
-  Message := ZipLoadStr(Ident);
-  Message := Format(Message, [Drive]);
-  FDisplayMsg := True;
-  FResIdent := Ident;
-end;
-
-constructor EZipMaster.CreateResFile(Ident: Integer; const File1, File2: String);
-begin
-  inherited Create(ERRORMSG);
-  Message := ZipLoadStr(Ident);
-//  if Message = '' then
-//    Message := Format('id = %d [files = %s, %s]%s', [ident, File1,
-//      File2, RESOURCE_ERROR1])
-//  else
-  Message := Format(Message, [File1, File2]);
-  FDisplayMsg := True;
-  FResIdent := Ident;
-end;
-
-constructor EZipMaster.CreateResMsgOS(Ident: Integer; const Msg: string; err:
-    Integer);
-//var
-//  e: integer;
-begin
-//  e := err;
-//  if err = 0 then
-//    e := GetLastError(); // get it before Create clears it
-  inherited Create(ERRORMSG);
-  Message := ZipLoadStr(Ident) + '%s';
-  Message := Format(Message, [Msg, WinErr(err)]);
-  FDisplayMsg := True;
-  FResIdent := Ident;
-end;
-
-function WinErr(err: Integer): string;
-begin
-//  if err = 0 then
-//    err := GetLastError();
-  if err > 0 then
-    Result := Format(' <%X:%s>', [err, SysErrorMessage(err)])
+  if Value > 0 then
+    FExtErr := -Value
   else
-    Result := '';
+    FExtErr := Value;
+end;
+
+constructor EZMAbort.Create;
+begin
+  inherited Create('User Abort');
+  ExtErr := -ZS_Abort;
+end;
+
+{ EZipMaster }
+
+constructor EZipMaster.CreateMsg(Core: TZMRoot; Ident, LineNo, UnitNo: Integer);
+var
+  Msg: string;
+begin
+  Msg := Core.ErrMsg(Ident);
+{$IFDEF UNICODE}
+  inherited Create(Msg);
+{$ELSE}
+  inherited Create(Core.AsSysStr(Msg)); // create with ansi message
+  UMessage := Msg;
+{$ENDIF}
+  if Ident < 0 then
+    ExtErr := Ident
+  else
+    ExtErr := -((UnitNo shl ZERR_UNIT_SHIFTS) + (LineNo shl ZERR_LINE_SHIFTS) or
+      AbsErr(Ident));
+end;
+
+constructor EZipMaster.CreateMsgFmt(Core: TZMHandler; Ident: Integer;
+  const Args: array of const; LineNo, UnitNo: Integer);
+var
+  Msg: string;
+begin
+  Msg := Core.ZipFmtLoadStr(Ident, Args);
+{$IFDEF UNICODE}
+  inherited Create(Msg);
+{$ELSE}
+  inherited Create(Core.AsSysStr(Msg)); // create with ansi message
+  UMessage := Msg;
+{$ENDIF}
+  if Ident < 0 then
+    ExtErr := Ident
+  else
+    ExtErr := -((UnitNo shl ZERR_UNIT_SHIFTS) + (LineNo shl ZERR_LINE_SHIFTS) or
+      AbsErr(Ident));
 end;
 
 end.
