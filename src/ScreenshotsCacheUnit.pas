@@ -345,3 +345,4 @@ initialization
 finalization
   ScreenshotsCache.Free;
 end.
+

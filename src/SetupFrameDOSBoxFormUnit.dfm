@@ -203,13 +203,14 @@ object SetupFrameDOSBoxForm: TSetupFrameDOSBoxForm
     Width = 218
     Height = 21
     Style = csDropDownList
-    ItemHeight = 13
     ItemIndex = 0
     TabOrder = 10
-    Text = 'Direct X'
+    Text = '[None]'
     Items.Strings = (
+      '[None]'
       'Direct X'
-      'Win DIB')
+      'Win DIB'
+      'Windows')
   end
   object DisableScreensaverCheckBox: TCheckBox
     Left = 14
@@ -237,9 +238,10 @@ object SetupFrameDOSBoxForm: TSetupFrameDOSBoxForm
     Width = 97
     Height = 27
     Anchors = [akLeft, akBottom]
+    Kind = bkOK
+    NumGlyphs = 2
     TabOrder = 15
     OnClick = OKButtonClick
-    Kind = bkOK
   end
   object CancelButton: TBitBtn
     Left = 117
@@ -247,8 +249,9 @@ object SetupFrameDOSBoxForm: TSetupFrameDOSBoxForm
     Width = 97
     Height = 27
     Anchors = [akLeft, akBottom]
-    TabOrder = 16
     Kind = bkCancel
+    NumGlyphs = 2
+    TabOrder = 16
   end
   object RestoreDefaultValuesButton: TBitBtn
     Left = 323
@@ -257,8 +260,6 @@ object SetupFrameDOSBoxForm: TSetupFrameDOSBoxForm
     Height = 28
     Anchors = [akLeft, akBottom]
     Caption = 'Vorgabewerte wiederherstellen'
-    TabOrder = 18
-    OnClick = RestoreDefaultValuesButtonClick
     Glyph.Data = {
       DE010000424DDE01000000000000760000002800000024000000120000000100
       0400000000006801000000000000000000001000000000000000000000000000
@@ -277,6 +278,8 @@ object SetupFrameDOSBoxForm: TSetupFrameDOSBoxForm
       3333333333338888883333330000333333333333333333333333333333333333
       0000}
     NumGlyphs = 2
+    TabOrder = 18
+    OnClick = RestoreDefaultValuesButtonClick
   end
   object DosBoxDirEdit: TLabeledEdit
     Left = 14
@@ -296,7 +299,6 @@ object SetupFrameDOSBoxForm: TSetupFrameDOSBoxForm
     Width = 169
     Height = 21
     Style = csDropDownList
-    ItemHeight = 13
     TabOrder = 1
   end
   object WaitOnErrorCheckBox: TCheckBox
@@ -314,7 +316,6 @@ object SetupFrameDOSBoxForm: TSetupFrameDOSBoxForm
     Width = 169
     Height = 21
     Style = csDropDownList
-    ItemHeight = 13
     TabOrder = 2
   end
   object DOSBoxCodepageComboBox: TComboBox
@@ -323,7 +324,6 @@ object SetupFrameDOSBoxForm: TSetupFrameDOSBoxForm
     Width = 169
     Height = 21
     Style = csDropDownList
-    ItemHeight = 13
     TabOrder = 3
   end
   object CustomSetsMemo: TRichEdit
@@ -332,10 +332,17 @@ object SetupFrameDOSBoxForm: TSetupFrameDOSBoxForm
     Width = 639
     Height = 100
     Anchors = [akLeft, akTop, akRight, akBottom]
+    Font.Charset = CHINESEBIG5_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     PlainText = True
     ScrollBars = ssBoth
     TabOrder = 11
     WordWrap = False
+    Zoom = 100
   end
   object CustomSetsClearButton: TBitBtn
     Tag = 3
@@ -345,8 +352,6 @@ object SetupFrameDOSBoxForm: TSetupFrameDOSBoxForm
     Height = 25
     Anchors = [akLeft, akBottom]
     Caption = 'L'#246'schen'
-    TabOrder = 12
-    OnClick = ButtonWork
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -361,6 +366,8 @@ object SetupFrameDOSBoxForm: TSetupFrameDOSBoxForm
       BBB35555F55555575F555550555555550BBB55575555555575F5555555555555
       50BB555555555555575F555555555555550B5555555555555575}
     NumGlyphs = 2
+    TabOrder = 12
+    OnClick = ButtonWork
   end
   object CustomSetsLoadButton: TBitBtn
     Tag = 4
@@ -370,8 +377,6 @@ object SetupFrameDOSBoxForm: TSetupFrameDOSBoxForm
     Height = 25
     Anchors = [akLeft, akBottom]
     Caption = 'Laden...'
-    TabOrder = 13
-    OnClick = ButtonWork
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000130B0000130B00001000000000000000000000000000
@@ -386,6 +391,8 @@ object SetupFrameDOSBoxForm: TSetupFrameDOSBoxForm
       B3333337FFFF77377FF333B000000333BB33337777777F3377FF3BB3333BB333
       3BB33773333773333773B333333B3333333B7333333733333337}
     NumGlyphs = 2
+    TabOrder = 13
+    OnClick = ButtonWork
   end
   object CustomSetsSaveButton: TBitBtn
     Tag = 5
@@ -395,8 +402,6 @@ object SetupFrameDOSBoxForm: TSetupFrameDOSBoxForm
     Height = 25
     Anchors = [akLeft, akBottom]
     Caption = 'Speichern...'
-    TabOrder = 14
-    OnClick = ButtonWork
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000130B0000130B00001000000000000000000000000000
@@ -411,15 +416,18 @@ object SetupFrameDOSBoxForm: TSetupFrameDOSBoxForm
       99337F3FF7F3733777F30F08F0F0337999337F7737F73F7777330FFFF0039999
       93337FFFF7737777733300000033333333337777773333333333}
     NumGlyphs = 2
+    TabOrder = 14
+    OnClick = ButtonWork
   end
   object HelpButton: TBitBtn
     Left = 220
     Top = 539
     Width = 97
     Height = 27
+    Kind = bkHelp
+    NumGlyphs = 2
     TabOrder = 17
     OnClick = HelpButtonClick
-    Kind = bkHelp
   end
   object DosBoxTxtOpenDialog: TOpenDialog
     DefaultExt = 'txt'

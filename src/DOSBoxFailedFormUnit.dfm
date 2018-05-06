@@ -46,8 +46,9 @@ object DOSBoxFailedForm: TDOSBoxFailedForm
     Width = 97
     Height = 25
     Anchors = [akLeft, akBottom]
-    TabOrder = 1
     Kind = bkOK
+    NumGlyphs = 2
+    TabOrder = 1
   end
   object ProfileGroupBox: TGroupBox
     Left = 8
@@ -91,7 +92,6 @@ object DOSBoxFailedForm: TDOSBoxFailedForm
       Width = 225
       Height = 21
       Style = csDropDownList
-      ItemHeight = 13
       TabOrder = 2
     end
   end
@@ -125,13 +125,14 @@ object DOSBoxFailedForm: TDOSBoxFailedForm
       Width = 225
       Height = 21
       Style = csDropDownList
-      ItemHeight = 13
       ItemIndex = 0
       TabOrder = 0
-      Text = 'Direct X'
+      Text = '[None]'
       Items.Strings = (
+        '[None]'
         'Direct X'
-        'Win DIB')
+        'Win DIB'
+        'Windows')
     end
   end
 end

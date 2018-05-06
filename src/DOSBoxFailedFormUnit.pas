@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons, GameDBUnit;
+  Dialogs, StdCtrls, Buttons, GameDBUnit, CommonComponents;
 
 type
   TDOSBoxFailedForm = class(TForm)
@@ -97,7 +97,15 @@ begin
     RenderComboBox.ItemIndex:=I; break;
   end;
 
-  If Trim(ExtUpperCase(PrgSetup.DOSBoxSettings[0].SDLVideodriver))='WINDIB' then SDLComboBox.ItemIndex:=1 else SDLComboBox.ItemIndex:=0;
+  if Trim(ExtUpperCase(PrgSetup.DOSBoxSettings[0].SDLVideodriver)) = 'DIRECTX' then
+    SDLComboBox.ItemIndex := 1
+  else if Trim(ExtUpperCase(PrgSetup.DOSBoxSettings[0].SDLVideodriver)) = 'WINDIB' then
+    SDLComboBox.ItemIndex := 2
+  else if Trim(ExtUpperCase(PrgSetup.DOSBoxSettings[0].SDLVideodriver)) = 'WINDOWS' then
+    SDLComboBox.ItemIndex := 3
+  else
+    SDLComboBox.ItemIndex := 0;
+
   RemoteLabel.Visible:=IsRemoteSession and (SDLComboBox.ItemIndex=0);
 end;
 
@@ -113,7 +121,12 @@ begin
   Game.NoDOSBoxFailedDialog:=DoNotShowAgainCheckBox.Checked;
   Game.StoreAllValues;
 
-  If SDLComboBox.ItemIndex=1 then PrgSetup.DOSBoxSettings[0].SDLVideodriver:='WinDIB' else PrgSetup.DOSBoxSettings[0].SDLVideodriver:='DirectX';
+  case SDLComboBox.ItemIndex of
+    0: PrgSetup.DOSBoxSettings[0].SDLVideodriver := '';
+    1: PrgSetup.DOSBoxSettings[0].SDLVideodriver := 'DirectX';
+    2: PrgSetup.DOSBoxSettings[0].SDLVideodriver := 'WinDIB';
+    3: PrgSetup.DOSBoxSettings[0].SDLVideodriver := 'Windows';
+  end;
 end;
 
 { global }

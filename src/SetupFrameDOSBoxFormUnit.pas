@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons, ExtCtrls, PrgSetupUnit, GameDBUnit, ComCtrls;
+  Dialogs, StdCtrls, Buttons, ExtCtrls, PrgSetupUnit, GameDBUnit, ComCtrls,
+  System.UITypes, CommonComponents;
 
 type
   TSetupFrameDOSBoxForm = class(TForm)
@@ -167,7 +168,15 @@ begin
   CenterDOSBoxCheckBox.Checked:=DOSBoxData.CenterDOSBoxWindow;
   DisableScreensaverCheckBox.Checked:=DOSBoxData.DisableScreensaver;
   WaitOnErrorCheckBox.Checked:=DOSBoxData.WaitOnError;
-  If Trim(ExtUpperCase(DOSBoxData.SDLVideodriver))='WINDIB' then SDLVideoDriverComboBox.ItemIndex:=1 else SDLVideoDriverComboBox.ItemIndex:=0;
+
+  if Trim(ExtUpperCase(DOSBoxData.SDLVideodriver)) = 'DIRECTX' then
+    SDLVideoDriverComboBox.ItemIndex := 1
+  else if Trim(ExtUpperCase(DOSBoxData.SDLVideodriver)) = 'WINDIB' then
+    SDLVideoDriverComboBox.ItemIndex := 2
+  else if Trim(ExtUpperCase(DOSBoxData.SDLVideodriver)) = 'WINDOWS' then
+    SDLVideoDriverComboBox.ItemIndex := 3
+  else
+    SDLVideoDriverComboBox.ItemIndex := 0;
 
   St:=StringToStringList(DOSBoxData.CustomSettings);
   try
@@ -320,7 +329,14 @@ begin
   DOSBoxData.CenterDOSBoxWindow:=CenterDOSBoxCheckBox.Checked;
   DOSBoxData.DisableScreensaver:=DisableScreensaverCheckBox.Checked;
   DOSBoxData.WaitOnError:=WaitOnErrorCheckBox.Checked;
-  If SDLVideoDriverComboBox.ItemIndex=1 then DOSBoxData.SDLVideodriver:='WinDIB' else DOSBoxData.SDLVideodriver:='DirectX';
+
+  case SDLVideoDriverComboBox.ItemIndex of
+    0: DOSBoxData.SDLVideodriver := '';
+    1: DOSBoxData.SDLVideodriver := 'DirectX';
+    2: DOSBoxData.SDLVideodriver := 'WinDIB';
+    3: DOSBoxData.SDLVideodriver := 'Windows';
+  end;
+
   DOSBoxData.CustomSettings:=StringListToString(CustomSetsMemo.Lines);
 end;
 

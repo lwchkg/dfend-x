@@ -3,7 +3,7 @@ interface
 
 {DEFINE ShowSelectDialogEvenIfOnlyOneCDDrive}
 
-uses Classes, GameDBUnit;
+uses Classes, GameDBUnit, CommonComponents, System.UITypes;
 
 Procedure RunGame(const Game : TGame; const DeleteOnExit : TStringList; const RunSetup : Boolean = False; const DosBoxCommandLine : String =''; const Wait : Boolean = False);
 Function RunGameAndGetHandle(const Game : TGame; const DeleteOnExit : TStringList; const RunSetup : Boolean = False; const DosBoxCommandLine : String ='') : THandle;
@@ -1486,11 +1486,16 @@ begin
 
   If FullScreen then ShowFullscreenInfoDialog(Application.MainForm);
 
+  S:=Trim(ExtUpperCase(PrgSetup.DOSBoxSettings[DOSBoxNr].SDLVideodriver));
+  Env:='';
+  If S='WINDIB' then
+    Env:='windib'
+  Else If S='DIRECTX' then
+    Env:='directx'
+  Else If S='WINDOWS' then
+    Env:='windows';
+
   if asAdmin then begin
-    S:=Trim(ExtUpperCase(PrgSetup.DOSBoxSettings[DOSBoxNr].SDLVideodriver));
-    Env:='';
-    If S='WINDIB' then Env:='windib';
-    If S='DIRECTX' then Env:='directx';
     result:=INVALID_HANDLE_VALUE;
     S:=IncludeTrailingPathDelimiter((ExtractFilePath(PrgFile)));
     ShellExecute(
@@ -1505,9 +1510,6 @@ begin
   end;
 
   S:=Trim(ExtUpperCase(PrgSetup.DOSBoxSettings[DOSBoxNr].SDLVideodriver));
-  Env:='';
-  If S='WINDIB' then Env:='windib';
-  If S='DIRECTX' then Env:='directx';
   If Env<>'' then begin
     SpeedTestInfo('Setting up environment variables for DOSBox');
     Env:='SDL_VIDEODRIVER='+Env;
@@ -1548,13 +1550,15 @@ begin
     nil,
     nil,
     False,
-    0,
+    IfThen(TypeInfo(PChar) = TypeInfo(PWideChar), CREATE_UNICODE_ENVIRONMENT, 0),
     P,
     PChar(ExtractFilePath(PrgFile)),
     StartupInfo,
     ProcessInformation
   ) then begin
     Application.Restore;
+    MessageDlg(Format('Error code: %d' + #13 + 'Command line: %s',
+        [GetLastError(), '"'+PrgFile+'" '+Params]), mtError, [mbOK], 0);
     MessageDlg(Format(LanguageSetup.MessageCouldNotStartProgram,[PrgFile]),mtError,[mbOK],0);
     result:=INVALID_HANDLE_VALUE;
     exit;
