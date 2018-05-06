@@ -150,7 +150,8 @@ end;
 Function StrToFloatEx(S : String) : Double;
 Var I : Integer;
 begin
-  For I:=1 to length(S) do If (S[I]='.') or (S[I]=',') then S[I]:=DecimalSeparator;
+  For I:=1 to length(S) do If (S[I]='.') or (S[I]=',') then
+    S[I] := FormatSettings.DecimalSeparator;
   result:=StrToFloat(S);
 end;
 
@@ -1085,7 +1086,8 @@ begin
   result:=False;
   S:=Trim(Version);
   If Trim(S)='' then exit;
-  For I:=1 to length(S) do If (S[I]=',') or (S[I]='.') then S[I]:=DecimalSeparator;
+  For I:=1 to length(S) do If (S[I]=',') or (S[I]='.') then
+    S[I] := FormatSettings.DecimalSeparator;
   try D:=StrToFloat(S); except exit; end;
   result:=(D<MinSupportedDOSBoxVersion-0.0000001);
 end;

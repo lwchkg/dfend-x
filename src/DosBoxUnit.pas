@@ -1451,7 +1451,9 @@ begin
   result:='-CONF "'+ConfFile+'"'+Add;
 end;
 
-Type TCharArray=Array[0..MaxInt-1] of Char;
+Const PCharArrayUpperBound = 16777215; { Smells :-( But I have no intention to rewrite related functions. }
+
+Type TCharArray=Array[0..PCharArrayUpperBound] of Char;
      PCharArray=^TCharArray;
 
 Function RunDosBox(const DOSBoxPath : String; const DOSBoxNr : Integer; const ConfFile : String; const FullScreen : Boolean; const ShowConsole : Integer; const asAdmin : Boolean; const DosBoxCommandLine : String ='') : THandle;
@@ -1512,14 +1514,15 @@ begin
     P:=PCharArray(GetEnvironmentStrings);
     try
       Size:=0;
-      For I:=0 to MaxInt-1 do If (P^[I]=#0) and (P^[I+1]=#0) then begin Size:=I+1; break; end;
+      For I:=0 to PCharArrayUpperBound do
+        If (P^[I]=#0) and (P^[I+1]=#0) then begin Size:=I+1; break; end;
       SetLength(Q,Size+length(Env)+1+1);
       Move(P^[0],Q[0],Size);
       Move(Env[1],Q[Size],length(Env));
       Q[Size+length(Env)]:=#0;
       Q[Size+length(Env)+1]:=#0;
     finally
-      FreeEnvironmentStrings(PAnsiChar(P));
+      FreeEnvironmentStrings(PChar(P));
     end;
     SpeedTestInfoOnly('Added '+Env);
     P:=@Q[0];

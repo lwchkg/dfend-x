@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, StdCtrls, Buttons, ExtCtrls, ImgList, GameDBUnit, LinkFileUnit,
-  Menus;
+  Menus, System.ImageList, System.UITypes;
 
 Type TFrameClass=class of TFrame;  
 
@@ -893,7 +893,9 @@ Var D : Double;
     I : Integer;
 begin
   If (AGame<>nil) and (Trim(ExtUpperCase(AGame.VideoCard))='VGA') then begin
-    S:=CheckDOSBoxVersion(GetDOSBoxNr(AGame)); For I:=1 to length(S) do If (S[I]=',') or (S[I]='.') then S[I]:=DecimalSeparator;
+    S:=CheckDOSBoxVersion(GetDOSBoxNr(AGame));
+    For I:=1 to length(S) do
+      If (S[I]=',') or (S[I]='.') then S[I] := FormatSettings.DecimalSeparator;
     if not TryStrToFloat(S,D) then D:=0.72;
     If D>0.72 then begin AGame.VideoCard:='svga_s3'; AGame.StoreAllValues; end;
   end;

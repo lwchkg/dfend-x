@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Buttons, XPMan, StdCtrls, ComCtrls, ExtCtrls, ToolWin, ImgList,
   Menus, AppEvnts, ActiveX, GameDBUnit, GameDBToolsUnit, ViewFilesFrameUnit,
-  LinkFileUnit, HelpTools;
+  LinkFileUnit, HelpTools, System.ImageList;
 
 {
 }
@@ -3462,7 +3462,8 @@ begin
   end;
 
   VerString:=CheckDOSBoxVersion(0);
-  S:=VerString; For I:=1 to length(S) do if (S[I]=',') or (S[I]='.') then S[I]:=DecimalSeparator;
+  S:=VerString; For I:=1 to length(S) do
+    if (S[I]=',') or (S[I]='.') then S[I] := FormatSettings.DecimalSeparator;
   If not TryStrToFloat(S,D) then D:=0.72;
 
   S:=IncludeTrailingPathDelimiter(GetSpecialFolder(Handle,CSIDL_LOCAL_APPDATA))+'DOSBox\dosbox-'+VerString+'.conf';
@@ -3486,7 +3487,8 @@ Var D : Double;
     I : Integer;
 begin
   VerString:=CheckDOSBoxVersion(0);
-  S:=VerString; For I:=1 to length(S) do if (S[I]=',') or (S[I]='.') then S[I]:=DecimalSeparator;
+  S:=VerString; For I:=1 to length(S) do
+    if (S[I]=',') or (S[I]='.') then S[I] := FormatSettings.DecimalSeparator;
   If not TryStrToFloat(S,D) then D:=0.72;
 
   If D<=0.72 then begin

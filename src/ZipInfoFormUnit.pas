@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ComCtrls, ZipMstr, SevenZipVCL, Buttons;
+  Dialogs, StdCtrls, ComCtrls, ZipMstr, ZMDelZip, SevenZipVCL, Buttons,
+  System.UITypes;
 
 Type TZipMode=(zmExtract, zmCreate, zmAdd, zmCreateAndDelete, zmAddAndDelete, zmDeleteOnly);
 
@@ -38,8 +39,8 @@ type
     Procedure ZipExtract;
     Procedure ZipCreate;
     Procedure ZipAdd;
-    Procedure ZipPassword(Sender: TObject; IsZipAction: Boolean; var NewPassword: String; ForFile: String; var RepeatCount: LongWord; var Action: TPasswordButton);
-    Procedure ZipProgress(Sender: TObject; Details: TProgressDetails);
+    Procedure ZipPassword(Sender: TObject; IsZipAction: Boolean; var NewPassword: String; const ForFile: String; var RepeatCount: LongWord; var Action: TMsgDlgBtn);
+    Procedure ZipProgress(Sender: TObject; Details: TZMProgressDetails);
     Function SevenZipWork : Boolean;
     Procedure SevenZipExtract;
     Procedure SevenZipCreate;
@@ -97,7 +98,10 @@ begin
   Folder:=IncludeTrailingPathDelimiter(AFolder);
 
   If (Mode=zmExtract) or (Mode=zmAdd) or (Mode=zmAddAndDelete) then begin
-    If not FileExists(ZipFile) then begin MessageDlg(Format(LanguageSetup.MessageCouldNotFindFile,[ZipFile]),mtError,[mbOK],0); exit; end;
+    If not FileExists(ZipFile) then begin
+      MessageDlg(Format(LanguageSetup.MessageCouldNotFindFile,[ZipFile]),mtError,[mbOK],0);
+      exit;
+    end;
   end;
 
   If (Mode=zmCreate) or (Mode=zmCreateAndDelete) then begin
@@ -150,9 +154,9 @@ begin
   try
     SetCurrentDir(ExtractFilePath(ExpandFileName(Application.ExeName)));
 
-    if Mode=zmDeleteOnly then begin
-      Ok:=True;
-    end else begin
+    if Mode=zmDeleteOnly then
+      Ok:=True
+    else begin
       Ext:=Trim(UpperCase(ExtractFileExt(ZipFile)));
 
       If (Mode in [zmCreate, zmAdd, zmCreateAndDelete, zmAddAndDelete]) and (not DirectoryExists(Folder)) then begin
@@ -163,9 +167,11 @@ begin
       end;
 
       Handled:=False; Ok:=False;
-      For I:=0 to PrgSetup.PackerSettingsCount-1 do If ExtensionInList(Ext,PrgSetup.PackerSettings[I].FileExtensions) then begin
-        Handled:=True;
-        Ok:=ExternalWork(I);
+      For I:=0 to PrgSetup.PackerSettingsCount-1 do begin
+        If ExtensionInList(Ext,PrgSetup.PackerSettings[I].FileExtensions) then begin
+          Handled:=True;
+          Ok:=ExternalWork(I);
+        end;
       end;
 
       If not Handled then begin
@@ -192,7 +198,7 @@ Var S : String;
 begin
   result:=True;
 
-  If FileExists(PrgDir+DelZipDll_Name) then begin
+  If FileExists(PrgDir + DelZipDll_Name) then begin
     Zip:=TZipMaster.Create(self);
   end else begin
     S:=GetCurrentDir;
@@ -204,10 +210,10 @@ begin
   end;
 
   try
-    Zip.OnPasswordError:=ZipPassword;
-    Zip.OnProgressDetails:=ZipProgress;
-    Zip.ZipFileName:=ZipFile;
-    Zip.RootDir:=Folder;
+    Zip.OnPasswordError := ZipPassword;
+    Zip.OnProgress := ZipProgress;
+    Zip.ZipFileName := ZipFile;
+    Zip.RootDir := Folder;
 
     CancelButton.Enabled:=True;
 
@@ -217,7 +223,7 @@ begin
       zmAdd, zmAddAndDelete       : ZipAdd;
     end except end;
 
-    while Zip.Busy do begin
+    while Zip.State = ZsBusy do begin
       Sleep(500);
       Application.ProcessMessages;
       if FProcessingCanceled then begin Zip.Cancel:=True; result:=false; break; end;
@@ -252,7 +258,7 @@ begin
     ULTRA   : Zip.AddCompLevel:=9;
   end;
 
-  Zip.AddOptions:=[AddHiddenFiles,AddDirNames,AddSeparateDirs];
+  Zip.AddOptions := [AddHiddenFiles, AddDirNames {* , AddSeparateDirs *} ];
   Zip.FSpecArgs.Add('>*.*');
 
   Zip.Add;
@@ -271,7 +277,7 @@ begin
     ULTRA   : Zip.AddCompLevel:=9;
   end;
 
-  Zip.AddOptions:=[AddHiddenFiles,AddDirNames,AddSeparateDirs,AddUpdate];
+  Zip.AddOptions:=[AddHiddenFiles,AddDirNames, {* AddSeparateDirs, *} AddUpdate];
   Zip.FSpecArgs.Add('>*.*');
 
   B:=False;
@@ -288,12 +294,14 @@ begin
   If B then Zip.Add;
 end;
 
-procedure TZipInfoForm.ZipPassword(Sender: TObject; IsZipAction: Boolean; var NewPassword: String; ForFile: String; var RepeatCount: LongWord; var Action: TPasswordButton);
+procedure TZipInfoForm.ZipPassword(Sender: TObject; IsZipAction: Boolean;
+    var NewPassword: String; const ForFile: String; var RepeatCount: LongWord;
+    var Action: TMsgDlgBtn);
 begin
-  If InputQuery(LanguageSetup.ZipFormCaptionExtract,LanguageSetup.ZipFormPasswordPrompt,NewPassword) then Action:=pwbOk else Action:=pwbAbort;
+  If InputQuery(LanguageSetup.ZipFormCaptionExtract,LanguageSetup.ZipFormPasswordPrompt,NewPassword) then Action:=mbOK else Action:=mbAbort;
 end;
 
-procedure TZipInfoForm.ZipProgress(Sender: TObject; Details: TProgressDetails);
+procedure TZipInfoForm.ZipProgress(Sender: TObject; Details: TZMProgressDetails);
 Var S : String;
 begin
   ProgressBar.Position:=Details.TotalPerCent;

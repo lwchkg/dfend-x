@@ -265,8 +265,6 @@ object ProfileEditorForm: TProfileEditorForm
         Width = 316
         Height = 25
         Caption = 'Screenshot-Verzeichnis automatisch festlegen'
-        TabOrder = 4
-        OnClick = ButtonWork
         Glyph.Data = {
           76010000424D7601000000000000760000002800000020000000100000000100
           04000000000000010000120B0000120B00001000000000000000000000000000
@@ -281,6 +279,8 @@ object ProfileEditorForm: TProfileEditorForm
           8F037F3777777777337F0F77777777777F037F3333333333337F0FFFFFFFFFFF
           FF037FFFFFFFFFFFFF7F00000000000000037777777777777773}
         NumGlyphs = 2
+        TabOrder = 4
+        OnClick = ButtonWork
       end
       object ExtraFilesListBox: TListBox
         Left = 13
@@ -326,9 +326,11 @@ object ProfileEditorForm: TProfileEditorForm
         Top = 296
         Width = 501
         Height = 257
+        ParentFont = False
         PlainText = True
         ScrollBars = ssBoth
         TabOrder = 3
+        Zoom = 100
       end
       object GenerateGameDataFolderNameButton: TBitBtn
         Tag = 19
@@ -337,8 +339,6 @@ object ProfileEditorForm: TProfileEditorForm
         Width = 278
         Height = 25
         Caption = 'Daten-Verzeichnis automatisch erstellen'
-        TabOrder = 1
-        OnClick = ButtonWork
         Glyph.Data = {
           76010000424D7601000000000000760000002800000020000000100000000100
           04000000000000010000120B0000120B00001000000000000000000000000000
@@ -353,6 +353,8 @@ object ProfileEditorForm: TProfileEditorForm
           B333333377F377F3333333FB99FB99FB3333333377FF77333333333FB9999FB3
           333333333777733333333333FBFBFB3333333333333333333333}
         NumGlyphs = 2
+        TabOrder = 1
+        OnClick = ButtonWork
       end
       object GameInfoMetaDataButton: TBitBtn
         Tag = 23
@@ -473,8 +475,6 @@ object ProfileEditorForm: TProfileEditorForm
         Width = 94
         Height = 25
         Caption = 'Hinzuf'#252'gen...'
-        TabOrder = 1
-        OnClick = ButtonWork
         Glyph.Data = {
           76010000424D7601000000000000760000002800000020000000100000000100
           04000000000000010000130B0000130B00001000000000000000000000000000
@@ -489,6 +489,8 @@ object ProfileEditorForm: TProfileEditorForm
           B3333337FFFF77377FF333B000000333BB33337777777F3377FF3BB3333BB333
           3BB33773333773333773B333333B3333333B7333333733333337}
         NumGlyphs = 2
+        TabOrder = 1
+        OnClick = ButtonWork
       end
       object MountingEditButton: TBitBtn
         Tag = 6
@@ -497,8 +499,6 @@ object ProfileEditorForm: TProfileEditorForm
         Width = 94
         Height = 25
         Caption = 'Bearbeiten...'
-        TabOrder = 2
-        OnClick = ButtonWork
         Glyph.Data = {
           76010000424D7601000000000000760000002800000020000000100000000100
           04000000000000010000120B0000120B00001000000000000000000000000000
@@ -513,6 +513,8 @@ object ProfileEditorForm: TProfileEditorForm
           0FF03333737F37737F373330B00FFFFF0F033337F77F33337F733309030FFFFF
           00333377737FFFFF773333303300000003333337337777777333}
         NumGlyphs = 2
+        TabOrder = 2
+        OnClick = ButtonWork
       end
       object MountingDelButton: TBitBtn
         Tag = 7
@@ -521,8 +523,6 @@ object ProfileEditorForm: TProfileEditorForm
         Width = 94
         Height = 25
         Caption = 'L'#246'schen'
-        TabOrder = 3
-        OnClick = ButtonWork
         Glyph.Data = {
           76010000424D7601000000000000760000002800000020000000100000000100
           04000000000000010000120B0000120B00001000000000000000000000000000
@@ -537,6 +537,8 @@ object ProfileEditorForm: TProfileEditorForm
           BBB35555F55555575F555550555555550BBB55575555555575F5555555555555
           50BB555555555555575F555555555555550B5555555555555575}
         NumGlyphs = 2
+        TabOrder = 3
+        OnClick = ButtonWork
       end
       object MountingDeleteAllButton: TBitBtn
         Tag = 8
@@ -1019,7 +1021,6 @@ object ProfileEditorForm: TProfileEditorForm
         Width = 248
         Height = 21
         Style = csDropDownList
-        ItemHeight = 13
         ItemIndex = 0
         TabOrder = 6
         Text = 'Master (2)'
@@ -1079,8 +1080,6 @@ object ProfileEditorForm: TProfileEditorForm
               Width = 105
               Height = 25
               Caption = 'L'#246'schen'
-              TabOrder = 0
-              OnClick = ButtonWork
               Glyph.Data = {
                 76010000424D7601000000000000760000002800000020000000100000000100
                 04000000000000010000120B0000120B00001000000000000000000000000000
@@ -1095,6 +1094,8 @@ object ProfileEditorForm: TProfileEditorForm
                 BBB35555F55555575F555550555555550BBB55575555555575F5555555555555
                 50BB555555555555575F555555555555550B5555555555555575}
               NumGlyphs = 2
+              TabOrder = 0
+              OnClick = ButtonWork
             end
             object AutoexecLoadButton: TBitBtn
               Tag = 11
@@ -1103,8 +1104,6 @@ object ProfileEditorForm: TProfileEditorForm
               Width = 105
               Height = 25
               Caption = 'Laden...'
-              TabOrder = 1
-              OnClick = ButtonWork
               Glyph.Data = {
                 76010000424D7601000000000000760000002800000020000000100000000100
                 04000000000000010000130B0000130B00001000000000000000000000000000
@@ -1119,6 +1118,8 @@ object ProfileEditorForm: TProfileEditorForm
                 B3333337FFFF77377FF333B000000333BB33337777777F3377FF3BB3333BB333
                 3BB33773333773333773B333333B3333333B7333333733333337}
               NumGlyphs = 2
+              TabOrder = 1
+              OnClick = ButtonWork
             end
             object AutoexecSaveButton: TBitBtn
               Tag = 12
@@ -1127,8 +1128,6 @@ object ProfileEditorForm: TProfileEditorForm
               Width = 105
               Height = 25
               Caption = 'Speichern...'
-              TabOrder = 2
-              OnClick = ButtonWork
               Glyph.Data = {
                 76010000424D7601000000000000760000002800000020000000100000000100
                 04000000000000010000130B0000130B00001000000000000000000000000000
@@ -1143,6 +1142,8 @@ object ProfileEditorForm: TProfileEditorForm
                 99337F3FF7F3733777F30F08F0F0337999337F7737F73F7777330FFFF0039999
                 93337FFFF7737777733300000033333333337777773333333333}
               NumGlyphs = 2
+              TabOrder = 2
+              OnClick = ButtonWork
             end
           end
           object AutoexecMemo: TRichEdit
@@ -1151,10 +1152,12 @@ object ProfileEditorForm: TProfileEditorForm
             Width = 497
             Height = 114
             Align = alClient
+            ParentFont = False
             PlainText = True
             ScrollBars = ssBoth
             TabOrder = 0
             WordWrap = False
+            Zoom = 100
           end
         end
         object AutoexecSheet2: TTabSheet
@@ -1180,8 +1183,6 @@ object ProfileEditorForm: TProfileEditorForm
               Width = 105
               Height = 25
               Caption = 'L'#246'schen'
-              TabOrder = 0
-              OnClick = ButtonWork
               Glyph.Data = {
                 76010000424D7601000000000000760000002800000020000000100000000100
                 04000000000000010000120B0000120B00001000000000000000000000000000
@@ -1196,6 +1197,8 @@ object ProfileEditorForm: TProfileEditorForm
                 BBB35555F55555575F555550555555550BBB55575555555575F5555555555555
                 50BB555555555555575F555555555555550B5555555555555575}
               NumGlyphs = 2
+              TabOrder = 0
+              OnClick = ButtonWork
             end
             object FinalizationLoadButton: TBitBtn
               Tag = 25
@@ -1204,8 +1207,6 @@ object ProfileEditorForm: TProfileEditorForm
               Width = 105
               Height = 25
               Caption = 'Laden...'
-              TabOrder = 1
-              OnClick = ButtonWork
               Glyph.Data = {
                 76010000424D7601000000000000760000002800000020000000100000000100
                 04000000000000010000130B0000130B00001000000000000000000000000000
@@ -1220,6 +1221,8 @@ object ProfileEditorForm: TProfileEditorForm
                 B3333337FFFF77377FF333B000000333BB33337777777F3377FF3BB3333BB333
                 3BB33773333773333773B333333B3333333B7333333733333337}
               NumGlyphs = 2
+              TabOrder = 1
+              OnClick = ButtonWork
             end
             object FinalizationSaveButton: TBitBtn
               Tag = 26
@@ -1228,8 +1231,6 @@ object ProfileEditorForm: TProfileEditorForm
               Width = 105
               Height = 25
               Caption = 'Speichern...'
-              TabOrder = 2
-              OnClick = ButtonWork
               Glyph.Data = {
                 76010000424D7601000000000000760000002800000020000000100000000100
                 04000000000000010000130B0000130B00001000000000000000000000000000
@@ -1244,6 +1245,8 @@ object ProfileEditorForm: TProfileEditorForm
                 99337F3FF7F3733777F30F08F0F0337999337F7737F73F7777330FFFF0039999
                 93337FFFF7737777733300000033333333337777773333333333}
               NumGlyphs = 2
+              TabOrder = 2
+              OnClick = ButtonWork
             end
           end
           object FinalizationMemo: TRichEdit
@@ -1252,10 +1255,12 @@ object ProfileEditorForm: TProfileEditorForm
             Width = 497
             Height = 114
             Align = alClient
+            ParentFont = False
             PlainText = True
             ScrollBars = ssBoth
             TabOrder = 0
             WordWrap = False
+            Zoom = 100
           end
         end
       end
@@ -1281,8 +1286,6 @@ object ProfileEditorForm: TProfileEditorForm
         Width = 105
         Height = 25
         Caption = 'L'#246'schen'
-        TabOrder = 1
-        OnClick = ButtonWork
         Glyph.Data = {
           76010000424D7601000000000000760000002800000020000000100000000100
           04000000000000010000120B0000120B00001000000000000000000000000000
@@ -1297,6 +1300,8 @@ object ProfileEditorForm: TProfileEditorForm
           BBB35555F55555575F555550555555550BBB55575555555575F5555555555555
           50BB555555555555575F555555555555550B5555555555555575}
         NumGlyphs = 2
+        TabOrder = 1
+        OnClick = ButtonWork
       end
       object CustomSetsLoadButton: TBitBtn
         Tag = 15
@@ -1305,8 +1310,6 @@ object ProfileEditorForm: TProfileEditorForm
         Width = 105
         Height = 25
         Caption = 'Laden...'
-        TabOrder = 2
-        OnClick = ButtonWork
         Glyph.Data = {
           76010000424D7601000000000000760000002800000020000000100000000100
           04000000000000010000130B0000130B00001000000000000000000000000000
@@ -1321,6 +1324,8 @@ object ProfileEditorForm: TProfileEditorForm
           B3333337FFFF77377FF333B000000333BB33337777777F3377FF3BB3333BB333
           3BB33773333773333773B333333B3333333B7333333733333337}
         NumGlyphs = 2
+        TabOrder = 2
+        OnClick = ButtonWork
       end
       object CustomSetsSaveButton: TBitBtn
         Tag = 16
@@ -1329,8 +1334,6 @@ object ProfileEditorForm: TProfileEditorForm
         Width = 105
         Height = 25
         Caption = 'Speichern...'
-        TabOrder = 3
-        OnClick = ButtonWork
         Glyph.Data = {
           76010000424D7601000000000000760000002800000020000000100000000100
           04000000000000010000130B0000130B00001000000000000000000000000000
@@ -1345,6 +1348,8 @@ object ProfileEditorForm: TProfileEditorForm
           99337F3FF7F3733777F30F08F0F0337999337F7737F73F7777330FFFF0039999
           93337FFFF7737777733300000033333333337777773333333333}
         NumGlyphs = 2
+        TabOrder = 3
+        OnClick = ButtonWork
       end
       object CustomSetsValueListEditor: TValueListEditor
         Left = 12
@@ -1364,8 +1369,6 @@ object ProfileEditorForm: TProfileEditorForm
         Width = 105
         Height = 25
         Caption = 'Hinzuf'#252'gen'
-        TabOrder = 5
-        OnClick = ButtonWork
         Glyph.Data = {
           76010000424D7601000000000000760000002800000020000000100000000100
           04000000000000010000130B0000130B00001000000000000000000000000000
@@ -1380,6 +1383,8 @@ object ProfileEditorForm: TProfileEditorForm
           333333333337733333FF3333333C333330003333333733333777333333333333
           3000333333333333377733333333333333333333333333333333}
         NumGlyphs = 2
+        TabOrder = 5
+        OnClick = ButtonWork
       end
       object CustomSetsEnvDel: TBitBtn
         Tag = 18
@@ -1388,8 +1393,6 @@ object ProfileEditorForm: TProfileEditorForm
         Width = 105
         Height = 25
         Caption = 'L'#246'schen'
-        TabOrder = 6
-        OnClick = ButtonWork
         Glyph.Data = {
           76010000424D7601000000000000760000002800000020000000100000000100
           04000000000000010000120B0000120B00001000000000000000000000000000
@@ -1404,16 +1407,20 @@ object ProfileEditorForm: TProfileEditorForm
           BBB35555F55555575F555550555555550BBB55575555555575F5555555555555
           50BB555555555555575F555555555555550B5555555555555575}
         NumGlyphs = 2
+        TabOrder = 6
+        OnClick = ButtonWork
       end
       object CustomSetsMemo: TRichEdit
         Left = 13
         Top = 16
         Width = 500
         Height = 201
+        ParentFont = False
         PlainText = True
         ScrollBars = ssBoth
         TabOrder = 0
         WordWrap = False
+        Zoom = 100
       end
     end
   end
@@ -1422,17 +1429,19 @@ object ProfileEditorForm: TProfileEditorForm
     Top = 621
     Width = 90
     Height = 25
+    Kind = bkOK
+    NumGlyphs = 2
     TabOrder = 1
     OnClick = OKButtonClick
-    Kind = bkOK
   end
   object CancelButton: TBitBtn
     Left = 100
     Top = 621
     Width = 90
     Height = 25
-    TabOrder = 2
     Kind = bkCancel
+    NumGlyphs = 2
+    TabOrder = 2
   end
   object PreviousButton: TBitBtn
     Tag = 1
@@ -1441,10 +1450,6 @@ object ProfileEditorForm: TProfileEditorForm
     Width = 113
     Height = 25
     Caption = 'Vorheriges'
-    ModalResult = 1
-    TabOrder = 4
-    Visible = False
-    OnClick = OKButtonClick
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -1458,7 +1463,11 @@ object ProfileEditorForm: TProfileEditorForm
       33333333337737F3333333333333003333333333333377333333333333333333
       3333333333333333333333333333333333333333333333333333333333333333
       3333333333333333333333333333333333333333333333333333}
+    ModalResult = 1
     NumGlyphs = 2
+    TabOrder = 4
+    Visible = False
+    OnClick = OKButtonClick
   end
   object NextButton: TBitBtn
     Tag = 2
@@ -1467,10 +1476,6 @@ object ProfileEditorForm: TProfileEditorForm
     Width = 113
     Height = 25
     Caption = 'N'#228'chstes'
-    ModalResult = 1
-    TabOrder = 5
-    Visible = False
-    OnClick = OKButtonClick
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -1484,16 +1489,21 @@ object ProfileEditorForm: TProfileEditorForm
       33333333337F3F77333333333309003333333333337F77333333333333003333
       3333333333773333333333333333333333333333333333333333333333333333
       3333333333333333333333333333333333333333333333333333}
+    ModalResult = 1
     NumGlyphs = 2
+    TabOrder = 5
+    Visible = False
+    OnClick = OKButtonClick
   end
   object HelpButton: TBitBtn
     Left = 197
     Top = 621
     Width = 90
     Height = 25
+    Kind = bkHelp
+    NumGlyphs = 2
     TabOrder = 3
     OnClick = HelpButtonClick
-    Kind = bkHelp
   end
   object OpenDialog: TOpenDialog
     Left = 440
@@ -1507,7 +1517,7 @@ object ProfileEditorForm: TProfileEditorForm
     Left = 504
     Top = 594
     Bitmap = {
-      494C010110001400080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101100014000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000005000000001002000000000000050
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -2188,7 +2198,7 @@ object ProfileEditorForm: TProfileEditorForm
     Left = 488
     Top = 504
     Bitmap = {
-      494C010103000400080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101030004000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000000000000000000000FFFF0000000000000000000000

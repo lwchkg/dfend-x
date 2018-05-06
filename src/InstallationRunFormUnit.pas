@@ -321,9 +321,7 @@ Procedure SplitText(const St : TStringList; const Lines : String);
 Var I : Integer;
     S : String;
 begin
-  SetLength(S,length(Lines)*2);
-  CharToOEM(PChar(Lines),PChar(S));
-  SetLength(S,StrLen(PChar(S)));
+  S := Lines;
 
   While length(S)>75 do begin
     I:=75;

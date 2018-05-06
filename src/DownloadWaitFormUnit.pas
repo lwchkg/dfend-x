@@ -178,7 +178,7 @@ Type THTTPThread=class(TThread)
     HTTP : TIdHTTP;
     FTP : TIdFTP;
     FSize : Int64;
-    Procedure WorkEvent1(ASender: TObject; AWorkMode: TWorkMode; AWorkCount: Integer);
+    Procedure WorkEvent1(ASender: TObject; AWorkMode: TWorkMode; AWorkCount: Int64);
     Procedure WorkEvent2;
     Procedure RedirectEvent(Sender: TObject; var dest: string; var NumRedirect: Integer; var Handled: boolean; var VMethod: TIdHTTPMethod);
     Procedure FixSourceForgeDownload(const MSt : TMemoryStream);
@@ -338,7 +338,7 @@ begin
 
 end;
 
-Procedure THTTPThread.WorkEvent1(ASender: TObject; AWorkMode: TWorkMode; AWorkCount: Integer);
+Procedure THTTPThread.WorkEvent1(ASender: TObject; AWorkMode: TWorkMode; AWorkCount: Int64);
 begin
   FWorkEvent1Sender:=ASender;
   FWorkEvent1WorkMode:=AWorkMode;

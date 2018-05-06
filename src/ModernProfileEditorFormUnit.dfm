@@ -32,8 +32,9 @@ object ModernProfileEditorForm: TModernProfileEditorForm
       Top = 6
       Width = 97
       Height = 25
-      TabOrder = 1
       Kind = bkCancel
+      NumGlyphs = 2
+      TabOrder = 1
     end
     object PreviousButton: TBitBtn
       Tag = 1
@@ -42,10 +43,6 @@ object ModernProfileEditorForm: TModernProfileEditorForm
       Width = 130
       Height = 25
       Caption = 'Vorheriges'
-      ModalResult = 1
-      TabOrder = 3
-      Visible = False
-      OnClick = OKButtonClick
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         04000000000000010000120B0000120B00001000000000000000000000000000
@@ -59,7 +56,11 @@ object ModernProfileEditorForm: TModernProfileEditorForm
         33333333337737F3333333333333003333333333333377333333333333333333
         3333333333333333333333333333333333333333333333333333333333333333
         3333333333333333333333333333333333333333333333333333}
+      ModalResult = 1
       NumGlyphs = 2
+      TabOrder = 3
+      Visible = False
+      OnClick = OKButtonClick
     end
     object NextButton: TBitBtn
       Tag = 2
@@ -68,10 +69,6 @@ object ModernProfileEditorForm: TModernProfileEditorForm
       Width = 130
       Height = 25
       Caption = 'N'#228'chstes'
-      ModalResult = 1
-      TabOrder = 4
-      Visible = False
-      OnClick = OKButtonClick
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         04000000000000010000120B0000120B00001000000000000000000000000000
@@ -86,25 +83,31 @@ object ModernProfileEditorForm: TModernProfileEditorForm
         3333333333773333333333333333333333333333333333333333333333333333
         3333333333333333333333333333333333333333333333333333}
       Layout = blGlyphRight
+      ModalResult = 1
       NumGlyphs = 2
+      TabOrder = 4
+      Visible = False
+      OnClick = OKButtonClick
     end
     object OKButton: TBitBtn
       Left = 9
       Top = 6
       Width = 97
       Height = 25
+      Kind = bkOK
+      NumGlyphs = 2
       TabOrder = 0
       OnClick = OKButtonClick
-      Kind = bkOK
     end
     object HelpButton: TBitBtn
       Left = 215
       Top = 6
       Width = 97
       Height = 25
+      Kind = bkHelp
+      NumGlyphs = 2
       TabOrder = 2
       OnClick = HelpButtonClick
-      Kind = bkHelp
     end
     object ToolsButton: TBitBtn
       Left = 590
@@ -112,8 +115,6 @@ object ModernProfileEditorForm: TModernProfileEditorForm
       Width = 97
       Height = 25
       Caption = 'Tools'
-      TabOrder = 5
-      OnClick = ToolsButtonClick
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         04000000000000010000120B0000120B00001000000000000000000000000000
@@ -128,6 +129,8 @@ object ModernProfileEditorForm: TModernProfileEditorForm
         07557777777F55557F5555000005555707555577777FF5557F55553000075557
         0755557F7777FFF5755555335000005555555577577777555555}
       NumGlyphs = 2
+      TabOrder = 5
+      OnClick = ToolsButtonClick
     end
   end
   object MainPanel: TPanel
@@ -194,7 +197,7 @@ object ModernProfileEditorForm: TModernProfileEditorForm
     Left = 224
     Top = 485
     Bitmap = {
-      494C010118001C00100010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010118001C00140010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000007000000001002000000000000070
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -1134,7 +1137,7 @@ object ModernProfileEditorForm: TModernProfileEditorForm
     Left = 288
     Top = 488
     Bitmap = {
-      494C010104000C00100010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000C00140010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

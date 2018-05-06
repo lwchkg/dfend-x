@@ -2393,7 +2393,7 @@ begin
                                         // it at the top, Y=100 is at the bottom
 
                 // X, Y of top center of the pie
-                Bounds.left + ((Bounds.right-Bounds.left) div 2), Bounds.top,
+                Bounds.left + ((Bounds.right-Bounds.left) div 2), Bounds.top
               );
     end;
 

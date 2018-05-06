@@ -16,24 +16,20 @@ implementation
 uses Windows, SysUtils, Math, CommonTools, PrgConsts, PrgSetupUnit,
      DOSBoxTempUnit, DOSBoxUnit, MainUnit;
 
-const SpecialChars : Array[0..6] of Char = (#27, 'É','Í','º','»','È','¼');
+const SpecialChars : Array[0..6] of AnsiChar = (ansichar($1B), ansichar($C9),
+          ansichar($CD), ansichar($BA), ansichar($BB), ansichar($C8), ansichar($BC));
       SpecialSymbols : Array[0..6] of String = ('<ESC>','<UL>','<->','<|>','<UR>','<LL>','<LR>');
 
 const NoConvert : Array[0..2] of String = ('CONFIG_','AUTOEXEC_CONFIGFILE_HELP','CONFIGFILE_INTRO');
 
 Function SingleLineStringToDOSBoxLangString(const S : String) : String;
-Var T : String;
-    I : Integer;
+Var I : Integer;
 begin
   result:=S;
   if Trim(result)='' then exit;
 
-  SetLength(T,length(result));
-  CharToOEM(PChar(result),PChar(T));
-  SetLength(T,StrLen(PChar(T)));
-  result:=T;
-
-  For I:=Low(SpecialChars) to High(SpecialChars) do result:=Replace(result,SpecialSymbols[I],SpecialChars[I]);
+  For I:=Low(SpecialChars) to High(SpecialChars) do
+    result:=Replace(result, SpecialSymbols[I], Char(SpecialChars[I]));
 end;
 
 Function StringToDOSBoxLangString(const S : String) : String;
@@ -58,10 +54,6 @@ begin
   if Trim(result)='' then exit;
 
   For I:=Low(SpecialChars) to High(SpecialChars) do result:=Replace(result,SpecialChars[I],SpecialSymbols[I]);
-
-  SetLength(T,length(result));
-  OEMToChar(PChar(result),PChar(T));
-  SetLength(T,StrLen(PChar(T)));
   result:=T;
 end;
 

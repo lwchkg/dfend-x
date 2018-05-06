@@ -89,7 +89,7 @@ type
     procedure SetHelpType(value: THelpType);
     function GetVersion: string;
     procedure SetVersion(dummy: string);
-    function OnRouteHelp(Command: Word; Data: Longint; var CallHelp: Boolean): Boolean;
+    function OnRouteHelp(Command: Word; Data: THelpEventData; var CallHelp: Boolean): Boolean;
   protected
   public
     constructor Create(AOwner: TComponent); override;
@@ -152,8 +152,8 @@ begin
   inherited Create(AOwner);
   if CheckRouterInstance and not (csDesigning in Componentstate) then
   begin
-       fAppOnHelp := Application.onhelp;
-       Application.onhelp := OnRouteHelp;
+       fAppOnHelp := Application.OnHelp;
+       Application.OnHelp := OnRouteHelp;
        GLOBAL_HELPROUTER := Self;
   end;
   fShowType := stDefault;
@@ -214,7 +214,7 @@ begin
    end;
 end;
 
-function THTMLhelpRouter.OnRouteHelp(Command: Word; Data: Longint; var CallHelp: Boolean): Boolean;
+function THTMLhelpRouter.OnRouteHelp(Command: Word; Data: THelpEventData; var CallHelp: Boolean): Boolean;
 var
    showHTML: boolean;
    rHandle: integer;

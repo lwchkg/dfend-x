@@ -25,7 +25,7 @@ implementation
 
 {DEFINE DebugThumbnailCache}
 
-uses SysUtils, {$IFDEF DebugThumbnailCache}Dialogs,{$ENDIF} Math, ZLib,
+uses SysUtils, {$IFDEF DebugThumbnailCache}Dialogs,{$ENDIF} Math, System.ZLib,
      PNGImage, jpeg, GIFImage, ImageStretch, PrgSetupUnit, PrgConsts, CommonTools;
 
 { TThumbnail }
