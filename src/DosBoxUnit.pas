@@ -1557,8 +1557,6 @@ begin
     ProcessInformation
   ) then begin
     Application.Restore;
-    MessageDlg(Format('Error code: %d' + #13 + 'Command line: %s',
-        [GetLastError(), '"'+PrgFile+'" '+Params]), mtError, [mbOK], 0);
     MessageDlg(Format(LanguageSetup.MessageCouldNotStartProgram,[PrgFile]),mtError,[mbOK],0);
     result:=INVALID_HANDLE_VALUE;
     exit;
