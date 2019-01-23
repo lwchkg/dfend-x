@@ -1,5 +1,7 @@
 # dfend-x
 
+**This maintenance build is still WIP. Do not download until this notice is removed.**
+
 Dfend-X is a maintenance build of
 [D-Fend Reloaded](http://dfendreloaded.sourceforge.net/) that can run
 [DOSBox-X](https://github.com/joncampbell123/dosbox-x).
